@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Data: real-world sanity check must never be committed (spec 5.6)
+data/sanity_check/*
+!data/sanity_check/README.md
+
+# Model / embedding caches
+.cache/
+models/
+*.npy
+*.faiss
+
+# Frontend
+node_modules/
+frontend/dist/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
