@@ -121,3 +121,20 @@ security.lockouts_before_restriction.ALL,security.lockouts_before_restriction,AL
 support.hours.SA,support.hours,SA,24x7,text,"24 hours a day, 7 days a week",2025-01-01,,Chat and phone
 support.hours.AE,support.hours,AE,24x7,text,"24 hours a day, 7 days a week",2025-01-01,,Chat and phone
 support.hours.EG,support.hours,EG,09-22,text,"9:00 AM to 10:00 PM Cairo time, every day",2025-01-01,,Chat and phone
+kyc.address_proof_max_age.AE,kyc.address_proof_max_age,AE,3,months,3 months,2025-01-01,,Document date
+kyc.address_proof_max_age.EG,kyc.address_proof_max_age,EG,3,months,3 months,2025-01-01,,Document date
+kyc.expired_id_grace.SA,kyc.expired_id_grace,SA,30,calendar_days,30 calendar days,2025-01-01,,After ID expiry date
+kyc.expired_id_grace.AE,kyc.expired_id_grace,AE,30,calendar_days,30 calendar days,2025-01-01,,After ID expiry date
+kyc.expired_id_grace.EG,kyc.expired_id_grace,EG,60,calendar_days,60 calendar days,2025-01-01,,After ID expiry date
+kyc.selfie_attempts.ALL,kyc.selfie_attempts,ALL,3,attempts,3,2025-01-01,,Per day
+kyc.reverification_interval.ALL,kyc.reverification_interval,ALL,2,years,2 years,2025-01-01,,
+kyc.source_of_funds_threshold.SA,kyc.source_of_funds_threshold,SA,50000,SAR,"SAR 50,000",2025-01-01,,Received in one calendar month
+kyc.source_of_funds_threshold.AE,kyc.source_of_funds_threshold,AE,50000,AED,"AED 50,000",2025-01-01,,Received in one calendar month
+kyc.source_of_funds_threshold.EG,kyc.source_of_funds_threshold,EG,250000,EGP,"EGP 250,000",2025-01-01,,Received in one calendar month
+account.phone_change_hold.ALL,account.phone_change_hold,ALL,24,hours,24 hours,2025-01-01,,New recipients and international transfers blocked
+account.email_link_expiry.ALL,account.email_link_expiry,ALL,24,hours,24 hours,2025-01-01,,
+account.max_linked_banks.ALL,account.max_linked_banks,ALL,3,count,3,2025-01-01,,
+limits.min_topup.SA,limits.min_topup,SA,10,SAR,SAR 10,2025-01-01,,
+limits.min_topup.AE,limits.min_topup,AE,10,AED,AED 10,2025-01-01,,
+limits.min_topup.EG,limits.min_topup,EG,50,EGP,EGP 50,2025-01-01,,
+limits.daily_transfer_minor.EG,limits.daily_transfer_minor,EG,2000,EGP,"EGP 2,000",2025-01-01,,Guardian can set lower
