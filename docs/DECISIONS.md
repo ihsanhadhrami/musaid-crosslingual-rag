@@ -54,3 +54,37 @@ Status is one of: Accepted, Superseded by ADR-N, Proposed.
 **Decision:** Build the pipeline by hand: normalization, translation, retrieval, fusion, reranking and generation. Reimplementing one configuration in LlamaIndex or LangChain later is optional.
 
 **Consequences:** More code to write, but full control over each ablation variable and no hidden prompts.
+
+---
+
+## ADR-005: KB authored as Markdown with fact placeholders
+
+**Status:** Accepted (Phase 1)
+
+**Context:** The KB needs the same value (a fee, a deadline) repeated across near-duplicate articles, fee schedules and country sections. A typo in one copy creates an accidental contradiction, and that silently corrupts the benchmark's gold answers (spec §10).
+
+**Decision:**
+- Articles are Markdown files with YAML front matter in `data/kb/articles/`, which are easy to rewrite by hand and review in diffs.
+- Every governed value is a `{{fact_id}}` placeholder resolved from `data/kb/facts.csv` at build time.
+- A literal amount or percentage in an article is a build error.
+- Each fact has an effective date. Superseded values keep their own dated IDs, so archived articles render their old values.
+- `python -m musaid.ingest.build` validates the KB and renders `kb.jsonl`, `chunks.jsonl` and `docs/KB_STATS.md`. CI fails if any of these are stale.
+
+**Consequences:** Contradictions become impossible by construction, except where intended (archived articles). `facts.csv` doubles as the answer key for `critical_facts` and for the Phase 5 fidelity checker. The cost: authors write `{{fees.card_replacement.SA}}` instead of `SAR 25`, and worked examples with computed amounts are not allowed.
+
+---
+
+## ADR-006: Structure-aware chunking with country-tagged sections
+
+**Status:** Accepted (Phase 1)
+
+**Context:** Gold labels in the benchmark point at chunk IDs. Chunk boundaries therefore decide what counts as a correct retrieval, and must never cut a fee table or a procedure in half.
+
+**Decision:**
+- Split on `##`/`###` headings, then pack adjacent sections greedily: up to 400 tokens, stopping once a chunk reaches 200. Short trailing sections join the previous chunk.
+- Tables and lists are atomic, together with a lead-in line ending in `:`.
+- A heading that names a country (`## Egypt`) tags its chunk with that country. Sections for different countries are never packed together.
+- Each chunk's `text` gets a prefix of title, section path and countries. The `body` without the prefix is what users see as the citation.
+- Tokens are approximated as words plus punctuation, which is close enough for sizing.
+
+**Consequences:** Country sections become separately retrievable and filterable, which ablation #10 needs. Chunk IDs (`kb-0071#c2`) are deterministic, and `body_sha1` detects when a chunk's content changes under an existing gold label. **The chunker must be frozen (`CHUNKER_VERSION`) before Phase 2 labeling starts.** Any later change requires re-checking labels whose `body_sha1` moved.

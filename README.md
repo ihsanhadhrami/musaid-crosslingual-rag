@@ -2,7 +2,7 @@
 
 Cross-lingual support RAG that answers Arabic (MSA, Gulf, Levantine/Egyptian, code-switched, Arabizi) and English questions from an English-only knowledge base, with a public benchmark.
 
-> **Status: Phase 0 (setup).** Results, demo and benchmark links will appear here as phases ship. Full plan: [project-1-bilingual-support-rag.md](project-1-bilingual-support-rag.md).
+> **Status: Phase 1 (knowledge base authoring).** See [docs/KB_STATS.md](docs/KB_STATS.md) for progress. Results, demo and benchmark links will appear here as phases ship. Full plan: [project-1-bilingual-support-rag.md](project-1-bilingual-support-rag.md).
 
 ## Run locally
 

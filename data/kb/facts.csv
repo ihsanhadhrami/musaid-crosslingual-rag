@@ -1,0 +1,123 @@
+fact_id,topic,country,value,unit,display,effective_date,superseded_by,notes
+calendar.business_days.SA,calendar.business_days,SA,Sun-Thu,text,Sunday to Thursday,2025-01-01,,Public holidays excluded
+calendar.business_days.AE,calendar.business_days,AE,Mon-Fri,text,Monday to Friday,2025-01-01,,Public holidays excluded
+calendar.business_days.EG,calendar.business_days,EG,Sun-Thu,text,Sunday to Thursday,2025-01-01,,Public holidays excluded
+kyc.verification_time.SA,kyc.verification_time,SA,1,business_days,1 business day,2025-01-01,,Manual review only; automatic checks take minutes
+kyc.verification_time.AE,kyc.verification_time,AE,2,business_days,2 business days,2025-01-01,,
+kyc.verification_time.EG,kyc.verification_time,EG,3,business_days,3 business days,2025-01-01,,
+kyc.min_age.SA,kyc.min_age,SA,18,years,18,2025-01-01,,
+kyc.min_age.AE,kyc.min_age,AE,18,years,18,2025-01-01,,
+kyc.min_age.EG,kyc.min_age,EG,16,years,16,2025-01-01,,Guardian consent needed under kyc.guardian_consent_under.EG
+kyc.guardian_consent_under.EG,kyc.guardian_consent_under,EG,21,years,21,2025-01-01,,Egypt only
+kyc.id_document.SA,kyc.id_document,SA,national_id_or_iqama,text,a valid Saudi national ID or Iqama,2025-01-01,,
+kyc.id_document.AE,kyc.id_document,AE,emirates_id,text,a valid Emirates ID,2025-01-01,,
+kyc.id_document.EG,kyc.id_document,EG,national_id,text,a valid Egyptian national ID card,2025-01-01,,
+limits.balance_max_unverified.SA,limits.balance_max_unverified,SA,5000,SAR,"SAR 5,000",2025-01-01,,
+limits.balance_max_unverified.AE,limits.balance_max_unverified,AE,3000,AED,"AED 3,000",2025-01-01,,
+limits.balance_max_unverified.EG,limits.balance_max_unverified,EG,20000,EGP,"EGP 20,000",2025-01-01,,
+limits.balance_max_verified.SA,limits.balance_max_verified,SA,100000,SAR,"SAR 100,000",2025-01-01,,
+limits.balance_max_verified.AE,limits.balance_max_verified,AE,75000,AED,"AED 75,000",2025-01-01,,
+limits.balance_max_verified.EG,limits.balance_max_verified,EG,300000,EGP,"EGP 300,000",2025-01-01,,
+limits.daily_transfer_unverified.SA,limits.daily_transfer_unverified,SA,1000,SAR,"SAR 1,000",2025-01-01,,
+limits.daily_transfer_unverified.AE,limits.daily_transfer_unverified,AE,1000,AED,"AED 1,000",2025-01-01,,
+limits.daily_transfer_unverified.EG,limits.daily_transfer_unverified,EG,5000,EGP,"EGP 5,000",2025-01-01,,
+limits.daily_transfer_verified.SA@2025-01-01,limits.daily_transfer_verified,SA,10000,SAR,"SAR 10,000",2025-01-01,limits.daily_transfer_verified.SA,Raised on 2026-03-01
+limits.daily_transfer_verified.SA,limits.daily_transfer_verified,SA,20000,SAR,"SAR 20,000",2026-03-01,,
+limits.daily_transfer_verified.AE,limits.daily_transfer_verified,AE,15000,AED,"AED 15,000",2025-01-01,,
+limits.daily_transfer_verified.EG,limits.daily_transfer_verified,EG,60000,EGP,"EGP 60,000",2025-01-01,,
+limits.monthly_transfer_verified.SA,limits.monthly_transfer_verified,SA,100000,SAR,"SAR 100,000",2025-01-01,,
+limits.monthly_transfer_verified.AE,limits.monthly_transfer_verified,AE,75000,AED,"AED 75,000",2025-01-01,,
+limits.monthly_transfer_verified.EG,limits.monthly_transfer_verified,EG,200000,EGP,"EGP 200,000",2025-01-01,,
+limits.atm_daily.SA,limits.atm_daily,SA,5000,SAR,"SAR 5,000",2025-01-01,,
+limits.atm_daily.AE,limits.atm_daily,AE,5000,AED,"AED 5,000",2025-01-01,,
+limits.atm_daily.EG,limits.atm_daily,EG,15000,EGP,"EGP 15,000",2025-01-01,,
+limits.contactless_no_pin.SA,limits.contactless_no_pin,SA,300,SAR,SAR 300,2025-01-01,,Per transaction
+limits.contactless_no_pin.AE,limits.contactless_no_pin,AE,500,AED,AED 500,2025-01-01,,Per transaction
+limits.contactless_no_pin.EG,limits.contactless_no_pin,EG,600,EGP,EGP 600,2025-01-01,,Per transaction
+fees.local_transfer.SA,fees.local_transfer,SA,0,SAR,free,2025-01-01,,
+fees.local_transfer.AE,fees.local_transfer,AE,1,AED,AED 1,2025-01-01,,Per transfer
+fees.local_transfer.EG,fees.local_transfer,EG,0.5,percent,0.5%,2025-01-01,,Subject to min and max below
+fees.local_transfer_min.EG,fees.local_transfer_min,EG,5,EGP,EGP 5,2025-01-01,,
+fees.local_transfer_max.EG,fees.local_transfer_max,EG,20,EGP,EGP 20,2025-01-01,,
+transfer.intl_available.SA,transfer.intl_available,SA,yes,text,available,2025-01-01,,
+transfer.intl_available.AE,transfer.intl_available,AE,yes,text,available,2025-01-01,,
+transfer.intl_available.EG,transfer.intl_available,EG,no,text,not available,2025-01-01,,Outgoing only; receiving from abroad is allowed
+fees.intl_transfer_pct.SA@2025-01-01,fees.intl_transfer_pct,SA,2.0,percent,2%,2025-01-01,fees.intl_transfer_pct.SA,
+fees.intl_transfer_pct.SA,fees.intl_transfer_pct,SA,1.5,percent,1.5%,2026-03-01,,
+fees.intl_transfer_pct.AE@2025-01-01,fees.intl_transfer_pct,AE,1.5,percent,1.5%,2025-01-01,fees.intl_transfer_pct.AE,
+fees.intl_transfer_pct.AE,fees.intl_transfer_pct,AE,1.25,percent,1.25%,2026-03-01,,
+fees.intl_transfer_min.SA,fees.intl_transfer_min,SA,15,SAR,SAR 15,2025-01-01,,Per transfer
+fees.intl_transfer_min.AE,fees.intl_transfer_min,AE,15,AED,AED 15,2025-01-01,,Per transfer
+transfer.intl_delivery.SA,transfer.intl_delivery,SA,2,business_days,2 business days,2025-01-01,,Maximum
+transfer.intl_delivery.AE,transfer.intl_delivery,AE,1,business_days,1 business day,2025-01-01,,Maximum
+fees.fx_markup.SA,fees.fx_markup,SA,2.5,percent,2.5%,2025-01-01,,Over the reference rate
+fees.fx_markup.AE,fees.fx_markup,AE,2.0,percent,2%,2025-01-01,,Over the reference rate
+fees.fx_markup.EG,fees.fx_markup,EG,3.0,percent,3%,2025-01-01,,Over the reference rate
+fees.card_replacement.SA@2025-01-01,fees.card_replacement,SA,35,SAR,SAR 35,2025-01-01,fees.card_replacement.SA,
+fees.card_replacement.SA,fees.card_replacement,SA,25,SAR,SAR 25,2026-03-01,,Lost/stolen/damaged
+fees.card_replacement.AE,fees.card_replacement,AE,25,AED,AED 25,2025-01-01,,Lost/stolen/damaged
+fees.card_replacement.EG,fees.card_replacement,EG,100,EGP,EGP 100,2025-01-01,,Lost/stolen/damaged
+card.replacement_free_window.ALL,card.replacement_free_window,ALL,12,months,12 months,2025-01-01,,Damaged cards only; from card issue date
+fees.physical_card_issuance.SA,fees.physical_card_issuance,SA,30,SAR,SAR 30,2025-01-01,,First card
+fees.physical_card_issuance.AE,fees.physical_card_issuance,AE,30,AED,AED 30,2025-01-01,,First card
+fees.physical_card_issuance.EG,fees.physical_card_issuance,EG,150,EGP,EGP 150,2025-01-01,,First card
+fees.virtual_card.SA,fees.virtual_card,SA,0,SAR,free,2025-01-01,,
+fees.virtual_card.AE,fees.virtual_card,AE,0,AED,free,2025-01-01,,
+fees.virtual_card.EG,fees.virtual_card,EG,25,EGP,EGP 25,2025-01-01,,One-time
+fees.atm_withdrawal.SA,fees.atm_withdrawal,SA,3,SAR,SAR 3,2025-01-01,,After free withdrawals
+fees.atm_withdrawal.AE,fees.atm_withdrawal,AE,2,AED,AED 2,2025-01-01,,
+fees.atm_withdrawal.EG,fees.atm_withdrawal,EG,10,EGP,EGP 10,2025-01-01,,
+fees.atm_free_withdrawals.SA,fees.atm_free_withdrawals,SA,2,count_per_month,2,2025-01-01,,Saudi Arabia only
+fees.card_topup.SA,fees.card_topup,SA,1.0,percent,1%,2025-01-01,,Top-up by debit card
+fees.card_topup.AE,fees.card_topup,AE,1.5,percent,1.5%,2025-01-01,,Top-up by debit card
+fees.card_topup.EG,fees.card_topup,EG,2.0,percent,2%,2025-01-01,,Top-up by debit card
+fees.bill_payment.SA,fees.bill_payment,SA,0,SAR,free,2025-01-01,,
+fees.bill_payment.AE,fees.bill_payment,AE,0,AED,free,2025-01-01,,
+fees.bill_payment.EG,fees.bill_payment,EG,2,EGP,EGP 2,2025-01-01,,Per bill
+fees.dormancy_monthly.SA,fees.dormancy_monthly,SA,0,SAR,no fee,2025-01-01,,
+fees.dormancy_monthly.AE,fees.dormancy_monthly,AE,10,AED,AED 10 per month,2025-01-01,,
+fees.dormancy_monthly.EG,fees.dormancy_monthly,EG,20,EGP,EGP 20 per month,2025-01-01,,
+fees.change_notice.ALL,fees.change_notice,ALL,30,calendar_days,30 calendar days,2025-01-01,,
+tax.vat.SA,tax.vat,SA,15,percent,15%,2025-01-01,,Applied to fees
+tax.vat.AE,tax.vat,AE,5,percent,5%,2025-01-01,,Applied to fees
+tax.vat.EG,tax.vat,EG,14,percent,14%,2025-01-01,,Applied to fees
+refund.merchant_card.SA,refund.merchant_card,SA,7,business_days,7 business days,2025-01-01,,After merchant issues refund
+refund.merchant_card.AE@2025-01-01,refund.merchant_card,AE,14,business_days,14 business days,2025-01-01,refund.merchant_card.AE,
+refund.merchant_card.AE,refund.merchant_card,AE,10,business_days,10 business days,2026-03-01,,After merchant issues refund
+refund.merchant_card.EG,refund.merchant_card,EG,14,business_days,14 business days,2025-01-01,,After merchant issues refund
+refund.wrong_transfer.SA,refund.wrong_transfer,SA,5,business_days,5 business days,2025-01-01,,After dispute approval
+refund.wrong_transfer.AE,refund.wrong_transfer,AE,7,business_days,7 business days,2025-01-01,,After dispute approval
+refund.wrong_transfer.EG,refund.wrong_transfer,EG,10,business_days,10 business days,2025-01-01,,After dispute approval
+failed_payment.reversal.SA,failed_payment.reversal,SA,2,business_days,2 business days,2025-01-01,,
+failed_payment.reversal.AE,failed_payment.reversal,AE,3,business_days,3 business days,2025-01-01,,
+failed_payment.reversal.EG,failed_payment.reversal,EG,5,business_days,5 business days,2025-01-01,,
+dispute.filing_window.SA,dispute.filing_window,SA,60,calendar_days,60 calendar days,2025-01-01,,From transaction date
+dispute.filing_window.AE,dispute.filing_window,AE,45,calendar_days,45 calendar days,2025-01-01,,From transaction date
+dispute.filing_window.EG,dispute.filing_window,EG,30,calendar_days,30 calendar days,2025-01-01,,From transaction date
+dispute.investigation.SA,dispute.investigation,SA,30,calendar_days,30 calendar days,2025-01-01,,
+dispute.investigation.AE,dispute.investigation,AE,30,calendar_days,30 calendar days,2025-01-01,,
+dispute.investigation.EG,dispute.investigation,EG,45,calendar_days,45 calendar days,2025-01-01,,
+chargeback.max_resolution.ALL,chargeback.max_resolution,ALL,90,calendar_days,90 calendar days,2025-01-01,,Card network rules
+transfer.cancel_window.ALL,transfer.cancel_window,ALL,30,minutes,30 minutes,2025-01-01,,Pending transfers only
+transfer.unclaimed_return.ALL,transfer.unclaimed_return,ALL,14,calendar_days,14 calendar days,2025-01-01,,
+card.delivery.SA,card.delivery,SA,5,business_days,5 business days,2025-01-01,,
+card.delivery.AE,card.delivery,AE,3,business_days,3 business days,2025-01-01,,
+card.delivery.EG,card.delivery,EG,10,business_days,10 business days,2025-01-01,,
+card.pin_attempts.ALL,card.pin_attempts,ALL,3,attempts,3,2025-01-01,,
+card.validity.ALL,card.validity,ALL,4,years,4 years,2025-01-01,,
+card.hold_release.ALL,card.hold_release,ALL,7,calendar_days,7 calendar days,2025-01-01,,
+account.dormant_after.SA,account.dormant_after,SA,12,months,12 months,2025-01-01,,No customer-initiated activity
+account.dormant_after.AE,account.dormant_after,AE,12,months,12 months,2025-01-01,,No customer-initiated activity
+account.dormant_after.EG,account.dormant_after,EG,18,months,18 months,2025-01-01,,No customer-initiated activity
+account.closure_payout.SA,account.closure_payout,SA,3,business_days,3 business days,2025-01-01,,
+account.closure_payout.AE,account.closure_payout,AE,5,business_days,5 business days,2025-01-01,,
+account.closure_payout.EG,account.closure_payout,EG,7,business_days,7 business days,2025-01-01,,
+account.statement_history.ALL,account.statement_history,ALL,24,months,24 months,2025-01-01,,
+security.otp_expiry.ALL,security.otp_expiry,ALL,5,minutes,5 minutes,2025-01-01,,
+security.otp_resend_wait.ALL,security.otp_resend_wait,ALL,60,seconds,60 seconds,2025-01-01,,
+security.max_login_attempts.ALL,security.max_login_attempts,ALL,5,attempts,5,2025-01-01,,
+security.lockout_duration.ALL,security.lockout_duration,ALL,30,minutes,30 minutes,2025-01-01,,
+security.lockouts_before_restriction.ALL,security.lockouts_before_restriction,ALL,3,count,3,2025-01-01,,Within 24 hours
+support.hours.SA,support.hours,SA,24x7,text,"24 hours a day, 7 days a week",2025-01-01,,Chat and phone
+support.hours.AE,support.hours,AE,24x7,text,"24 hours a day, 7 days a week",2025-01-01,,Chat and phone
+support.hours.EG,support.hours,EG,09-22,text,"9:00 AM to 10:00 PM Cairo time, every day",2025-01-01,,Chat and phone
