@@ -138,3 +138,36 @@ limits.min_topup.SA,limits.min_topup,SA,10,SAR,SAR 10,2025-01-01,,
 limits.min_topup.AE,limits.min_topup,AE,10,AED,AED 10,2025-01-01,,
 limits.min_topup.EG,limits.min_topup,EG,50,EGP,EGP 50,2025-01-01,,
 limits.daily_transfer_minor.EG,limits.daily_transfer_minor,EG,2000,EGP,"EGP 2,000",2025-01-01,,Guardian can set lower
+transfer.local_bank_delivery.SA,transfer.local_bank_delivery,SA,instant,text,within a few minutes (including weekends),2025-01-01,,
+transfer.local_bank_delivery.AE,transfer.local_bank_delivery,AE,1,business_days,1 business day,2025-01-01,,
+transfer.local_bank_delivery.EG,transfer.local_bank_delivery,EG,instant,text,within a few minutes (including weekends),2025-01-01,,
+topup.bank_transfer_time.SA,topup.bank_transfer_time,SA,instant,text,within a few minutes,2025-01-01,,
+topup.bank_transfer_time.AE,topup.bank_transfer_time,AE,1,business_days,1 business day,2025-01-01,,
+topup.bank_transfer_time.EG,topup.bank_transfer_time,EG,instant,text,within a few minutes,2025-01-01,,
+transfer.intl_receive_time.ALL,transfer.intl_receive_time,ALL,3,business_days,3 business days,2025-01-01,,Maximum after sender's bank releases it
+fees.intl_receive.ALL,fees.intl_receive,ALL,0,text,free,2025-01-01,,Sender's bank may charge
+bill.posting_time.SA,bill.posting_time,SA,1,business_days,1 business day,2025-01-01,,
+bill.posting_time.AE,bill.posting_time,AE,2,business_days,2 business days,2025-01-01,,
+bill.posting_time.EG,bill.posting_time,EG,1,business_days,1 business day,2025-01-01,,
+limits.card_topup_daily.SA,limits.card_topup_daily,SA,10000,SAR,"SAR 10,000",2025-01-01,,
+limits.card_topup_daily.AE,limits.card_topup_daily,AE,10000,AED,"AED 10,000",2025-01-01,,
+limits.card_topup_daily.EG,limits.card_topup_daily,EG,30000,EGP,"EGP 30,000",2025-01-01,,
+limits.qr_payment.SA,limits.qr_payment,SA,5000,SAR,"SAR 5,000",2025-01-01,,Per payment
+limits.qr_payment.AE,limits.qr_payment,AE,5000,AED,"AED 5,000",2025-01-01,,Per payment
+limits.qr_payment.EG,limits.qr_payment,EG,10000,EGP,"EGP 10,000",2025-01-01,,Per payment
+transfer.request_expiry.ALL,transfer.request_expiry,ALL,7,calendar_days,7 calendar days,2025-01-01,,
+transfer.split_max_people.ALL,transfer.split_max_people,ALL,10,count,10,2025-01-01,,Including you
+transfer.schedule_max_ahead.ALL,transfer.schedule_max_ahead,ALL,12,months,12 months,2025-01-01,,
+transfer.scheduled_run_time.ALL,transfer.scheduled_run_time,ALL,08:00,text,8:00 AM local time,2025-01-01,,
+payment_link.expiry.ALL,payment_link.expiry,ALL,30,calendar_days,30 calendar days,2025-01-01,,
+payment_link.max_amount.SA,payment_link.max_amount,SA,2000,SAR,"SAR 2,000",2025-01-01,,Per link
+payment_link.max_amount.AE,payment_link.max_amount,AE,2000,AED,"AED 2,000",2025-01-01,,Per link
+payment_link.max_amount.EG,payment_link.max_amount,EG,5000,EGP,"EGP 5,000",2025-01-01,,Per link
+fees.payment_link.SA,fees.payment_link,SA,1.0,percent,1%,2025-01-01,,Charged to the seller
+fees.payment_link.AE,fees.payment_link,AE,1.0,percent,1%,2025-01-01,,Charged to the seller
+fees.payment_link.EG,fees.payment_link,EG,1.5,percent,1.5%,2025-01-01,,Charged to the seller
+limits.instapay_per_transfer.EG,limits.instapay_per_transfer,EG,50000,EGP,"EGP 50,000",2025-01-01,,
+limits.temp_increase_daily.SA,limits.temp_increase_daily,SA,50000,SAR,"SAR 50,000",2026-03-01,,New in 2026; verified accounts
+limits.temp_increase_daily.AE,limits.temp_increase_daily,AE,40000,AED,"AED 40,000",2026-03-01,,New in 2026; verified accounts
+limits.temp_increase_available.EG,limits.temp_increase_available,EG,no,text,not available,2026-03-01,,
+limits.temp_increase_duration.ALL,limits.temp_increase_duration,ALL,7,calendar_days,7 calendar days,2026-03-01,,
