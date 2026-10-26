@@ -212,3 +212,14 @@ limits.receive_monthly_unverified.AE,limits.receive_monthly_unverified,AE,7500,A
 limits.receive_monthly_unverified.EG,limits.receive_monthly_unverified,EG,40000,EGP,"EGP 40,000",2025-01-01,,
 limits.temp_increase_review.ALL,limits.temp_increase_review,ALL,1,business_days,1 business day,2026-03-01,,
 limits.temp_increase_max_requests.ALL,limits.temp_increase_max_requests,ALL,2,count_per_year,2,2026-03-01,,Per calendar year
+security.password_min_length.ALL,security.password_min_length,ALL,8,characters,8,2025-01-01,,
+security.trusted_devices_max.ALL,security.trusted_devices_max,ALL,3,count,3,2025-01-01,,
+security.new_device_hold.ALL,security.new_device_hold,ALL,24,hours,24 hours,2025-01-01,,New recipients and international transfers
+security.sim_swap_hold.ALL,security.sim_swap_hold,ALL,24,hours,24 hours,2025-01-01,,All outgoing transfers
+security.app_auto_lock.ALL,security.app_auto_lock,ALL,5,minutes,5 minutes,2025-01-01,,Of inactivity
+security.otp_max_resends.ALL,security.otp_max_resends,ALL,3,count,3,2025-01-01,,
+security.otp_resend_lockout.ALL,security.otp_resend_lockout,ALL,30,minutes,30 minutes,2025-01-01,,
+security.restriction_review.SA,security.restriction_review,SA,2,business_days,2 business days,2025-01-01,,After all documents received
+security.restriction_review.AE,security.restriction_review,AE,3,business_days,3 business days,2025-01-01,,After all documents received
+security.restriction_review.EG,security.restriction_review,EG,5,business_days,5 business days,2025-01-01,,After all documents received
+support.fraud_line_hours.ALL,support.fraud_line_hours,ALL,24x7,text,"24 hours a day, 7 days a week",2025-01-01,,Including Egypt
