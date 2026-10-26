@@ -204,3 +204,11 @@ wallet.samsung_pay.SA,wallet.samsung_pay,SA,yes,text,available,2025-01-01,,
 wallet.samsung_pay.AE,wallet.samsung_pay,AE,yes,text,available,2025-01-01,,
 wallet.samsung_pay.EG,wallet.samsung_pay,EG,no,text,not available,2025-01-01,,
 card.activation_deadline.ALL,card.activation_deadline,ALL,90,calendar_days,90 calendar days,2025-01-01,,From when the card is sent
+limits.qr_daily.SA,limits.qr_daily,SA,10000,SAR,"SAR 10,000",2025-01-01,,All QR payments in one day
+limits.qr_daily.AE,limits.qr_daily,AE,10000,AED,"AED 10,000",2025-01-01,,All QR payments in one day
+limits.qr_daily.EG,limits.qr_daily,EG,20000,EGP,"EGP 20,000",2025-01-01,,All QR payments in one day
+limits.receive_monthly_unverified.SA,limits.receive_monthly_unverified,SA,10000,SAR,"SAR 10,000",2025-01-01,,
+limits.receive_monthly_unverified.AE,limits.receive_monthly_unverified,AE,7500,AED,"AED 7,500",2025-01-01,,
+limits.receive_monthly_unverified.EG,limits.receive_monthly_unverified,EG,40000,EGP,"EGP 40,000",2025-01-01,,
+limits.temp_increase_review.ALL,limits.temp_increase_review,ALL,1,business_days,1 business day,2026-03-01,,
+limits.temp_increase_max_requests.ALL,limits.temp_increase_max_requests,ALL,2,count_per_year,2,2026-03-01,,Per calendar year
