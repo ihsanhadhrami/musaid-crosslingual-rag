@@ -223,3 +223,6 @@ security.restriction_review.SA,security.restriction_review,SA,2,business_days,2 
 security.restriction_review.AE,security.restriction_review,AE,3,business_days,3 business days,2025-01-01,,After all documents received
 security.restriction_review.EG,security.restriction_review,EG,5,business_days,5 business days,2025-01-01,,After all documents received
 support.fraud_line_hours.ALL,support.fraud_line_hours,ALL,24x7,text,"24 hours a day, 7 days a week",2025-01-01,,Including Egypt
+app.min_ios.ALL,app.min_ios,ALL,16,version,iOS 16,2025-01-01,,
+app.min_android.ALL,app.min_android,ALL,9,version,Android 9,2025-01-01,,
+account.statement_request_time.ALL,account.statement_request_time,ALL,5,business_days,5 business days,2025-01-01,,Statements older than in-app history
