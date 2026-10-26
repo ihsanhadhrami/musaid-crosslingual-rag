@@ -186,3 +186,21 @@ refund.after_closure.EG,refund.after_closure,EG,10,business_days,10 business day
 fees.intl_recall.SA,fees.intl_recall,SA,50,SAR,SAR 50,2025-01-01,,Charged even if recall fails
 fees.intl_recall.AE,fees.intl_recall,AE,50,AED,AED 50,2025-01-01,,Charged even if recall fails
 dispute.temporary_credit_after.ALL,dispute.temporary_credit_after,ALL,10,business_days,10 business days,2025-01-01,,Card disputes only
+fees.atm_abroad.SA,fees.atm_abroad,SA,15,SAR,SAR 15,2025-01-01,,Plus FX markup; ATM owner may charge
+fees.atm_abroad.AE,fees.atm_abroad,AE,10,AED,AED 10,2025-01-01,,Plus FX markup; ATM owner may charge
+fees.atm_abroad.EG,fees.atm_abroad,EG,50,EGP,EGP 50,2025-01-01,,Plus FX markup; ATM owner may charge
+limits.card_daily_spend.SA,limits.card_daily_spend,SA,20000,SAR,"SAR 20,000",2025-01-01,,Default; can be lowered in app
+limits.card_daily_spend.AE,limits.card_daily_spend,AE,20000,AED,"AED 20,000",2025-01-01,,Default; can be lowered in app
+limits.card_daily_spend.EG,limits.card_daily_spend,EG,50000,EGP,"EGP 50,000",2025-01-01,,Default; can be lowered in app
+card.hold_release_extended.ALL,card.hold_release_extended,ALL,30,calendar_days,30 calendar days,2025-01-01,,Hotels and car rental
+card.renewal_sent_before.ALL,card.renewal_sent_before,ALL,30,calendar_days,30 calendar days,2025-01-01,,Before expiry
+card.max_virtual.ALL,card.max_virtual,ALL,3,count,3,2025-01-01,,
+card.3ds_approval_window.ALL,card.3ds_approval_window,ALL,5,minutes,5 minutes,2025-01-01,,
+card.not_arrived_wait.ALL,card.not_arrived_wait,ALL,5,business_days,5 business days,2025-01-01,,After the expected delivery date
+wallet.apple_pay.SA,wallet.apple_pay,SA,yes,text,available,2025-01-01,,
+wallet.apple_pay.AE,wallet.apple_pay,AE,yes,text,available,2025-01-01,,
+wallet.apple_pay.EG,wallet.apple_pay,EG,no,text,not available yet,2025-01-01,,
+wallet.samsung_pay.SA,wallet.samsung_pay,SA,yes,text,available,2025-01-01,,
+wallet.samsung_pay.AE,wallet.samsung_pay,AE,yes,text,available,2025-01-01,,
+wallet.samsung_pay.EG,wallet.samsung_pay,EG,no,text,not available,2025-01-01,,
+card.activation_deadline.ALL,card.activation_deadline,ALL,90,calendar_days,90 calendar days,2025-01-01,,From when the card is sent
