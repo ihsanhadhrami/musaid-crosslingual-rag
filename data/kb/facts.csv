@@ -226,3 +226,13 @@ support.fraud_line_hours.ALL,support.fraud_line_hours,ALL,24x7,text,"24 hours a 
 app.min_ios.ALL,app.min_ios,ALL,16,version,iOS 16,2025-01-01,,
 app.min_android.ALL,app.min_android,ALL,9,version,Android 9,2025-01-01,,
 account.statement_request_time.ALL,account.statement_request_time,ALL,5,business_days,5 business days,2025-01-01,,Statements older than in-app history
+complaint.response.SA,complaint.response,SA,10,business_days,10 business days,2025-01-01,,Final response
+complaint.response.AE,complaint.response,AE,15,business_days,15 business days,2025-01-01,,Final response
+complaint.response.EG,complaint.response,EG,15,business_days,15 business days,2025-01-01,,Final response
+complaint.acknowledge.ALL,complaint.acknowledge,ALL,1,business_days,1 business day,2025-01-01,,
+data.retention_after_closure.SA,data.retention_after_closure,SA,10,years,10 years,2025-01-01,,
+data.retention_after_closure.AE,data.retention_after_closure,AE,5,years,5 years,2025-01-01,,
+data.retention_after_closure.EG,data.retention_after_closure,EG,5,years,5 years,2025-01-01,,
+legal.terms_notice.ALL,legal.terms_notice,ALL,30,calendar_days,30 calendar days,2025-01-01,,
+legal.closure_notice.ALL,legal.closure_notice,ALL,60,calendar_days,60 calendar days,2025-01-01,,Unless fraud or legal reasons
+account.dormant_closure.ALL,account.dormant_closure,ALL,12,months,12 months,2025-01-01,,Further months dormant with zero balance
