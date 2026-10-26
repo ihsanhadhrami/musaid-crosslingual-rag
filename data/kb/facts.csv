@@ -171,3 +171,18 @@ limits.temp_increase_daily.SA,limits.temp_increase_daily,SA,50000,SAR,"SAR 50,00
 limits.temp_increase_daily.AE,limits.temp_increase_daily,AE,40000,AED,"AED 40,000",2026-03-01,,New in 2026; verified accounts
 limits.temp_increase_available.EG,limits.temp_increase_available,EG,no,text,not available,2026-03-01,,
 limits.temp_increase_duration.ALL,limits.temp_increase_duration,ALL,7,calendar_days,7 calendar days,2026-03-01,,
+atm.dispense_resolution.SA,atm.dispense_resolution,SA,5,business_days,5 business days,2025-01-01,,ATM cash not dispensed
+atm.dispense_resolution.AE,atm.dispense_resolution,AE,7,business_days,7 business days,2025-01-01,,ATM cash not dispensed
+atm.dispense_resolution.EG,atm.dispense_resolution,EG,10,business_days,10 business days,2025-01-01,,ATM cash not dispensed
+fraud.full_protection_window.ALL,fraud.full_protection_window,ALL,2,calendar_days,2 calendar days,2025-01-01,,From when you notice
+fraud.liability_cap.SA,fraud.liability_cap,SA,500,SAR,SAR 500,2025-01-01,,If reported late
+fraud.liability_cap.AE,fraud.liability_cap,AE,500,AED,AED 500,2025-01-01,,If reported late
+fraud.liability_cap.EG,fraud.liability_cap,EG,2000,EGP,"EGP 2,000",2025-01-01,,If reported late
+dispute.appeal_window.ALL,dispute.appeal_window,ALL,15,calendar_days,15 calendar days,2025-01-01,,From the decision
+dispute.goods_wait.ALL,dispute.goods_wait,ALL,15,calendar_days,15 calendar days,2025-01-01,,After expected delivery date
+refund.after_closure.SA,refund.after_closure,SA,5,business_days,5 business days,2025-01-01,,After the refund reaches us
+refund.after_closure.AE,refund.after_closure,AE,7,business_days,7 business days,2025-01-01,,After the refund reaches us
+refund.after_closure.EG,refund.after_closure,EG,10,business_days,10 business days,2025-01-01,,After the refund reaches us
+fees.intl_recall.SA,fees.intl_recall,SA,50,SAR,SAR 50,2025-01-01,,Charged even if recall fails
+fees.intl_recall.AE,fees.intl_recall,AE,50,AED,AED 50,2025-01-01,,Charged even if recall fails
+dispute.temporary_credit_after.ALL,dispute.temporary_credit_after,ALL,10,business_days,10 business days,2025-01-01,,Card disputes only
