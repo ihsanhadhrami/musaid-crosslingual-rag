@@ -80,7 +80,7 @@ Tag each article's `mess` honestly. `docs/KB_STATS.md` counts them.
 
 ## 7. The hand-rewrite pass (draft → rewritten)
 
-LLM drafts are too clean and too uniform. Before setting `status: rewritten`:
+LLM drafts are too clean and too uniform. The hand rewrite applies to the 40 articles marked `rewrite_target = yes` in `inventory.csv` (ADR-007). Before setting `status: rewritten`:
 
 1. **Vary the structure.** Not every article gets the same intro, headings and closing.
 2. **Remove LLM tells:** "Here's everything you need to know", symmetrical bullet lists, an obligatory closing summary, "Please note that…" on every paragraph.

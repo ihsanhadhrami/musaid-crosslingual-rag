@@ -51,7 +51,7 @@ def build(paths: Paths) -> tuple[KBResult, list[Chunk], dict[str, str]]:
     outputs = {
         "kb": _jsonl(result.articles),
         "chunks": _jsonl(chunks),
-        "stats": render_stats(sources, facts, result, chunks, planned=len(inventory)),
+        "stats": render_stats(sources, facts, result, chunks, inventory),
     }
     return result, chunks, outputs
 

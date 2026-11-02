@@ -29,11 +29,14 @@ def render_stats(
     facts: dict[str, Fact],
     result: KBResult,
     chunks: list[Chunk],
-    planned: int,
+    inventory: dict[str, dict[str, str]],
 ) -> str:
     n = len(sources)
+    planned = len(inventory)
     metas = [s.meta for s in sources]
-    status = Counter(m.status for m in metas)
+    # ADR-007: only articles marked rewrite_target in inventory.csv get the hand rewrite.
+    targets = {d for d, row in inventory.items() if row.get("rewrite_target") == "yes"}
+    rewritten = {m.doc_id for m in metas if m.status == ReviewStatus.REWRITTEN}
     lines = [
         "# Knowledge base stats",
         "",
@@ -45,7 +48,8 @@ def render_stats(
         "|---|---:|---|",
         f"| Planned articles (inventory.csv) | {planned} | 150–300 |",
         f"| Drafted | {n} | {planned} |",
-        f"| Rewritten by hand | {status[ReviewStatus.REWRITTEN]} | all drafted |",
+        f"| Rewritten by hand (ADR-007 targets) | {len(rewritten & targets)} | {len(targets)} |",
+        f"| Rewritten by hand (outside targets) | {len(rewritten - targets)} | |",
         f"| Facts in facts.csv | {len(facts)} | |",
         "",
         "## Articles by category",
