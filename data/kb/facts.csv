@@ -242,3 +242,4 @@ legal.governing_language.EG,legal.governing_language,EG,ar,text,Arabic,2025-01-0
 legal.jurisdiction.SA,legal.jurisdiction,SA,riyadh,text,the competent courts and committees in Riyadh,2025-01-01,,
 legal.jurisdiction.AE,legal.jurisdiction,AE,dubai,text,the courts of the Emirate of Dubai,2025-01-01,,
 legal.jurisdiction.EG,legal.jurisdiction,EG,cairo,text,the competent courts of Cairo,2025-01-01,,
+fraud.max_report_age.ALL,fraud.max_report_age,ALL,13,months,13 months,2025-01-01,,From the transaction date; local law may allow longer
