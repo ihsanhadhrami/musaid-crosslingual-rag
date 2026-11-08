@@ -67,6 +67,7 @@ The build replaces each placeholder with the fact's `display` column. The rules:
 | `fee_table` | One sentence on scope, the table, footnotes, then exceptions in prose |
 | `policy` | The rule, who it applies to, exceptions, consequences |
 | `troubleshooting` | Symptom-led headings ("Card declined online"), likely causes, then fixes in order |
+| `legal_document` | Numbered clauses (`## 6. Payments`, `### 6.3 ...`), formal but readable; 3,000–9,000 tokens; values still come from facts (ADR-008) |
 
 ## 6. Mandatory realistic mess (spec §5.2)
 

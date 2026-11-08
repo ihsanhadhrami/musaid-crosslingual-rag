@@ -43,6 +43,7 @@ class ArticleType(StrEnum):
     FEE_TABLE = "fee_table"
     POLICY = "policy"
     TROUBLESHOOTING = "troubleshooting"
+    LEGAL_DOCUMENT = "legal_document"  # long-form terms and policies (ADR-008)
 
 
 class Mess(StrEnum):

@@ -16,7 +16,7 @@ from dataclasses import dataclass, field
 
 from musaid.ingest.schema import COUNTRIES, COUNTRY_NAMES, Article, Chunk, Country
 
-CHUNKER_VERSION = "1"
+CHUNKER_VERSION = "2"  # v2: MAX_TOKENS includes the prefix
 MAX_TOKENS = 400
 MIN_TOKENS = 200  # stop packing sections once a chunk reaches this size
 
@@ -189,8 +189,22 @@ def chunk_article(
     article: Article, max_tokens: int = MAX_TOKENS, min_tokens: int = MIN_TOKENS
 ) -> list[Chunk]:
     sections = split_sections(parse_blocks(article.text))
+    # MAX_TOKENS applies to the embedded text, so leave room for the longest possible prefix.
+    reserve = max(
+        (
+            count_tokens(
+                _prefix(
+                    article.title,
+                    [*article.section_path, *s.headings],
+                    list(s.countries or article.countries),
+                )
+            )
+            for s in sections
+        ),
+        default=0,
+    )
     chunks: list[Chunk] = []
-    for i, g in enumerate(_pack(sections, max_tokens, min_tokens)):
+    for i, g in enumerate(_pack(sections, max_tokens - reserve, min_tokens)):
         headed = [s.headings for s in g.sections if s.headings]
         section_path = list(article.section_path)
         if len(g.sections) == 1 and headed:

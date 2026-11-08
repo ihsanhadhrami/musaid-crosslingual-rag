@@ -111,3 +111,29 @@ Status is one of: Accepted, Superseded by ADR-N, Proposed.
 - The limitation is also measured. Since every article's rewrite status is known, the Phase 3–4 eval harness reports retrieval metrics separately for queries whose gold article is rewritten and queries whose gold article is a draft. A large gap means the drafts make retrieval artificially easy, and that becomes a reported finding rather than a hidden bias.
 - The real-world sanity check (spec §5.6) carries more weight. It is the main evidence that results hold outside the KB we wrote.
 - Gold labels must be checked against rendered text, which `body_sha1` already supports. A rewrite after labeling changes chunk hashes, so **rewrites of the 40 should be finished before Phase 2 labeling starts.**
+
+---
+
+## ADR-008: Grow the KB to about 1,000–1,200 chunks
+
+**Status:** Accepted (Phase 1)
+
+**Context:** The 200 help articles produce 222 chunks (about 50,000 tokens), against the spec's 1,000–3,000. Real help-center articles are short, so this is realistic per article, but the corpus as a whole is too small. With few candidates per query, retrieval is artificially easy and scores would be inflated (spec §10). Chunk size is already within the spec's 200–400 tokens (ADR-006), so growth has to come from more text, not smaller chunks: roughly 220,000–250,000 tokens in total.
+
+**Decision:** Grow the KB in three stages. Each stage leaves a complete, usable KB.
+
+| Stage | Content | Est. chunks |
+|---|---|---|
+| 1 | Long-form legal documents (`article_type: legal_document`, kb-0201..kb-0216): full Terms of Use, Card Terms, Privacy Notice, full Fees and Charges Schedule, dispute, AML, complaints and other policies, plus **archived 2025 editions** of the Terms, Card Terms and fee schedule | ~250 |
+| 2 | Remittance corridor guides (e.g. Saudi Arabia/UAE to India, Pakistan, the Philippines, Egypt) and card-abroad travel guides | ~300 |
+| 3 | Realistic noise: release notes, promotions (expired and current), service notices, money tips, glossary | ~300 |
+
+- **Same rules as the rest of the KB:** governed values come from `facts.csv`, and validation is unchanged.
+- **Archived editions are near-identical to the current ones.** They differ only in clauses whose facts changed, which makes them the hardest superseded-policy negatives in the benchmark.
+- **Category shares in `KB_STATS.md` count help articles only.** Legal documents are listed separately, so the spec's category split still describes the help center.
+- **Stop at about 1,000–1,200 chunks.** Beyond that, each extra chunk adds little retrieval difficulty for the authoring and review cost.
+
+**Consequences:**
+- The new text is LLM-drafted. It's outside the ADR-007 rewrite targets and disclosed the same way.
+- Adding documents doesn't change existing chunk IDs, but it can create a second valid answer for a query. **Growth should finish before Phase 2 labeling**, so gold labels are complete.
+- Legal documents let Phase 2 include hard queries whose only answer sits in a dense clause, for example governing language or liability caps.

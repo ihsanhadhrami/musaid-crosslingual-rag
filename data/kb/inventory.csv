@@ -199,3 +199,19 @@ kb-0197,How long we keep your data,legal_policy,policy,ALL,,,
 kb-0198,Changes to our terms,legal_policy,policy,ALL,,,
 kb-0199,Accounts of deceased customers,legal_policy,policy,ALL,,,
 kb-0200,Restricted countries and transactions,legal_policy,policy,ALL,,,
+kb-0201,Terms of Use (2026 edition),legal_policy,legal_document,ALL,country_specific;buried_exception;cross_reference,,Replaces kb-0202
+kb-0202,Terms of Use (2025 edition),legal_policy,legal_document,ALL,superseded,,Superseded by kb-0201
+kb-0203,Card Terms and Conditions (2026 edition),legal_policy,legal_document,ALL,country_specific;buried_exception,,Replaces kb-0204
+kb-0204,Card Terms and Conditions (2025 edition),legal_policy,legal_document,ALL,superseded,,Superseded by kb-0203
+kb-0205,Privacy Notice,legal_policy,legal_document,ALL,country_specific;buried_exception,,
+kb-0206,Fees and Charges Schedule (2026),legal_policy,legal_document,ALL,country_specific;near_duplicate,,Replaces kb-0207
+kb-0207,Fees and Charges Schedule (2025),legal_policy,legal_document,ALL,superseded,,Superseded by kb-0206
+kb-0208,"Dispute, Refund and Chargeback Policy",legal_policy,legal_document,ALL,country_specific;buried_exception;near_duplicate,,
+kb-0209,Customer Identification and Anti-Money Laundering Policy,legal_policy,legal_document,ALL,country_specific;buried_exception,,
+kb-0210,Complaints Handling Policy,legal_policy,legal_document,ALL,country_specific;near_duplicate,,
+kb-0211,Payment Links Seller Terms,legal_policy,legal_document,ALL,country_specific;buried_exception,,
+kb-0212,Acceptable Use Policy,legal_policy,legal_document,ALL,buried_exception,,
+kb-0213,Cookie and Device Data Notice,legal_policy,legal_document,ALL,,,
+kb-0214,Electronic Communications Consent,legal_policy,legal_document,ALL,,,
+kb-0215,Unauthorized Transactions and Liability Policy,legal_policy,legal_document,ALL,country_specific;near_duplicate,,
+kb-0216,Dormant Accounts and Unclaimed Funds Policy,legal_policy,legal_document,ALL,country_specific;near_duplicate,,

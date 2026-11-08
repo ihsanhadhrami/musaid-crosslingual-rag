@@ -85,3 +85,9 @@ def test_ids_and_hash_are_deterministic():
 
 def test_count_tokens():
     assert count_tokens("Fees: SAR 1,000.") == 7
+
+
+def test_max_tokens_includes_the_prefix():
+    md = "\n\n".join(f"## Section {i}\n\n{words(120)}" for i in range(8))
+    chunks = chunk_article(make(md), max_tokens=400, min_tokens=200)
+    assert all(c.n_tokens <= 400 for c in chunks)
