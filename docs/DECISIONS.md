@@ -84,6 +84,7 @@ Status is one of: Accepted, Superseded by ADR-N, Proposed.
 - Split on `##`/`###` headings, then pack adjacent sections greedily: up to 400 tokens, stopping once a chunk reaches 200. Short trailing sections join the previous chunk.
 - Tables and lists are atomic, together with a lead-in line ending in `:`.
 - A heading that names a country (`## Egypt`) tags its chunk with that country. Sections for different countries are never packed together.
+- The build fails if a heading tags a chunk with a country the article's `countries` don't include, for example `## Paying in Egypt` in a guide for travellers from Saudi Arabia and the UAE.
 - Each chunk's `text` gets a prefix of title, section path and countries. The `body` without the prefix is what users see as the citation.
 - Tokens are approximated as words plus punctuation, which is close enough for sizing.
 

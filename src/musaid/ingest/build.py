@@ -16,7 +16,7 @@ from musaid.ingest.chunking import chunk_article
 from musaid.ingest.facts import load_facts
 from musaid.ingest.schema import Chunk
 from musaid.ingest.stats import render_stats
-from musaid.ingest.validate import KBResult, check_kb
+from musaid.ingest.validate import Issue, KBResult, check_kb
 
 ROOT = Path(__file__).resolve().parents[3]
 
@@ -48,6 +48,17 @@ def build(paths: Paths) -> tuple[KBResult, list[Chunk], dict[str, str]]:
     sources = load_articles(paths.kb_dir / "articles")
     result = check_kb(sources, facts, set(inventory))
     chunks = [c for a in result.articles for c in chunk_article(a)]
+    # A country named in a heading tags the chunk; it must be one the article covers.
+    article_countries = {a.doc_id: set(a.countries) for a in result.articles}
+    for c in chunks:
+        if extra := set(c.countries) - article_countries[c.doc_id]:
+            result.issues.append(
+                Issue(
+                    "error",
+                    c.chunk_id,
+                    f"heading tags {sorted(extra)}, which the article's countries don't include",
+                )
+            )
     outputs = {
         "kb": _jsonl(result.articles),
         "chunks": _jsonl(chunks),
