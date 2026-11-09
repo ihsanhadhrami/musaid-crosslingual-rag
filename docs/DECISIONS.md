@@ -137,3 +137,20 @@ Status is one of: Accepted, Superseded by ADR-N, Proposed.
 - The new text is LLM-drafted. It's outside the ADR-007 rewrite targets and disclosed the same way.
 - Adding documents doesn't change existing chunk IDs, but it can create a second valid answer for a query. **Growth should finish before Phase 2 labeling**, so gold labels are complete.
 - Legal documents let Phase 2 include hard queries whose only answer sits in a dense clause, for example governing language or liability caps.
+
+### ADR-008 revision (Phase 1): stop at about 650–750 chunks
+
+**Context:** Stage 1 added 95 chunks, not the ~250 estimated: the 16 legal documents came out at 3–21 chunks each. Reaching 1,000 chunks would need roughly 165,000–210,000 more tokens of drafted text, about seven times Stage 1, for diminishing gains in retrieval difficulty.
+
+**Revised decision:** Stop growth at about **650–750 chunks**:
+
+| Stage | Content | Est. chunks |
+|---|---|---|
+| 1 (done) | 16 legal documents, incl. archived editions | 95 (KB: 317) |
+| 2 | Remittance corridor guides, card-abroad travel guides, life-event guides (`article_type: guide`) | ~230 |
+| 3 | Small noise set: release notes, promotions, service notices | ~100 |
+
+**Revised consequences:**
+- The KB is below the spec's 1,000-chunk minimum. This is stated in the README's known limitations and in the dataset card, with the chunk count.
+- The evidence that retrieval isn't artificially easy comes from three places: the rewritten-vs-draft comparison (ADR-007), the hard negatives (archived editions, near-duplicates, templated corridor guides), and the real-world sanity check (spec §5.6).
+- Growth can resume later without breaking existing gold labels, because new documents only add chunks. Doing so would require re-checking gold completeness for affected queries.

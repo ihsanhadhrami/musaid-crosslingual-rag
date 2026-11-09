@@ -243,3 +243,41 @@ legal.jurisdiction.SA,legal.jurisdiction,SA,riyadh,text,the competent courts and
 legal.jurisdiction.AE,legal.jurisdiction,AE,dubai,text,the courts of the Emirate of Dubai,2025-01-01,,
 legal.jurisdiction.EG,legal.jurisdiction,EG,cairo,text,the competent courts of Cairo,2025-01-01,,
 fraud.max_report_age.ALL,fraud.max_report_age,ALL,13,months,13 months,2025-01-01,,From the transaction date; local law may allow longer
+corridor.usual_time_IN.SA,corridor.usual_time_IN,SA,within 1 hour,text,within 1 hour,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_IN.AE,corridor.usual_time_IN,AE,within 1 hour,text,within 1 hour,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_PK.SA,corridor.usual_time_PK,SA,within 1 hour,text,within 1 hour,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_PK.AE,corridor.usual_time_PK,AE,within 1 hour,text,within 1 hour,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.max_per_transfer_PK.SA,corridor.max_per_transfer_PK,SA,15000,SAR,"SAR 15,000",2025-01-01,,Payout partner limit
+corridor.max_per_transfer_PK.AE,corridor.max_per_transfer_PK,AE,15000,AED,"AED 15,000",2025-01-01,,Payout partner limit
+corridor.usual_time_BD.SA,corridor.usual_time_BD,SA,same business day,text,same business day,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_BD.AE,corridor.usual_time_BD,AE,same business day,text,same business day,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.max_per_transfer_BD.SA,corridor.max_per_transfer_BD,SA,10000,SAR,"SAR 10,000",2025-01-01,,Payout partner limit
+corridor.max_per_transfer_BD.AE,corridor.max_per_transfer_BD,AE,10000,AED,"AED 10,000",2025-01-01,,Payout partner limit
+corridor.usual_time_PH.SA,corridor.usual_time_PH,SA,within 1 hour,text,within 1 hour,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_PH.AE,corridor.usual_time_PH,AE,within 1 hour,text,within 1 hour,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_EG.SA,corridor.usual_time_EG,SA,within 1 hour,text,within 1 hour,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_EG.AE,corridor.usual_time_EG,AE,within 1 hour,text,within 1 hour,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_ID.SA,corridor.usual_time_ID,SA,same business day,text,same business day,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_ID.AE,corridor.usual_time_ID,AE,same business day,text,same business day,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_NP.SA,corridor.usual_time_NP,SA,1 business day,text,1 business day,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_NP.AE,corridor.usual_time_NP,AE,1 business day,text,1 business day,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.max_per_transfer_NP.SA,corridor.max_per_transfer_NP,SA,5000,SAR,"SAR 5,000",2025-01-01,,Payout partner limit
+corridor.max_per_transfer_NP.AE,corridor.max_per_transfer_NP,AE,5000,AED,"AED 5,000",2025-01-01,,Payout partner limit
+corridor.usual_time_LK.SA,corridor.usual_time_LK,SA,same business day,text,same business day,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_LK.AE,corridor.usual_time_LK,AE,same business day,text,same business day,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_JO.SA,corridor.usual_time_JO,SA,1 business day,text,1 business day,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_JO.AE,corridor.usual_time_JO,AE,1 business day,text,1 business day,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_LB.SA,corridor.usual_time_LB,SA,2 business days,text,2 business days,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_LB.AE,corridor.usual_time_LB,AE,2 business days,text,2 business days,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_MA.SA,corridor.usual_time_MA,SA,1 business day,text,1 business day,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_MA.AE,corridor.usual_time_MA,AE,1 business day,text,1 business day,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_GB.SA,corridor.usual_time_GB,SA,same business day,text,same business day,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_GB.AE,corridor.usual_time_GB,AE,same business day,text,same business day,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_US.SA,corridor.usual_time_US,SA,2 business days,text,2 business days,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_US.AE,corridor.usual_time_US,AE,1 business day,text,1 business day,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_TR.SA,corridor.usual_time_TR,SA,same business day,text,same business day,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.usual_time_TR.AE,corridor.usual_time_TR,AE,same business day,text,same business day,2025-01-01,,Usual time; maximum is transfer.intl_delivery
+corridor.available_SD.SA,corridor.available_SD,SA,no,text,not available,2025-01-01,,
+corridor.available_SD.AE,corridor.available_SD,AE,no,text,not available,2025-01-01,,
+corridor.available_YE.SA,corridor.available_YE,SA,no,text,not available,2025-01-01,,
+corridor.available_YE.AE,corridor.available_YE,AE,no,text,not available,2025-01-01,,

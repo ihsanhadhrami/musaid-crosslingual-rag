@@ -215,3 +215,19 @@ kb-0213,Cookie and Device Data Notice,legal_policy,legal_document,ALL,,,
 kb-0214,Electronic Communications Consent,legal_policy,legal_document,ALL,,,
 kb-0215,Unauthorized Transactions and Liability Policy,legal_policy,legal_document,ALL,country_specific;near_duplicate,,
 kb-0216,Dormant Accounts and Unclaimed Funds Policy,legal_policy,legal_document,ALL,country_specific;near_duplicate,,
+kb-0217,Sending money to India,transfers_payments,guide,SA;AE,country_specific;near_duplicate,,Corridor guide (ADR-008)
+kb-0218,Sending money to Pakistan,transfers_payments,guide,SA;AE,country_specific;near_duplicate;buried_exception,,Corridor guide (ADR-008)
+kb-0219,Sending money to Bangladesh,transfers_payments,guide,SA;AE,country_specific;near_duplicate;buried_exception,,Corridor guide (ADR-008)
+kb-0220,Sending money to the Philippines,transfers_payments,guide,SA;AE,country_specific;near_duplicate,,Corridor guide (ADR-008)
+kb-0221,Sending money to Egypt,transfers_payments,guide,SA;AE,country_specific;near_duplicate;buried_exception,,Corridor guide (ADR-008)
+kb-0222,Sending money to Indonesia,transfers_payments,guide,SA;AE,country_specific;near_duplicate,,Corridor guide (ADR-008)
+kb-0223,Sending money to Nepal,transfers_payments,guide,SA;AE,country_specific;near_duplicate;buried_exception,,Corridor guide (ADR-008)
+kb-0224,Sending money to Sri Lanka,transfers_payments,guide,SA;AE,country_specific;near_duplicate,,Corridor guide (ADR-008)
+kb-0225,Sending money to Jordan,transfers_payments,guide,SA;AE,country_specific;near_duplicate,,Corridor guide (ADR-008)
+kb-0226,Sending money to Lebanon,transfers_payments,guide,SA;AE,country_specific;near_duplicate;buried_exception,,Corridor guide (ADR-008)
+kb-0227,Sending money to Morocco,transfers_payments,guide,SA;AE,country_specific;near_duplicate,,Corridor guide (ADR-008)
+kb-0228,Sending money to the United Kingdom,transfers_payments,guide,SA;AE,country_specific;near_duplicate,,Corridor guide (ADR-008)
+kb-0229,Sending money to the United States,transfers_payments,guide,SA;AE,country_specific;near_duplicate,,Corridor guide (ADR-008)
+kb-0230,Sending money to Türkiye,transfers_payments,guide,SA;AE,country_specific;near_duplicate,,Corridor guide (ADR-008)
+kb-0231,Sending money to Sudan,transfers_payments,guide,SA;AE,country_specific;near_duplicate,,Unavailable corridor (ADR-008)
+kb-0232,Sending money to Yemen,transfers_payments,guide,SA;AE,country_specific;near_duplicate,,Unavailable corridor (ADR-008)

@@ -54,18 +54,20 @@ def render_stats(
         "",
         "## Articles by category",
         "",
-        "Shares count help articles only; long-form legal documents are listed separately "
+        "Shares count help articles only; legal documents and guides are listed separately "
         "(ADR-008).",
         "",
         "| Category | Articles | Share | Target share |",
         "|---|---:|---:|---:|",
     ]
-    help_metas = [m for m in metas if m.article_type != ArticleType.LEGAL_DOCUMENT]
+    extra_types = (ArticleType.LEGAL_DOCUMENT, ArticleType.GUIDE)
+    help_metas = [m for m in metas if m.article_type not in extra_types]
     cats = Counter(m.category for m in help_metas)
     for cat, target in CATEGORY_TARGET_SHARE.items():
         share = _pct(cats[cat], len(help_metas))
         lines.append(f"| {cat.value} | {cats[cat]} | {share} | {target:.0%} |")
-    lines.append(f"| *legal documents* | {len(metas) - len(help_metas)} | | |")
+    for t in extra_types:
+        lines.append(f"| *{t.value}s* | {sum(m.article_type == t for m in metas)} | | |")
 
     lines += ["", "## Articles by country", "", "An article can cover several countries.", ""]
     lines += ["| Country | Articles |", "|---|---:|"]

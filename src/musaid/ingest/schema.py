@@ -44,6 +44,7 @@ class ArticleType(StrEnum):
     POLICY = "policy"
     TROUBLESHOOTING = "troubleshooting"
     LEGAL_DOCUMENT = "legal_document"  # long-form terms and policies (ADR-008)
+    GUIDE = "guide"  # corridor, travel and life-event guides (ADR-008)
 
 
 class Mess(StrEnum):
