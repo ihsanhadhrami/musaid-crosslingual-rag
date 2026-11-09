@@ -281,3 +281,4 @@ corridor.available_SD.SA,corridor.available_SD,SA,no,text,not available,2025-01-
 corridor.available_SD.AE,corridor.available_SD,AE,no,text,not available,2025-01-01,,
 corridor.available_YE.SA,corridor.available_YE,SA,no,text,not available,2025-01-01,,
 corridor.available_YE.AE,corridor.available_YE,AE,no,text,not available,2025-01-01,,
+account.max_pockets.ALL,account.max_pockets,ALL,10,count,10,2025-01-01,,
