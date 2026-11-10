@@ -7,10 +7,10 @@ countries: [AE]
 effective_date: 2025-01-01
 superseded_by: kb-0071
 article_type: policy
-status: draft
+status: rewritten
 mess: [superseded]
 ---
-For accounts registered in the UAE, refunds are credited within these times:
+For UAE-registered accounts, the following maximum refund periods applied during 2025:
 
 | Refund type | Time |
 |---|---|
@@ -18,6 +18,8 @@ For accounts registered in the UAE, refunds are credited within these times:
 | Wrong transfer (after dispute approval) | Up to {{refund.wrong_transfer.AE}} |
 | Failed payment reversal | Up to {{failed_payment.reversal.AE}} |
 
-Times are counted in business days, {{calendar.business_days.AE}}, excluding UAE public holidays.
+All periods were measured in business days according to {{calendar.business_days.AE}} and excluded UAE public holidays.
 
-Merchant refund times start when the merchant issues the refund. Contact the merchant first if you haven't received confirmation from them.
+For merchant refunds, the processing period began when the merchant issued the refund. If the merchant had not confirmed that it was sent, you needed to contact the merchant first.
+
+This article has been superseded by [Refund timelines](kb-0071).

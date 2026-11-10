@@ -7,22 +7,22 @@ countries: [SA, AE, EG]
 effective_date: 2025-01-01
 superseded_by: null
 article_type: troubleshooting
-status: draft
+status: rewritten
 mess: [near_duplicate]
 ---
-If your profile has said **In review** for a while, your documents are waiting for a person on our verification team. That's normal for some IDs, for example older cards, worn photos, or a name that's written differently on your ID and in the app.
+The **In review** status means your documents have been referred to our verification team for manual checking. This can happen with older identity cards, unclear or worn images, or differences between the name in your app and the name on your ID.
 
-## How long is too long?
+## Expected review time
 
-A manual review in Saudi Arabia finishes within {{kyc.verification_time.SA}}. In the UAE it's {{kyc.verification_time.AE}}, and in Egypt {{kyc.verification_time.EG}}. Weekends and public holidays aren't counted.
+Manual checks take up to {{kyc.verification_time.SA}} in Saudi Arabia, {{kyc.verification_time.AE}} in the UAE, and {{kyc.verification_time.EG}} in Egypt. Weekends and public holidays are not included.
 
-## Things that slow a review down
+## Common reasons for delays
 
-- The selfie doesn't clearly match the ID photo (glasses, a hat, poor light).
-- The ID expires in the next few days.
-- The name in your profile doesn't match your ID. Arabic and English spellings are compared, so small differences are fine, but a different family name is not.
-- You submitted more than once. Each new submission cancels the previous one.
+- The selfie does not clearly match the photograph on your ID, often because of glasses, headwear, or poor lighting.
+- Your ID is close to its expiry date.
+- Your profile name differs from the ID. Minor differences between Arabic and English spellings are acceptable, but a different family name may require further review.
+- You submitted your documents again. A new submission replaces and cancels the earlier one.
 
-## What you can do
+## What to do while waiting
 
-Keep the app updated and notifications on, because if we need anything else we'll ask there. If the review time for your country has passed, chat with us from **Help** in the app and we'll check where it is. We can't speed up a review that is still within the normal time.
+Keep the app updated and allow notifications so we can contact you if additional information is needed. If the stated review period for your country has passed, contact us through **Help** in the app so we can check the status. We cannot accelerate a review that is still within the normal timeframe.

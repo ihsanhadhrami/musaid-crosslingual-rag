@@ -7,25 +7,30 @@ countries: all
 effective_date: 2025-01-01
 superseded_by: null
 article_type: policy
-status: draft
+status: rewritten
 mess: [buried_exception, cross_reference]
 ---
-Some scams don't steal your login. They convince you to send money yourself.
+Some fraudsters do not need your password. Instead, they persuade you to authorize the payment yourself.
 
 ## Investment scams
 
-You're promised large, quick returns on crypto, forex or a "trading platform". Often you see small profits at first, and then you're asked to pay "fees" or "taxes" to withdraw. The money is never returned.
+These schemes often promise fast, guaranteed profits through crypto, foreign exchange, or an alleged trading platform. A scammer may show small early gains and later demand extra "taxes" or "fees" before allowing a withdrawal. The promised money never arrives.
 
-Warning signs: guaranteed returns, pressure to act fast, contact through WhatsApp or social media, and requests to send money to a person rather than a regulated company.
+Be cautious when someone:
+
+- Guarantees a return.
+- Pressures you to act immediately.
+- Contacts you through WhatsApp or social media.
+- Asks you to pay an individual instead of a regulated business.
 
 ## Fake sellers
 
-Cars, phones, rental flats and pets are common. The seller wants a deposit by transfer, often because they're "abroad", and the item never exists.
+Scammers commonly advertise cars, phones, rental properties, or pets that do not exist. They may claim to be overseas and request a deposit by bank transfer before you can view or receive the item.
 
-Pay by card where you can. Card payments have dispute rights that transfers don't. See [Fraudulent merchants](kb-0098).
+Where possible, pay by card. Card purchases may have dispute rights that are not available for bank transfers. See [Fraudulent merchants](kb-0098).
 
-## Romance and job scams
+## Romance and employment scams
 
-Someone you met online, or a recruiter, asks you to send money or to receive money and pass it on. Receiving and forwarding money for someone else can make you part of a crime.
+A person you met online, or someone posing as a recruiter, may ask for money or ask you to receive funds and forward them elsewhere. Moving money for another person can make you an unwitting participant in criminal activity.
 
-If you've sent money to a scammer, report it immediately; see [Reporting fraud](kb-0156). Because you approved the payment, it isn't covered by our protection for unauthorized transactions, but we'll try to stop the money if we can still reach it.
+If you have paid a scammer, report it immediately through [Reporting fraud](kb-0156). Because you authorized the payment yourself, it is not covered by the protection for unauthorized transactions. We will still try to stop or recover the funds if they are reachable.

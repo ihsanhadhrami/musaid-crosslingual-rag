@@ -7,10 +7,13 @@ countries: all
 effective_date: 2025-01-01
 superseded_by: null
 article_type: fee_table
-status: draft
+status: rewritten
 mess: [country_specific, near_duplicate]
 ---
-There are two account levels: **Basic**, before you verify your ID, and **Verified**. The most you can hold in your balance depends on your level and your country.
+Your maximum balance is based on your account tier and the country where the account is registered.
+
+- **Basic**: applies before identity verification.
+- **Verified**: applies after your identity has been verified.
 
 ## Saudi Arabia
 
@@ -33,8 +36,8 @@ There are two account levels: **Basic**, before you verify your ID, and **Verifi
 | Basic | {{limits.balance_max_unverified.EG}} |
 | Verified | {{limits.balance_max_verified.EG}} |
 
-## What counts towards the balance limit?
+## What is included in the balance limit?
 
-Everything in your account, including money in Pockets. Pending refunds count once they arrive.
+The limit covers all money held in your account, including funds stored in Pockets. A pending refund is included once the refund reaches your account.
 
-If a top-up or incoming transfer would take you over the limit, it's declined in full. It isn't partly accepted. Spend or move some money out first, or verify your account to move up to the Verified level.
+If a top-up or incoming transfer would put your balance above the applicable limit, the full transaction is declined rather than partially accepted. You must spend or transfer out some funds first, or verify your identity to qualify for the Verified tier.

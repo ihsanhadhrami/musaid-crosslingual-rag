@@ -7,21 +7,21 @@ countries: [SA, AE, EG]
 effective_date: 2025-01-01
 superseded_by: null
 article_type: troubleshooting
-status: draft
+status: rewritten
 mess: [buried_exception]
 ---
 ## "Too many attempts. Try again later."
 
-To protect your money, the app locks login after {{security.max_login_attempts.ALL}} wrong passwords in a row. The lock lasts {{security.lockout_duration.ALL}}. After that you can try again.
+The app temporarily blocks login after {{security.max_login_attempts.ALL}} consecutive incorrect passwords. The lock remains in place for {{security.lockout_duration.ALL}}, after which you can try signing in again.
 
-## I've forgotten my password
+## If you forgot your password
 
-Don't keep guessing. Tap **Forgot password** on the login screen, confirm your phone number with the code we send, and set a new password. Resetting your password ends the lock straight away.
+Stop entering possible passwords and select **Forgot password** on the login screen. Confirm your phone number using the code we send, then create a new password. Completing the reset removes the login lock immediately.
 
-## My card is still working, is that normal?
+## Does the card continue working?
 
-Yes. A login lock only affects the app. Your card and any scheduled transfers keep working. If you think someone else has been trying to get into your account, freeze your card from the website or by calling the number on the back of your card.
+Yes. The lock applies only to app access. Your physical card and scheduled transfers continue to operate. If you suspect someone is attempting to access your account, freeze the card through the website or call the number printed on its back.
 
-## Locked again?
+## If the account is locked repeatedly
 
-If your account is locked {{security.lockouts_before_restriction.ALL}} times within one day, it's restricted for your protection, and the timer no longer unlocks it. Resetting your password won't lift it either. Only our support team can, after checking your identity. Contact us through **Help** on the login screen.
+If your account reaches {{security.lockouts_before_restriction.ALL}} locks in one day, it is placed under an additional security restriction. The normal timer will no longer restore access, and changing your password will not remove the restriction. Support must verify your identity and unlock the account. Contact us through **Help** on the login screen.

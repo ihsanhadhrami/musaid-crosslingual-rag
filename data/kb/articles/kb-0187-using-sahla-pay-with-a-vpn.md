@@ -7,25 +7,25 @@ countries: all
 effective_date: 2025-01-01
 superseded_by: null
 article_type: faq
-status: draft
+status: rewritten
 mess: [buried_exception, cross_reference]
 ---
-## Can I use the app with a VPN?
+## Can I use a VPN with Sahla Pay?
 
-You can, but it can cause problems. Our security systems look at where your connection comes from. A VPN can make it look like you're logging in from another country.
+The app may work while a VPN is active, but the connection can trigger security problems. Because our systems assess the apparent location of your connection, a VPN may make it seem as though you are signing in from another country.
 
-## What can go wrong?
+## Possible effects
 
-- Extra security checks, like a new code or a selfie
-- Transfers held for review
-- Login blocked, if the VPN shows a location in a country we can't serve
+A VPN connection may lead to:
 
-## What should I do?
+- An additional security check, such as a new verification code or selfie.
+- A transfer being held for review.
+- A blocked login if the VPN location appears to be in a country we do not support.
 
-Turn the VPN off while you use Sahla Pay, especially when logging in on a new device or sending money.
+## Recommended setup
 
-## I'm abroad and need a VPN to reach other services
+Turn off the VPN while using Sahla Pay, particularly when signing in on a new device or sending a transfer.
 
-Turn it off just for Sahla Pay. Our app works from abroad without a VPN, wherever mobile data or Wi-Fi is available.
+If you are abroad and need a VPN for other services, disable it only while using Sahla Pay. The app can be used overseas without a VPN wherever mobile data or Wi-Fi is available.
 
-If the VPN makes your connection appear to come from a restricted country, transactions are blocked automatically, even if you're actually at home. See [Restricted countries and transactions](kb-0200).
+Transactions are automatically blocked if the VPN makes your connection appear to come from a restricted country, even when you are physically in your home country. See [Restricted countries and transactions](kb-0200).

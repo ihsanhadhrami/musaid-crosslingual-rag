@@ -7,28 +7,26 @@ countries: [SA, AE, EG]
 effective_date: 2026-03-01
 superseded_by: null
 article_type: procedure
-status: draft
+status: rewritten
 mess: [buried_exception, cross_reference]
 ---
-If your card is cracked, bent, or the chip or contactless has stopped working, you can order a replacement. Your card number changes, but your balance and transaction history don't.
+You can request a replacement if your card is bent, cracked, or its chip or contactless function no longer works. The replacement has a new card number, but your balance and transaction history remain unchanged.
 
-If your card is lost or stolen instead, freeze it straight away and follow [Reporting a lost or stolen card](kb-0107).
+For a lost or stolen card, freeze it immediately and use [Reporting a lost or stolen card](kb-0107).
 
-## Order a replacement
+## Request a replacement
 
-To replace a damaged card:
+1. Open **Cards** and select the affected card.
+2. Choose **Card settings** > **Replace card** > **It's damaged**.
+3. Check and confirm your delivery address.
+4. Review and confirm any applicable fee.
 
-1. Go to **Cards** and tap your card.
-2. Tap **Card settings** > **Replace card** > **It's damaged**.
-3. Confirm your delivery address.
-4. Confirm the fee, if there is one.
+Your current card remains active until the replacement is activated. This means you can continue using any functions that still work, such as contactless payments if only the chip is damaged.
 
-Your old card keeps working until you activate the new one, so you can still use the parts that work, for example contactless if only the chip is broken.
+## Replacement fees
 
-## Fees
+The charge is {{fees.card_replacement.SA}} in Saudi Arabia, {{fees.card_replacement.AE}} in the UAE, and {{fees.card_replacement.EG}} in Egypt. See [Card replacement fees](kb-0109) for the complete fee information.
 
-A replacement costs {{fees.card_replacement.SA}} in Saudi Arabia, {{fees.card_replacement.AE}} in the UAE and {{fees.card_replacement.EG}} in Egypt. The full fee table is in [Card replacement fees](kb-0109).
+Saved card details and online subscriptions do not update automatically. Once the new card arrives, replace the old details in shopping apps and other services.
 
-Online subscriptions and saved cards (for example in shopping apps) won't update automatically. Add the new card details once it arrives.
-
-If the card stops working within {{card.replacement_free_window.ALL}} of when it was issued, and it hasn't been physically broken (for example, the chip just stopped reading), the replacement is free. Choose **It stopped working** instead of **It's damaged** in step 2, and the fee is removed before you confirm.
+If the card stops working within {{card.replacement_free_window.ALL}} of its issue date and has not been physically damaged, for example, the chip simply stops being read, the replacement is free. In step 2, select **It stopped working** rather than **It's damaged**. The fee will be removed before confirmation.

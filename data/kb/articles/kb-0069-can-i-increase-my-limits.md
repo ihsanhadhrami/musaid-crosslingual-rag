@@ -7,21 +7,21 @@ countries: all
 effective_date: 2026-03-01
 superseded_by: null
 article_type: faq
-status: draft
+status: rewritten
 mess: [country_specific, buried_exception, cross_reference]
 ---
-Your limits depend on whether your account is verified. Verifying is the main way to raise them.
+Your account's verification status determines its standard transfer limits. Completing verification is the usual way to move from the unverified limits to the verified limits.
 
-## I'm not verified yet
+## If your account is not verified
 
-Verify your identity, and your limits go up straight away. See [Unverified vs verified accounts](kb-0010).
+Complete identity verification and the verified limits apply as soon as verification is finished. See [Unverified vs verified accounts](kb-0010).
 
-## I'm already verified
+## If your account is already verified
 
-The standard verified limits are the highest permanent limits for personal accounts. We can't raise them permanently on request.
+The standard verified limits are the highest permanent limits available to personal accounts. We do not permanently raise them through individual requests.
 
-## I need to send a large amount once
+## If you need to make one unusually large payment
 
-From 1 March 2026, verified accounts in Saudi Arabia and the UAE can ask for a temporary increase to the daily limit, for example to pay a deposit on a flat or a car. The temporary daily limit is up to {{limits.temp_increase_daily.SA}} in Saudi Arabia and {{limits.temp_increase_daily.AE}} in the UAE, for {{limits.temp_increase_duration.ALL}}. See [Requesting a temporary limit increase](kb-0150).
+From 1 March 2026, verified customers in Saudi Arabia and the UAE can request a temporary increase to their daily limit for a one-off expense, such as a rental deposit or vehicle payment. The temporary daily maximum is {{limits.temp_increase_daily.SA}} in Saudi Arabia and {{limits.temp_increase_daily.AE}} in the UAE, and it remains active for {{limits.temp_increase_duration.ALL}}. See [Requesting a temporary limit increase](kb-0150).
 
-Temporary increases are {{limits.temp_increase_available.EG}} for accounts registered in Egypt. Your monthly limit stays the same during a temporary increase, so a large one-off payment can use up most of your month.
+Temporary increases are {{limits.temp_increase_available.EG}} for Egypt-registered accounts. The monthly limit is not increased when a temporary daily limit is approved, so one large payment may consume most of the available monthly allowance.

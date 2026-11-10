@@ -7,28 +7,26 @@ countries: [SA, AE, EG]
 effective_date: 2025-01-01
 superseded_by: null
 article_type: procedure
-status: draft
+status: rewritten
 mess: [country_specific, buried_exception, cross_reference]
 ---
-You can close your Sahla Pay account at any time, for free. Deleting the app does not close your account; see [Deleting the app vs closing your account](kb-0189).
+You can close your Sahla Pay account at no cost whenever you choose. Removing the app from your phone does not close the account; see [Deleting the app vs closing your account](kb-0189).
 
-## Before you start
+## Prepare before closing
 
-- Download any statements you need. After closing, you won't have access to the app. We keep records for {{account.statement_history.ALL}} in the app, and you'd have to ask support for older ones.
-- Cancel subscriptions and saved card payments, and tell anyone who sends you money regularly.
-- Make sure there are no pending transfers.
+- Download any statements you may need. Once the account is closed, you cannot access the app. Statements remain available in the app for {{account.statement_history.ALL}}, while older records must be requested from support.
+- Cancel subscriptions and stored card payments, and notify anyone who regularly sends money to you.
+- Confirm that no transfers are still pending.
 
-## Close your account
+## Close the account
 
-To close your account:
+1. Open **Profile** > **Account settings** > **Close account**.
+2. Select a reason for closing, if you wish to provide one.
+3. Choose a bank account in your own name for the remaining balance.
+4. Enter the confirmation code sent to your phone.
 
-1. Go to **Profile** > **Account settings** > **Close account**.
-2. Tell us why (optional, but it helps us).
-3. Choose a bank account in your name for any remaining balance.
-4. Confirm with the code we send to your phone.
+## What happens to the remaining balance?
 
-## What happens to my balance?
+Any balance left in the account is paid to the selected bank account within {{account.closure_payout.SA}} in Saudi Arabia, {{account.closure_payout.AE}} in the UAE, or {{account.closure_payout.EG}} in Egypt. Your cards stop working as soon as the account is closed.
 
-Your remaining balance is sent to the bank account you chose within {{account.closure_payout.SA}} in Saudi Arabia, {{account.closure_payout.AE}} in the UAE or {{account.closure_payout.EG}} in Egypt. Your cards stop working immediately.
-
-You can't close your account while a dispute is open. Wait for the dispute to finish, or cancel it, and then try again. Refunds that arrive after closing are sent to the same bank account; see [Refunds after account closure](kb-0088).
+An account with an open dispute cannot be closed. Wait until the dispute is resolved or cancel it before trying again. If a refund arrives after closure, it is sent to the same nominated bank account. See [Refunds after account closure](kb-0088).

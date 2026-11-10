@@ -7,12 +7,12 @@ countries: all
 effective_date: 2025-01-01
 superseded_by: null
 article_type: procedure
-status: draft
+status: rewritten
 mess: [country_specific, buried_exception]
 ---
-Pay with your iPhone or Apple Watch in shops, apps and online.
+Use Apple Pay with your Sahla Pay card on an iPhone or Apple Watch for in-store, in-app, and online purchases.
 
-## Where is it available?
+## Availability
 
 | Country | Apple Pay |
 |---|---|
@@ -20,18 +20,16 @@ Pay with your iPhone or Apple Watch in shops, apps and online.
 | UAE | {{wallet.apple_pay.AE}} |
 | Egypt | {{wallet.apple_pay.EG}} |
 
-## Add your card
+## Add a Sahla Pay card
 
-To add your card:
+1. Open **Cards** and select the physical or virtual card you want to use.
+2. Choose **Add to Apple Wallet**.
+3. Complete the on-screen instructions and accept the applicable terms.
 
-1. Go to **Cards** and tap your physical or virtual card.
-2. Tap **Add to Apple Wallet**.
-3. Follow the steps on screen and accept the terms.
+You can also add the card directly through Apple's Wallet app. Starting from Sahla Pay is usually quicker because the card information is entered automatically.
 
-You can also add it from the Wallet app, but adding it from Sahla Pay is faster because your details are filled in for you.
+## Use Apple Pay
 
-## Paying with Apple Pay
+At a contactless terminal, hold your iPhone near the reader and authenticate with Face ID or Touch ID. Apple Pay transactions are not subject to the usual contactless no-PIN limit because the payment is confirmed on your device.
 
-Hold your iPhone near the card reader and confirm with Face ID or Touch ID. Apple Pay payments aren't limited by the contactless no-PIN limit, because you confirm them on your phone.
-
-If you freeze your card in Sahla Pay, Apple Pay stops working too. Replacing your card, though, doesn't update Apple Pay automatically: remove the old card from Wallet and add the new one.
+Freezing the card in Sahla Pay also disables its Apple Pay version. If the card is replaced, the replacement is not added automatically: remove the old card from Apple Wallet and add the new card.

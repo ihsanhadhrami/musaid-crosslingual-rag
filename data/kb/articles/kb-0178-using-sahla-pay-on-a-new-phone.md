@@ -7,27 +7,25 @@ countries: all
 effective_date: 2025-01-01
 superseded_by: null
 article_type: procedure
-status: draft
+status: rewritten
 mess: [buried_exception, cross_reference]
 ---
-Moving to a new phone? Your account isn't stored on your phone, so nothing is lost.
+Your Sahla Pay account is stored securely with us rather than only on your phone, so changing devices does not remove your account or transaction history.
 
-## Set up the new phone
+## Set up Sahla Pay on the new phone
 
-To start using Sahla Pay on it:
+1. Download the app from the App Store or Google Play.
+2. Sign in using your phone number and password.
+3. Enter the SMS code we send. Your SIM must be in the new phone, or your number must be active there through an eSIM.
+4. Complete the selfie check to confirm your identity.
+5. Enable biometric login again if you want to use it.
 
-1. Install the app from the App Store or Google Play.
-2. Log in with your phone number and password.
-3. Enter the code we send by SMS. Your SIM must be in the new phone, or your number must be active on it as an eSIM.
-4. Take a selfie to confirm it's you.
-5. Turn on biometric login again.
+## Remove the previous phone
 
-## Remove the old phone
+After signing in, open **Profile** > **Security** > **Trusted devices** and remove the old phone. This is especially important before selling it or giving it to someone else.
 
-Go to **Profile** > **Security** > **Trusted devices** and remove your old phone, especially if you're selling it or giving it away.
+## Add cards to mobile wallets again
 
-## Cards in mobile wallets
+Cards do not transfer automatically between phones in Apple Pay, Google Pay, or Samsung Pay. Add your Sahla Pay card again on the new device.
 
-Apple Pay, Google Pay and Samsung Pay don't move with you. Add your card again on the new phone.
-
-For {{security.new_device_hold.ALL}} after setting up a new phone, sending money to new recipients and international transfers are paused. Payments to recipients you've used before, card payments and QR payments work as normal. See [Trusted devices](kb-0160).
+For {{security.new_device_hold.ALL}} after the new phone is set up, transfers to new recipients and international transfers are paused. Transfers to recipients you have used before, card payments, and QR payments continue to work normally. See [Trusted devices](kb-0160).

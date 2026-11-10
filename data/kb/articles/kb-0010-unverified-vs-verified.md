@@ -7,22 +7,20 @@ countries: all
 effective_date: 2026-03-01
 superseded_by: null
 article_type: policy
-status: draft
+status: rewritten
 mess: [country_specific, cross_reference]
 ---
-Every Sahla Pay account starts unverified. Verifying your ID raises your limits and unlocks more of the app.
+All new Sahla Pay accounts begin in the unverified tier. Completing identity verification increases the applicable limits and enables additional services.
 
-## What you can do
-
-| | Unverified | Verified |
+| Feature | Unverified | Verified |
 |---|---|---|
-| Receive money and top up | Yes | Yes |
-| Send to other Sahla Pay users | Yes, within lower limits | Yes |
+| Receive money and add funds | Yes | Yes |
+| Send to other Sahla Pay users | Yes, subject to lower limits | Yes |
 | Send to bank accounts | No | Yes |
-| International transfers | No | Yes, except in Egypt |
+| International transfers | No | Yes, except for Egypt-registered accounts |
 | Virtual and physical cards | No | Yes |
 
-## Limits by country
+## Limits by registered country
 
 | | Saudi Arabia | UAE | Egypt |
 |---|---|---|---|
@@ -31,6 +29,6 @@ Every Sahla Pay account starts unverified. Verifying your ID raises your limits 
 | Daily sending, unverified | {{limits.daily_transfer_unverified.SA}} | {{limits.daily_transfer_unverified.AE}} | {{limits.daily_transfer_unverified.EG}} |
 | Daily sending, verified | {{limits.daily_transfer_verified.SA}} | {{limits.daily_transfer_verified.AE}} | {{limits.daily_transfer_verified.EG}} |
 
-If someone sends you money that would take an unverified account above its maximum balance, the transfer is declined and the sender gets their money back.
+An incoming payment is rejected if it would push an unverified account above its maximum balance. The sender's money is then returned.
 
-More detail on sending limits is in [Daily and monthly transfer limits](kb-0034). To verify, see [How to verify your identity in the app](kb-0006).
+For the full transfer rules, see [Daily and monthly transfer limits](kb-0034). To complete verification, follow [How to verify your identity in the app](kb-0006).

@@ -7,33 +7,33 @@ countries: [SA, AE, EG]
 effective_date: 2026-03-01
 superseded_by: null
 article_type: policy
-status: draft
+status: rewritten
 mess: [country_specific, buried_exception]
 ---
-How long a refund takes depends on what kind of refund it is and the country your account is registered in. All times below are maximums, counted in business days.
+Refund processing times vary by refund type and by the country where your Sahla Pay account is registered. The periods below are maximums and are measured in business days.
 
 ## Saudi Arabia
 
-- Refund from a merchant to your Sahla Pay card: up to {{refund.merchant_card.SA}} after the merchant issues it.
-- Wrong transfer, after your dispute is approved: up to {{refund.wrong_transfer.SA}}.
-- Failed payment that was deducted from your balance: reversed within {{failed_payment.reversal.SA}}.
+- Merchant refund to your Sahla Pay card: up to {{refund.merchant_card.SA}} after the merchant sends it.
+- Reversal for an incorrect transfer after dispute approval: up to {{refund.wrong_transfer.SA}}.
+- Reversal of a failed payment deducted from your balance: within {{failed_payment.reversal.SA}}.
 
 ## UAE
 
-- Refund from a merchant to your Sahla Pay card: up to {{refund.merchant_card.AE}} after the merchant issues it.
-- Wrong transfer, after your dispute is approved: up to {{refund.wrong_transfer.AE}}.
-- Failed payment that was deducted from your balance: reversed within {{failed_payment.reversal.AE}}.
+- Merchant refund to your Sahla Pay card: up to {{refund.merchant_card.AE}} after the merchant sends it.
+- Reversal for an incorrect transfer after dispute approval: up to {{refund.wrong_transfer.AE}}.
+- Reversal of a failed payment deducted from your balance: within {{failed_payment.reversal.AE}}.
 
 ## Egypt
 
-- Refund from a merchant to your Sahla Pay card: up to {{refund.merchant_card.EG}} after the merchant issues it.
-- Wrong transfer, after your dispute is approved: up to {{refund.wrong_transfer.EG}}.
-- Failed payment that was deducted from your balance: reversed within {{failed_payment.reversal.EG}}.
+- Merchant refund to your Sahla Pay card: up to {{refund.merchant_card.EG}} after the merchant sends it.
+- Reversal for an incorrect transfer after dispute approval: up to {{refund.wrong_transfer.EG}}.
+- Reversal of a failed payment deducted from your balance: within {{failed_payment.reversal.EG}}.
 
-## When the clock starts
+## When processing begins
 
-For merchant refunds, the time starts when the merchant sends the refund, not when you ask for it. Some merchants take a week or more to process a return before they send anything. If the merchant gives you a refund reference or an ARN number, keep it, because it lets us trace the refund.
+For a merchant refund, the timeline starts on the date the merchant issues the refund. It does not begin when you request the return, and the merchant may take a week or longer to process it. Keep any refund reference or ARN provided by the merchant so we can trace the payment if needed.
 
-Refunds go back to the way you paid. A refund for a card payment goes to your card, which is your Sahla Pay balance. A refund for a QR payment goes to your balance as well.
+Refunds are returned through the original payment method. Card-payment refunds are credited to your Sahla Pay balance, and QR-payment refunds are also credited to your balance.
 
-If the card you paid with has since been replaced, the refund still reaches you, because it follows your account, not the card number. If you closed your Sahla Pay account before the refund arrived, it's sent to the bank account you nominated when closing. See [Refunds after account closure](kb-0088).
+A replacement card does not prevent a refund from arriving because the refund follows your Sahla Pay account rather than the old card number. If your Sahla Pay account was closed before the refund was received, the funds are sent to the bank account you nominated during closure. See [Refunds after account closure](kb-0088).

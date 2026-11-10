@@ -7,27 +7,25 @@ countries: all
 effective_date: 2025-01-01
 superseded_by: null
 article_type: procedure
-status: draft
+status: rewritten
 mess: [country_specific, buried_exception, cross_reference]
 ---
-If you see a payment or transfer you didn't make or approve, act straight away.
+If a payment or transfer appears in your account that you did not authorize, report it immediately.
 
-## Do this now
+## Secure the account and report the transaction
 
-To protect your account:
+1. In **Cards**, select **Freeze** to stop card use.
+2. Change your password through **Profile** > **Security** > **Change password**.
+3. Open the transaction in **Activity** and choose **Report a problem** > **I didn't make this**.
 
-1. Freeze your card: **Cards** > **Freeze**.
-2. Change your password: **Profile** > **Security** > **Change password**.
-3. Report the transaction: tap it in **Activity** > **Report a problem** > **I didn't make this**.
+## When the money is protected
 
-## Will I get my money back?
+If you report the transaction within {{fraud.full_protection_window.ALL}} of noticing it, and you did not give anyone your password, PIN, or one-time password, we refund the full amount after confirming that the transaction was unauthorized.
 
-If you report an unauthorized transaction within {{fraud.full_protection_window.ALL}} of noticing it, and you didn't share your password, PIN or one-time passwords with anyone, we refund it in full once we've confirmed it was unauthorized.
+Reports made after that period are subject to a maximum customer loss of {{fraud.liability_cap.SA}} in Saudi Arabia, {{fraud.liability_cap.AE}} in the UAE, or {{fraud.liability_cap.EG}} in Egypt. This limit does not apply if you acted fraudulently or with gross negligence.
 
-If you report it later, the most you'll lose is {{fraud.liability_cap.SA}} in Saudi Arabia, {{fraud.liability_cap.AE}} in the UAE or {{fraud.liability_cap.EG}} in Egypt, unless you acted fraudulently or with gross negligence.
+## Examples of gross negligence
 
-## What counts as gross negligence?
+Examples include telling a caller your one-time password, writing your PIN on the card, or allowing another person to use your phone and Sahla Pay app. If the transaction was confirmed with an OTP, we may ask how someone else obtained or used the code.
 
-Sharing a one-time password with a caller, writing your PIN on your card, or letting someone else use your phone and app. If a transaction was approved with your OTP, we'll ask how the code was shared.
-
-Payments you approved yourself because someone tricked you, for example a fake seller, aren't "unauthorized" under these rules, even though it's fraud. Report them through [Reporting fraud](kb-0156), and we'll try to recover the money, but the protection above doesn't apply.
+A payment you personally approved after being deceived, for example, by a fake seller, is treated differently. It is still fraud, but it is not an unauthorized transaction under these rules. Report it through [Reporting fraud](kb-0156); we will try to recover the funds, but the unauthorized-transaction protection above does not apply.

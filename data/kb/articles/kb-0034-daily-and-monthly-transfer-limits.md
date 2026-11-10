@@ -7,10 +7,10 @@ countries: [SA, AE, EG]
 effective_date: 2026-03-01
 superseded_by: null
 article_type: fee_table
-status: draft
+status: rewritten
 mess: [country_specific, buried_exception, cross_reference]
 ---
-These limits apply to money you send from your Sahla Pay balance: to other Sahla Pay users, to bank accounts, and abroad. They depend on whether your account is verified and on the country your account is registered in.
+Your transfer allowance is determined by your account's verification status and registration country. These limits cover transfers from your Sahla Pay balance to other users, bank accounts, and recipients abroad.
 
 | Limit | Saudi Arabia | UAE | Egypt |
 |---|---|---|---|
@@ -18,12 +18,12 @@ These limits apply to money you send from your Sahla Pay balance: to other Sahla
 | Monthly, verified account | {{limits.monthly_transfer_verified.SA}} | {{limits.monthly_transfer_verified.AE}} | {{limits.monthly_transfer_verified.EG}} |
 | Daily, unverified account | {{limits.daily_transfer_unverified.SA}} | {{limits.daily_transfer_unverified.AE}} | {{limits.daily_transfer_unverified.EG}} |
 
-Unverified accounts don't have a separate monthly limit, but the balance cap still applies. See [Wallet balance limits](kb-0135).
+An unverified account has no separate monthly transfer allowance. However, its wallet balance cap still applies. For details, see [Wallet balance limits](kb-0135).
 
-Card payments, bill payments and QR payments in shops don't count towards these limits. They have their own limits, listed in the articles for each service.
+These limits do not include card purchases, bill payments, or QR payments made in shops. Each of those services has its own limits, described in the relevant service article.
 
-Daily limits reset at midnight in your account's country, and monthly limits on the 1st of each month. If a transfer fails or is cancelled, the amount is added back to your available limit straight away. A transfer you've disputed only comes back once the dispute is closed.
+Your daily allowance becomes available again at midnight according to your account's registered country. The monthly allowance resets on the first day of each month. Failed or cancelled transfers are returned to your available allowance immediately. If you dispute a transfer, the amount remains counted until the dispute is resolved.
 
-Money you move to a bank account in your own name counts towards the daily limit but not the monthly one. The app checks the name on the receiving account, so this only works for accounts you've linked under **Profile** > **Bank accounts**. See [Linking a bank account](kb-0026).
+Transfers to a bank account held in your own name are included in the daily limit but excluded from the monthly limit. The receiving account must be linked through **Profile** > **Bank accounts** because the app verifies the account holder's name. See [Linking a bank account](kb-0026).
 
-Need more? See [Can I increase my limits?](kb-0069).
+For information about requesting a higher allowance, see [Can I increase my limits?](kb-0069).

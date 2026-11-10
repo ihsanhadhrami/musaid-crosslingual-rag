@@ -7,26 +7,26 @@ countries: [EG]
 effective_date: 2025-01-01
 superseded_by: null
 article_type: procedure
-status: draft
+status: rewritten
 mess: [country_specific, buried_exception, cross_reference]
 ---
-If your account is registered in Egypt, you can send money to anyone with an InstaPay address (IPA), and it arrives in their bank account within seconds.
+Customers with accounts registered in Egypt can send money to an InstaPay address (IPA). The funds are normally credited to the recipient's bank account within seconds.
 
-## Send to an InstaPay address
+## Send money using an IPA
 
-To send:
+1. Open **Send** > **InstaPay**.
+2. Enter the recipient's IPA, such as `name@instapay`, or the mobile number linked to their InstaPay account.
+3. Check the recipient name shown by the app before continuing.
+4. Enter the amount and select **Send**.
 
-1. Tap **Send** > **InstaPay**.
-2. Enter the recipient's IPA, for example name@instapay, or their mobile number linked to InstaPay.
-3. Check the recipient name that appears.
-4. Enter the amount and tap **Send**.
+If the displayed name does not match the person you intend to pay, stop and check the IPA or phone number before sending. A completed transfer may not be reversible.
 
-## Limits and fees
+## Limits and charges
 
-You can send up to {{limits.instapay_per_transfer.EG}} per transfer. InstaPay transfers also count towards your daily limit of {{limits.daily_transfer_verified.EG}}.
+Each InstaPay transfer is limited to {{limits.instapay_per_transfer.EG}}. The amount also uses part of your daily verified-account transfer allowance, which is {{limits.daily_transfer_verified.EG}}.
 
-The fee is the same as other local bank transfers in Egypt: {{fees.local_transfer.EG}} of the amount, at least {{fees.local_transfer_min.EG}} and at most {{fees.local_transfer_max.EG}}. See [Local transfer fees](kb-0033).
+The applicable fee is the same as for other local bank transfers in Egypt: {{fees.local_transfer.EG}} of the amount sent, subject to a minimum of {{fees.local_transfer_min.EG}} and a maximum of {{fees.local_transfer_max.EG}}. See [Local transfer fees](kb-0033).
 
-## Receiving through InstaPay
+## Receiving money
 
-People can't send to you through InstaPay using a Sahla Pay address. Give them your Sahla Pay IBAN instead, and they can send to it through InstaPay as a normal bank transfer.
+InstaPay cannot be used to send money to you through a Sahla Pay address. To receive funds, provide your Sahla Pay IBAN instead. The sender can then use InstaPay to make an ordinary bank transfer to that IBAN.

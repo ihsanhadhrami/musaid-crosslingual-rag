@@ -7,32 +7,30 @@ countries: all
 effective_date: 2025-01-01
 superseded_by: null
 article_type: procedure
-status: draft
+status: rewritten
 mess: [country_specific, buried_exception, cross_reference]
 ---
-If you've been scammed, or think someone has access to your account, report it straight away. The faster we know, the better the chance of stopping the money.
+Report a suspected scam or unauthorized access immediately. Early reporting gives us a better chance of securing the account and stopping the funds.
 
 ## Report fraud in the app
 
-To report it:
+1. Freeze the card through **Cards** > **Freeze**.
+2. Open **Help** > **Report fraud**.
+3. Select the type of incident and identify the affected transactions.
+4. Describe what happened in as much detail as possible.
 
-1. Freeze your card: **Cards** > **Freeze**.
-2. Go to **Help** > **Report fraud**.
-3. Choose what happened and pick the transactions involved.
-4. Tell us how it happened, in as much detail as you can.
+## Contact the fraud line
 
-## Call us
+The fraud line is available {{support.fraud_line_hours.ALL}} across Saudi Arabia, the UAE, and Egypt. Find the number in **Help** > **Call us** or on the back of your card.
 
-The fraud line is open {{support.fraud_line_hours.ALL}} in all three countries. The number is in **Help** > **Call us** and on the back of your card.
+Egypt's standard support hours are {{support.hours.EG}}, but fraud calls in Egypt are answered at any time, including outside those general support hours.
 
-This is different from our general support hours in Egypt, which are {{support.hours.EG}}. Fraud calls in Egypt are always answered, even outside those hours.
+## What we do after you report
 
-## What happens next
+We secure your account and try to stop or freeze the funds through the recipient's bank or Sahla Pay account. A case number is provided, and you can track the report in **Help** > **My cases**.
 
-We try to stop or freeze the money with the recipient's bank or Sahla Pay account, and we secure your account. You'll get a case number to follow up in **Help** > **My cases**.
+## Can the money be recovered?
 
-## Will I get my money back?
+Recovery depends on the circumstances. If someone used your account without permission, follow [Transactions I didn't make](kb-0090). If you personally sent the money after being deceived, we will try to recover it, but recovery is not guaranteed.
 
-It depends on what happened. If someone used your account without your permission, see [Transactions I didn't make](kb-0090). If you were tricked into sending money yourself, we'll try to recover it, but we can't guarantee it.
-
-We also recommend reporting scams to the police. We'll give you a statement of the transactions if they ask for one.
+You should also report the scam to the police. If requested, we can provide a transaction statement for the police report.

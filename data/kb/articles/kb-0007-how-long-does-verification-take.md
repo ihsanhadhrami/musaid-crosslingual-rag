@@ -7,27 +7,27 @@ countries: [SA, AE, EG]
 effective_date: 2025-01-01
 superseded_by: null
 article_type: faq
-status: draft
+status: rewritten
 mess: [country_specific, cross_reference]
 ---
-Most identity checks are approved automatically a few minutes after you submit your documents. Some need a manual review by our team.
+Most identity verifications finish automatically within a few minutes of document submission. If an automatic check cannot be completed, our team performs a manual review.
 
-## How long does a manual review take?
+## How long does manual verification take?
 
-It depends on the country your account is registered in:
+The maximum review period depends on your account's registered country:
 
 - Saudi Arabia: up to {{kyc.verification_time.SA}}
 - UAE: up to {{kyc.verification_time.AE}}
 - Egypt: up to {{kyc.verification_time.EG}}
 
-## Which days count as business days?
+## What counts as a business day?
 
-Business days are {{calendar.business_days.SA}} in Saudi Arabia, {{calendar.business_days.AE}} in the UAE, and {{calendar.business_days.EG}} in Egypt. Public holidays don't count. A review submitted on a Thursday evening in Riyadh will usually be picked up on Sunday.
+Business days are {{calendar.business_days.SA}} in Saudi Arabia, {{calendar.business_days.AE}} in the UAE, and {{calendar.business_days.EG}} in Egypt. Public holidays are excluded. For example, a review submitted on Thursday evening in Riyadh will generally be handled from Sunday.
 
-## Can I use the app while I wait?
+## Can I continue using Sahla Pay?
 
-Yes. Until you're verified, your account works with the limits for unverified accounts. You can top up and receive money, but sending is capped. See [Unverified vs verified accounts](kb-0010).
+Yes. While verification is pending, your account follows the restrictions for unverified accounts. You can add money and receive funds, but sending money remains limited. See [Unverified vs verified accounts](kb-0010).
 
-## It's taking longer than this
+## What if the review takes longer?
 
-Please don't submit your documents again. A new submission goes to the back of the queue and restarts the review. If the time above has passed, check your email and app notifications first, because we may have asked for a clearer photo. If there's nothing there, contact us through **Help** > **Chat with us**.
+Do not submit your documents again. A second submission starts a new review and places you at the end of the queue. Once the stated timeframe has passed, check your email and in-app notifications in case we requested a clearer image. If there is no request, contact us through **Help** > **Chat with us**.

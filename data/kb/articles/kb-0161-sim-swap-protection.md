@@ -7,25 +7,29 @@ countries: all
 effective_date: 2025-01-01
 superseded_by: null
 article_type: policy
-status: draft
+status: rewritten
 mess: [buried_exception, cross_reference]
 ---
-In a SIM swap scam, a criminal convinces your mobile operator to move your number to a new SIM card, so they receive your codes. We watch for this.
+A SIM swap occurs when someone persuades your mobile operator to move your phone number to another SIM, allowing them to receive your verification codes. We monitor for this type of change.
 
-## What we do
+## Protection after a SIM change
 
-When we detect that the SIM card for your number has changed, we pause all outgoing transfers, local and international, for {{security.sim_swap_hold.ALL}}. You'll get an email explaining why.
+When we detect that your number has been moved to a different SIM, outgoing transfers, including local and international transfers, are paused for {{security.sim_swap_hold.ALL}}. We send an email explaining the hold.
 
-## I changed my SIM myself
+## If you changed the SIM yourself
 
-That's fine. If you got a new SIM, for example after losing your phone or switching to an eSIM, the pause ends on its own after {{security.sim_swap_hold.ALL}}. To lift it sooner, take a selfie in **Profile** > **Security** > **Confirm it's me**.
+The protection is also triggered by legitimate changes, such as replacing a lost-phone SIM or moving to an eSIM. In that case, the pause ends automatically after {{security.sim_swap_hold.ALL}}.
 
-## Signs your SIM has been swapped
+You can request earlier access by completing **Profile** > **Security** > **Confirm it's me** and taking a selfie.
 
-- Your phone suddenly shows **No service** or **SOS only**, in a place where it normally works.
-- You get a message from your operator about a SIM change you didn't ask for.
-- You stop receiving calls and texts.
+## Signs of a possible SIM swap
 
-If this happens, contact your mobile operator first, then our fraud line. See [Reporting fraud](kb-0156).
+Watch for:
 
-Card payments in shops keep working during the pause, because they don't depend on SMS codes. If you think your SIM was swapped by someone else, freeze your card as well.
+- **No service** or **SOS only** appearing where your phone normally has coverage.
+- A mobile-operator notification about a SIM replacement you did not request.
+- An unexpected loss of incoming calls and text messages.
+
+If you notice these signs, contact your mobile operator first and then call our fraud line. See [Reporting fraud](kb-0156).
+
+Card payments in shops continue to work during the transfer hold because they do not rely on SMS verification. If you suspect another person performed the SIM swap, freeze your card as well.

@@ -7,31 +7,27 @@ countries: all
 effective_date: 2025-01-01
 superseded_by: null
 article_type: faq
-status: draft
+status: rewritten
 mess: [country_specific, buried_exception, cross_reference]
 ---
-Withdraw cash from your Sahla Pay balance at any ATM that shows the card network logo.
+You can withdraw cash from your Sahla Pay balance at an ATM displaying your card network's logo.
 
-## How much can I withdraw?
+## Withdrawal limits
 
-Up to {{limits.atm_daily.SA}} a day in Saudi Arabia, {{limits.atm_daily.AE}} in the UAE and {{limits.atm_daily.EG}} in Egypt. The ATM may have its own lower limit per withdrawal.
+The daily maximum is {{limits.atm_daily.SA}} in Saudi Arabia, {{limits.atm_daily.AE}} in the UAE, and {{limits.atm_daily.EG}} in Egypt. An individual ATM may impose a lower limit for each withdrawal.
 
-## How much does it cost?
+## Withdrawal fees
 
-In your own country: {{fees.atm_withdrawal.SA}} in Saudi Arabia, {{fees.atm_withdrawal.AE}} in the UAE and {{fees.atm_withdrawal.EG}} in Egypt per withdrawal. Full details are in [ATM withdrawal fees](kb-0117).
+For withdrawals in your account's country, the fee per transaction is {{fees.atm_withdrawal.SA}} in Saudi Arabia, {{fees.atm_withdrawal.AE}} in the UAE, and {{fees.atm_withdrawal.EG}} in Egypt. See [ATM withdrawal fees](kb-0117) for more information.
 
-In Saudi Arabia, your first {{fees.atm_free_withdrawals.SA}} withdrawals each calendar month are free.
+In Saudi Arabia, the first {{fees.atm_free_withdrawals.SA}} withdrawals in each calendar month are free when made at Saudi Arabian ATMs. Withdrawals made abroad always incur a fee and do not use any of those free withdrawals.
 
-## Can I check my balance at the ATM?
+## Checking your balance
 
-Use the app instead. Balance checks at ATMs are free, but some ATMs show the wrong amount for prepaid accounts.
+Check your balance in the Sahla Pay app rather than at an ATM. Although ATM balance inquiries are free, some machines may display an incorrect balance for prepaid accounts.
 
-## Can I use my virtual card?
+## Can I withdraw with a virtual card?
 
-No. ATMs need the physical card.
+No. Cash withdrawals require the physical card.
 
-## The ATM didn't give me cash
-
-See [ATM didn't dispense cash](kb-0089).
-
-The free withdrawals in Saudi Arabia only apply at ATMs in Saudi Arabia. A withdrawal abroad is always charged, and it doesn't use up one of your free withdrawals.
+If an ATM fails to dispense cash, follow [ATM didn't dispense cash](kb-0089).

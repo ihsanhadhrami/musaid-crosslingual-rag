@@ -7,25 +7,25 @@ countries: [EG]
 effective_date: 2025-01-01
 superseded_by: null
 article_type: policy
-status: draft
+status: rewritten
 mess: [buried_exception]
 ---
-In Egypt, you can open a Sahla Pay account from age {{kyc.min_age.EG}}. If you're under {{kyc.guardian_consent_under.EG}}, a parent or legal guardian has to approve your account before you can send money or use a card.
+In Egypt, you may open a Sahla Pay account once you reach {{kyc.min_age.EG}}. Customers younger than {{kyc.guardian_consent_under.EG}} must receive approval from a parent or legal guardian before they can send money or use a card.
 
-## How guardian approval works
+## Setting up guardian approval
 
-1. Open your account and verify it with your own national ID.
-2. In **Profile** > **Guardian**, enter your guardian's phone number.
-3. Your guardian gets a request in their own Sahla Pay app and approves it.
+1. Open the account and complete verification using your own national ID.
+2. Go to **Profile** > **Guardian** and provide your guardian's phone number.
+3. Your guardian receives the request in their Sahla Pay app and approves it there.
 
-Your guardian must have a verified Sahla Pay account registered in Egypt.
+The guardian must have a verified Sahla Pay account registered in Egypt.
 
-## Limits for accounts with a guardian
+## Limits and guardian access
 
-You can send up to {{limits.daily_transfer_minor.EG}} a day. Your guardian can set a lower limit, see your transactions, and freeze your card from their app. They can't send money out of your account.
+A minor account can send up to {{limits.daily_transfer_minor.EG}} per day. From their app, the guardian may apply a lower limit, review transactions, or freeze the card. The guardian cannot transfer funds out of the minor's account.
 
-## When you turn {{kyc.guardian_consent_under.EG}}
+## After reaching {{kyc.guardian_consent_under.EG}}
 
-Your account becomes a normal account automatically on your birthday, with the standard limits for verified accounts in Egypt. Your guardian loses access, and you don't need to do anything.
+On your birthday, the account automatically changes to a standard account with the normal verified-account limits for Egypt. Guardian access is removed automatically, and no action is required.
 
-International transfers stay unavailable for all accounts in Egypt, whatever your age. If your guardian closes their own Sahla Pay account, your account goes back to receive-only until you add a new guardian.
+International transfers remain unavailable for every account registered in Egypt, including adult accounts. If the guardian closes their Sahla Pay account, the minor account becomes receive-only until a new guardian is added.

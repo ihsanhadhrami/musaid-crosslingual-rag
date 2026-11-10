@@ -7,22 +7,22 @@ countries: all
 effective_date: 2025-01-01
 superseded_by: null
 article_type: faq
-status: draft
+status: rewritten
 mess: [cross_reference]
 ---
-Some error messages in the app include a code. Here's what the most common ones mean.
+When the app shows an error code, use the table below to identify the likely cause and the next step.
 
 | Code | Meaning | What to do |
 |---|---|---|
-| E101 | No internet connection | Check Wi-Fi or mobile data and try again |
-| E204 | Session expired | Log in again |
-| E310 | Daily limit reached | Try again after midnight, or see [Daily and monthly transfer limits](kb-0034) |
-| E315 | Recipient can't receive this amount | The recipient's balance limit would be exceeded |
-| E402 | Insufficient balance | Top up and try again |
-| E450 | Blocked for security | Check your notifications and confirm it was you |
-| E512 | Recipient bank not responding | Try again later |
-| E600 | Verification required | Verify your identity in **Profile** |
+| E101 | No internet connection | Check your Wi-Fi or mobile data, then retry |
+| E204 | Session expired | Sign in again |
+| E310 | Daily limit reached | Wait until after midnight or see [Daily and monthly transfer limits](kb-0034) |
+| E315 | Recipient cannot receive this amount | The payment would exceed the recipient's balance limit |
+| E402 | Insufficient balance | Add money to your balance and try again |
+| E450 | Blocked for security | Review your notifications and confirm that you initiated the activity |
+| E512 | Recipient bank not responding | Wait and try again later |
+| E600 | Verification required | Complete verification through **Profile** |
 | E701 | Device not supported | See [Supported phones and operating systems](kb-0172) |
-| E900 | Something went wrong on our side | Try again in a few minutes |
+| E900 | Something went wrong on our side | Wait a few minutes and retry |
 
-If you see a code that isn't listed, or the same error keeps coming back, contact us through **Help** > **Chat with us** and include the code.
+If the code is not listed here, or the same message continues to appear, contact us through **Help** > **Chat with us**. Include the exact code in your message.

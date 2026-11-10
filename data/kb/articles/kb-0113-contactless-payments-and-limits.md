@@ -7,12 +7,12 @@ countries: all
 effective_date: 2025-01-01
 superseded_by: null
 article_type: faq
-status: draft
+status: rewritten
 mess: [country_specific, buried_exception, cross_reference]
 ---
-Tap your card on the card reader to pay. For small amounts, you don't need a PIN.
+Pay by holding your card near the payment terminal. Smaller contactless purchases usually do not require a PIN.
 
-## What's the no-PIN limit?
+## Contactless payments without a PIN
 
 | Country | Contactless without PIN, per payment |
 |---|---|
@@ -20,18 +20,18 @@ Tap your card on the card reader to pay. For small amounts, you don't need a PIN
 | UAE | {{limits.contactless_no_pin.AE}} |
 | Egypt | {{limits.contactless_no_pin.EG}} |
 
-Above this amount, the reader asks for your PIN.
+For a payment above the applicable country limit, the terminal asks you to enter your PIN.
 
-## Why did the reader ask for my PIN for a small payment?
+## Why was I asked for a PIN below the limit?
 
-For security, after several contactless payments in a row the card asks for your PIN once, even below the limit. It then works without PIN again.
+The card may require a PIN after several consecutive contactless payments as an additional security check. Once you complete that PIN transaction, contactless payments can be used without a PIN again, subject to the normal limit.
 
-## Can I turn contactless off?
+## Turn contactless payments off
 
-Yes: **Cards** > **Card settings** > **Contactless payments**.
+Open **Cards** > **Card settings** > **Contactless payments**.
 
-## Is phone payment the same?
+## Payments with a phone
 
-Payments with Apple Pay, Google Pay or Samsung Pay don't have this limit, because you confirm them with your phone's lock. See [Adding your card to Apple Pay](kb-0111).
+Apple Pay, Google Pay, and Samsung Pay do not use this contactless no-PIN limit because each payment is authenticated through your phone's screen lock. See [Adding your card to Apple Pay](kb-0111).
 
-The first payment with a new or replacement card must be chip and PIN. Contactless only works after that.
+A new or replacement physical card must first be used with chip and PIN. Contactless payments become available after that first chip-and-PIN transaction.

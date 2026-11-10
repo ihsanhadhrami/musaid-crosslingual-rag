@@ -7,10 +7,10 @@ countries: [SA, AE, EG]
 effective_date: 2026-03-01
 superseded_by: null
 article_type: fee_table
-status: draft
+status: rewritten
 mess: [country_specific, buried_exception]
 ---
-What it costs to replace your Sahla Pay card, by the country your account is registered in.
+The replacement charge depends on the reason for replacement and the country where your Sahla Pay account is registered.
 
 | Reason | Saudi Arabia | UAE | Egypt |
 |---|---|---|---|
@@ -18,8 +18,8 @@ What it costs to replace your Sahla Pay card, by the country your account is reg
 | Damaged | {{fees.card_replacement.SA}} | {{fees.card_replacement.AE}} | {{fees.card_replacement.EG}} |
 | Expired (renewal) | free | free | free |
 
-Fees include VAT and are taken from your balance when you order the replacement. If your balance is too low, you'll be asked to top up first.
+The listed fees include VAT and are deducted from your balance when you request the replacement. If your balance does not cover the charge, you must top up before the order can be completed.
 
-Virtual cards can be replaced at any time for no charge.
+Virtual cards may be replaced free of charge at any time.
 
-A card that stops working on its own within {{card.replacement_free_window.ALL}} of being issued is replaced free of charge, as long as it isn't physically damaged. Cards that are bent, cracked or scratched across the chip are charged at the damaged rate.
+A card that fails without physical damage within {{card.replacement_free_window.ALL}} of its issue date is replaced at no cost. Physical damage, including bending, cracking, or scratches across the chip, is charged at the damaged-card rate.
