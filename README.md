@@ -36,7 +36,7 @@ frontend/        React + Tailwind (Phase 7)
 
 ## Known limitations
 
-- **Smaller KB than the spec's target.** The knowledge base is about 650–750 chunks, below the 1,000–3,000 in the plan (ADR-008).
+- **Smaller KB than the spec's target.** The knowledge base is 354 articles and 600 chunks, below the 1,000–3,000 in the plan (ADR-008).
 - **Mostly LLM-drafted text.** Only 40 of the 200 help articles are rewritten by hand (ADR-007). Results are reported separately for rewritten and draft gold articles.
 
 ## Scope

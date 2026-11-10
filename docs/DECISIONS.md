@@ -156,6 +156,20 @@ Status is one of: Accepted, Superseded by ADR-N, Proposed.
 - The evidence that retrieval isn't artificially easy comes from three places: the rewritten-vs-draft comparison (ADR-007), the hard negatives (archived editions, near-duplicates, templated corridor guides), and the real-world sanity check (spec §5.6).
 - Growth can resume later without breaking existing gold labels, because new documents only add chunks. Doing so would require re-checking gold completeness for affected queries.
 
+### ADR-008 outcome (end of Phase 1): 600 chunks
+
+| Stage | Content | Articles | Chunks added | KB total |
+|---|---|---:|---:|---:|
+| Start | 200 help articles | 200 | | 222 |
+| 1 | Legal documents, incl. archived editions | 16 | 95 | 317 |
+| 2 | Corridor, travel and life-event guides | 45 | 162 | 479 |
+| Rewrites | 40 hand rewrites (ADR-007), chunker v3 (ADR-009) | | +1 | 480 |
+| 3 | 18 release notes, 21 service notices, 12 announcements, 15 offers (`article_type: announcement`); glossary, 16 money tips, 10 explainers (`guide`) | 93 | 120 | **600** |
+
+**Why we stopped at 600, not 650:** Stage 3 content is short by nature, and most notices and offers fit in a single chunk, so each extra chunk now costs a whole extra article. The last 50 chunks would have been about 35 more filler articles, adding little retrieval difficulty. The noise set already does its job. It adds dated, near-duplicate and expired content (offers that ended, the March 2026 release note restating fee changes, holiday notices repeating transfer times), and those chunks compete with the real answers.
+
+**Consequence:** the dataset card and README report 354 articles and 600 chunks. Stage 3 added 52 `promo.*` facts to `facts.csv`, and all governed values in the noise set use placeholders like the rest of the KB.
+
 ## ADR-009: Chunker frozen at v3 for Phase 2
 
 **Status:** Accepted (end of Phase 1)
@@ -174,5 +188,5 @@ The same inspection found three content problems, fixed in the articles: a repea
 
 **Consequences:**
 - From here, any change to `chunking.py` that alters chunk boundaries, IDs or bodies requires re-checking every gold label whose `body_sha1` changed.
-- Deliberate small chunks remain. Country-tagged sections, such as a single Egypt table, aren't packed with other countries' sections: 38 of 480 chunks are under 100 tokens. This is intended (ADR-006) and is the price of country filtering.
+- Deliberate small chunks remain. Country-tagged sections, such as a single Egypt table, aren't packed with other countries' sections, and short service notices fit in one small chunk: 59 of the final 600 chunks are under 100 tokens. This is intended (ADR-006). It is the price of country filtering, and it is realistic for a help center.
 - Article edits after labeling begins follow the same rule: check the labels whose `body_sha1` moved.
