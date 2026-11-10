@@ -55,13 +55,13 @@ def render_stats(
         "",
         "## Articles by category",
         "",
-        "Shares count help articles only; legal documents and guides are listed separately "
-        "(ADR-008).",
+        "Shares count help articles only; legal documents, guides and announcements are listed "
+        "separately (ADR-008).",
         "",
         "| Category | Articles | Share | Target share |",
         "|---|---:|---:|---:|",
     ]
-    extra_types = (ArticleType.LEGAL_DOCUMENT, ArticleType.GUIDE)
+    extra_types = (ArticleType.LEGAL_DOCUMENT, ArticleType.GUIDE, ArticleType.ANNOUNCEMENT)
     help_metas = [m for m in metas if m.article_type not in extra_types]
     cats = Counter(m.category for m in help_metas)
     for cat, target in CATEGORY_TARGET_SHARE.items():
