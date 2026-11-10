@@ -71,6 +71,20 @@ def test_large_sections_split_but_never_inside_a_table():
     assert len(chunks) == 3
 
 
+def test_empty_parent_heading_is_kept_and_shared_parent_becomes_the_path():
+    md = "## 9. Fees\n\n### 9.1 Our fees\n\nA.\n\n### 9.2 VAT\n\nB."
+    [chunk] = chunk_article(make(md))
+    assert chunk.body.startswith("## 9. Fees\n\n### 9.1 Our fees")
+    assert chunk.section_path == ["Cards", "9. Fees"]
+
+
+def test_empty_heading_is_not_carried_into_a_sibling():
+    md = "## Egypt\n\n## UAE\n\nB."
+    [chunk] = chunk_article(make(md))
+    assert "Egypt" not in chunk.body
+    assert chunk.countries == ["AE"]
+
+
 def test_short_trailing_section_joins_previous_chunk():
     md = f"## Main\n\n{words(250)}\n\n## Note\n\nA short note."
     assert len(chunk_article(make(md))) == 1

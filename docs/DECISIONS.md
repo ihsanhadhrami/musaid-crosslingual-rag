@@ -155,3 +155,24 @@ Status is one of: Accepted, Superseded by ADR-N, Proposed.
 - The KB is below the spec's 1,000-chunk minimum. This is stated in the README's known limitations and in the dataset card, with the chunk count.
 - The evidence that retrieval isn't artificially easy comes from three places: the rewritten-vs-draft comparison (ADR-007), the hard negatives (archived editions, near-duplicates, templated corridor guides), and the real-world sanity check (spec §5.6).
 - Growth can resume later without breaking existing gold labels, because new documents only add chunks. Doing so would require re-checking gold completeness for affected queries.
+
+## ADR-009: Chunker frozen at v3 for Phase 2
+
+**Status:** Accepted (end of Phase 1)
+
+**Context:** ADR-006 requires the chunker to be frozen before Phase 2 labeling, because gold labels point at chunk IDs. A 30-chunk inspection (`build sample 30 --seed 2026`) found two v2 defects:
+- A heading with no text of its own, such as "## 9. Fees and exchange rates" directly before "### 9.1", was dropped. Its words never reached any chunk.
+- A chunk packing several subsections of one parent (9.1–9.3) got only the article's section path, not the parent heading.
+
+The same inspection found three content problems, fixed in the articles: a repeated rendered value in kb-0249, a templated currency phrase in kb-0235, and kb-0208's `section_path` splitting at a comma.
+
+**Decision:** Fix both defects as chunker v3 and freeze it:
+- An empty heading is carried into its first subsection, never into a sibling.
+- A packed chunk's section path is the parent headings its sections share.
+
+`CHUNKER_VERSION` is printed in `KB_STATS.md`, so `build --check` in CI fails if chunking changes without the outputs being regenerated.
+
+**Consequences:**
+- From here, any change to `chunking.py` that alters chunk boundaries, IDs or bodies requires re-checking every gold label whose `body_sha1` changed.
+- Deliberate small chunks remain. Country-tagged sections, such as a single Egypt table, aren't packed with other countries' sections: 38 of 480 chunks are under 100 tokens. This is intended (ADR-006) and is the price of country filtering.
+- Article edits after labeling begins follow the same rule: check the labels whose `body_sha1` moved.

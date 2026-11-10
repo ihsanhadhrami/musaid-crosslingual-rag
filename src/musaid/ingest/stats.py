@@ -4,7 +4,7 @@ from collections import Counter
 from statistics import median
 
 from musaid.ingest.articles import SourceArticle
-from musaid.ingest.chunking import MAX_TOKENS
+from musaid.ingest.chunking import CHUNKER_VERSION, MAX_TOKENS
 from musaid.ingest.schema import (
     CATEGORY_TARGET_SHARE,
     COUNTRIES,
@@ -51,6 +51,7 @@ def render_stats(
         f"| Rewritten by hand (ADR-007 targets) | {len(rewritten & targets)} | {len(targets)} |",
         f"| Rewritten by hand (outside targets) | {len(rewritten - targets)} | |",
         f"| Facts in facts.csv | {len(facts)} | |",
+        f"| Chunker version (frozen, ADR-009) | {CHUNKER_VERSION} | |",
         "",
         "## Articles by category",
         "",

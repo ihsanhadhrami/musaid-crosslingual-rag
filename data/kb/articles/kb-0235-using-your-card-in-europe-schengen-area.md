@@ -10,7 +10,7 @@ article_type: guide
 status: draft
 mess: [country_specific, near_duplicate]
 ---
-Your Sahla Pay card works in Europe (Schengen area) wherever the card network logo is shown, for payments in shops, online and at ATMs. The local currency is euros, and the local currency in non-euro countries.
+Your Sahla Pay card works in Europe (Schengen area) wherever the card network logo is shown, for payments in shops, online and at ATMs. Most Schengen countries use the euro; a few, such as Switzerland, Norway and Czechia, have their own currency.
 
 ## Before you travel
 
@@ -21,11 +21,11 @@ Your Sahla Pay card works in Europe (Schengen area) wherever the card network lo
 
 ## Paying in local currency
 
-When a card machine or ATM offers to charge you in your own currency instead of euros, and the local currency in non-euro countries, choose euros, and the local currency in non-euro countries. If you accept the conversion, the shop's or ATM's exchange rate is used, which is usually worse than ours.
+When a card machine or ATM offers to charge you in your own currency instead of the local currency, always choose the local currency. If you accept the conversion, the shop's or ATM's exchange rate is used, which is usually worse than ours.
 
 ## If your account is in Saudi Arabia
 
-- Card payments in euros, and the local currency in non-euro countries: no fee, but our exchange rate includes a markup of {{fees.fx_markup.SA}}.
+- Card payments in euros or another local currency: no fee, but our exchange rate includes a markup of {{fees.fx_markup.SA}}.
 - ATM withdrawals: {{fees.atm_abroad.SA}} per withdrawal plus VAT, as well as the markup.
 - You can withdraw up to {{limits.atm_daily.SA}} a day and spend up to {{limits.card_daily_spend.SA}} a day by card, counted in riyals after conversion.
 - Contactless without a PIN is limited to the equivalent of {{limits.contactless_no_pin.SA}} per payment.
@@ -34,7 +34,7 @@ You can also pay with Apple Pay or Google Pay.
 
 ## If your account is in the UAE
 
-- Card payments in euros, and the local currency in non-euro countries: no fee, but our exchange rate includes a markup of {{fees.fx_markup.AE}}.
+- Card payments in euros or another local currency: no fee, but our exchange rate includes a markup of {{fees.fx_markup.AE}}.
 - ATM withdrawals: {{fees.atm_abroad.AE}} per withdrawal plus VAT, as well as the markup.
 - You can withdraw up to {{limits.atm_daily.AE}} a day and spend up to {{limits.card_daily_spend.AE}} a day by card, counted in dirhams after conversion.
 - Contactless without a PIN is limited to the equivalent of {{limits.contactless_no_pin.AE}} per payment.
@@ -43,7 +43,7 @@ You can also pay with Apple Pay or Google Pay.
 
 ## If your account is in Egypt
 
-- Card payments in euros, and the local currency in non-euro countries: no fee, but our exchange rate includes a markup of {{fees.fx_markup.EG}}.
+- Card payments in euros or another local currency: no fee, but our exchange rate includes a markup of {{fees.fx_markup.EG}}.
 - ATM withdrawals: {{fees.atm_abroad.EG}} per withdrawal plus VAT, as well as the markup.
 - You can withdraw up to {{limits.atm_daily.EG}} a day and spend up to {{limits.card_daily_spend.EG}} a day by card, counted in pounds after conversion.
 - Contactless without a PIN is limited to the equivalent of {{limits.contactless_no_pin.EG}} per payment.

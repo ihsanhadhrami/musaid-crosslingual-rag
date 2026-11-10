@@ -16,7 +16,9 @@ from dataclasses import dataclass, field
 
 from musaid.ingest.schema import COUNTRIES, COUNTRY_NAMES, Article, Chunk, Country
 
-CHUNKER_VERSION = "2"  # v2: MAX_TOKENS includes the prefix
+# v2: MAX_TOKENS includes the prefix. v3: empty parent headings are kept, and packed
+# sections get their shared parent headings as section path. Frozen for Phase 2 (ADR-009).
+CHUNKER_VERSION = "3"
 MAX_TOKENS = 400
 MIN_TOKENS = 200  # stop packing sections once a chunk reaches this size
 
@@ -116,11 +118,25 @@ def split_sections(blocks: list[Block]) -> list[Section]:
             stack.append((b.level, b.text))
             heads = [h for _, h in stack]
             countries = next((c for h in reversed(heads) if (c := heading_countries(h))), None)
-            sections.append(Section(heads, countries, [f"{'#' * b.level} {b.text}"]))
+            # A heading with no text of its own (e.g. "## 9. Fees" straight before "### 9.1")
+            # is carried into its first subsection, so its words still reach a chunk.
+            prev = sections[-1]
+            is_parent = prev.headings and prev.headings == heads[: len(prev.headings)]
+            carried = prev.pieces if not prev.has_content and is_parent else []
+            sections.append(Section(heads, countries, [*carried, f"{'#' * b.level} {b.text}"]))
         else:
             sections[-1].pieces.append(b.text)
             sections[-1].has_content = True
     return [s for s in sections if s.has_content]
+
+
+def _common_prefix(paths: list[list[str]]) -> list[str]:
+    out: list[str] = []
+    for level in zip(*paths, strict=False):
+        if len(set(level)) != 1:
+            break
+        out.append(level[0])
+    return out
 
 
 @dataclass
@@ -207,8 +223,9 @@ def chunk_article(
     for i, g in enumerate(_pack(sections, max_tokens - reserve, min_tokens)):
         headed = [s.headings for s in g.sections if s.headings]
         section_path = list(article.section_path)
-        if len(g.sections) == 1 and headed:
-            section_path += headed[0]
+        if headed and len(headed) == len(g.sections):
+            # One section: its full heading path. Several: the parent headings they share.
+            section_path += _common_prefix(headed)
         countries = list(g.countries or article.countries)
         body = "\n\n".join(g.pieces)
         text = _prefix(article.title, section_path, countries) + body

@@ -2,7 +2,7 @@
 doc_id: kb-0208
 title: Dispute, Refund and Chargeback Policy
 category: legal_policy
-section_path: [Legal, Dispute, Refund and Chargeback Policy]
+section_path: [Legal, "Dispute, Refund and Chargeback Policy"]
 countries: all
 effective_date: 2026-03-01
 superseded_by: null

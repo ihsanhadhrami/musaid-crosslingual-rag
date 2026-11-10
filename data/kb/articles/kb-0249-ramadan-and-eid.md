@@ -34,13 +34,13 @@ From Saudi Arabia and the UAE, you can send money to family abroad by internatio
 Eid al-Fitr and Eid al-Adha are public holidays in Saudi Arabia, the UAE and Egypt, and the exact dates depend on the moon. During the holidays:
 
 - transfers between Sahla Pay users, QR payments and card payments work as normal;
-- local bank transfers still arrive {{transfer.local_bank_delivery.SA}} in Saudi Arabia and {{transfer.local_bank_delivery.EG}} in Egypt;
+- in Saudi Arabia and Egypt, local bank transfers arrive as quickly as on any other day;
 - local bank transfers in the UAE, and international transfers, wait for the next business day;
 - bill payments are posted to the company after the holiday.
 
 ## Support during Ramadan
 
-Chat and phone support are open {{support.hours.SA}} in Saudi Arabia and {{support.hours.AE}} in the UAE, as usual. In Egypt, support hours may change during Ramadan; we announce any changes in the app. The fraud line is open {{support.fraud_line_hours.ALL}} in all three countries, whatever the date.
+In Saudi Arabia and the UAE, chat and phone support hours don't change during Ramadan. In Egypt, support hours may change during Ramadan; we announce any changes in the app. The fraud line is open {{support.fraud_line_hours.ALL}} in all three countries, whatever the date.
 
 ## Watch out for Eid scams
 
