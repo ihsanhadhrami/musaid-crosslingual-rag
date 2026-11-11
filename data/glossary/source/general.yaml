@@ -1,0 +1,97 @@
+# Terms that cut across every category. Schema: src/musaid/glossary/schema.py.
+# levantine_egyptian holds both dialects; notes say which form belongs to which when it matters.
+
+- concept_id: account
+  kb_term: account
+  category: general
+  variants:
+    msa: [حساب, حسابي]
+    gulf: [حسابي في التطبيق, الحساب حقي]
+    levantine_egyptian: [الأكونت بتاعي, حسابي عندكم, الأكونت تبعي]
+    arabizi: [7sabi, 7esabi, el account, el akont]
+
+- concept_id: balance
+  kb_term: balance
+  category: general
+  variants:
+    msa: [الرصيد, رصيد المحفظة]
+    gulf: [رصيدي, كم باقي عندي, الرصيد اللي عندي]
+    levantine_egyptian: [الفلوس اللي في المحفظة, المصاري اللي بالمحفظة, رصيدي كام]
+    arabizi: [raseedi, rasidi, el raseed, kam ba2i 3andi]
+
+- concept_id: wallet
+  kb_term: wallet
+  category: general
+  variants:
+    msa: [المحفظة, المحفظة الإلكترونية]
+    gulf: [المحفظة حقتي, محفظتي]
+    levantine_egyptian: [المحفظة بتاعتي, المحفظة تبعي]
+    arabizi: [el ma7faza, ma7fazti, el wallet]
+
+- concept_id: fee
+  kb_term: fee
+  kb_aliases: [charge]
+  category: general
+  variants:
+    msa: [رسوم, رسم, عمولة]
+    gulf: [كم ياخذون, كم الرسوم, يخصمون علي]
+    levantine_egyptian: [بتاخدوا كام, قديش بتاخدوا, في رسوم]
+    arabizi: [rosoom, rusum, kam takhdoon, bta5do kam, 2adesh bt2akhdo]
+  notes: "بتاخدوا كام is Egyptian; قديش is Levantine."
+
+- concept_id: limit
+  kb_term: limit
+  category: general
+  variants:
+    msa: [الحد الأقصى, سقف, الحد المسموح]
+    gulf: [الحد, الليمت, كم أقدر أحول]
+    levantine_egyptian: [الليميت, أقصى مبلغ, أعلى مبلغ]
+    arabizi: [el 7ad, el limit, el 7ad el a2sa, a2sa mablagh]
+
+- concept_id: customer_support
+  kb_term: customer support
+  kb_aliases: [support]
+  category: general
+  variants:
+    msa: [خدمة العملاء, الدعم الفني]
+    gulf: [أكلم أحد, أبي أكلم موظف, الدعم]
+    levantine_egyptian: [خدمة العملا, أكلم حد, بدي احكي مع حدا]
+    arabizi: [khedmet el 3omala, akalem 7ad, abi akalem mowazaf, badi e7ki ma3 7ada]
+
+- concept_id: app
+  kb_term: app
+  category: general
+  variants:
+    msa: [التطبيق]
+    gulf: [البرنامج, التطبيق حقكم]
+    levantine_egyptian: [الأبلكيشن, التطبيق بتاعكم, الابليكيشن تبعكم]
+    arabizi: [el tatbee2, el app, el application, tatbi2]
+
+- concept_id: transaction
+  kb_term: transaction
+  category: general
+  variants:
+    msa: [معاملة, عملية]
+    gulf: [العملية, الحركة]
+    levantine_egyptian: [المعاملة, العملية دي]
+    arabizi: [3amaleya, el 3amalia, el 7araka]
+
+- concept_id: salary
+  kb_term: salary
+  category: general
+  variants:
+    msa: [الراتب, الأجر الشهري]
+    gulf: [راتبي, المعاش]
+    levantine_egyptian: [المرتب, المعاش بتاعي, معاشي]
+    arabizi: [el ratib, ratbi, el morattab, ma3ash]
+  notes: "Gulf and Egyptian speakers both use معاش for a monthly salary, not only a pension."
+
+- concept_id: weekend_holiday
+  kb_term: public holiday
+  kb_aliases: [weekend]
+  category: general
+  variants:
+    msa: [عطلة رسمية, عطلة نهاية الأسبوع]
+    gulf: [الويكند, الإجازة, العيد]
+    levantine_egyptian: [الأجازة, يوم الجمعة, العطلة]
+    arabizi: [el weekend, agaza, ejaza, el 3eed]

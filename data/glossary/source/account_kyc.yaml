@@ -1,0 +1,206 @@
+# Account opening, verification (KYC) and profile changes.
+
+- concept_id: verification
+  kb_term: verification
+  kb_aliases: [verify]
+  category: account_kyc
+  variants:
+    msa: [التحقق من الهوية, توثيق الحساب]
+    gulf: [أوثق حسابي, تفعيل الحساب, التوثيق]
+    levantine_egyptian: [تأكيد الهوية, أوثّق الأكونت, أفعّل حسابي]
+    arabizi: [tawtheeq, awathe2 7sabi, ta2keed el hawya, verify]
+  notes: "Customers often say تفعيل (activation) when they mean identity verification."
+
+- concept_id: unverified_account
+  kb_term: unverified
+  category: account_kyc
+  variants:
+    msa: [حساب غير موثق]
+    gulf: [حسابي مو موثق, ما وثقت حسابي]
+    levantine_egyptian: [الحساب مش متوثق, لسه موثقتش, حسابي مش موثّق]
+    arabizi: [7sabi mesh mewathaq, mo mwatha2, ghair mowathaq]
+
+- concept_id: iqama
+  kb_term: Iqama
+  category: account_kyc
+  variants:
+    msa: [الإقامة, بطاقة الإقامة]
+    gulf: [إقامتي, رقم الإقامة]
+    levantine_egyptian: [الإقامة بتاعتي, الإقامة تبعي]
+    arabizi: [iqama, e2ama, eqama, rakam el e2ama]
+
+- concept_id: emirates_id
+  kb_term: Emirates ID
+  category: account_kyc
+  variants:
+    msa: [الهوية الإماراتية, بطاقة الهوية الإماراتية]
+    gulf: [الإيميرتس آي دي, هويتي الإماراتية]
+    levantine_egyptian: [البطاقة الإماراتية, الهوية الإماراتية بتاعتي]
+    arabizi: [emirates id, hawya emaratiya, el emirates id]
+
+- concept_id: national_id
+  kb_term: national ID
+  category: account_kyc
+  variants:
+    msa: [بطاقة الهوية الوطنية, الهوية الوطنية]
+    gulf: [الهوية, هويتي]
+    levantine_egyptian: [البطاقة, بطاقة الرقم القومي, الرقم القومي]
+    arabizi: [el beta2a, ra2am qawmi, el hawiya, el betaa]
+  notes: "Egyptians call the national ID البطاقة or الرقم القومي."
+
+- concept_id: passport
+  kb_term: passport
+  category: account_kyc
+  variants:
+    msa: [جواز السفر]
+    gulf: [الجواز, جوازي]
+    levantine_egyptian: [الباسبور, الباسبورت]
+    arabizi: [jawaz, el jawaz, basbor, el passport]
+
+- concept_id: expired_id
+  kb_term: expired
+  category: account_kyc
+  variants:
+    msa: [هوية منتهية الصلاحية, انتهاء صلاحية الهوية]
+    gulf: [هويتي منتهية, الإقامة خلصت]
+    levantine_egyptian: [البطاقة انتهت, الهوية خلصانة, البطاقة منتهية]
+    arabizi: [hawiyti montahya, el e2ama khelset, el beta2a entahet]
+
+- concept_id: selfie
+  kb_term: selfie
+  category: account_kyc
+  variants:
+    msa: [صورة شخصية, التحقق بالوجه]
+    gulf: [السيلفي, صورة الوجه]
+    levantine_egyptian: [السلفي, صورة لوشي, صورة لوجهي]
+    arabizi: [selfie, sora shakhseya, swret wajhi, el selfy]
+  notes: "صورة لوشي is Egyptian (وش = face)."
+
+- concept_id: id_rejected
+  kb_term: rejected
+  category: account_kyc
+  variants:
+    msa: [رفض الهوية, رُفض التحقق]
+    gulf: [رفضوا هويتي, انرفض التوثيق]
+    levantine_egyptian: [الهوية اترفضت, رفضوا البطاقة, انرفضت الهوية]
+    arabizi: [rafado hawiyti, etrafadet, enrafad el tawtheeq]
+
+- concept_id: in_review
+  kb_term: In review
+  category: account_kyc
+  variants:
+    msa: [قيد المراجعة]
+    gulf: [تحت المراجعة, للحين تحت المراجعة]
+    levantine_egyptian: [لسه تحت المراجعة, لسا عم يراجعوا]
+    arabizi: [ta7t el moraj3a, lessa ta7t el mraj3a, 2eed el moraja3a, lal7een ta7t el mraj3a]
+
+- concept_id: proof_of_address
+  kb_term: proof of address
+  category: account_kyc
+  variants:
+    msa: [إثبات العنوان, إثبات السكن]
+    gulf: [ورقة العنوان, عقد الإيجار]
+    levantine_egyptian: [إيصال الكهربا, فاتورة باسمي]
+    arabizi: [ethbat 3enwan, esbat el 3onwan, ithbat sakan, wasl el kahraba]
+
+- concept_id: phone_number
+  kb_term: phone number
+  category: account_kyc
+  variants:
+    msa: [رقم الهاتف, رقم الجوال المسجل]
+    gulf: [رقم جوالي, رقمي]
+    levantine_egyptian: [رقم الموبايل, نمرتي, رقم تلفوني]
+    arabizi: [ra2am jawali, nemrti, ra2m el mobile, nimrti]
+
+- concept_id: email_address
+  kb_term: email address
+  kb_aliases: [email]
+  category: account_kyc
+  variants:
+    msa: [البريد الإلكتروني]
+    gulf: [الإيميل, إيميلي]
+    levantine_egyptian: [الميل, الإيميل بتاعي]
+    arabizi: [el email, el emil, el mail, emaili]
+
+- concept_id: guardian_consent
+  kb_term: guardian consent
+  kb_aliases: [guardian]
+  category: account_kyc
+  variants:
+    msa: [موافقة ولي الأمر]
+    gulf: [حساب لولدي, ولدي تحت السن]
+    levantine_egyptian: [حساب لابني, موافقة الأهل]
+    arabizi: [mowaf2et wali el amr, 7esab l ebni, 7sab l weldi]
+
+- concept_id: business_account
+  kb_term: business account
+  category: account_kyc
+  variants:
+    msa: [حساب تجاري, حساب أعمال]
+    gulf: [حساب للمؤسسة, حساب للمحل]
+    levantine_egyptian: [حساب بزنس, حساب للشركة]
+    arabizi: [7sab tejari, business account, 7esab lel sherka]
+
+- concept_id: more_than_one_account
+  kb_term: second account
+  kb_aliases: [one account per person]
+  category: account_kyc
+  variants:
+    msa: [أكثر من حساب]
+    gulf: [حسابين, أفتح حساب ثاني]
+    levantine_egyptian: [أكتر من أكونت, أعمل حساب تاني]
+    arabizi: [7esabeen, aktar men 7sab, afta7 7sab thani]
+
+- concept_id: source_of_funds
+  kb_term: source of funds
+  category: account_kyc
+  variants:
+    msa: [مصدر الأموال]
+    gulf: [مصدر الفلوس, من وين الفلوس]
+    levantine_egyptian: [منين الفلوس دي, من وين المصاري]
+    arabizi: [masdar el floos, mnen el felos, men wen el masari]
+
+- concept_id: nafath
+  kb_term: Nafath
+  category: account_kyc
+  variants:
+    msa: [نفاذ, النفاذ الوطني الموحد]
+    gulf: [أوثق بنفاذ, تطبيق نفاذ]
+    levantine_egyptian: [نفاذ السعودي]
+    arabizi: [nafath, nafaz, nafad]
+
+- concept_id: uae_pass
+  kb_term: UAE Pass
+  category: account_kyc
+  variants:
+    msa: [الهوية الرقمية الإماراتية]
+    gulf: [يو اي اي باس, الهوية الرقمية]
+    levantine_egyptian: [يو إيه إي باس]
+    arabizi: [uae pass, uaepass, yu ay ay pass]
+
+- concept_id: linked_bank_account
+  kb_term: bank account
+  category: account_kyc
+  variants:
+    msa: [الحساب البنكي المرتبط, ربط حساب بنكي]
+    gulf: [أربط حسابي البنكي, حساب البنك]
+    levantine_egyptian: [أربط حساب البنك, حساب البنك بتاعي]
+    arabizi: [arbot 7sabi el bank, rabt 7esab bank, 7sab el bank]
+
+- concept_id: account_tier
+  kb_term: tier
+  category: account_kyc
+  variants:
+    msa: [مستويات الحساب, فئة الحساب]
+    gulf: [مستوى الحساب, ليفل الحساب]
+    levantine_egyptian: [ليفل الأكونت, درجة الحساب]
+    arabizi: [mostawa el 7sab, level el account]
+
+- concept_id: moving_country
+  kb_term: moving to another country
+  category: account_kyc
+  variants:
+    msa: [الانتقال إلى بلد آخر]
+    gulf: [بنتقل لدولة ثانية, بسكن برا]
+    levantine_egyptian: [هنقل لبلد تاني, رح انتقل على بلد تاني]
+    arabizi: [hanetnaqel l balad tani, ra7 2entel 3a balad tani, bantagel l dawla thanya]

@@ -209,3 +209,20 @@ The same inspection found three content problems, fixed in the articles: a repea
 - About 5–6 queries point at each rewritten chunk on average. This is fine for cross-variety comparison, where the parallel subset deliberately repeats intents. Watch that no single chunk dominates the test set.
 - The draft side (~30%, about 120 queries) is still large enough for the rewritten-vs-draft comparison in ADR-007.
 - Superseded-policy traps mostly use the four rewritten pairs. Other old editions (Terms, Card Terms, fee schedule) are drafts and serve as hard negatives.
+
+## ADR-011: The glossary is written in YAML and checked against the KB
+
+**Status:** Accepted
+
+**Context:** Phase 2 needs a glossary of at least 150 entries (spec §5.3) that the query translator will be given (ablation #8). A glossary entry is only useful if its English side is a word the retriever can match. Hand-editing Arabic inside JSONL lines is also error-prone.
+
+**Decision:**
+- Entries are written by hand in `data/glossary/source/*.yaml`, one file per category. `python -m musaid.glossary.build` validates them and writes `data/glossary/glossary.jsonl`. CI fails if the output is stale, the same way it does for the KB.
+- Each entry keeps the spec schema (`kb_term` plus `variants` for `msa`, `gulf`, `levantine_egyptian`, `arabizi`) and adds `concept_id`, `category`, optional `kb_aliases` and `notes`.
+- `kb_term` and every alias must appear as whole words in the KB text. Every variety needs at least one form. MSA and dialect forms must be in Arabic script only; Arabizi forms must be lowercase Latin letters and digits.
+- Duplicates are found after light Arabic folding (hamza forms, alef maqsura, ta marbuta, diacritics). A repeat inside one entry is an error. A form shared by two concepts is a warning, because real customer words can be ambiguous.
+- Levantine and Egyptian share one list, as in the spec. `notes` says which dialect a form belongs to when that matters.
+
+**Consequences:**
+- The translator never gets pointed at English the KB doesn't use.
+- Folding here is deliberately light. The full query normalizer (CAMeL Tools) comes in Phase 4 and isn't needed to keep the glossary clean.

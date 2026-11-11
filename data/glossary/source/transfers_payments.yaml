@@ -1,0 +1,234 @@
+# Transfers, top-ups, bills and everyday payments.
+
+- concept_id: transfer
+  kb_term: transfer
+  category: transfers_payments
+  variants:
+    msa: [تحويل, حوالة مالية]
+    gulf: [حوالة, أحوّل]
+    levantine_egyptian: [أحوّل فلوس, تحويلة]
+    arabizi: [ta7weel, 7awala, a7awel floos]
+
+- concept_id: send_money
+  kb_term: send money
+  category: transfers_payments
+  variants:
+    msa: [إرسال الأموال, إرسال مبلغ]
+    gulf: [أرسل فلوس, أحول فلوس]
+    levantine_egyptian: [أبعت فلوس, بدي ابعت مصاري]
+    arabizi: [ab3at floos, arsel felos, ab3at masari]
+
+- concept_id: international_transfer
+  kb_term: international transfer
+  kb_aliases: [sending money abroad]
+  category: transfers_payments
+  variants:
+    msa: [تحويل دولي, حوالة دولية]
+    gulf: [حوالة برا, أحول لبرا, حوالة خارجية]
+    levantine_egyptian: [تحويل للخارج, أبعت فلوس برا, ابعت مصاري عالبلد]
+    arabizi: [7awala barra, ta7weel dawli, ab3at floos barra]
+
+- concept_id: receive_from_abroad
+  kb_term: receiving money
+  category: transfers_payments
+  variants:
+    msa: [استلام الأموال, استقبال حوالة]
+    gulf: [أستلم حوالة, وصلتني فلوس من برا]
+    levantine_egyptian: [أستلم فلوس من برا, حدا بعتلي مصاري]
+    arabizi: [astalem 7awala, wesletni floos men barra, 7ada ba3atli masari]
+
+- concept_id: recipient
+  kb_term: recipient
+  kb_aliases: [beneficiary]
+  category: transfers_payments
+  variants:
+    msa: [المستفيد, المستلم]
+    gulf: [الشخص اللي أحول له, اللي بحول له]
+    levantine_egyptian: [اللي باعتله, الشخص اللي بعتتلو]
+    arabizi: [el mostafeed, el mostalem, elli ba3atlo]
+
+- concept_id: iban
+  kb_term: IBAN
+  category: transfers_payments
+  variants:
+    msa: [رقم الآيبان, رقم الحساب الدولي]
+    gulf: [الآيبان, الايبان حقي]
+    levantine_egyptian: [رقم الحساب, الآيبان بتاعي]
+    arabizi: [iban, el iban, ra2m el iban]
+
+- concept_id: exchange_rate
+  kb_term: exchange rate
+  category: transfers_payments
+  variants:
+    msa: [سعر الصرف, سعر العملة]
+    gulf: [سعر التحويل, سعر الريال]
+    levantine_egyptian: [سعر الدولار, سعر الجنيه]
+    arabizi: [se3r el sarf, se3r el dollar, sa3r el sarf]
+
+- concept_id: fx_markup
+  kb_term: markup
+  category: transfers_payments
+  variants:
+    msa: [هامش سعر الصرف, عمولة تحويل العملة]
+    gulf: [الفرق في السعر, زيادة على سعر الصرف]
+    levantine_egyptian: [فرق العملة, العمولة على العملة]
+    arabizi: [far2 el 3omla, 3omoula 3al 3omla, el far2 fe el se3r]
+
+- concept_id: failed_transfer
+  kb_term: failed
+  category: transfers_payments
+  variants:
+    msa: [فشل التحويل, تحويل فاشل]
+    gulf: [الحوالة ما مشت, التحويل فشل]
+    levantine_egyptian: [التحويل ما زبط, التحويل ما مشيش]
+    arabizi: [el 7awala ma mashet, el ta7weel feshel, ma zabat]
+
+- concept_id: wrong_transfer
+  kb_term: wrong person
+  kb_aliases: [wrong transfer]
+  category: transfers_payments
+  variants:
+    msa: [تحويل خاطئ, تحويل إلى شخص خاطئ]
+    gulf: [حولت غلط, حولت لشخص غلط]
+    levantine_egyptian: [حولت لحد غلط, بعتت مصاري لحدا غلط]
+    arabizi: [7awelt ghalat, ba3at l 7ad ghalat, 7awalt le shakhs ghalat]
+
+- concept_id: cancel_transfer
+  kb_term: cancel
+  category: transfers_payments
+  variants:
+    msa: [إلغاء التحويل]
+    gulf: [أكنسل الحوالة, ألغي التحويل]
+    levantine_egyptian: [ألغي التحويلة, أكنسل التحويل]
+    arabizi: [alghi el ta7weel, akansel el 7awala, cancel]
+
+- concept_id: pending
+  kb_term: pending
+  category: transfers_payments
+  variants:
+    msa: [قيد الانتظار, معلّق]
+    gulf: [معلقة, ما اكتملت]
+    levantine_egyptian: [لسه بيحمل, لسا معلقة]
+    arabizi: [m3alla2a, pending, lessa m3la2]
+
+- concept_id: not_received
+  kb_term: didn't receive
+  category: transfers_payments
+  variants:
+    msa: [لم يستلم المستفيد المبلغ]
+    gulf: [الفلوس ما وصلت, ما وصلته الحوالة]
+    levantine_egyptian: [الفلوس موصلتش, المصاري ما وصلت]
+    arabizi: [el floos ma wslat, mawsletsh, ma wasalat]
+
+- concept_id: top_up
+  kb_term: top-up
+  kb_aliases: [top up]
+  category: transfers_payments
+  variants:
+    msa: [شحن الرصيد, تعبئة المحفظة]
+    gulf: [أشحن المحفظة, أعبي الرصيد]
+    levantine_egyptian: [أحط فلوس في المحفظة, أعبّي المحفظة]
+    arabizi: [ash7an el ma7faza, a3abi raseed, a7ot floos fel ma7faza]
+
+- concept_id: mobile_recharge
+  kb_term: mobile recharge
+  category: transfers_payments
+  variants:
+    msa: [شحن رصيد الجوال]
+    gulf: [أشحن جوالي, أعبي شريحة]
+    levantine_egyptian: [أشحن كارت, رصيد موبايل, أشحن خطي]
+    arabizi: [ash7an el jawal, sha7n el mobile, ash7an khatti]
+
+- concept_id: bill_payment
+  kb_term: bill
+  kb_aliases: [bills]
+  category: transfers_payments
+  variants:
+    msa: [دفع الفواتير, سداد الفواتير]
+    gulf: [أسدد الفاتورة, أدفع فاتورة الكهرباء]
+    levantine_egyptian: [أدفع الفاتورة, فاتورة الكهربا]
+    arabizi: [asadded el fatoora, adfa3 el fatura, fatoret el kahraba]
+
+- concept_id: sadad
+  kb_term: SADAD
+  category: transfers_payments
+  variants:
+    msa: [نظام سداد]
+    gulf: [سداد, أسدد عن طريق سداد]
+    levantine_egyptian: [سداد السعودي]
+    arabizi: [sadad]
+
+- concept_id: instapay
+  kb_term: InstaPay
+  category: transfers_payments
+  variants:
+    msa: [إنستاباي]
+    gulf: [انستا باي]
+    levantine_egyptian: [انستاباي, عنوان انستاباي]
+    arabizi: [instapay, insta pay]
+
+- concept_id: qr_payment
+  kb_term: QR code
+  kb_aliases: [QR]
+  category: transfers_payments
+  variants:
+    msa: [رمز الاستجابة السريعة, الدفع بالرمز]
+    gulf: [أدفع بالباركود, الكيو آر]
+    levantine_egyptian: [الكيو آر كود, أدفع بالكود]
+    arabizi: [el qr, el barcode, adfa3 bel code]
+
+- concept_id: request_money
+  kb_term: request money
+  kb_aliases: [requesting money]
+  category: transfers_payments
+  variants:
+    msa: [طلب أموال, طلب مبلغ]
+    gulf: [أطلب فلوس من أحد]
+    levantine_egyptian: [أطلب فلوس من صاحبي, اطلب مصاري من حدا]
+    arabizi: [atlob floos, a6lob felos, otlob masari]
+
+- concept_id: split_bill
+  kb_term: split
+  category: transfers_payments
+  variants:
+    msa: [تقسيم الفاتورة]
+    gulf: [نقسم الحساب, نتقاسم الفاتورة]
+    levantine_egyptian: [نقسم الفاتورة, كل واحد يدفع نصيبه]
+    arabizi: [n2asem el 7esab, nqasim el fatoora]
+
+- concept_id: scheduled_transfer
+  kb_term: scheduled
+  kb_aliases: [recurring]
+  category: transfers_payments
+  variants:
+    msa: [تحويل مجدول, تحويل دوري]
+    gulf: [حوالة ثابتة كل شهر, تحويل تلقائي]
+    levantine_egyptian: [تحويل كل شهر, تحويل أوتوماتيك]
+    arabizi: [ta7weel kol shahr, 7awala thabta, ta7weel automatic]
+
+- concept_id: receipt
+  kb_term: receipt
+  category: transfers_payments
+  variants:
+    msa: [إيصال, إيصال التحويل]
+    gulf: [إثبات التحويل, سند التحويل]
+    levantine_egyptian: [الوصل, سكرين التحويل]
+    arabizi: [esal, wasl, ithbat el ta7weel]
+
+- concept_id: reference_number
+  kb_term: reference number
+  category: transfers_payments
+  variants:
+    msa: [الرقم المرجعي]
+    gulf: [رقم العملية]
+    levantine_egyptian: [رقم المرجع, رقم التحويلة]
+    arabizi: [ra2m el 3amaleya, ra2m marje3i]
+
+- concept_id: payment_link
+  kb_term: payment link
+  category: transfers_payments
+  variants:
+    msa: [رابط دفع]
+    gulf: [لينك دفع, رابط الدفع حقي]
+    levantine_egyptian: [لينك للدفع, لينك أبعته للزبون]
+    arabizi: [link daf3, rabet el daf3, link lel daf3]

@@ -27,6 +27,8 @@ jobs:
       - run: uv run pytest -m "not integration"
       - name: KB builds cleanly and committed outputs are current
         run: uv run python -m musaid.ingest.build --check
+      - name: Glossary builds cleanly and glossary.jsonl is current
+        run: uv run python -m musaid.glossary.build --check
 
   integration:
     runs-on: ubuntu-latest
