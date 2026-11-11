@@ -1,0 +1,140 @@
+# Security, fraud, OTPs and account access.
+
+- concept_id: otp
+  kb_term: one-time password
+  kb_aliases: [OTP]
+  category: security
+  variants:
+    msa: [رمز التحقق, كلمة المرور لمرة واحدة]
+    gulf: [الكود اللي يجيني, رمز التحقق اللي بالرسالة]
+    levantine_egyptian: [الكود اللي بيوصلني, كود التفعيل]
+    arabizi: [el otp, el code, ramz el ta7a2o2, el kod]
+
+- concept_id: otp_not_received
+  kb_term: not receiving
+  category: security
+  variants:
+    msa: [لا يصلني رمز التحقق]
+    gulf: [الكود ما يوصلني, ما جاني الرمز]
+    levantine_egyptian: [الكود مش بيوصل, ما عم يوصلني الكود]
+    arabizi: [el code ma ywsalni, el kod mesh byewsal, ma jani el ramz]
+
+- concept_id: account_locked
+  kb_term: locked
+  category: security
+  variants:
+    msa: [قفل الحساب, الحساب مقفل]
+    gulf: [حسابي انقفل, انقفل علي الحساب]
+    levantine_egyptian: [الأكونت اتقفل, الحساب مسكّر]
+    arabizi: [7sabi en2afal, el account et2afal, el 7sab msakkar]
+
+- concept_id: password
+  kb_term: password
+  category: security
+  variants:
+    msa: [كلمة المرور, كلمة السر]
+    gulf: [الباسوورد, نسيت الرمز السري]
+    levantine_egyptian: [الباسورد, نسيت كلمة السر]
+    arabizi: [el password, el basswerd, kelmet el ser, nseet el password]
+
+- concept_id: phishing
+  kb_term: phishing
+  kb_aliases: [scam]
+  category: security
+  variants:
+    msa: [تصيد احتيالي, رسالة احتيال]
+    gulf: [رسالة نصب, أحد يتصل يقول إنه من البنك]
+    levantine_egyptian: [رسالة نصب, حد كلمني وقال انه من الشركة]
+    arabizi: [resalet nasb, nasb, e7tiyal, 7ad kalemni]
+
+- concept_id: fraud
+  kb_term: fraud
+  category: security
+  variants:
+    msa: [احتيال, عملية احتيالية]
+    gulf: [انسرقت فلوسي, نصبوا علي]
+    levantine_egyptian: [اتنصب عليّا, حد سرق فلوسي]
+    arabizi: [etnasab 3alaya, nasabo 3alay, ensara2at floosi]
+
+- concept_id: account_takeover
+  kb_term: accessed my account
+  category: security
+  variants:
+    msa: [اختراق الحساب, دخول غير مصرح به]
+    gulf: [حسابي انهكر, أحد دخل حسابي]
+    levantine_egyptian: [الأكونت اتهكر, حدا فات على حسابي]
+    arabizi: [7sabi enhakar, el account et-hakar, 7ada fat 3a 7sabi]
+
+- concept_id: sim_swap
+  kb_term: SIM swap
+  category: security
+  variants:
+    msa: [استبدال الشريحة, نقل الشريحة]
+    gulf: [أحد طلع شريحة برقمي, الشريحة وقفت فجأة]
+    levantine_egyptian: [الخط فصل فجأة, حد طلّع خط برقمي]
+    arabizi: [sim swap, el khat fasal, el shari7a wa2fat]
+
+- concept_id: stolen_phone
+  kb_term: phone was stolen
+  category: security
+  variants:
+    msa: [سرقة الهاتف, فقدان الجوال]
+    gulf: [جوالي انسرق, ضاع جوالي]
+    levantine_egyptian: [الموبايل اتسرق, تلفوني انسرق]
+    arabizi: [jawali ensara2, el mobile etsara2, talefoni ensara2]
+
+- concept_id: biometric_login
+  kb_term: biometric
+  kb_aliases: [fingerprint]
+  category: security
+  variants:
+    msa: [الدخول بالبصمة, التحقق البيومتري]
+    gulf: [البصمة, بصمة الوجه]
+    levantine_egyptian: [البصمة مش شغالة, الدخول بالوش]
+    arabizi: [el basma, basmet el wesh, face id]
+
+- concept_id: trusted_device
+  kb_term: trusted device
+  category: security
+  variants:
+    msa: [جهاز موثوق]
+    gulf: [الجهاز المعتمد, الأجهزة المسجلة]
+    levantine_egyptian: [الجهاز المتسجل, الموبايل المتسجل عندكم]
+    arabizi: [el jehaz el mowasaq, el gehaz el metsagel]
+
+- concept_id: suspicious_login
+  kb_term: suspicious login
+  category: security
+  variants:
+    msa: [تسجيل دخول مشبوه]
+    gulf: [جاني تنبيه دخول غريب]
+    levantine_egyptian: [جالي تنبيه ان حد دخل]
+    arabizi: [tanbeeh dokhool ghareeb, gali tanbeeh]
+
+- concept_id: account_restriction
+  kb_term: restriction
+  kb_aliases: [restricted]
+  category: security
+  variants:
+    msa: [تقييد الحساب, حساب مقيد]
+    gulf: [حسابي موقوف, وقفوا حسابي]
+    levantine_egyptian: [الحساب متجمد, وقفولي الأكونت]
+    arabizi: [7sabi maw2oof, wa22afo 7sabi, el 7sab metgammed]
+
+- concept_id: two_step_verification
+  kb_term: two-step verification
+  category: security
+  variants:
+    msa: [التحقق بخطوتين]
+    gulf: [التحقق الثنائي]
+    levantine_egyptian: [التأكيد على مرحلتين]
+    arabizi: [ta7a2o2 b khotwatain, two step]
+
+- concept_id: investment_scam
+  kb_term: investment scams
+  category: security
+  variants:
+    msa: [احتيال استثماري]
+    gulf: [استثمار نصب, وعدوني بأرباح]
+    levantine_egyptian: [استثمار طلع نصب, وعدوني بمكسب كبير]
+    arabizi: [estethmar nasb, wa3adoni b arba7]

@@ -1,0 +1,95 @@
+# Terms, privacy, closure and complaints.
+
+- concept_id: close_account
+  kb_term: closing your account
+  kb_aliases: [close your account]
+  category: legal_policy
+  variants:
+    msa: [إغلاق الحساب]
+    gulf: [أبي أسكر حسابي, أقفل الحساب]
+    levantine_egyptian: [عايز أقفل الأكونت, بدي سكّر حسابي]
+    arabizi: [askker 7sabi, a2fel el account, badi sakker 7esabi]
+
+- concept_id: terms_of_use
+  kb_term: terms
+  category: legal_policy
+  variants:
+    msa: [الشروط والأحكام, شروط الاستخدام]
+    gulf: [الشروط]
+    levantine_egyptian: [الشروط بتاعتكم]
+    arabizi: [el shoroot, el shorout w el a7kam, terms]
+
+- concept_id: privacy
+  kb_term: privacy
+  kb_aliases: [personal data]
+  category: legal_policy
+  variants:
+    msa: [الخصوصية, البيانات الشخصية]
+    gulf: [بياناتي, وش تسوون ببياناتي]
+    levantine_egyptian: [بياناتي الشخصية, بتعملوا ايه بالداتا بتاعتي]
+    arabizi: [bayanati, el khososeya, el data]
+
+- concept_id: data_retention
+  kb_term: keep your data
+  category: legal_policy
+  variants:
+    msa: [مدة الاحتفاظ بالبيانات]
+    gulf: [كم تخلون بياناتي]
+    levantine_egyptian: [هتحتفظوا ببياناتي قد ايه]
+    arabizi: [kam t5alloon bayanati, ad eh bt7tefzo bel data]
+
+- concept_id: complaint
+  kb_term: complaint
+  category: legal_policy
+  variants:
+    msa: [شكوى رسمية, تقديم شكوى]
+    gulf: [أبي أشتكي, أرفع شكوى]
+    levantine_egyptian: [عايز أشتكي, بدي قدّم شكوى]
+    arabizi: [abi ashteki, 3ayez ashteki, shakwa]
+
+- concept_id: regulator
+  kb_term: central bank
+  category: legal_policy
+  variants:
+    msa: [البنك المركزي, الجهة الرقابية]
+    gulf: [ساما, أشتكي للبنك المركزي]
+    levantine_egyptian: [البنك المركزي المصري]
+    arabizi: [el bank el markazi, sama]
+
+- concept_id: deceased_customer
+  kb_term: deceased
+  kb_aliases: [inheritance]
+  category: legal_policy
+  variants:
+    msa: [حساب متوفى, الورثة]
+    gulf: [أبوي توفى وعنده فلوس بالحساب]
+    levantine_egyptian: [حساب واحد متوفي, الورث]
+    arabizi: [mutawaffa, el waratha, el wers]
+
+- concept_id: restricted_countries
+  kb_term: restricted countries
+  kb_aliases: [sanctions]
+  category: legal_policy
+  variants:
+    msa: [الدول المحظورة, العقوبات]
+    gulf: [دول ممنوع التحويل لها]
+    levantine_egyptian: [بلاد ممنوع أحول لها]
+    arabizi: [dowal mamnoo3a, belad mamnoo3]
+
+- concept_id: account_closed_by_company
+  kb_term: closes an account
+  category: legal_policy
+  variants:
+    msa: [إغلاق الحساب من قبل الشركة]
+    gulf: [قفلتوا حسابي بدون سبب]
+    levantine_egyptian: [قفلتولي الأكونت من غير سبب]
+    arabizi: [2afalto 7sabi, 2afaltooli el account]
+
+- concept_id: terms_change
+  kb_term: changes to our terms
+  category: legal_policy
+  variants:
+    msa: [تعديل الشروط]
+    gulf: [غيرتوا الشروط]
+    levantine_egyptian: [الشروط اتغيرت]
+    arabizi: [ghayarto el shoroot, el shoroot etghayaret]

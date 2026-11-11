@@ -83,6 +83,7 @@ def test_fold_arabic():
 def test_committed_glossary_is_clean_and_current():
     res, content = build(ROOT)
     assert [str(e) for e in res.errors] == []
+    assert len(res.entries) >= 150, "spec §5.3 needs at least 150 glossary entries"
     path = ROOT / "data" / "glossary" / "glossary.jsonl"
     assert path.read_text(encoding="utf-8") == content, (
         "glossary.jsonl is stale: run `uv run python -m musaid.glossary.build`"

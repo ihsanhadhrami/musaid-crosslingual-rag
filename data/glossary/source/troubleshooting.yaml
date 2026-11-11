@@ -1,0 +1,130 @@
+# App problems, login, notifications and statements.
+
+- concept_id: app_crash
+  kb_term: crashing
+  kb_aliases: [won't open]
+  category: troubleshooting
+  variants:
+    msa: [التطبيق يتوقف, التطبيق لا يفتح]
+    gulf: [البرنامج يطلعني, التطبيق ما يفتح]
+    levantine_egyptian: [الأبلكيشن بيقفل لوحده, التطبيق ما عم يفتح]
+    arabizi: [el app bey2fel, el tatbee2 ma yefta7, el app ma 3am yefta7]
+
+- concept_id: cant_log_in
+  kb_term: log in
+  category: troubleshooting
+  variants:
+    msa: [تعذر تسجيل الدخول]
+    gulf: [ما أقدر أدخل, ما يدخلني]
+    levantine_egyptian: [مش عارف أدخل, ما عم يفوتني]
+    arabizi: [ma agdar adkhol, mesh 3aref adkhol, ma 3am yfawetni]
+
+- concept_id: notifications
+  kb_term: notifications
+  category: troubleshooting
+  variants:
+    msa: [الإشعارات, التنبيهات]
+    gulf: [ما توصلني الإشعارات]
+    levantine_egyptian: [النوتيفيكيشن مش بيجي]
+    arabizi: [el eshe3arat, el notification, el notifications]
+
+- concept_id: balance_not_updating
+  kb_term: refresh
+  category: troubleshooting
+  variants:
+    msa: [الرصيد لا يتحدث]
+    gulf: [الرصيد ما تغير, الرصيد واقف]
+    levantine_egyptian: [الرصيد مش بيتحدث, الرصيد ما تغيّر]
+    arabizi: [el raseed ma taghayar, el raseed mesh byet7adas]
+
+- concept_id: app_update
+  kb_term: update the app
+  category: troubleshooting
+  variants:
+    msa: [تحديث التطبيق]
+    gulf: [يطلب مني تحديث, أحدث البرنامج]
+    levantine_egyptian: [بيقولي اعمل ابديت, التطبيق بدو تحديث]
+    arabizi: [a3mel update, a7des el app, update]
+
+- concept_id: error_code
+  kb_term: error
+  category: troubleshooting
+  variants:
+    msa: [رسالة خطأ, رمز الخطأ]
+    gulf: [يطلع لي خطأ, ايرور]
+    levantine_egyptian: [بيطلعلي ايرور, في غلط بيطلع]
+    arabizi: [error, bytla3li error, khata2]
+
+- concept_id: new_phone
+  kb_term: new phone
+  category: troubleshooting
+  variants:
+    msa: [هاتف جديد]
+    gulf: [غيرت جوالي, جوال جديد]
+    levantine_egyptian: [غيرت الموبايل, تلفون جديد]
+    arabizi: [ghayart jawali, mobile gdid, talefon jdid]
+
+- concept_id: app_language
+  kb_term: language
+  category: troubleshooting
+  variants:
+    msa: [لغة التطبيق, تغيير اللغة]
+    gulf: [أحول التطبيق عربي]
+    levantine_egyptian: [أخلي الأبلكيشن عربي]
+    arabizi: [a7awel el app 3arabi, el lugha, el logha]
+
+- concept_id: statement
+  kb_term: statement
+  kb_aliases: [transaction history]
+  category: troubleshooting
+  variants:
+    msa: [كشف الحساب, سجل العمليات]
+    gulf: [كشف حساب, أبي كشف]
+    levantine_egyptian: [كشف حساب بالعمليات, ستيتمنت]
+    arabizi: [kashf 7esab, statement, sejel el 3amaleyat]
+
+- concept_id: slow_app
+  kb_term: slow
+  category: troubleshooting
+  variants:
+    msa: [التطبيق بطيء]
+    gulf: [البرنامج ثقيل, يعلق]
+    levantine_egyptian: [الأبلكيشن تقيل, بيهنج]
+    arabizi: [ta2eel, byhang, y3alleg]
+
+- concept_id: camera_not_working
+  kb_term: camera
+  category: troubleshooting
+  variants:
+    msa: [الكاميرا لا تعمل]
+    gulf: [الكاميرا ما تشتغل]
+    levantine_egyptian: [الكاميرا مش شغالة]
+    arabizi: [el camera ma tshtghel, el camera mesh shaghala]
+
+- concept_id: processing_stuck
+  kb_term: processing
+  category: troubleshooting
+  variants:
+    msa: [قيد المعالجة]
+    gulf: [معلق على جاري المعالجة, يلف وما يخلص]
+    levantine_egyptian: [بيلف ومش بيخلص, واقف على جاري التنفيذ]
+    arabizi: [byleff, wa2ef, processing]
+
+- concept_id: vpn
+  kb_term: VPN
+  category: troubleshooting
+  variants:
+    msa: [الشبكة الافتراضية الخاصة]
+    gulf: [في بي ان]
+    levantine_egyptian: [الفي بي إن]
+    arabizi: [vpn, el vpn]
+
+- concept_id: delete_app
+  kb_term: deleting the app
+  kb_aliases: [delete]
+  category: troubleshooting
+  variants:
+    msa: [حذف التطبيق]
+    gulf: [أمسح البرنامج, مسحت التطبيق]
+    levantine_egyptian: [مسحت الأبلكيشن, شلت التطبيق]
+    arabizi: [masa7t el app, ams7 el tatbee2]
