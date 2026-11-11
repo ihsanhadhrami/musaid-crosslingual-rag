@@ -215,6 +215,7 @@ Customers don't use policy vocabulary. The glossary maps how people ask to how t
 | Gold labels | 1–3 gold `chunk_id`s per answerable query + short reference answer in English |
 | Unanswerable | 10–15% have no answer in the KB (tests escalation) |
 | Ambiguous | ~8% depend on country but don't state it (tests clarifying questions) |
+| Gold source split | ~70% of answerable queries have their gold answer in one of the 40 hand-rewritten articles (`status: rewritten`), ~30% in draft articles; retrieval always searches the full KB (ADR-010) |
 | Parallel subset | 40 intents written in **all six varieties** (240 queries, counted within the 450), so you can compare varieties on identical intent; the remaining queries follow the distribution below |
 | Agreement check | A second Arabic speaker independently labels 50 queries; report agreement |
 
@@ -284,7 +285,7 @@ Customers don't use policy vocabulary. The glossary maps how people ask to how t
 ### Phase 2: Glossary + evaluation dataset, **before** building retrieval (Weeks 3–4)
 1. Build the glossary from the KB's key terms; add dialect and Arabizi variants you'd actually hear.
 2. Write `docs/ANNOTATION.md`: gold chunk rules, variety definitions, what counts as ambiguous/unanswerable, how to write `critical_facts`.
-3. Write queries per 5.4, including the parallel subset.
+3. Write queries per 5.4, including the parallel subset. Aim ~70% of answerable queries at the 40 rewritten articles and ~30% at drafts (ADR-010).
 4. Label gold chunks with a search helper; verify each by reading it.
 5. Second-annotator check on 50 queries; compute agreement.
 6. Split dev/test; hash and lock the test file.

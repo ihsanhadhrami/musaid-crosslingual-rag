@@ -190,3 +190,22 @@ The same inspection found three content problems, fixed in the articles: a repea
 - From here, any change to `chunking.py` that alters chunk boundaries, IDs or bodies requires re-checking every gold label whose `body_sha1` changed.
 - Deliberate small chunks remain. Country-tagged sections, such as a single Egypt table, aren't packed with other countries' sections, and short service notices fit in one small chunk: 59 of the final 600 chunks are under 100 tokens. This is intended (ADR-006). It is the price of country filtering, and it is realistic for a help center.
 - Article edits after labeling begins follow the same rule: check the labels whose `body_sha1` moved.
+
+## ADR-010: Most gold answers come from the 40 rewritten articles
+
+**Status:** Accepted (planned for Phase 2, not started)
+
+**Context:** Phase 2 needs at least 450 labeled queries, and labeling is the slowest part of the project. Only 40 of the 354 articles are rewritten by hand (ADR-007). ADR-007 already requires the eval harness to report results separately for rewritten and draft gold articles, and that comparison needs enough queries on both sides.
+
+**Decision:**
+- About **70% of answerable queries** have their gold answer in one of the 40 rewritten articles (`status: rewritten`, 50 chunks). About **30%** have it in draft articles: help drafts, legal documents, guides and announcements.
+- **Retrieval always searches the full KB** of 600 chunks. The split only decides where gold answers sit, never what the system can see.
+- Unanswerable and ambiguous queries aren't counted in the split.
+- A query's group comes from its first gold chunk. A multi-hop query whose gold chunks span both groups is tagged `mixed` and reported on its own.
+- Most intents in the parallel subset (spec §5.4) are drawn from the rewritten articles.
+
+**Consequences:**
+- Labeling is faster. You know the 40 rewritten articles well, and their 50 chunks are where most gold labels point.
+- About 5–6 queries point at each rewritten chunk on average. This is fine for cross-variety comparison, where the parallel subset deliberately repeats intents. Watch that no single chunk dominates the test set.
+- The draft side (~30%, about 120 queries) is still large enough for the rewritten-vs-draft comparison in ADR-007.
+- Superseded-policy traps mostly use the four rewritten pairs. Other old editions (Terms, Card Terms, fee schedule) are drafts and serve as hard negatives.
