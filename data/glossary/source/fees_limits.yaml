@@ -1,0 +1,139 @@
+# Fee schedules, limits and charges.
+
+- concept_id: fee_schedule
+  kb_term: fee schedule
+  category: fees_limits
+  variants:
+    msa: [جدول الرسوم, قائمة الرسوم]
+    gulf: [كل الرسوم عندكم, جدول الرسوم حقكم]
+    levantine_egyptian: [الرسوم كلها كام, لستة الأسعار]
+    arabizi: [gadwal el rosoom, kol el rosoom, list el as3ar]
+
+- concept_id: daily_monthly_limit
+  kb_term: daily
+  kb_aliases: [monthly]
+  category: fees_limits
+  variants:
+    msa: [الحد اليومي, الحد الشهري]
+    gulf: [كم أقدر أحول باليوم, حد الشهر]
+    levantine_egyptian: [أقصى حاجة في اليوم, قديش فيني حوّل بالشهر]
+    arabizi: [el 7ad el yawmi, kam a2dar a7awel fel yom, el 7ad el shahri]
+
+- concept_id: limit_reset
+  kb_term: reset
+  category: fees_limits
+  variants:
+    msa: [إعادة تعيين الحد, تجديد الحد]
+    gulf: [متى يتجدد الحد, الحد يرجع]
+    levantine_egyptian: [الليميت بيتجدد امتى, الحد بيرجع امتى]
+    arabizi: [meta yetjadad el 7ad, el limit byetgadded emta]
+
+- concept_id: limit_increase
+  kb_term: limit increase
+  kb_aliases: [increase my limits]
+  category: fees_limits
+  variants:
+    msa: [رفع الحد, زيادة الحد]
+    gulf: [أبي أرفع الحد, أزيد الليمت]
+    levantine_egyptian: [عايز أزود الحد, بدي علّي الليميت]
+    arabizi: [arfa3 el 7ad, azawed el limit, raf3 el limit]
+
+- concept_id: wallet_balance_limit
+  kb_term: balance limits
+  category: fees_limits
+  variants:
+    msa: [الحد الأقصى للرصيد]
+    gulf: [كم أقدر أخلي في المحفظة]
+    levantine_egyptian: [أقصى رصيد ينفع يكون في المحفظة]
+    arabizi: [a2sa raseed, kam agdar a5alli fel ma7faza]
+
+- concept_id: atm_fee
+  kb_term: ATM withdrawal fees
+  category: fees_limits
+  variants:
+    msa: [رسوم السحب النقدي]
+    gulf: [كم ياخذون على السحب, رسوم الصراف]
+    levantine_egyptian: [السحب من المكنة بكام, في رسوم عالسحب]
+    arabizi: [rosoom el sa7b, el sa7b b kam]
+
+- concept_id: transfer_fee
+  kb_term: transfer fees
+  category: fees_limits
+  variants:
+    msa: [رسوم التحويل]
+    gulf: [كم رسوم الحوالة, عمولة التحويل]
+    levantine_egyptian: [التحويل بكام, قديش بتاخدوا عالتحويل]
+    arabizi: [rosoom el ta7weel, el ta7weel b kam, 3omolet el 7awala]
+
+- concept_id: top_up_fee
+  kb_term: top-up fees
+  category: fees_limits
+  variants:
+    msa: [رسوم شحن المحفظة]
+    gulf: [في رسوم على الشحن]
+    levantine_egyptian: [الشحن عليه رسوم؟]
+    arabizi: [rosoom el sha7n, fe rosoom 3al sha7n]
+
+- concept_id: dormant_fee
+  kb_term: dormant
+  kb_aliases: [inactive]
+  category: fees_limits
+  variants:
+    msa: [رسوم الحساب الخامل, حساب خامل]
+    gulf: [الحساب واقف من زمان, ما استخدمت الحساب]
+    levantine_egyptian: [الحساب نايم, مستخدمتش الأكونت من زمان]
+    arabizi: [7sab khamel, el 7sab nayem, ma estakhdamt el 7sab]
+
+- concept_id: vat
+  kb_term: VAT
+  category: fees_limits
+  variants:
+    msa: [ضريبة القيمة المضافة]
+    gulf: [الضريبة, الفات]
+    levantine_egyptian: [الضريبة المضافة]
+    arabizi: [el dareeba, vat, el 9areeba]
+
+- concept_id: unexpected_fee
+  kb_term: why was I charged
+  category: fees_limits
+  variants:
+    msa: [رسوم غير متوقعة]
+    gulf: [ليش انخصم مني, ليش خصمتوا علي]
+    levantine_egyptian: [ليه اتخصم مني فلوس, ليش انسحب مني رسوم]
+    arabizi: [lesh enkhasam meni, leh et5asam meni, lesh khasamto 3alay]
+
+- concept_id: free_services
+  kb_term: free
+  category: fees_limits
+  variants:
+    msa: [مجاني, بدون رسوم]
+    gulf: [ببلاش, بلاش]
+    levantine_egyptian: [ببلاش, مجاناً, من غير فلوس]
+    arabizi: [bbalash, majjani, mn gher floos]
+
+- concept_id: fee_change_notice
+  kb_term: notice period
+  category: fees_limits
+  variants:
+    msa: [فترة الإشعار, إشعار بتغيير الرسوم]
+    gulf: [غيرتوا الرسوم بدون ما تقولون]
+    levantine_egyptian: [غيرتوا الأسعار من غير ما تقولوا]
+    arabizi: [ghayarto el rosoom, ghayarto el as3ar men gher ma t2olo]
+
+- concept_id: receiving_limit
+  kb_term: receiving limit
+  category: fees_limits
+  variants:
+    msa: [حد استلام الأموال]
+    gulf: [كم أقدر أستلم]
+    levantine_egyptian: [قد ايه أقدر أستقبل]
+    arabizi: [kam agdar astalem, ad eh a2dar asta2bel]
+
+- concept_id: cashback
+  kb_term: cashback
+  category: fees_limits
+  variants:
+    msa: [استرداد نقدي]
+    gulf: [الكاش باك]
+    levantine_egyptian: [الكاش باك بتاعي]
+    arabizi: [cashback, cash back, el kash bak]

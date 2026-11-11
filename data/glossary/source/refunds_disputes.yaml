@@ -1,0 +1,158 @@
+# Refunds, disputes and chargebacks.
+
+- concept_id: refund
+  kb_term: refund
+  category: refunds_disputes
+  variants:
+    msa: [استرداد, استرداد المبلغ]
+    gulf: [ارجاع الفلوس, ترجع فلوسي, أبي فلوسي ترجع]
+    levantine_egyptian: [رجوع الفلوس, ترجيع الفلوس, بدي مصرياتي ترجع]
+    arabizi: [arja3 floosi, tarja3 el floos, refund, ragga3li floosi]
+
+- concept_id: refund_timeline
+  kb_term: refund timelines
+  kb_aliases: [money back]
+  category: refunds_disputes
+  variants:
+    msa: [مدة الاسترداد, متى يُسترد المبلغ]
+    gulf: [متى ترجع فلوسي, كم ياخذ وقت الاسترجاع]
+    levantine_egyptian: [الفلوس هترجع امتى, قديش بتاخد المصاري لترجع]
+    arabizi: [meta tarja3 floosi, el floos hatrga3 emta, kam ya5ud wa2t]
+
+- concept_id: dispute
+  kb_term: dispute
+  category: refunds_disputes
+  variants:
+    msa: [اعتراض, نزاع, تقديم اعتراض]
+    gulf: [أرفع اعتراض, أبي أعترض على العملية]
+    levantine_egyptian: [أعمل شكوى على العملية, بدي اعترض]
+    arabizi: [a3tared, e3terad, dispute, a3mel shakwa 3al 3amaleya]
+
+- concept_id: dispute_deadline
+  kb_term: dispute deadlines
+  kb_aliases: [deadline]
+  category: refunds_disputes
+  variants:
+    msa: [المهلة المحددة للاعتراض, آخر موعد للاعتراض]
+    gulf: [لين متى أقدر أعترض, فات الوقت]
+    levantine_egyptian: [آخر ميعاد للشكوى, لحد امتى اقدر اعترض]
+    arabizi: [akher ma3ad, le7ad emta a2dar a3tered, lain meta agdar a3tared]
+
+- concept_id: dispute_rejected
+  kb_term: dispute was rejected
+  category: refunds_disputes
+  variants:
+    msa: [رُفض الاعتراض]
+    gulf: [رفضوا اعتراضي, انرفض الاعتراض]
+    levantine_egyptian: [الشكوى اترفضت, رفضوا الاعتراض تبعي]
+    arabizi: [rafado e3terady, el shakwa etrafadet]
+
+- concept_id: dispute_evidence
+  kb_term: evidence
+  category: refunds_disputes
+  variants:
+    msa: [الأدلة, المستندات الداعمة]
+    gulf: [الإثباتات, وش أرسل لكم إثبات]
+    levantine_egyptian: [إثبات, أبعتلكم ايه كإثبات, سكرين شوت]
+    arabizi: [ethbat, esbat, screenshot, adella]
+
+- concept_id: chargeback
+  kb_term: chargeback
+  category: refunds_disputes
+  variants:
+    msa: [استرجاع المدفوعات, رد المبالغ المدفوعة]
+    gulf: [تشارج باك, استرجاع من البنك]
+    levantine_egyptian: [الشارج باك, ارجاع المبلغ من البنك]
+    arabizi: [chargeback, charge back, tshargback]
+
+- concept_id: duplicate_charge
+  kb_term: duplicate
+  kb_aliases: [charged twice]
+  category: refunds_disputes
+  variants:
+    msa: [خصم مكرر, عملية مكررة]
+    gulf: [انخصم مني مرتين, خصموا مرتين]
+    levantine_egyptian: [اتخصم مني مرتين, انسحب المبلغ مرتين]
+    arabizi: [et5asam marteen, enkhasam meni marten, khasamo martain]
+
+- concept_id: unrecognized_subscription
+  kb_term: subscription
+  category: refunds_disputes
+  variants:
+    msa: [اشتراك غير معروف, اشتراك لم أطلبه]
+    gulf: [اشتراك ما أعرفه, يخصمون كل شهر]
+    levantine_egyptian: [اشتراك معرفوش, في خصم كل شهر]
+    arabizi: [eshterak ma a3rfo, ishtirak, subscription]
+
+- concept_id: partial_refund
+  kb_term: partial refunds
+  category: refunds_disputes
+  variants:
+    msa: [استرداد جزئي]
+    gulf: [رجعوا لي جزء, ما رجعوا المبلغ كامل]
+    levantine_egyptian: [رجعولي نص الفلوس, رجعوا جزء من المصاري]
+    arabizi: [rag3oli goz2, ma rajj3o el mablagh kamel]
+
+- concept_id: unauthorized_transaction
+  kb_term: transactions I didn't make
+  kb_aliases: [unauthorized]
+  category: refunds_disputes
+  variants:
+    msa: [عملية غير مصرح بها, عملية لم أقم بها]
+    gulf: [عملية ما سويتها, أحد سحب من حسابي]
+    levantine_egyptian: [عملية معملتهاش, حد سحب من حسابي, عملية ما عملتها]
+    arabizi: [3amaleya ma sawetha, 7ad sa7ab men 7sabi, 3amaleya ma3amaltehash]
+
+- concept_id: atm_no_cash
+  kb_term: didn't dispense cash
+  category: refunds_disputes
+  variants:
+    msa: [الصراف لم يصرف النقود]
+    gulf: [الصراف ما طلع فلوس, انخصم من الصراف وما طلعت]
+    levantine_egyptian: [المكنة مطلعتش فلوس, الصراف ما طلّع مصاري]
+    arabizi: [el sarraf ma tala3 floos, el makana mattala3etsh floos]
+
+- concept_id: goods_not_received
+  kb_term: goods or services not received
+  category: refunds_disputes
+  variants:
+    msa: [لم أستلم الطلب, البضاعة لم تصل]
+    gulf: [الطلب ما وصلني, دفعت وما وصل شي]
+    levantine_egyptian: [الأوردر موصلش, دفعت والطلبية ما وصلت]
+    arabizi: [el order mawslsh, el talab ma waslni, dafa3t w ma wasal shi]
+
+- concept_id: merchant_refund
+  kb_term: merchant
+  category: refunds_disputes
+  variants:
+    msa: [التاجر, البائع]
+    gulf: [المحل, المتجر]
+    levantine_egyptian: [المحل اللي اشتريت منه, البياع]
+    arabizi: [el ma7al, el tajer, el bayya3]
+
+- concept_id: fraudulent_merchant
+  kb_term: fraudulent merchants
+  category: refunds_disputes
+  variants:
+    msa: [تاجر احتيالي, متجر وهمي]
+    gulf: [محل نصاب, موقع نصب]
+    levantine_egyptian: [موقع نصاب, البياع نصب عليّا]
+    arabizi: [mawke3 nassab, nasab 3alaya, ma7al nassab]
+
+- concept_id: track_dispute
+  kb_term: track
+  category: refunds_disputes
+  variants:
+    msa: [متابعة حالة الاعتراض]
+    gulf: [وين وصل اعتراضي, وش صار على الشكوى]
+    levantine_egyptian: [الشكوى وصلت لفين, شو صار بالشكوى]
+    arabizi: [wain wesel e3teradi, el shakwa weslet l fen, shu sar bel shakwa]
+
+- concept_id: refund_completed_missing
+  kb_term: completed
+  category: refunds_disputes
+  variants:
+    msa: [الاسترداد مكتمل لكنه غير ظاهر]
+    gulf: [مكتوب تم الاسترجاع بس ما وصل]
+    levantine_egyptian: [مكتوب اترجع بس مش لاقيه, مكتوب مكتمل وما وصل شي]
+    arabizi: [maktoub tam bas ma wasal, maktoob etraga3 bas mesh la2eeh]
