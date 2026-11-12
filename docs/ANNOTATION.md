@@ -254,4 +254,5 @@ Disagreements are settled by discussion. The outcome goes in the Rulings log, an
 
 Add one line per decision that the rules above didn't settle: date, query id, ruling.
 
-- *(none yet)*
+- 2026-11-12, pg-003 and pg-009: **when more than 3 chunks each fully answer a query**, keep 3 in this order: the help article that owns the topic, then the legal document, then a FAQ, then an announcement or release note. Name the chunks you left out in `notes`, so a retriever that returns them isn't misread as wrong when reading failures.
+- 2026-11-12, pg-004: **a procedure that is the same in every country isn't ambiguous**, even when a number in the same chunk differs by country (delivery times), as long as the question asks for the steps and not the number.

@@ -1,0 +1,411 @@
+# Parallel subset, intents pg-001 to pg-010 (ANNOTATION.md §10).
+# Claude-drafted; every query is verified: false until a human has read its gold chunks.
+# Shared labels live once per group in the `<<: &pgNNN` anchor; each query only sets
+# its own qid, query, variety and difficulty.
+
+# pg-001: wrong-transfer money back after dispute approval, Saudi Arabia
+- <<: &pg001
+    parallel_group: pg-001
+    type: number_sensitive
+    country: SA
+    gold_chunk_ids: [kb-0075#c1, kb-0071#c1, kb-0072#c0]
+    reference_answer: >-
+      In Saudi Arabia, once a wrong-transfer dispute is approved, the money is returned within
+      5 business days, counted from the approval date.
+    critical_facts: ["5 business days"]
+    notes: "Competitor kb-0075#c0 has deadlines and investigation times, not the return time."
+  qid: q-0001
+  variety: english
+  query: "I sent 800 riyals to the wrong guy by mistake. You approved my dispute yesterday, how long before the money is back in my wallet?"
+  difficulty: medium
+- <<: *pg001
+  qid: q-0002
+  variety: msa
+  query: "حوّلت مبلغ ٨٠٠ ريال إلى شخص آخر بالخطأ، وتمت الموافقة على الاعتراض. متى سيعود المبلغ إلى رصيدي؟"
+  difficulty: medium
+- <<: *pg001
+  qid: q-0003
+  variety: gulf
+  query: "حولت ٨٠٠ ريال لواحد غلط ووافقتوا على الاعتراض، متى ترجع فلوسي؟"
+  difficulty: medium
+- <<: *pg001
+  qid: q-0004
+  variety: levantine_egyptian
+  query: "بعت ٨٠٠ ريال لحد غلط من غير قصد والشكوى اتقبلت، الفلوس هترجعلي امتى؟"
+  difficulty: hard
+- <<: *pg001
+  qid: q-0005
+  variety: code_switched
+  query: "سويت transfer بـ ٨٠٠ ريال لشخص غلط والـ dispute صار approved، كم يوم لين ترجع الفلوس؟"
+  difficulty: medium
+- <<: *pg001
+  qid: q-0006
+  variety: arabizi
+  query: "7awalt 800 riyal l wa7ed ghalat w el dispute etwafa2 3aleh, meta tarja3 floosi?"
+  difficulty: hard
+
+# pg-002: how long manual identity review takes, Egypt
+- <<: &pg002
+    parallel_group: pg-002
+    type: number_sensitive
+    country: EG
+    gold_chunk_ids: [kb-0007#c0, kb-0009#c0, kb-0030#c0]
+    reference_answer: >-
+      For accounts registered in Egypt, a manual verification review takes up to 3 business days,
+      excluding weekends and public holidays.
+    critical_facts: ["3 business days"]
+  qid: q-0007
+  variety: english
+  query: "My ID check got sent to manual review. I'm in Egypt, what's the longest it can take?"
+  difficulty: easy
+- <<: *pg002
+  qid: q-0008
+  variety: msa
+  query: "أُحيل التحقق من هويتي إلى المراجعة اليدوية، وأنا مقيم في مصر. ما أقصى مدة لهذه المراجعة؟"
+  difficulty: easy
+- <<: *pg002
+  qid: q-0009
+  variety: gulf
+  query: "توثيق حسابي صار مراجعة يدوية وأنا ساكن في مصر، كم أقصى شي ياخذ؟"
+  difficulty: medium
+- <<: *pg002
+  qid: q-0010
+  variety: levantine_egyptian
+  query: "التوثيق بتاعي لسه بيتراجع يدوي وأنا في مصر، بياخد أقصاه قد ايه؟"
+  difficulty: medium
+- <<: *pg002
+  qid: q-0011
+  variety: code_switched
+  query: "الـ verification حقي دخل manual review وأنا في مصر، كم ياخذ maximum؟"
+  difficulty: easy
+- <<: *pg002
+  qid: q-0012
+  variety: arabizi
+  query: "el tawtheeq bta3i bytraga3 yadawi w ana fi masr, akhro ad eh?"
+  difficulty: hard
+
+# pg-003: daily transfer limit for a verified account, Saudi Arabia (trap: kb-0035, 2025)
+- <<: &pg003
+    parallel_group: pg-003
+    type: superseded_trap
+    country: SA
+    gold_chunk_ids: [kb-0034#c0, kb-0201#c7, kb-0030#c0]
+    reference_answer: >-
+      A verified account registered in Saudi Arabia can transfer up to SAR 20,000 per day.
+    critical_facts: ["SAR 20,000"]
+    notes: >-
+      Trap: kb-0035#c0 (2025) says SAR 10,000. kb-0275#c1 (release note) also states SAR 20,000;
+      left out under the 3-chunk cap (help article, then legal, then FAQ, then announcement).
+  qid: q-0013
+  variety: english
+  query: "what's the most I can transfer in a day from a verified account in Saudi?"
+  difficulty: hard
+- <<: *pg003
+  qid: q-0014
+  variety: msa
+  query: "ما الحد اليومي للتحويل من حساب موثق في السعودية؟"
+  difficulty: hard
+- <<: *pg003
+  qid: q-0015
+  variety: gulf
+  query: "حسابي موثق بالسعودية، كم أقدر أحول في اليوم الواحد؟"
+  difficulty: hard
+- <<: *pg003
+  qid: q-0016
+  variety: levantine_egyptian
+  query: "انا عايش في السعودية وحسابي متوثق، اقدر احول قد ايه في اليوم؟"
+  difficulty: hard
+- <<: *pg003
+  qid: q-0017
+  variety: code_switched
+  query: "كم الـ daily limit للتحويل إذا الحساب verified في السعودية؟"
+  difficulty: hard
+- <<: *pg003
+  qid: q-0018
+  variety: arabizi
+  query: "kam a2dar a7awel fel yom law 7sabi mwatha2 fi el saudi?"
+  difficulty: hard
+
+# pg-004: card never arrived, what to do (same steps in every country)
+- <<: &pg004
+    parallel_group: pg-004
+    type: troubleshooting
+    country: null
+    gold_chunk_ids: [kb-0120#c0]
+    reference_answer: >-
+      Check Cards > Track delivery. If the card still hasn't arrived 5 business days after the
+      expected delivery date, select Card not received; the card is cancelled and a replacement
+      is issued free of charge.
+    critical_facts: ["Card not received"]
+    notes: "Not ambiguous: delivery times differ by country but the steps don't. kb-0102#c0 has times only."
+  qid: q-0019
+  variety: english
+  query: "Ordered my card almost three weeks ago and it still hasn't shown up. What should I do?"
+  difficulty: easy
+- <<: *pg004
+  qid: q-0020
+  variety: msa
+  query: "طلبت البطاقة منذ ثلاثة أسابيع تقريباً ولم تصلني حتى الآن. ماذا عليّ أن أفعل؟"
+  difficulty: easy
+- <<: *pg004
+  qid: q-0021
+  variety: gulf
+  query: "طلبت الكرت من ثلاث أسابيع وللحين ما وصلني، وش أسوي؟"
+  difficulty: medium
+- <<: *pg004
+  qid: q-0022
+  variety: levantine_egyptian
+  query: "طلبت الكارت من تلات أسابيع ولسه موصلش، أعمل ايه؟"
+  difficulty: medium
+- <<: *pg004
+  qid: q-0023
+  variety: code_switched
+  query: "طلبت الـ card من ثلاث weeks وللحين ما وصل، وش المفروض أسوي؟"
+  difficulty: medium
+- <<: *pg004
+  qid: q-0024
+  variety: arabizi
+  query: "talabt el kart men 3 asabee3 w lessa ma weselsh, a3mel eh?"
+  difficulty: medium
+
+# pg-005: how long the login lock lasts after wrong passwords
+- <<: &pg005
+    parallel_group: pg-005
+    type: number_sensitive
+    country: null
+    gold_chunk_ids: [kb-0154#c0, kb-0173#c0, kb-0170#c0]
+    reference_answer: >-
+      After 5 wrong password attempts, login is locked for 30 minutes. Resetting the password with
+      Forgot password removes the lock straight away.
+    critical_facts: ["30 minutes"]
+  qid: q-0025
+  variety: english
+  query: "typed my password wrong a bunch of times and now it says too many attempts. how long do i have to wait"
+  difficulty: easy
+- <<: *pg005
+  qid: q-0026
+  variety: msa
+  query: "أدخلت كلمة المرور بشكل خاطئ عدة مرات وظهرت رسالة تفيد بكثرة المحاولات. كم عليّ أن أنتظر؟"
+  difficulty: easy
+- <<: *pg005
+  qid: q-0027
+  variety: gulf
+  query: "دخلت الباسوورد غلط كذا مرة وطلع لي محاولات كثيرة، كم لازم أنتظر؟"
+  difficulty: medium
+- <<: *pg005
+  qid: q-0028
+  variety: levantine_egyptian
+  query: "كتبت الباسورد غلط كذا مرة وطلعلي ان المحاولات كتير، استنى قد ايه؟"
+  difficulty: medium
+- <<: *pg005
+  qid: q-0029
+  variety: code_switched
+  query: "حطيت الـ password غلط كم مرة وصار الـ account locked، كم دقيقة لازم أستنى؟"
+  difficulty: easy
+- <<: *pg005
+  qid: q-0030
+  variety: arabizi
+  query: "katabt el password ghalat kaza marra w 2alli mo7awlat kteer, astanna ad eh?"
+  difficulty: medium
+
+# pg-006: merchant refund reaching the balance, UAE (trap: kb-0073, 2025 says 14 days)
+- <<: &pg006
+    parallel_group: pg-006
+    type: superseded_trap
+    country: AE
+    gold_chunk_ids: [kb-0071#c2, kb-0072#c0, kb-0074#c0]
+    reference_answer: >-
+      For UAE accounts, a merchant refund reaches your Sahla Pay balance within 10 business days
+      after the merchant sends it.
+    critical_facts: ["10 business days"]
+    notes: "Trap: kb-0073#c0 (2025) says up to 14 business days."
+  qid: q-0031
+  variety: english
+  query: "A shop in Dubai says they refunded my card purchase. How many days until it shows up in my Sahla balance?"
+  difficulty: hard
+- <<: *pg006
+  qid: q-0032
+  variety: msa
+  query: "أبلغني متجر في دبي بأنه أعاد قيمة مشترياتي إلى البطاقة. كم يوماً يستغرق ظهور المبلغ في رصيدي؟"
+  difficulty: hard
+- <<: *pg006
+  qid: q-0033
+  variety: gulf
+  query: "محل في دبي يقول رجع لي المبلغ على الكرت، متى يوصل رصيدي؟"
+  difficulty: hard
+- <<: *pg006
+  qid: q-0034
+  variety: levantine_egyptian
+  query: "محل في دبي قال انه رجعلي الفلوس على الكارت، هتنزل في الرصيد بعد قد ايه؟"
+  difficulty: hard
+- <<: *pg006
+  qid: q-0035
+  variety: code_switched
+  query: "محل في دبي سوى refund على الكرت، كم business days لين يطلع في الـ balance؟"
+  difficulty: hard
+- <<: *pg006
+  qid: q-0036
+  variety: arabizi
+  query: "ma7al fi dubai 2al eno raga3li el floos 3al kart, emta btenzal fel raseed?"
+  difficulty: hard
+
+# pg-007: can a 17-year-old open an account, Egypt
+- <<: &pg007
+    parallel_group: pg-007
+    type: country_specific
+    country: EG
+    gold_chunk_ids: [kb-0002#c0, kb-0019#c0, kb-0258#c0]
+    reference_answer: >-
+      Yes. In Egypt the minimum age is 16. Until age 21, a parent or legal guardian must approve
+      the account in the app before he can send money or use a card.
+    critical_facts: ["16", "21"]
+  qid: q-0037
+  variety: english
+  query: "My son is 17 and we live in Egypt. Can he get his own Sahla Pay account?"
+  difficulty: easy
+- <<: *pg007
+  qid: q-0038
+  variety: msa
+  query: "يبلغ ابني من العمر ١٧ عاماً ونقيم في مصر. هل يمكنه فتح حساب خاص به؟"
+  difficulty: easy
+- <<: *pg007
+  qid: q-0039
+  variety: gulf
+  query: "ولدي عمره ١٧ وساكنين في مصر، يقدر يفتح له حساب؟"
+  difficulty: medium
+- <<: *pg007
+  qid: q-0040
+  variety: levantine_egyptian
+  query: "ابني عنده ١٧ سنة واحنا في مصر، ينفع يعمل حساب لنفسه؟"
+  difficulty: medium
+- <<: *pg007
+  qid: q-0041
+  variety: code_switched
+  query: "ابني عمره 17 وعايشين في مصر، ينفع يعمل account لوحده؟"
+  difficulty: easy
+- <<: *pg007
+  qid: q-0042
+  variety: arabizi
+  query: "ebni 3ando 17 sana w e7na fi masr, yenfa3 ye3mel 7esab lewa7do?"
+  difficulty: medium
+
+# pg-008: sending to an InstaPay address (InstaPay implies Egypt)
+- <<: &pg008
+    parallel_group: pg-008
+    type: procedural
+    country: EG
+    gold_chunk_ids: [kb-0059#c0]
+    reference_answer: >-
+      Open Send > InstaPay, enter the recipient's InstaPay address or linked mobile number, check
+      the recipient name the app shows, then enter the amount and select Send.
+    critical_facts: ["check the recipient name"]
+  qid: q-0043
+  variety: english
+  query: "how do i send money to someone's instapay address from the app?"
+  difficulty: easy
+- <<: *pg008
+  qid: q-0044
+  variety: msa
+  query: "كيف يمكنني إرسال الأموال إلى عنوان إنستاباي من خلال التطبيق؟"
+  difficulty: easy
+- <<: *pg008
+  qid: q-0045
+  variety: gulf
+  query: "كيف أحول فلوس على عنوان انستاباي من التطبيق؟"
+  difficulty: easy
+- <<: *pg008
+  qid: q-0046
+  variety: levantine_egyptian
+  query: "ازاي ابعت فلوس على عنوان انستاباي من الأبلكيشن؟"
+  difficulty: easy
+- <<: *pg008
+  qid: q-0047
+  variety: code_switched
+  query: "ازاي أعمل send لـ InstaPay address من الأبلكيشن؟"
+  difficulty: easy
+- <<: *pg008
+  qid: q-0048
+  variety: arabizi
+  query: "ezay ab3at floos 3ala 3enwan instapay men el app?"
+  difficulty: easy
+
+# pg-009: replacing a cracked card, UAE fee
+- <<: &pg009
+    parallel_group: pg-009
+    type: number_sensitive
+    country: AE
+    gold_chunk_ids: [kb-0109#c0, kb-0108#c0, kb-0126#c0]
+    reference_answer: >-
+      Replacing a damaged card costs AED 25 for UAE accounts, VAT included, taken from your balance
+      when you order it.
+    critical_facts: ["AED 25"]
+    notes: "kb-0203#c5 (Card Terms 2026) also states AED 25; left out under the 3-chunk cap."
+  qid: q-0049
+  variety: english
+  query: "My card cracked down the middle. How much is a replacement in the UAE?"
+  difficulty: medium
+- <<: *pg009
+  qid: q-0050
+  variety: msa
+  query: "انكسرت بطاقتي. كم تبلغ رسوم استبدالها في الإمارات؟"
+  difficulty: medium
+- <<: *pg009
+  qid: q-0051
+  variety: gulf
+  query: "كرتي انكسر نصين، كم تاخذون على البدل في الإمارات؟"
+  difficulty: medium
+- <<: *pg009
+  qid: q-0052
+  variety: levantine_egyptian
+  query: "الكارت بتاعي اتكسر، البدل بكام في الإمارات؟"
+  difficulty: medium
+- <<: *pg009
+  qid: q-0053
+  variety: code_switched
+  query: "الـ card حقي انكسر، كم الـ replacement fee في الإمارات؟"
+  difficulty: easy
+- <<: *pg009
+  qid: q-0054
+  variety: arabizi
+  query: "el kart bta3i etkasar, el badal b kam fel emarat?"
+  difficulty: hard
+
+# pg-010: transfers blocked right after moving to an eSIM
+- <<: &pg010
+    parallel_group: pg-010
+    type: troubleshooting
+    country: null
+    gold_chunk_ids: [kb-0161#c0, kb-0350#c0]
+    reference_answer: >-
+      When your number moves to a new SIM, including an eSIM, outgoing transfers are paused for
+      24 hours. You can lift the pause early with Profile > Security > Confirm it's me and a selfie.
+    critical_facts: ["24 hours", "Confirm it's me"]
+  qid: q-0055
+  variety: english
+  query: "I just switched to an eSIM and now the app won't let me send money. Why?"
+  difficulty: medium
+- <<: *pg010
+  qid: q-0056
+  variety: msa
+  query: "انتقلت مؤخراً إلى شريحة إلكترونية، والآن لا يسمح لي التطبيق بإرسال الأموال. ما السبب؟"
+  difficulty: medium
+- <<: *pg010
+  qid: q-0057
+  variety: gulf
+  query: "غيرت شريحتي لشريحة إلكترونية والحين التطبيق ما يخليني أحول، ليش؟"
+  difficulty: medium
+- <<: *pg010
+  qid: q-0058
+  variety: levantine_egyptian
+  query: "غيرت الخط لشريحة الكترونية ومن ساعتها مش عارف احول فلوس، ليه؟"
+  difficulty: hard
+- <<: *pg010
+  qid: q-0059
+  variety: code_switched
+  query: "حولت لـ eSIM والحين التطبيق مو راضي يخليني أسوي transfer، ليش؟"
+  difficulty: medium
+- <<: *pg010
+  qid: q-0060
+  variety: arabizi
+  query: "ghayart el sim l esim w delwa2ty el app mesh 3ayez yekhallini a7awel, leh?"
+  difficulty: hard
