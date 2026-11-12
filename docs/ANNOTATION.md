@@ -17,6 +17,18 @@ This guide is for anyone who writes or labels queries for the Musaid benchmark. 
 | Dev and test splits | `data/eval/dev.jsonl`, `data/eval/test.jsonl` |
 | Test lock | `data/eval/test.lock.json` |
 
+**Tools**
+
+```
+python -m musaid.benchmark.search "dispute deadline card payment"   # find candidate chunks
+python -m musaid.benchmark.search "transfer limit" --country SA     # only chunks covering SA
+python -m musaid.benchmark.search --show kb-0077#c0                 # read a chunk in full
+python -m musaid.benchmark.build                                    # validate, rebuild, update stats
+python -m musaid.benchmark.build --final                            # before locking: warnings fail too
+```
+
+The search is plain BM25 over the English chunks. It finds candidates only, so try two or three wordings. It is separate from the retrieval code being evaluated. Progress against every target is in `docs/EVAL_STATS.md`.
+
 The KB is frozen. If you find an error in an article while labeling, write it in the Rulings log; don't fix the article. Changing a chunk would silently change the meaning of labels that point at it.
 
 ---

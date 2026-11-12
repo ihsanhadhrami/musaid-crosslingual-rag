@@ -29,6 +29,8 @@ jobs:
         run: uv run python -m musaid.ingest.build --check
       - name: Glossary builds cleanly and glossary.jsonl is current
         run: uv run python -m musaid.glossary.build --check
+      - name: Eval queries validate and queries.jsonl is current
+        run: uv run python -m musaid.benchmark.build --check
 
   integration:
     runs-on: ubuntu-latest
