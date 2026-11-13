@@ -1,0 +1,504 @@
+# Non-parallel queries with gold in the 40 rewritten articles (ADR-010, the ~70% side).
+# They ask about facts in those articles that the parallel subset doesn't use.
+# Claude-drafted; verified: false until a human has read the gold chunks.
+
+- qid: q-0314
+  query: "I'm visiting Dubai on a tourist visa for a month. Can I open a Sahla Pay account?"
+  variety: english
+  type: policy_eligibility
+  country: AE
+  gold_chunk_ids: [kb-0002#c0]
+  reference_answer: "No. Visitors on a tourist or visit visa can't open a personal Sahla Pay account."
+  critical_facts: []
+  difficulty: medium
+- qid: q-0315
+  query: "ما الحد الأدنى للعمر لفتح حساب في الإمارات؟"
+  variety: msa
+  type: number_sensitive
+  country: AE
+  gold_chunk_ids: [kb-0002#c0, kb-0201#c2]
+  reference_answer: "The minimum age to open an account in the UAE is 18."
+  critical_facts: ["18"]
+  difficulty: easy
+- qid: q-0316
+  query: "رفعت أوراق التوثيق يوم الخميس بالليل وأنا في الرياض، متى بيراجعونها؟"
+  variety: gulf
+  type: factual
+  country: SA
+  gold_chunk_ids: [kb-0007#c0]
+  reference_answer: "Business days in Saudi Arabia are Sunday to Thursday, so a review submitted on Thursday evening is generally handled from Sunday; manual reviews take up to 1 business day."
+  critical_facts: ["1 business day"]
+  difficulty: hard
+- qid: q-0317
+  query: "The English spelling of my name in the app is a bit different from my ID. Will that hold up my verification?"
+  variety: english
+  type: factual
+  gold_chunk_ids: [kb-0009#c0]
+  reference_answer: "Minor differences between Arabic and English spellings are acceptable; a different family name may need further review."
+  critical_facts: []
+  difficulty: medium
+- qid: q-0318
+  query: "الـ account حقي مو verified، أقدر أطلب card؟"
+  variety: code_switched
+  type: policy_eligibility
+  gold_chunk_ids: [kb-0010#c0, kb-0140#c0]
+  reference_answer: "No. Virtual and physical cards are only available once your account is verified."
+  critical_facts: []
+  difficulty: easy
+- qid: q-0319
+  query: "حد بعتلي ٢٥ ألف جنيه والحساب لسه مش متوثق، الفلوس هتنزل؟"
+  variety: levantine_egyptian
+  type: number_sensitive
+  country: EG
+  gold_chunk_ids: [kb-0010#c0, kb-0135#c0]
+  reference_answer: "No. An unverified Egypt account can hold at most EGP 20,000, and an incoming payment that would push it above that is rejected and returned to the sender."
+  critical_facts: ["EGP 20,000"]
+  difficulty: hard
+- qid: q-0320
+  query: "As a guardian, can I move money out of my 17-year-old's Sahla account in Egypt?"
+  variety: english
+  type: policy_eligibility
+  country: EG
+  gold_chunk_ids: [kb-0019#c0, kb-0258#c0]
+  reference_answer: "No. The guardian can set a lower limit, review transactions and freeze the card, but can't transfer funds out of the minor's account."
+  critical_facts: []
+  difficulty: medium
+- qid: q-0321
+  query: "ما الحد اليومي للتحويل من حساب قاصر في مصر؟"
+  variety: msa
+  type: number_sensitive
+  country: EG
+  gold_chunk_ids: [kb-0019#c0, kb-0201#c8]
+  reference_answer: "A minor account in Egypt can send up to EGP 2,000 per day, or a lower amount set by the guardian."
+  critical_facts: ["EGP 2,000"]
+  difficulty: easy
+- qid: q-0322
+  query: "لو أنا ولي الأمر وسكرت حسابي، وش يصير لحساب ولدي في مصر؟"
+  variety: gulf
+  type: policy_eligibility
+  country: EG
+  gold_chunk_ids: [kb-0019#c0, kb-0258#c0]
+  reference_answer: "Your child's account becomes receive-only until a new guardian approves it."
+  critical_facts: ["receive-only"]
+  difficulty: hard
+- qid: q-0323
+  query: "Does the money I keep in Pockets count toward my balance limit?"
+  variety: english
+  type: factual
+  gold_chunk_ids: [kb-0028#c4, kb-0135#c0]
+  reference_answer: "Yes. The balance limit covers all money in your account, including funds in Pockets."
+  critical_facts: []
+  difficulty: medium
+- qid: q-0324
+  query: "a2sa raseed lel 7esab el mwathaq fi masr kam?"
+  variety: arabizi
+  type: number_sensitive
+  country: EG
+  gold_chunk_ids: [kb-0028#c3, kb-0010#c0, kb-0135#c0]
+  reference_answer: "A verified account registered in Egypt can hold up to EGP 300,000."
+  critical_facts: ["EGP 300,000"]
+  difficulty: medium
+- qid: q-0325
+  query: "Do transfers to my own bank account count toward my monthly transfer limit?"
+  variety: english
+  type: factual
+  gold_chunk_ids: [kb-0034#c0]
+  reference_answer: "They count toward the daily limit but not the monthly limit, as long as the bank account is linked in Profile > Bank accounts."
+  critical_facts: []
+  difficulty: hard
+- qid: q-0326
+  query: "إذا اعترضت على تحويل، هل يعود مبلغه إلى حدي اليومي فوراً؟"
+  variety: msa
+  type: policy_eligibility
+  gold_chunk_ids: [kb-0034#c0]
+  reference_answer: "No. A disputed transfer stays counted until the dispute is resolved; only failed or cancelled transfers return to your allowance immediately."
+  critical_facts: []
+  difficulty: hard
+- qid: q-0327
+  query: "كم الحد الشهري للتحويل لحساب موثق في الإمارات؟"
+  variety: gulf
+  type: number_sensitive
+  country: AE
+  gold_chunk_ids: [kb-0034#c0, kb-0201#c7]
+  reference_answer: "A verified UAE account can transfer up to AED 75,000 per month."
+  critical_facts: ["AED 75,000"]
+  notes: "Hard negatives: kb-0028#c2, kb-0135#c0 and kb-0201#c3 give the UAE verified balance cap, also AED 75,000."
+  difficulty: easy
+- qid: q-0328
+  query: "هل الـ bill payments تنحسب من الـ daily transfer limit؟"
+  variety: code_switched
+  type: factual
+  gold_chunk_ids: [kb-0034#c0]
+  reference_answer: "No. Card purchases, bill payments and QR payments in shops have their own limits and don't count toward transfer limits."
+  critical_facts: []
+  difficulty: medium
+- qid: q-0329
+  query: "What details do I need from my cousin to send money to his bank account abroad?"
+  variety: english
+  type: procedural
+  gold_chunk_ids: [kb-0036#c0]
+  reference_answer: "His full bank-account name, his IBAN or account number, and the bank's SWIFT/BIC code where required. Your account must be verified."
+  critical_facts: ["SWIFT/BIC"]
+  difficulty: easy
+- qid: q-0330
+  query: "لو سعر الدولار اتغير بعد ما أكدت التحويل الدولي، المبلغ اللي هيوصل هيتغير؟"
+  variety: levantine_egyptian
+  type: factual
+  gold_chunk_ids: [kb-0036#c0, kb-0064#c0]
+  reference_answer: "No. The exchange rate is fixed when you confirm, so the recipient gets the amount shown."
+  critical_facts: []
+  difficulty: medium
+- qid: q-0331
+  query: "The bank rejected my international transfer because the IBAN was wrong. Do I get the fee back too?"
+  variety: english
+  type: policy_eligibility
+  gold_chunk_ids: [kb-0036#c0, kb-0100#c0]
+  reference_answer: "Yes. The full amount and the fee come back to your balance in your currency, at the rate on the day it's returned."
+  critical_facts: []
+  difficulty: medium
+- qid: q-0332
+  query: "ما رسوم التحويل الدولي من حساب مسجل في الإمارات؟"
+  variety: msa
+  type: superseded_trap
+  country: AE
+  gold_chunk_ids: [kb-0037#c0, kb-0132#c0, kb-0206#c2]
+  reference_answer: "From a UAE account the fee is 1.25% of the amount sent, minimum AED 15, plus VAT; the exchange rate includes a 2% markup."
+  critical_facts: ["1.25%", "AED 15"]
+  notes: "Trap: kb-0038#c0 (2025 schedule) says 1.5%."
+  difficulty: hard
+- qid: q-0333
+  query: "الضريبة تنحسب على رسوم الحوالة الدولية ولا على فرق العملة بعد؟ أنا بالسعودية"
+  variety: gulf
+  type: number_sensitive
+  country: SA
+  gold_chunk_ids: [kb-0037#c0]
+  reference_answer: "In Saudi Arabia, 15% VAT applies to the transfer fee only; the exchange rate markup isn't subject to VAT."
+  critical_facts: ["15%"]
+  difficulty: hard
+- qid: q-0334
+  query: "arkhas law 2assamt el 7awala el kbeera l kaza 7awala soghayara barra?"
+  variety: arabizi
+  type: factual
+  gold_chunk_ids: [kb-0037#c0]
+  reference_answer: "No. The minimum fee is charged on every transfer, so splitting one large transfer into smaller ones can cost more overall."
+  critical_facts: []
+  difficulty: hard
+- qid: q-0335
+  query: "حولت لـ bank account غلط بالغلط، نفس طريقة الـ dispute؟"
+  variety: code_switched
+  type: policy_eligibility
+  gold_chunk_ids: [kb-0044#c0]
+  reference_answer: "Yes, it uses the same dispute process, but the return is requested through the receiving bank, which makes the final decision, so it usually takes longer."
+  critical_facts: []
+  difficulty: medium
+- qid: q-0336
+  query: "Is there a maximum amount for a single InstaPay transfer?"
+  variety: english
+  type: number_sensitive
+  country: EG
+  gold_chunk_ids: [kb-0059#c0, kb-0201#c21]
+  reference_answer: "Yes. Each InstaPay transfer is limited to EGP 50,000, and it also uses part of your daily transfer allowance."
+  critical_facts: ["EGP 50,000"]
+  difficulty: easy
+- qid: q-0337
+  query: "ينفع حد يبعتلي فلوس على سهلة باي عن طريق انستاباي؟"
+  variety: levantine_egyptian
+  type: procedural
+  country: EG
+  gold_chunk_ids: [kb-0059#c0]
+  reference_answer: "Not to a Sahla Pay InstaPay address. Give the sender your Sahla Pay IBAN, and they can use InstaPay to make a normal bank transfer to it."
+  critical_facts: ["IBAN"]
+  difficulty: hard
+- qid: q-0338
+  query: "كم رسوم التحويل عبر إنستاباي؟"
+  variety: msa
+  type: number_sensitive
+  country: EG
+  gold_chunk_ids: [kb-0059#c0, kb-0033#c0, kb-0133#c0]
+  reference_answer: "The same as other local bank transfers in Egypt: 0.5% of the amount, minimum EGP 5 and maximum EGP 20."
+  critical_facts: ["0.5%", "EGP 5", "EGP 20"]
+  difficulty: easy
+- qid: q-0339
+  query: "لو وافقتوا على رفع الحد المؤقت، الحد الشهري بيزيد بعد؟"
+  variety: gulf
+  type: policy_eligibility
+  gold_chunk_ids: [kb-0069#c0, kb-0150#c0]
+  reference_answer: "No. A temporary increase changes only the daily transfer limit; the monthly limit and maximum balance stay the same."
+  critical_facts: []
+  difficulty: hard
+- qid: q-0340
+  query: "كام مرة في السنة أقدر أطلب رفع مؤقت للحد وأنا في السعودية؟"
+  variety: levantine_egyptian
+  type: number_sensitive
+  country: SA
+  gold_chunk_ids: [kb-0150#c0]
+  reference_answer: "No more than 2 times in a calendar year."
+  critical_facts: ["2 times"]
+  difficulty: medium
+- qid: q-0341
+  query: "fi masr a2dar atlob zyada mo2aqata fel limit?"
+  variety: arabizi
+  type: country_specific
+  country: EG
+  gold_chunk_ids: [kb-0150#c0, kb-0069#c0]
+  reference_answer: "No. Temporary limit increases are not available for Egypt-registered accounts."
+  critical_facts: ["not available"]
+  difficulty: medium
+- qid: q-0342
+  query: "كم تستغرق مراجعة طلب رفع الحد المؤقت في الإمارات؟"
+  variety: msa
+  type: number_sensitive
+  country: AE
+  gold_chunk_ids: [kb-0150#c0]
+  reference_answer: "Requests are reviewed within 1 business day, and an approved limit takes effect immediately."
+  critical_facts: ["1 business day"]
+  difficulty: medium
+- qid: q-0343
+  query: "A payment failed but you still took the money. I'm in Saudi, when will it come back?"
+  variety: english
+  type: number_sensitive
+  country: SA
+  gold_chunk_ids: [kb-0072#c0, kb-0071#c1, kb-0042#c0]
+  reference_answer: "For Saudi accounts, a failed payment deducted from your balance is reversed automatically within 2 business days."
+  critical_facts: ["2 business days"]
+  notes: "Also stated in kb-0208#c1 (Dispute policy) and kb-0097#c0 (Refunds FAQ); left out under the cap."
+  difficulty: easy
+- qid: q-0344
+  query: "رجعت الغرض للمحل من أسبوعين وللحين ما وصلني شي، من متى تبدأ مدة الاسترجاع؟"
+  variety: gulf
+  type: factual
+  gold_chunk_ids: [kb-0071#c4, kb-0072#c0]
+  reference_answer: "The refund timeline starts when the merchant issues the refund, not when you return the item, and the merchant may take a week or longer to process it."
+  critical_facts: []
+  difficulty: hard
+- qid: q-0345
+  query: "I filed a wrong-transfer dispute in Egypt. How long can the investigation take?"
+  variety: english
+  type: number_sensitive
+  country: EG
+  gold_chunk_ids: [kb-0075#c0, kb-0077#c0, kb-0201#c12]
+  reference_answer: "In Egypt, wrong-transfer investigations can take up to 45 calendar days."
+  critical_facts: ["45 calendar days"]
+  notes: "Also stated in kb-0208#c1 (Dispute policy); left out under the cap."
+  difficulty: medium
+- qid: q-0346
+  query: "الـ recipient صرف جزء من الفلوس اللي حولتها له بالغلط، وش يصير؟"
+  variety: code_switched
+  type: policy_eligibility
+  gold_chunk_ids: [kb-0075#c1]
+  reference_answer: "Sahla Pay can recover only what's left in the recipient's account; for the rest you'd need to go to the police or courts, and Sahla Pay can provide transaction records."
+  critical_facts: []
+  difficulty: hard
+- qid: q-0347
+  query: "I only noticed an unauthorized card payment a week later. Am I still covered in the UAE?"
+  variety: english
+  type: number_sensitive
+  country: AE
+  gold_chunk_ids: [kb-0090#c0]
+  reference_answer: "Reports made after 2 calendar days are subject to a maximum customer loss of AED 500, unless you acted fraudulently or with gross negligence."
+  critical_facts: ["AED 500"]
+  difficulty: hard
+- qid: q-0348
+  query: "إذا أعطيت رمز التحقق لشخص اتصل بي، فهل أفقد حقي في استرداد المبلغ؟"
+  variety: msa
+  type: multi_hop
+  gold_chunk_ids: [kb-0090#c1, kb-0090#c0]
+  reference_answer: "Telling a caller your one-time password counts as gross negligence, and the protection for unauthorized transactions, including the maximum-loss limit, doesn't apply in that case."
+  critical_facts: ["gross negligence"]
+  notes: "Hop 1: kb-0090#c1 gives the example; hop 2: kb-0090#c0 says the limit doesn't apply with gross negligence."
+  difficulty: hard
+- qid: q-0349
+  query: "طلبت أثاث وقالوا التوصيل بعد شهرين، والحين تأخر. متى أقدر أفتح اعتراض؟"
+  variety: gulf
+  type: number_sensitive
+  gold_chunk_ids: [kb-0099#c0]
+  reference_answer: "For late-delivery goods, the deadline counts from the expected delivery date, and you must wait at least 15 calendar days after that date before opening the dispute."
+  critical_facts: ["15 calendar days"]
+  difficulty: hard
+- qid: q-0350
+  query: "I've ordered a replacement for my damaged card. Can I keep using the old one until the new one comes?"
+  variety: english
+  type: policy_eligibility
+  gold_chunk_ids: [kb-0108#c0]
+  reference_answer: "Yes. The current card stays active until the replacement is activated, so anything that still works, like contactless, can be used."
+  critical_facts: []
+  difficulty: easy
+- qid: q-0351
+  query: "الكارت وقف يشتغل لوحده من غير ما يتكسر وعمره ٨ شهور، البدل بفلوس؟"
+  variety: levantine_egyptian
+  type: number_sensitive
+  gold_chunk_ids: [kb-0108#c0, kb-0109#c0, kb-0203#c5]
+  reference_answer: "No. A card that stops working within 12 months of issue without physical damage is replaced free; choose It stopped working."
+  critical_facts: ["12 months"]
+  difficulty: medium
+- qid: q-0352
+  query: "الـ card حقي بينتهي قريب، الـ renewal بفلوس؟"
+  variety: code_switched
+  type: factual
+  gold_chunk_ids: [kb-0109#c0, kb-0203#c5]
+  reference_answer: "No. Renewing an expiring card is free in all three countries."
+  critical_facts: []
+  difficulty: easy
+- qid: q-0353
+  query: "جاني card بديل، ليش ما يشتغل على Apple Pay؟"
+  variety: code_switched
+  type: troubleshooting
+  gold_chunk_ids: [kb-0111#c0]
+  reference_answer: "A replacement card isn't added to Apple Pay automatically: remove the old card from Apple Wallet and add the new one."
+  critical_facts: []
+  difficulty: medium
+- qid: q-0354
+  query: "هل تتوفر خدمة أبل باي لحسابات مصر؟"
+  variety: msa
+  type: country_specific
+  country: EG
+  gold_chunk_ids: [kb-0111#c0, kb-0203#c3]
+  reference_answer: "Not yet. Apple Pay is available in Saudi Arabia and the UAE but not yet in Egypt."
+  critical_facts: ["not available yet"]
+  difficulty: easy
+- qid: q-0355
+  query: "My new card won't do contactless at the shop. Why not?"
+  variety: english
+  type: troubleshooting
+  gold_chunk_ids: [kb-0113#c0, kb-0103#c0]
+  reference_answer: "A new or replacement card must first be used with chip and PIN; contactless works after that first chip-and-PIN payment."
+  critical_facts: []
+  difficulty: medium
+- qid: q-0356
+  query: "صحيح أول سحبتين في الشهر مجانية بالسعودية؟"
+  variety: gulf
+  type: number_sensitive
+  country: SA
+  gold_chunk_ids: [kb-0116#c0, kb-0131#c0, kb-0203#c5]
+  reference_answer: "Yes. In Saudi Arabia the first 2 withdrawals each calendar month at Saudi ATMs are free; after that it's SAR 3 plus VAT, and withdrawals abroad are always charged."
+  critical_facts: ["first 2 withdrawals"]
+  difficulty: easy
+- qid: q-0357
+  query: "Can I take cash out of an ATM with my virtual card?"
+  variety: english
+  type: factual
+  gold_chunk_ids: [kb-0116#c0]
+  reference_answer: "No. Cash withdrawals need the physical card."
+  critical_facts: []
+  difficulty: easy
+- qid: q-0358
+  query: "يظهر في التتبع أن البطاقة سُلّمت ووُقّع على استلامها، لكنني لم أستلمها. ماذا يحدث الآن؟"
+  variety: msa
+  type: policy_eligibility
+  gold_chunk_ids: [kb-0120#c0]
+  reference_answer: "It's treated as potentially stolen: the card is cancelled and the replacement fee applies, unless the courier confirms the delivery was recorded incorrectly."
+  critical_facts: []
+  difficulty: hard
+- qid: q-0359
+  query: "المندوب جا مرتين وما لقاني، وين صار الكرت؟"
+  variety: gulf
+  type: troubleshooting
+  gold_chunk_ids: [kb-0120#c0]
+  reference_answer: "After two unsuccessful delivery attempts the courier returns the card. When the status shows Returned, select Arrange delivery to pick a new date or address."
+  critical_facts: ["Arrange delivery"]
+  difficulty: medium
+- qid: q-0360
+  query: "What's the fee to top up with a debit card in Saudi?"
+  variety: english
+  type: number_sensitive
+  country: SA
+  gold_chunk_ids: [kb-0131#c0, kb-0055#c0, kb-0206#c1]
+  reference_answer: "Debit card top-ups cost 1% plus VAT for Saudi accounts; bank transfer top-ups are free."
+  critical_facts: ["1%"]
+  difficulty: easy
+- qid: q-0361
+  query: "el app et2afal 3ashan katabt el password ghalat, bas el kart lessa shaghal?"
+  variety: arabizi
+  type: factual
+  gold_chunk_ids: [kb-0154#c0]
+  reference_answer: "Yes. The lock only affects app access; your physical card and scheduled transfers keep working."
+  critical_facts: []
+  difficulty: medium
+- qid: q-0362
+  query: "بعد ما غيرت الشريحة، أقدر أدفع بالكارت في المحلات في الأربعة وعشرين ساعة دول؟"
+  variety: levantine_egyptian
+  type: factual
+  gold_chunk_ids: [kb-0161#c0]
+  reference_answer: "Yes. Card payments in shops keep working during the 24-hour transfer hold because they don't rely on SMS verification."
+  critical_facts: ["24 hours"]
+  difficulty: medium
+- qid: q-0363
+  query: "طلب مني شخص تعرفت عليه عبر الإنترنت أن أستقبل أموالاً في حسابي ثم أحوّلها لشخص آخر. هل في ذلك خطر؟"
+  variety: msa
+  type: factual
+  gold_chunk_ids: [kb-0164#c0]
+  reference_answer: "Yes. Receiving and forwarding money for someone you met online is a common scam and can make you an unwitting participant in crime."
+  critical_facts: []
+  difficulty: medium
+- qid: q-0364
+  query: "Getting error E315 when I try to send money to my sister. What's that?"
+  variety: english
+  type: troubleshooting
+  gold_chunk_ids: [kb-0177#c0, kb-0041#c0]
+  reference_answer: "E315 means the payment would put the recipient over their balance limit; she can verify her account, or you can send a smaller amount."
+  critical_facts: []
+  difficulty: easy
+- qid: q-0365
+  query: "طلع لي error E600 وأنا أحول، وش معناه؟"
+  variety: code_switched
+  type: troubleshooting
+  gold_chunk_ids: [kb-0177#c0]
+  reference_answer: "E600 means verification is required; complete it through Profile."
+  critical_facts: []
+  difficulty: easy
+- qid: q-0366
+  query: "غيرت الموبايل، الكارت هيظهر في جوجل باي لوحده؟"
+  variety: levantine_egyptian
+  type: factual
+  gold_chunk_ids: [kb-0178#c0]
+  reference_answer: "No. Cards don't move between phones in mobile wallets; add your Sahla Pay card again on the new phone."
+  critical_facts: []
+  difficulty: medium
+- qid: q-0367
+  query: "لو سويت close للحساب، أقدر آخذ الـ statements القديمة بعدين؟"
+  variety: code_switched
+  type: factual
+  gold_chunk_ids: [kb-0193#c0, kb-0181#c0]
+  reference_answer: "Download them before closing: you can't use the app once the account is closed, and older records have to be requested from support."
+  critical_facts: []
+  difficulty: medium
+- qid: q-0368
+  query: "أستخدم حسابي الشخصي لمحلي، ممكن تسكرونه؟"
+  variety: gulf
+  type: policy_eligibility
+  gold_chunk_ids: [kb-0195#c0]
+  reference_answer: "Yes. Operating a business through a personal account is a serious breach of the terms and can lead to closure, usually with at least 60 calendar days notice."
+  critical_facts: []
+  difficulty: medium
+- qid: q-0369
+  query: "What was the daily transfer limit for verified Saudi accounts back in 2025?"
+  variety: english
+  type: factual
+  country: SA
+  about_old_policy: true
+  gold_chunk_ids: [kb-0035#c0]
+  reference_answer: "During 2025, verified Saudi accounts could transfer up to SAR 10,000 per day. (It's SAR 20,000 now.)"
+  critical_facts: ["SAR 10,000"]
+  notes: "Explicitly asks about the old policy (ANNOTATION.md §5 rule 5)."
+  difficulty: medium
+- qid: q-0370
+  query: "كم كانت مدة استرداد مبالغ التجار لحسابات الإمارات خلال عام 2025؟"
+  variety: msa
+  type: factual
+  country: AE
+  about_old_policy: true
+  gold_chunk_ids: [kb-0073#c0]
+  reference_answer: "During 2025, merchant refunds to UAE accounts took up to 14 business days. (It's 10 business days now.)"
+  critical_facts: ["14 business days"]
+  notes: "Explicitly asks about the old policy (ANNOTATION.md §5 rule 5). kb-0097#c0 mentions 14 business days for Egypt merchant refunds; hard negative."
+  difficulty: medium
+- qid: q-0371
+  query: "I need to send EGP 120,000 by InstaPay today to pay for a car in Egypt. Can I do that in one day, or raise my limit?"
+  variety: english
+  type: multi_hop
+  country: EG
+  gold_chunk_ids: [kb-0059#c0, kb-0150#c0]
+  reference_answer: "No. Each InstaPay transfer is capped at EGP 50,000 and your verified daily allowance is EGP 60,000, and temporary limit increases are not available in Egypt."
+  critical_facts: ["EGP 60,000", "not available"]
+  notes: "Hop 1: InstaPay and daily limits (kb-0059#c0). Hop 2: no temporary increase in Egypt (kb-0150#c0, kb-0069#c0 equivalent)."
+  difficulty: hard
