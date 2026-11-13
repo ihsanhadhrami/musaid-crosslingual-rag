@@ -26,6 +26,7 @@ from musaid.benchmark.schema import (
     Script,
     Variety,
 )
+from musaid.benchmark.split import chunk_hashes, verify_lock
 from musaid.ingest.articles import load_articles
 from musaid.ingest.schema import ReviewStatus
 from musaid.ingest.validate import Issue
@@ -176,7 +177,7 @@ def check_queries(raws: list[tuple[str, dict]], chunks: dict[str, ChunkInfo]) ->
         _check_one(q, chunks, lambda m, w=w: err(w, m), lambda m, w=w: warn(w, m))
         res.queries.append(
             Query(
-                **q.model_dump(exclude={"verified", "notes"}),
+                **q.model_dump(exclude={"verified", "notes", "split_with"}),
                 script=script_of(q.query),
                 gold_source=gold_source_of(q, chunks),
             )
@@ -379,15 +380,40 @@ def build(root: Path, final: bool = False) -> tuple[BenchResult, dict[Path, str]
     raws, issues = load_sources(root / "data" / "eval" / "source")
     res = check_queries(raws, chunks)
     res.issues[:0] = issues
+    eval_dir = root / "data" / "eval"
+    split_path = eval_dir / "split.json"
+    if split_path.exists():
+        split = json.loads(split_path.read_text(encoding="utf-8"))
+        res.queries = [q.model_copy(update={"split": split.get(q.qid)}) for q in res.queries]
+        for q in res.queries:
+            if q.split is None:
+                res.issues.append(
+                    Issue(
+                        "warning",
+                        q.qid,
+                        "no split yet: run `python -m musaid.benchmark.split assign`",
+                    )
+                )
+        for qid in sorted(set(split) - {q.qid for q in res.queries}):
+            res.issues.append(Issue("error", qid, "in split.json but no longer in the sources"))
     if final:  # before locking: unverified labels and incomplete groups must be fixed
         res.issues = [
             Issue("error", i.where, f"final: {i.message}") if i.level == "warning" else i
             for i in res.issues
         ]
     outputs = {
-        root / "data" / "eval" / "queries.jsonl": _jsonl(res.queries),
+        eval_dir / "queries.jsonl": _jsonl(res.queries),
         root / "docs" / "EVAL_STATS.md": render_stats(res.queries),
     }
+    if split_path.exists():
+        for name in ("dev", "test"):
+            outputs[eval_dir / f"{name}.jsonl"] = _jsonl(q for q in res.queries if q.split == name)
+        lock_path = eval_dir / "test.lock.json"
+        if lock_path.exists():
+            lock = json.loads(lock_path.read_text(encoding="utf-8"))
+            test_jsonl = outputs[eval_dir / "test.jsonl"]
+            for problem in verify_lock(lock, test_jsonl, chunk_hashes(root)):
+                res.issues.append(Issue("error", "test.lock.json", problem))
     return res, outputs
 
 

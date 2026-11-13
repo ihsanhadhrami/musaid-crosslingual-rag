@@ -230,7 +230,9 @@ You write YAML in `data/eval/source/`. The builder adds `script`, `gold_source` 
 - **Test: 275 queries. Dev: everything else (at least 175).** Never tune anything on test.
 - The split is stratified by variety and type, using a fixed seed.
 - **A parallel group goes entirely to one split.** So do queries written as near-paraphrases of each other.
-- After the split, the test file's SHA-256 is recorded in `data/eval/test.lock.json`, together with the `body_sha1` of every gold chunk. CI fails if either changes. To fix a test label after locking, write an ADR and re-lock; never edit quietly.
+- Tie near-paraphrases with `split_with: q-NNNN` in the source; the split keeps tied queries together.
+- `python -m musaid.benchmark.split assign` writes `data/eval/split.json`. It's append-only: existing queries never change sides. ADR-012 has the method.
+- After every query is verified, `python -m musaid.benchmark.split lock` records the test file's SHA-256 in `data/eval/test.lock.json`, together with the `body_sha1` of every gold chunk. CI fails if either changes. To fix a test label after locking, write an ADR and re-lock; never edit quietly.
 
 ---
 

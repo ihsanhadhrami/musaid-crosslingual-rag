@@ -226,3 +226,22 @@ The same inspection found three content problems, fixed in the articles: a repea
 **Consequences:**
 - The translator never gets pointed at English the KB doesn't use.
 - Folding here is deliberately light. The full query normalizer (CAMeL Tools) comes in Phase 4 and isn't needed to keep the glossary clean.
+
+## ADR-012: How the dev/test split is drawn and locked
+
+**Status:** Accepted
+
+**Context:** The spec asks for 275 locked test queries and a dev set for tuning (§5.4). A careless split leaks answers: the six versions of a parallel intent, or two paraphrases of one question, would let a configuration tuned on dev see the test question in another variety. Small strata (one multi-hop group, four superseded-trap groups) are easy to lose entirely from one side.
+
+**Decision:**
+- Split units: a parallel group (6 queries) moves as one unit, and so do queries tied with `split_with`. Everything else is a single-query unit.
+- 24 of the 40 parallel groups and 131 single queries go to test (275 in all); the other 187 queries are dev.
+- Parallel groups are stratified by gold source; single queries by type and gold source. Inside each stratum, units are interleaved in proportion to their sub-group (type for groups, variety for singles), so every type, variety and gold source lands at 52–64% test against 59.5% overall.
+- Order within a stratum comes from SHA-256 of a fixed seed and the qid, so the split is reproducible and doesn't depend on file order.
+- `data/eval/split.json` is append-only: a new query joins its unit's split, or dev once the test set is locked.
+- `python -m musaid.benchmark.split lock` refuses to run until `build --final` is clean (every query verified). It then records the SHA-256 of `test.jsonl` and the `body_sha1` of every gold chunk in `test.lock.json`. From then on the build, and so CI, fails if either changes.
+
+**Consequences:**
+- No intent appears in both dev and test, in any variety.
+- The single multi-hop parallel group lands wholly in one split (test). Dev keeps one single multi-hop query, which is thin; results on multi-hop are reported from test only.
+- Fixing a test label after locking takes an ADR and a deliberate re-lock, which is the point.

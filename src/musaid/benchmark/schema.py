@@ -79,6 +79,7 @@ class QuerySource(_Strict):
     critical_facts: list[str] = Field(default_factory=list, max_length=4)
     parallel_group: str | None = Field(default=None, pattern=PARALLEL_GROUP_PATTERN)
     about_old_policy: bool = False  # explicitly asks about a superseded edition (max 5)
+    split_with: str | None = Field(default=None, pattern=QID_PATTERN)  # near-paraphrase: same split
     difficulty: Difficulty
     verified: bool = False
     notes: str = ""
