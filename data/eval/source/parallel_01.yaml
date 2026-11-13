@@ -6,6 +6,7 @@
 # pg-001: wrong-transfer money back after dispute approval, Saudi Arabia
 - <<: &pg001
     parallel_group: pg-001
+    verified: true
     type: number_sensitive
     country: SA
     gold_chunk_ids: [kb-0075#c1, kb-0071#c1, kb-0072#c0]
@@ -26,12 +27,12 @@
 - <<: *pg001
   qid: q-0003
   variety: gulf
-  query: "حولت ٨٠٠ ريال لواحد غلط ووافقتوا على الاعتراض، متى ترجع فلوسي؟"
+  query: "حولت ٨٠٠ ريال لواحد بالغلط ووافقتوا على الاعتراض، متى ترجع فلوسي؟"
   difficulty: medium
 - <<: *pg001
   qid: q-0004
   variety: levantine_egyptian
-  query: "بعت ٨٠٠ ريال لحد غلط من غير قصد والشكوى اتقبلت، الفلوس هترجعلي امتى؟"
+  query: "حولت ٨٠٠ ريال لشخص من غير قصد والشكوى اتقبلت، الفلوس هترجعلي امتى؟"
   difficulty: hard
 - <<: *pg001
   qid: q-0005
@@ -47,6 +48,7 @@
 # pg-002: how long manual identity review takes, Egypt
 - <<: &pg002
     parallel_group: pg-002
+    verified: true
     type: number_sensitive
     country: EG
     gold_chunk_ids: [kb-0007#c0, kb-0009#c0, kb-0030#c0]
@@ -87,6 +89,7 @@
 # pg-003: daily transfer limit for a verified account, Saudi Arabia (trap: kb-0035, 2025)
 - <<: &pg003
     parallel_group: pg-003
+    verified: true
     type: superseded_trap
     country: SA
     gold_chunk_ids: [kb-0034#c0, kb-0201#c7, kb-0030#c0]
@@ -129,6 +132,7 @@
 # pg-004: card never arrived, what to do (same steps in every country)
 - <<: &pg004
     parallel_group: pg-004
+    verified: true
     type: troubleshooting
     country: null
     gold_chunk_ids: [kb-0120#c0]
@@ -150,12 +154,12 @@
 - <<: *pg004
   qid: q-0021
   variety: gulf
-  query: "طلبت الكرت من ثلاث أسابيع وللحين ما وصلني، وش أسوي؟"
+  query: "طلبت الكرت من ثلاث أسابيع وللحين ما وصلني أي حاجة، وش أسوي؟"
   difficulty: medium
 - <<: *pg004
   qid: q-0022
   variety: levantine_egyptian
-  query: "طلبت الكارت من تلات أسابيع ولسه موصلش، أعمل ايه؟"
+  query: "طلبت الكارت من تلات أسابيع ولسه موصلش، أعمل ايه أو شو بعمل؟"
   difficulty: medium
 - <<: *pg004
   qid: q-0023
@@ -171,6 +175,7 @@
 # pg-005: how long the login lock lasts after wrong passwords
 - <<: &pg005
     parallel_group: pg-005
+    verified: true
     type: number_sensitive
     country: null
     gold_chunk_ids: [kb-0154#c0, kb-0173#c0, kb-0170#c0]
@@ -211,6 +216,7 @@
 # pg-006: merchant refund reaching the balance, UAE (trap: kb-0073, 2025 says 14 days)
 - <<: &pg006
     parallel_group: pg-006
+    verified: true
     type: superseded_trap
     country: AE
     gold_chunk_ids: [kb-0071#c2, kb-0072#c0, kb-0074#c0]
@@ -231,12 +237,12 @@
 - <<: *pg006
   qid: q-0033
   variety: gulf
-  query: "محل في دبي يقول رجع لي المبلغ على الكرت، متى يوصل رصيدي؟"
+  query: "محل في دبي يقول رجع لي المبلغ على الكرت اللي سددت منه، متى يوصل لرصيدي؟"
   difficulty: hard
 - <<: *pg006
   qid: q-0034
   variety: levantine_egyptian
-  query: "محل في دبي قال انه رجعلي الفلوس على الكارت، هتنزل في الرصيد بعد قد ايه؟"
+  query: "محل في دبي قال انه رجعلي الفلوس على الكارت اللي دفعت منه، هتنزل في الرصيد بعد قد ايه؟"
   difficulty: hard
 - <<: *pg006
   qid: q-0035
@@ -252,6 +258,7 @@
 # pg-007: can a 17-year-old open an account, Egypt
 - <<: &pg007
     parallel_group: pg-007
+    verified: true
     type: country_specific
     country: EG
     gold_chunk_ids: [kb-0002#c0, kb-0019#c0, kb-0258#c0]
@@ -276,7 +283,7 @@
 - <<: *pg007
   qid: q-0040
   variety: levantine_egyptian
-  query: "ابني عنده ١٧ سنة واحنا في مصر، ينفع يعمل حساب لنفسه؟"
+  query: "ابني عمره ١٧ سنة واحنا في مصر، ينفع يعمل حساب لألوه؟"
   difficulty: medium
 - <<: *pg007
   qid: q-0041
@@ -292,6 +299,7 @@
 # pg-008: sending to an InstaPay address (InstaPay implies Egypt)
 - <<: &pg008
     parallel_group: pg-008
+    verified: true
     type: procedural
     country: EG
     gold_chunk_ids: [kb-0059#c0]
@@ -332,6 +340,7 @@
 # pg-009: replacing a cracked card, UAE fee
 - <<: &pg009
     parallel_group: pg-009
+    verified: true
     type: number_sensitive
     country: AE
     gold_chunk_ids: [kb-0109#c0, kb-0108#c0, kb-0126#c0]
@@ -352,7 +361,7 @@
 - <<: *pg009
   qid: q-0051
   variety: gulf
-  query: "كرتي انكسر نصين، كم تاخذون على البدل في الإمارات؟"
+  query: "بطاقتي انكسرت نصين، كم تاخذون على البدل في الإمارات؟"
   difficulty: medium
 - <<: *pg009
   qid: q-0052
@@ -373,6 +382,7 @@
 # pg-010: transfers blocked right after moving to an eSIM
 - <<: &pg010
     parallel_group: pg-010
+    verified: true
     type: troubleshooting
     country: null
     gold_chunk_ids: [kb-0161#c0, kb-0350#c0]
@@ -392,12 +402,12 @@
 - <<: *pg010
   qid: q-0057
   variety: gulf
-  query: "غيرت شريحتي لشريحة إلكترونية والحين التطبيق ما يخليني أحول، ليش؟"
+  query: "غيرت شريحتي لشريحة إلكترونية والحين التطبيق مو راضي يخليني أحول، ليش؟"
   difficulty: medium
 - <<: *pg010
   qid: q-0058
   variety: levantine_egyptian
-  query: "غيرت الخط لشريحة الكترونية ومن ساعتها مش عارف احول فلوس، ليه؟"
+  query: "غيرت الخط لشريحة الكترونية, والتطبيق ما يخلينيش احول فلوس، ليه؟"
   difficulty: hard
 - <<: *pg010
   qid: q-0059
