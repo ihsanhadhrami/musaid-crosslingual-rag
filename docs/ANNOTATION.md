@@ -248,6 +248,12 @@ A second Arabic speaker labels **50 queries** on their own:
 - **Gold chunks:** the share of queries where the two gold sets overlap at all, the share with exactly the same set, and mean Jaccard.
 - **Answerable, needs-clarification, variety and type:** Cohen's κ for each.
 
+**How to run it**
+
+1. Give annotator B `data/eval/agreement/annotator_b.yaml` (already drawn with `python -m musaid.benchmark.agreement sample`), this guide and the search helper. Nothing else.
+2. They fill in every field and return the file to the same path.
+3. `python -m musaid.benchmark.agreement score` writes `docs/AGREEMENT.md` with the numbers and a table of disagreements.
+
 Disagreements are settled by discussion. The outcome goes in the Rulings log, and the agreed label replaces both. The agreement numbers are reported *before* adjudication.
 
 ---

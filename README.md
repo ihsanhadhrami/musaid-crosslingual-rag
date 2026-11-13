@@ -2,7 +2,7 @@
 
 Cross-lingual support RAG that answers Arabic (MSA, Gulf, Levantine/Egyptian, code-switched, Arabizi) and English questions from an English-only knowledge base, with a public benchmark.
 
-> **Status: Phase 1 (knowledge base authoring).** See [docs/KB_STATS.md](docs/KB_STATS.md) for progress. Results, demo and benchmark links will appear here as phases ship. Full plan: [project-1-bilingual-support-rag.md](project-1-bilingual-support-rag.md).
+> **Status: Phase 2 (glossary and benchmark).** The KB is frozen at 354 articles and 600 chunks ([docs/KB_STATS.md](docs/KB_STATS.md)). The glossary has 153 entries, and 462 evaluation queries are drafted ([docs/EVAL_STATS.md](docs/EVAL_STATS.md)); human verification is in progress and the test set isn't locked yet. Full plan: [project-1-bilingual-support-rag.md](project-1-bilingual-support-rag.md).
 
 ## Run locally
 
@@ -24,6 +24,19 @@ uv run pytest                 # unit + integration tests
 
 To run only the tests that don't need Docker: `uv run pytest -m "not integration"`.
 
+## Benchmark tools
+
+```bash
+uv run python -m musaid.glossary.build              # validate the glossary, write glossary.jsonl
+uv run python -m musaid.benchmark.build             # validate queries, write queries/dev/test.jsonl
+uv run python -m musaid.benchmark.search "refund"   # find candidate gold chunks
+uv run python -m musaid.benchmark.review            # review sheet with a competitor check
+uv run python -m musaid.benchmark.split assign      # dev/test split (ADR-012); `lock` after review
+uv run python -m musaid.benchmark.agreement score   # second-annotator agreement
+```
+
+Labeling rules are in [docs/ANNOTATION.md](docs/ANNOTATION.md).
+
 ## Repository layout
 
 ```
@@ -38,6 +51,7 @@ frontend/        React + Tailwind (Phase 7)
 
 - **Smaller KB than the spec's target.** The knowledge base is 354 articles and 600 chunks, below the 1,000–3,000 in the plan (ADR-008).
 - **Mostly LLM-drafted text.** Only 40 of the 200 help articles are rewritten by hand (ADR-007). Results are reported separately for rewritten and draft gold articles.
+- **LLM-drafted, human-verified queries.** The evaluation queries were drafted with an LLM from customer intents, then checked and corrected by a native Arabic speaker. The same author wrote the glossary, so query wording may overlap with glossary forms; that overlap is measured before glossary results are reported.
 
 ## Scope
 

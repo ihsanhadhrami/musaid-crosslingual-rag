@@ -1,0 +1,199 @@
+"""Second-annotator agreement check (ANNOTATION.md §14, spec Phase 2 step 5).
+
+uv run python -m musaid.benchmark.agreement sample   # write the blank sheet for annotator B
+uv run python -m musaid.benchmark.agreement score    # compare B's labels with ours
+
+The sample is 50 queries: 38 clear answerable, 6 ambiguous and 6 unanswerable, at least 35
+in Arabic varieties, at most one per parallel group, drawn reproducibly by hash.
+Annotator B sees only the query text, ANNOTATION.md and the search helper.
+"""
+
+import argparse
+import hashlib
+import json
+import sys
+from collections import Counter
+from pathlib import Path
+
+import yaml
+
+from musaid.benchmark.schema import Query
+
+SEED = "musaid-agreement-2026"
+PLAN = {
+    "answerable": {"english": 9, "msa": 7, "gulf": 7, "levantine_egyptian": 5,
+                   "code_switched": 5, "arabizi": 5},
+    "ambiguous": {"english": 2, "msa": 1, "gulf": 1, "levantine_egyptian": 1, "code_switched": 1},
+    "unanswerable": {"english": 2, "msa": 1, "gulf": 1, "levantine_egyptian": 1, "arabizi": 1},
+}  # fmt: skip
+LABELS = ("variety", "type", "answerable", "needs_clarification")
+
+
+def _h(key: str) -> str:
+    return hashlib.sha256(f"{SEED}:{key}".encode()).hexdigest()
+
+
+def _bucket(q: Query) -> str:
+    if not q.answerable:
+        return "unanswerable"
+    return "ambiguous" if q.needs_clarification else "answerable"
+
+
+def draw_sample(queries: list[Query]) -> list[Query]:
+    picked: list[Query] = []
+    used_groups: set[str] = set()
+    for bucket, quota in PLAN.items():
+        for variety, n in quota.items():
+            pool = sorted(
+                (q for q in queries if _bucket(q) == bucket and q.variety == variety),
+                key=lambda q: _h(q.qid),
+            )
+            for q in pool:
+                if n == 0:
+                    break
+                if q.parallel_group in used_groups:
+                    continue
+                picked.append(q)
+                n -= 1
+                if q.parallel_group:
+                    used_groups.add(q.parallel_group)
+    return sorted(picked, key=lambda q: _h("order:" + q.qid))  # shuffle so buckets don't show
+
+
+def blank_sheet(sample: list[Query]) -> str:
+    head = (
+        "# Second-annotator sheet (ANNOTATION.md §14).\n"
+        "# Fill in every field from the query text alone, using docs/ANNOTATION.md and\n"
+        '#   python -m musaid.benchmark.search "..."   to find chunks.\n'
+        "# Don't open data/eval/source, queries.jsonl, dev.jsonl or test.jsonl.\n"
+        "# variety: english | msa | gulf | levantine_egyptian | code_switched | arabizi\n"
+        "# type: see ANNOTATION.md §4. answerable / needs_clarification: true or false.\n"
+        "# gold_chunk_ids: 1-3 chunk ids, or [] if unanswerable.\n\n"
+    )
+    rows = [
+        {
+            "qid": q.qid,
+            "query": q.query,
+            "variety": None,
+            "type": None,
+            "answerable": None,
+            "needs_clarification": None,
+            "gold_chunk_ids": [],
+            "notes": "",
+        }
+        for q in sample
+    ]
+    return head + yaml.safe_dump(rows, allow_unicode=True, sort_keys=False, width=100)
+
+
+def cohen_kappa(a: list, b: list) -> float:
+    n = len(a)
+    if n == 0:
+        return float("nan")
+    po = sum(x == y for x, y in zip(a, b, strict=True)) / n
+    ca, cb = Counter(a), Counter(b)
+    pe = sum(ca[k] * cb[k] for k in set(ca) | set(cb)) / (n * n)
+    return 1.0 if pe == 1 else (po - pe) / (1 - pe)
+
+
+def score(ours: dict[str, Query], theirs: list[dict]) -> dict:
+    rows = [r for r in theirs if r.get("qid") in ours and r.get("variety") is not None]
+    out: dict = {"n": len(rows)}
+    for label in LABELS:
+        a = [str(getattr(ours[r["qid"]], label)) for r in rows]
+        b = [str(r.get(label)) for r in rows]
+        out[label] = {
+            "kappa": cohen_kappa(a, b),
+            "raw": sum(x == y for x, y in zip(a, b, strict=True)) / len(rows) if rows else 0,
+        }
+    both = [r for r in rows if ours[r["qid"]].answerable and r.get("answerable")]
+    overlaps, exact, jacc = 0, 0, []
+    for r in both:
+        g1, g2 = set(ours[r["qid"]].gold_chunk_ids), set(r.get("gold_chunk_ids") or [])
+        overlaps += bool(g1 & g2)
+        exact += g1 == g2
+        jacc.append(len(g1 & g2) / len(g1 | g2) if g1 | g2 else 1.0)
+    out["gold"] = {
+        "n": len(both),
+        "any_overlap": overlaps / len(both) if both else 0,
+        "exact": exact / len(both) if both else 0,
+        "mean_jaccard": sum(jacc) / len(jacc) if jacc else 0,
+    }
+    out["disagreements"] = [
+        {"qid": r["qid"], "field": label, "ours": str(getattr(ours[r["qid"]], label)),
+         "theirs": str(r.get(label))}
+        for r in rows for label in LABELS
+        if str(getattr(ours[r["qid"]], label)) != str(r.get(label))
+    ]  # fmt: skip
+    return out
+
+
+def render_report(s: dict) -> str:
+    lines = [
+        "# Annotator agreement",
+        "",
+        "Generated by `python -m musaid.benchmark.agreement score`, *before* adjudication",
+        "(ANNOTATION.md §14). Sample: 50 queries, at least 35 in Arabic varieties.",
+        "",
+        f"Queries labeled by both annotators: {s['n']}",
+        "",
+        "| Label | Raw agreement | Cohen's κ |",
+        "|---|---|---|",
+    ]
+    for label in LABELS:
+        lines.append(f"| {label} | {s[label]['raw']:.0%} | {s[label]['kappa']:.2f} |")
+    g = s["gold"]
+    lines += [
+        "",
+        f"Gold chunks, over the {g['n']} queries both annotators found answerable:",
+        "",
+        f"- any overlap: {g['any_overlap']:.0%}",
+        f"- exact same set: {g['exact']:.0%}",
+        f"- mean Jaccard: {g['mean_jaccard']:.2f}",
+        "",
+        "## Disagreements to adjudicate",
+        "",
+        "| qid | field | annotator A | annotator B |",
+        "|---|---|---|---|",
+    ]
+    lines += [
+        f"| {d['qid']} | {d['field']} | {d['ours']} | {d['theirs']} |" for d in s["disagreements"]
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def main(argv: list[str] | None = None) -> int:
+    from musaid.benchmark.build import ROOT, build
+
+    parser = argparse.ArgumentParser(prog="python -m musaid.benchmark.agreement")
+    parser.add_argument("cmd", choices=["sample", "score"])
+    parser.add_argument("--root", type=Path, default=ROOT)
+    args = parser.parse_args(argv)
+    sys.stdout.reconfigure(encoding="utf-8")
+    d = args.root / "data" / "eval" / "agreement"
+    d.mkdir(exist_ok=True)
+    sheet = d / "annotator_b.yaml"
+
+    res, _ = build(args.root)
+    if args.cmd == "sample":
+        if sheet.exists():
+            print(f"{sheet.name} already exists; delete it deliberately to redraw.")
+            return 1
+        sample = draw_sample(res.queries)
+        sheet.write_text(blank_sheet(sample), encoding="utf-8", newline="\n")
+        ids = d / "sample_qids.json"
+        ids.write_text(json.dumps([q.qid for q in sample]) + "\n", encoding="utf-8", newline="\n")
+        arabic = sum(q.variety != "english" for q in sample)
+        print(f"wrote {sheet.name}: {len(sample)} queries, {arabic} in Arabic varieties")
+        return 0
+
+    theirs = yaml.safe_load(sheet.read_text(encoding="utf-8")) or []
+    s = score({q.qid: q for q in res.queries}, theirs)
+    report = args.root / "docs" / "AGREEMENT.md"
+    report.write_text(render_report(s), encoding="utf-8", newline="\n")
+    print(f"wrote {report.relative_to(args.root).as_posix()} ({s['n']} queries scored)")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

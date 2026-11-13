@@ -1,0 +1,414 @@
+# Second-annotator sheet (ANNOTATION.md §14).
+# Fill in every field from the query text alone, using docs/ANNOTATION.md and
+#   python -m musaid.benchmark.search "..."   to find chunks.
+# Don't open data/eval/source, queries.jsonl, dev.jsonl or test.jsonl.
+# variety: english | msa | gulf | levantine_egyptian | code_switched | arabizi
+# type: see ANNOTATION.md §4. answerable / needs_clarification: true or false.
+# gold_chunk_ids: 1-3 chunk ids, or [] if unanswerable.
+
+- qid: q-0107
+  query: لو عملت close للـ account وأنا في مصر، الـ balance اللي فاضل يروح فين وامتى؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0265
+  query: فيه خصم كل شهر ما أعرف وش هو، كيف أوقفه؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0361
+  query: el app et2afal 3ashan katabt el password ghalat, bas el kart lessa shaghal?
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0326
+  query: إذا اعترضت على تحويل، هل يعود مبلغه إلى حدي اليومي فوراً؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0134
+  query: دفعت لبائع على إنستغرام ثمن هاتف وأكدت العملية في التطبيق، ثم اتضح أنه احتيال. هل ستُعاد إليّ
+    الأموال كعملية غير مصرح بها؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0461
+  query: anhi mobile a7san a2tareh, iphone wala samsung?
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0290
+  query: الموبايل اتسرق مني، أعمل ايه الأول عشان أحمي حسابي؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0383
+  query: ينفع أضيف الكارت على ابل باي؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0157
+  query: Lost my card somewhere in Riyadh. How much will a replacement cost me?
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0296
+  query: لو مسحت الأبلكيشن من الموبايل، الحساب بيتقفل؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0410
+  query: أقدر أقسط مشترياتي على أربع دفعات زي تابي؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0031
+  query: A shop in Dubai says they refunded my card purchase. How many days until it shows up in my Sahla
+    balance?
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0165
+  query: أبي أسكر حسابي بس ما رضى، وعندي اعتراض للحين مفتوح، هذا السبب؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0294
+  query: Can I download my statement as a spreadsheet instead of a PDF?
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0017
+  query: كم الـ daily limit للتحويل إذا الحساب verified في السعودية؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0062
+  query: أرسلت مبلغاً إلى رقم خاطئ قبل خمس دقائق. هل ما زال بإمكاني إلغاء التحويل؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0384
+  query: أقدر أسوي international transfer من حسابي؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0390
+  query: Can I ask for a temporary limit increase to buy a car?
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0184
+  query: حسابي متوثق وأنا في السعودية، أقصى فلوس ينفع تفضل في المحفظة كام؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0221
+  query: من سنة ما استخدمت الـ account وأنا في دبي، فيه fee عشان كذا؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0355
+  query: My new card won't do contactless at the shop. Why not?
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0322
+  query: لو أنا ولي الأمر وسكرت حسابي، وش يصير لحساب ولدي في مصر؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0205
+  query: Someone on WhatsApp is promising guaranteed 20% a week on crypto and wants me to transfer to
+    his personal account. Is this legit?
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0440
+  query: ينفع أوقف الحساب كله كام شهر وأنا مسافر وبعدين أرجعه؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0114
+  query: le7ad kam a2dar adfa3 bel kart tap mn gher el pin fel emarat?
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0374
+  query: كم الحد اليومي للتحويل؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0285
+  query: لو بتزيدون الرسوم، كم مدة تبلغونا قبلها؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0121
+  query: I sent dirhams to the wrong account about a month ago and only just noticed. Is it too late to
+    open a dispute?
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0346
+  query: الـ recipient صرف جزء من الفلوس اللي حولتها له بالغلط، وش يصير؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0455
+  query: غيّروا البريد الإلكتروني المسجل في حسابي نيابةً عني لأنني لا أستطيع الدخول.
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0282
+  query: I'm traveling in London at the moment. Does my daily limit reset at midnight London time or Riyadh
+    time?
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0334
+  query: arkhas law 2assamt el 7awala el kbeera l kaza 7awala soghayara barra?
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0250
+  query: كم رسوم التحويل لحساب بنكي داخل الإمارات؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0006
+  query: 7awalt 800 riyal l wa7ed ghalat w el dispute etwafa2 3aleh, meta tarja3 floosi?
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0100
+  query: انا دايماً مشغل في بي ان، والأبلكيشن بقى يطلب سيلفي كل شوية والتحويل متعلق، ده بسبب الفي بي ان؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0339
+  query: لو وافقتوا على رفع الحد المؤقت، الحد الشهري بيزيد بعد؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0401
+  query: How much is the seller fee when someone pays my payment link?
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0199
+  query: Is customer support open at 11 at night in Cairo? I really need to talk to someone.
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0170
+  query: ثبّتُّ التطبيق على هاتفي الجديد اليوم، ولا أستطيع الآن تحويل مبلغ إلى ابن عمي الذي لم أحوّل له
+    من قبل. لماذا؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0087
+  query: طالع لي خصم ١٢٠٠ درهم على الكرت وأنا ما سويته، وش أسوي وبترجع لي الفلوس؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0426
+  query: Can my family pick the money up as cash at a Western Union agent instead of a bank account?
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0187
+  query: What's the daily limit for ATM cash withdrawals in Egypt?
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0120
+  query: eshtarait sama3at online men shahr w ma wesletsh w el bayya3 mesh byrod, a3mel eh?
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0386
+  query: ما الحد الأقصى للرصيد في المحفظة بعد توثيق الحساب؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0298
+  query: بعد إغلاق حسابي في السعودية، كم سنة تحتفظون ببياناتي؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0313
+  query: كم تكلفة البطاقة البلاستيكية في مصر؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0146
+  query: حالة التحقق من هويتي «قيد المراجعة» منذ الأمس. هل أعيد رفع الهوية لتسريع العملية؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0438
+  query: Is there a premium plan I can pay for to get lower fees?
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0367
+  query: لو سويت close للحساب، أقدر آخذ الـ statements القديمة بعدين؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0337
+  query: ينفع حد يبعتلي فلوس على سهلة باي عن طريق انستاباي؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''

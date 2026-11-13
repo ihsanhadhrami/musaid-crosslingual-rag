@@ -64,3 +64,22 @@ def test_committed_split_is_complete_and_sized():
     assert sum(v == "test" for v in split.values()) == 275
     test = (ROOT / "data" / "eval" / "test.jsonl").read_text(encoding="utf-8").splitlines()
     assert len(test) == 275
+
+
+def test_agreement_sample_and_scoring():
+    from musaid.benchmark.agreement import cohen_kappa, draw_sample, score
+
+    assert cohen_kappa(["a", "b", "a", "b"], ["a", "b", "a", "b"]) == 1.0
+    assert abs(cohen_kappa(["a", "a", "b", "b"], ["a", "b", "a", "b"])) < 1e-9
+    qs = sample()
+    picked = draw_sample(qs)
+    groups = [q.parallel_group for q in picked if q.parallel_group]
+    assert len(groups) == len(set(groups))  # at most one per parallel group
+    ours = {q.qid: q for q in qs}
+    theirs = [
+        {"qid": q.qid, "variety": q.variety, "type": q.type, "answerable": True,
+         "needs_clarification": False, "gold_chunk_ids": q.gold_chunk_ids}
+        for q in picked
+    ]  # fmt: skip
+    s = score(ours, theirs)
+    assert s["gold"]["exact"] == 1.0 and s["disagreements"] == []
