@@ -1,0 +1,120 @@
+# Unanswerable queries (ANNOTATION.md §8): the KB has no chunk that answers them.
+# Each not_in_kb topic was checked against the KB text; topics the KB does answer
+# (buying crypto, credit-card top-ups, overdraft, web version, cheques, interest) are
+# deliberately left out. Claude-drafted; verified: false.
+
+# --- not_in_kb: plausible Sahla Pay questions the KB is silent on (34) ---
+- {qid: q-0408, variety: english, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium,
+   query: "Do you offer personal loans? I need about 10k for a few months."}
+- {qid: q-0409, variety: msa, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium,
+   query: "هل يمكنني الحصول على سلفة على راتبي من خلال سهلة باي؟"}
+- {qid: q-0410, variety: gulf, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium,
+   query: "أقدر أقسط مشترياتي على أربع دفعات زي تابي؟"}
+- {qid: q-0411, variety: english, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium,
+   query: "Does the Sahla card come with free travel insurance?"}
+- {qid: q-0412, variety: levantine_egyptian, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium,
+   query: "عندكم تأمين على الموبايل لو اتسرق أو اتكسر؟"}
+- {qid: q-0413, variety: msa, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium,
+   query: "هل تقدمون تمويلاً عقارياً لشراء منزل؟"}
+- {qid: q-0414, variety: english, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: hard, country: SA,
+   query: "Can I check my SIMAH credit score in the Sahla app?"}
+- {qid: q-0415, variety: gulf, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium,
+   query: "أبي أشتري ذهب من التطبيق، فيه خدمة كذا؟"}
+- {qid: q-0416, variety: code_switched, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium,
+   query: "أقدر أشتري stocks أو أستثمر في الـ app؟"}
+- {qid: q-0417, variety: english, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: hard,
+   query: "Is there a metal version of the Sahla card? The plastic one feels cheap."}
+- {qid: q-0418, variety: arabizi, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium,
+   query: "a2dar arbot 7esab paypal bel sahla pay?"}
+- {qid: q-0419, variety: msa, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium,
+   query: "هل يمكنني شراء بطاقات هدايا رقمية من التطبيق وإرسالها لأصدقائي؟"}
+- {qid: q-0420, variety: english, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium,
+   query: "Do you have a public API so I can connect my online store to Sahla Pay?"}
+- {qid: q-0421, variety: gulf, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: easy,
+   query: "فيه وضع داكن في التطبيق؟ الإضاءة تتعب عيوني بالليل"}
+- {qid: q-0422, variety: levantine_egyptian, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: easy,
+   query: "ينفع أحط ويدجت للرصيد على الشاشة الرئيسية للموبايل؟"}
+- {qid: q-0423, variety: english, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium, country: SA,
+   query: "Do you have an office in Jeddah where I can go and talk to someone in person?"}
+- {qid: q-0424, variety: msa, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: easy,
+   query: "هل لديكم قناة رسمية على تيليجرام؟"}
+- {qid: q-0425, variety: gulf, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: hard,
+   query: "متى بتفتحون في الكويت؟ أبي أستخدم التطبيق هناك"}
+- {qid: q-0426, variety: english, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: hard,
+   query: "Can my family pick the money up as cash at a Western Union agent instead of a bank account?"}
+- {qid: q-0427, variety: code_switched, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium,
+   query: "أقدر أجمع airline miles لما أدفع بالـ card؟"}
+- {qid: q-0428, variety: english, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: easy,
+   query: "Who is the CEO of Sahla Pay?"}
+- {qid: q-0429, variety: msa, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: hard,
+   query: "هل يمكنني التبرع لجمعية خيرية مباشرة من داخل التطبيق؟"}
+- {qid: q-0430, variety: gulf, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: hard,
+   query: "فيه حاسبة زكاة في التطبيق تحسب لي زكاة رصيدي؟"}
+- {qid: q-0431, variety: arabizi, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium,
+   query: "fi trading forex 3al app wala la2?"}
+- {qid: q-0432, variety: english, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: hard,
+   query: "Are you planning to launch Sahla Pay accounts in Jordan?"}
+- {qid: q-0433, variety: levantine_egyptian, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium,
+   query: "ينفع أربط سهلة باي ببرنامج المحاسبة بتاعي زي كويك بوكس؟"}
+- {qid: q-0434, variety: msa, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium,
+   query: "كيف أصبح وكيلاً معتمداً لسهلة باي لاستقبال الإيداعات النقدية؟"}
+- {qid: q-0435, variety: english, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: easy,
+   query: "Are you hiring? How do I apply for a job at Sahla Pay?"}
+- {qid: q-0436, variety: gulf, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: hard,
+   query: "فيه مكينة أقدر أطبع منها الكرت فوراً بدل ما أنتظر التوصيل؟"}
+- {qid: q-0437, variety: code_switched, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: hard,
+   query: "أقدر أحدد beneficiary يورث رصيدي من الحين، قبل أي شي يصير؟"}
+- {qid: q-0438, variety: english, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium,
+   query: "Is there a premium plan I can pay for to get lower fees?"}
+- {qid: q-0439, variety: msa, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium,
+   query: "هل يمكن تخصيص مدير حساب شخصي لي بسبب حجم تعاملاتي الكبير؟"}
+- {qid: q-0440, variety: levantine_egyptian, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: hard,
+   query: "ينفع أوقف الحساب كله كام شهر وأنا مسافر وبعدين أرجعه؟"}
+- {qid: q-0441, variety: english, type: unanswerable, answerable: false, unanswerable_reason: not_in_kb, difficulty: medium,
+   query: "Can you deliver foreign currency cash to my house before I travel?"}
+
+# --- account_specific: needs the customer's own data or an action (14) ---
+- {qid: q-0442, variety: english, type: unanswerable, answerable: false, unanswerable_reason: account_specific, difficulty: easy,
+   query: "Why is my transfer SP48293017 still pending? Can you check it?"}
+- {qid: q-0443, variety: gulf, type: unanswerable, answerable: false, unanswerable_reason: account_specific, difficulty: easy,
+   query: "كم رصيدي الحين بالضبط؟"}
+- {qid: q-0444, variety: english, type: unanswerable, answerable: false, unanswerable_reason: account_specific, difficulty: medium, country: SA,
+   query: "Please refund the 200 riyals Jarir charged me yesterday, I returned the headphones."}
+- {qid: q-0445, variety: msa, type: unanswerable, answerable: false, unanswerable_reason: account_specific, difficulty: easy,
+   query: "أرجو فتح حسابي المقفل الآن، أنا صاحب الحساب."}
+- {qid: q-0446, variety: levantine_egyptian, type: unanswerable, answerable: false, unanswerable_reason: account_specific, difficulty: easy,
+   query: "المرتب بتاعي نزل النهارده ولا لسه؟"}
+- {qid: q-0447, variety: code_switched, type: unanswerable, answerable: false, unanswerable_reason: account_specific, difficulty: medium,
+   query: "ليش انعمل restriction على الـ account حقي أمس؟"}
+- {qid: q-0448, variety: english, type: unanswerable, answerable: false, unanswerable_reason: account_specific, difficulty: easy,
+   query: "Cancel the card order I placed this morning, I don't need it anymore."}
+- {qid: q-0449, variety: arabizi, type: unanswerable, answerable: false, unanswerable_reason: account_specific, difficulty: medium,
+   query: "el kart bta3i hayewsal emta bezabt? talabto men talat ayam"}
+- {qid: q-0450, variety: msa, type: unanswerable, answerable: false, unanswerable_reason: account_specific, difficulty: medium,
+   query: "كم أنفقت على المطاعم الشهر الماضي؟"}
+- {qid: q-0451, variety: gulf, type: unanswerable, answerable: false, unanswerable_reason: account_specific, difficulty: medium,
+   query: "وافقوا على طلب رفع الحد اللي رسلته أمس؟"}
+- {qid: q-0452, variety: english, type: unanswerable, answerable: false, unanswerable_reason: account_specific, difficulty: medium,
+   query: "Why did you reject my dispute, case 77123? I sent all the evidence."}
+- {qid: q-0453, variety: levantine_egyptian, type: unanswerable, answerable: false, unanswerable_reason: account_specific, difficulty: medium,
+   query: "حساب صاحبي خالد متوثق ولا لأ؟ عايز أتأكد قبل ما أحوله"}
+- {qid: q-0454, variety: code_switched, type: unanswerable, answerable: false, unanswerable_reason: account_specific, difficulty: easy, country: AE,
+   query: "حول ٥٠٠ درهم لأخوي من حسابي please"}
+- {qid: q-0455, variety: msa, type: unanswerable, answerable: false, unanswerable_reason: account_specific, difficulty: medium,
+   query: "غيّروا البريد الإلكتروني المسجل في حسابي نيابةً عني لأنني لا أستطيع الدخول."}
+
+# --- out_of_domain: not about Sahla Pay at all (7) ---
+- {qid: q-0456, variety: english, type: unanswerable, answerable: false, unanswerable_reason: out_of_domain, difficulty: easy, country: AE,
+   query: "What's the weather going to be like in Dubai tomorrow?"}
+- {qid: q-0457, variety: gulf, type: unanswerable, answerable: false, unanswerable_reason: out_of_domain, difficulty: easy,
+   query: "مين فاز بمباراة الهلال أمس؟"}
+- {qid: q-0458, variety: levantine_egyptian, type: unanswerable, answerable: false, unanswerable_reason: out_of_domain, difficulty: easy,
+   query: "ممكن تديني طريقة عمل الكبسة؟"}
+- {qid: q-0459, variety: english, type: unanswerable, answerable: false, unanswerable_reason: out_of_domain, difficulty: easy,
+   query: "Write me a short poem about Ramadan."}
+- {qid: q-0460, variety: msa, type: unanswerable, answerable: false, unanswerable_reason: out_of_domain, difficulty: easy,
+   query: "ما عاصمة أستراليا؟"}
+- {qid: q-0461, variety: arabizi, type: unanswerable, answerable: false, unanswerable_reason: out_of_domain, difficulty: easy,
+   query: "anhi mobile a7san a2tareh, iphone wala samsung?"}
+- {qid: q-0462, variety: arabizi, type: unanswerable, answerable: false, unanswerable_reason: out_of_domain, difficulty: easy,
+   query: "salat el 3eed el sa3a kam fel 2ahera?"}

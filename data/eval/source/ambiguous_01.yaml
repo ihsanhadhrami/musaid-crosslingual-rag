@@ -1,0 +1,292 @@
+# Ambiguous queries (ANNOTATION.md §7): the answer differs by country and the query
+# neither states nor implies one, so the right behaviour is to ask which country.
+# Gold chunks hold the per-country answers. Claude-drafted; verified: false.
+
+- qid: q-0372
+  query: "What documents do I need to verify my account?"
+  variety: english
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0002#c0, kb-0005#c0]
+  reference_answer: "Depends on the country: a Saudi national ID or Iqama in Saudi Arabia, an Emirates ID in the UAE, or an Egyptian national ID in Egypt, plus a selfie (Egypt also needs a recent proof of address)."
+  difficulty: medium
+- qid: q-0373
+  query: "ما رسوم استبدال البطاقة المفقودة؟"
+  variety: msa
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0109#c0]
+  reference_answer: "SAR 25 in Saudi Arabia, AED 25 in the UAE or EGP 100 in Egypt, VAT included."
+  difficulty: easy
+- qid: q-0374
+  query: "كم الحد اليومي للتحويل؟"
+  variety: gulf
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0034#c0]
+  reference_answer: "For verified accounts: SAR 20,000 in Saudi Arabia, AED 15,000 in the UAE or EGP 60,000 in Egypt; lower for unverified accounts."
+  difficulty: easy
+- qid: q-0375
+  query: "How long does a merchant refund take to show up in my balance?"
+  variety: english
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0072#c0]
+  reference_answer: "After the merchant sends it: up to 7 business days in Saudi Arabia, 10 in the UAE or 14 in Egypt."
+  difficulty: medium
+- qid: q-0376
+  query: "الدعم الفني بيرد ٢٤ ساعة ولا ليه مواعيد؟"
+  variety: levantine_egyptian
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0185#c0]
+  reference_answer: "24 hours a day in Saudi Arabia and the UAE; 9:00 AM to 10:00 PM Cairo time in Egypt."
+  difficulty: medium
+- qid: q-0377
+  query: "كم الـ fee على الـ ATM withdrawal؟"
+  variety: code_switched
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0116#c0]
+  reference_answer: "In your own country: SAR 3 in Saudi Arabia (first 2 a month free), AED 2 in the UAE or EGP 10 in Egypt; withdrawals abroad cost more."
+  difficulty: easy
+- qid: q-0378
+  query: "kam rosoom el ta7weel l 7esab bank?"
+  variety: arabizi
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0033#c0]
+  reference_answer: "Free in Saudi Arabia, AED 1 in the UAE, and 0.5% (minimum EGP 5, maximum EGP 20) in Egypt, plus VAT where it applies."
+  difficulty: medium
+- qid: q-0379
+  query: "What's the minimum age to open an account?"
+  variety: english
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0002#c0]
+  reference_answer: "18 in Saudi Arabia and the UAE, 16 in Egypt (with guardian approval until 21)."
+  difficulty: easy
+- qid: q-0380
+  query: "كم تستغرق المراجعة اليدوية للتحقق من الهوية؟"
+  variety: msa
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0007#c0]
+  reference_answer: "Up to 1 business day in Saudi Arabia, 2 in the UAE or 3 in Egypt."
+  difficulty: easy
+- qid: q-0381
+  query: "كم أقدر أدفع بالكرت تاب بدون الرقم السري؟"
+  variety: gulf
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0113#c0]
+  reference_answer: "Up to SAR 300 in Saudi Arabia, AED 500 in the UAE or EGP 600 in Egypt per payment."
+  difficulty: easy
+- qid: q-0382
+  query: "Is there a fee if I don't use my account for a long time?"
+  variety: english
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0137#c0]
+  reference_answer: "No fee in Saudi Arabia; after 12 months without activity AED 10 a month in the UAE; after 18 months EGP 20 a month in Egypt."
+  difficulty: medium
+- qid: q-0383
+  query: "ينفع أضيف الكارت على ابل باي؟"
+  variety: levantine_egyptian
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0111#c0]
+  reference_answer: "Yes in Saudi Arabia and the UAE (Cards > Add to Apple Wallet); not yet available in Egypt."
+  difficulty: medium
+- qid: q-0384
+  query: "أقدر أسوي international transfer من حسابي؟"
+  variety: code_switched
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0036#c0]
+  reference_answer: "Yes from verified accounts in Saudi Arabia and the UAE; not available for accounts registered in Egypt."
+  difficulty: medium
+- qid: q-0385
+  query: "What's the deadline to dispute a card payment?"
+  variety: english
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0077#c0, kb-0076#c0]
+  reference_answer: "60 calendar days in Saudi Arabia, 45 in the UAE or 30 in Egypt, from the transaction date."
+  difficulty: easy
+- qid: q-0386
+  query: "ما الحد الأقصى للرصيد في المحفظة بعد توثيق الحساب؟"
+  variety: msa
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0135#c0, kb-0010#c0]
+  reference_answer: "SAR 100,000 in Saudi Arabia, AED 75,000 in the UAE or EGP 300,000 in Egypt."
+  difficulty: easy
+- qid: q-0387
+  query: "كم رسوم الشحن بالبطاقة البنكية؟"
+  variety: gulf
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0055#c0]
+  reference_answer: "1% in Saudi Arabia, 1.5% in the UAE or 2% in Egypt, plus VAT; bank transfer top-ups are free."
+  difficulty: easy
+- qid: q-0388
+  query: "How much does a physical card cost?"
+  variety: english
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0101#c0]
+  reference_answer: "SAR 30 in Saudi Arabia, AED 30 in the UAE or EGP 150 in Egypt, charged once when you order."
+  difficulty: easy
+- qid: q-0389
+  query: "kam el limit bta3 el sa7b men el makana fel yom?"
+  variety: arabizi
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0136#c0]
+  reference_answer: "SAR 5,000 in Saudi Arabia, AED 5,000 in the UAE or EGP 15,000 in Egypt per day."
+  difficulty: medium
+- qid: q-0390
+  query: "Can I ask for a temporary limit increase to buy a car?"
+  variety: english
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0150#c0]
+  reference_answer: "In Saudi Arabia up to SAR 50,000 a day and in the UAE up to AED 40,000, for 7 calendar days; not available in Egypt."
+  difficulty: medium
+- qid: q-0391
+  query: "كم نسبة ضريبة القيمة المضافة على رسومكم؟"
+  variety: msa
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0143#c0]
+  reference_answer: "15% in Saudi Arabia, 5% in the UAE and 14% in Egypt."
+  difficulty: easy
+- qid: q-0392
+  query: "إذا سكرت حسابي، متى توصلني الفلوس الباقية في حسابي البنكي؟"
+  variety: gulf
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0193#c0]
+  reference_answer: "Within 3 business days in Saudi Arabia, 5 in the UAE or 7 in Egypt."
+  difficulty: medium
+- qid: q-0393
+  query: "How long do you keep my data after I close my account?"
+  variety: english
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0197#c0]
+  reference_answer: "10 years in Saudi Arabia, 5 years in the UAE and 5 years in Egypt."
+  difficulty: medium
+- qid: q-0394
+  query: "التحويل الدولي بياخد قد ايه لحد ما يوصل؟"
+  variety: levantine_egyptian
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0039#c0]
+  reference_answer: "At most 2 business days from Saudi Arabia or 1 from the UAE after it shows Sent to bank; international transfers aren't available from Egypt."
+  difficulty: medium
+- qid: q-0395
+  query: "كم الـ markup على الـ exchange rate عندكم؟"
+  variety: code_switched
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0064#c0]
+  reference_answer: "2.5% in Saudi Arabia, 2% in the UAE and 3% in Egypt, included in the rate shown."
+  difficulty: easy
+- qid: q-0396
+  query: "How much is the international transfer fee?"
+  variety: english
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0037#c0]
+  reference_answer: "1.5% (minimum SAR 15) from Saudi Arabia or 1.25% (minimum AED 15) from the UAE, plus VAT; not available from Egypt."
+  difficulty: medium
+- qid: q-0397
+  query: "ما المهلة المتاحة لتقديم اعتراض على تحويل أرسلته إلى شخص خاطئ؟"
+  variety: msa
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0075#c0]
+  reference_answer: "60 calendar days in Saudi Arabia, 45 in the UAE or 30 in Egypt."
+  difficulty: medium
+- qid: q-0398
+  query: "كم أقصى مبلغ أدفعه بالباركود في العملية الوحدة؟"
+  variety: gulf
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0144#c0]
+  reference_answer: "SAR 5,000 in Saudi Arabia, AED 5,000 in the UAE or EGP 10,000 in Egypt per QR payment."
+  difficulty: medium
+- qid: q-0399
+  query: "How long does it take to get money back when a failed payment was still deducted?"
+  variety: english
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0072#c0]
+  reference_answer: "Reversed automatically within 2 business days in Saudi Arabia, 3 in the UAE or 5 in Egypt."
+  difficulty: medium
+- qid: q-0400
+  query: "el kart byewsal ba3d ad eh men ma atlobo?"
+  variety: arabizi
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0102#c0]
+  reference_answer: "Usually 5 business days in Saudi Arabia, 3 in the UAE or 10 in Egypt."
+  difficulty: medium
+- qid: q-0401
+  query: "How much is the seller fee when someone pays my payment link?"
+  variety: english
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0066#c0, kb-0145#c0]
+  reference_answer: "1% in Saudi Arabia, 1% in the UAE and 1.5% in Egypt, taken from the payment."
+  difficulty: medium
+- qid: q-0402
+  query: "متى يصبح الحساب خاملاً إذا لم أستخدمه؟"
+  variety: msa
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0194#c0]
+  reference_answer: "After 12 months without a transaction you make yourself in Saudi Arabia and the UAE, or 18 months in Egypt."
+  difficulty: medium
+- qid: q-0403
+  query: "كم مدة التحقيق في الاعتراض على تحويل غلط؟"
+  variety: gulf
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0075#c0]
+  reference_answer: "Up to 30 calendar days in Saudi Arabia and the UAE, and up to 45 in Egypt."
+  difficulty: medium
+- qid: q-0404
+  query: "رسوم دفع الفواتير كام؟"
+  variety: levantine_egyptian
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0049#c0]
+  reference_answer: "Free in Saudi Arabia and the UAE; EGP 2 plus VAT per bill in Egypt."
+  difficulty: easy
+- qid: q-0405
+  query: "كم الـ maximum balance للحساب الـ unverified؟"
+  variety: code_switched
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0140#c0]
+  reference_answer: "SAR 5,000 in Saudi Arabia, AED 3,000 in the UAE or EGP 20,000 in Egypt."
+  difficulty: easy
+- qid: q-0406
+  query: "What does it cost to recall an international transfer?"
+  variety: english
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0100#c0]
+  reference_answer: "SAR 50 in Saudi Arabia or AED 50 in the UAE, not refunded if the recall fails; international transfers aren't available from Egypt."
+  difficulty: hard
+- qid: q-0407
+  query: "أقدر أدفع بسامسونج باي؟"
+  variety: gulf
+  type: ambiguous
+  needs_clarification: true
+  gold_chunk_ids: [kb-0112#c0]
+  reference_answer: "Yes in Saudi Arabia and the UAE; Samsung Pay isn't available in Egypt (Google Pay is)."
+  difficulty: medium
