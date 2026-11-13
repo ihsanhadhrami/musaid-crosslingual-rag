@@ -29,7 +29,7 @@
 - <<: *pg011
   qid: q-0064
   variety: levantine_egyptian
-  query: "لسه باعت فلوس لرقم غلط من خمس دقايق، ينفع ألغيها؟"
+  query: "لسه حولت فلوسي لرقم غلط قبل خمس دقايق، ينفع ألغيها؟"
   difficulty: medium
 - <<: *pg011
   qid: q-0065

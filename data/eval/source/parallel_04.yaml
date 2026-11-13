@@ -1,0 +1,410 @@
+# Parallel subset, intents pg-031 to pg-040 (ANNOTATION.md §10).
+# pg-031..035 point at rewritten articles, pg-036..040 at drafts (ADR-010 mix).
+# Claude-drafted; verified: false until a human has read the gold chunks.
+
+# pg-031: maximum wallet balance for a verified account, Saudi Arabia
+- <<: &pg031
+    parallel_group: pg-031
+    type: number_sensitive
+    country: SA
+    gold_chunk_ids: [kb-0028#c1, kb-0010#c0, kb-0135#c0]
+    reference_answer: >-
+      A verified account registered in Saudi Arabia can hold up to SAR 100,000, including money kept
+      in Pockets.
+    critical_facts: ["SAR 100,000"]
+  qid: q-0181
+  variety: english
+  query: "I'm verified in Saudi. What's the most money I can keep in my Sahla wallet?"
+  difficulty: easy
+- <<: *pg031
+  qid: q-0182
+  variety: msa
+  query: "حسابي موثق في السعودية. ما الحد الأقصى للمبلغ الذي يمكنني الاحتفاظ به في المحفظة؟"
+  difficulty: easy
+- <<: *pg031
+  qid: q-0183
+  variety: gulf
+  query: "حسابي موثق بالسعودية، كم أقصى مبلغ أقدر أخليه في المحفظة؟"
+  difficulty: medium
+- <<: *pg031
+  qid: q-0184
+  variety: levantine_egyptian
+  query: "حسابي متوثق وأنا في السعودية، أقصى فلوس ينفع تفضل في المحفظة كام؟"
+  difficulty: medium
+- <<: *pg031
+  qid: q-0185
+  variety: code_switched
+  query: "الـ account حقي verified بالسعودية، كم الـ maximum balance اللي أقدر أخليه؟"
+  difficulty: easy
+- <<: *pg031
+  qid: q-0186
+  variety: arabizi
+  query: "7esabi mwatha2 fel saudi, kam a2sa mablagh a2dar akhalleeh fel ma7faza?"
+  difficulty: medium
+
+# pg-032: daily ATM cash limit, Egypt
+- <<: &pg032
+    parallel_group: pg-032
+    type: number_sensitive
+    country: EG
+    gold_chunk_ids: [kb-0116#c0, kb-0136#c0, kb-0203#c2]
+    reference_answer: >-
+      For accounts registered in Egypt, the daily ATM withdrawal limit is EGP 15,000. A single ATM
+      may set a lower limit per withdrawal.
+    critical_facts: ["EGP 15,000"]
+  qid: q-0187
+  variety: english
+  query: "What's the daily limit for ATM cash withdrawals in Egypt?"
+  difficulty: easy
+- <<: *pg032
+  qid: q-0188
+  variety: msa
+  query: "ما الحد اليومي للسحب النقدي من أجهزة الصراف الآلي في مصر؟"
+  difficulty: easy
+- <<: *pg032
+  qid: q-0189
+  variety: gulf
+  query: "كم أقدر أسحب كاش من الصراف في اليوم وأنا في مصر؟"
+  difficulty: medium
+- <<: *pg032
+  qid: q-0190
+  variety: levantine_egyptian
+  query: "أقدر أسحب كام في اليوم من المكنة في مصر؟"
+  difficulty: medium
+- <<: *pg032
+  qid: q-0191
+  variety: code_switched
+  query: "كم الـ daily limit للسحب من الـ ATM في مصر؟"
+  difficulty: easy
+- <<: *pg032
+  qid: q-0192
+  variety: arabizi
+  query: "a2dar as7ab kam fel yom men el makana fi masr?"
+  difficulty: medium
+
+# pg-033: Sahla Pay closed my account without notice or a reason
+- <<: &pg033
+    parallel_group: pg-033
+    type: policy_eligibility
+    country: null
+    gold_chunk_ids: [kb-0195#c0]
+    reference_answer: >-
+      Usually Sahla Pay gives at least 60 calendar days notice before closing an account. When the
+      closure relates to suspected fraud or a legal requirement it can act immediately without
+      notice and may be unable to give the reason; the balance is then sent to a bank account in
+      your name, or held if the authorities require it.
+    critical_facts: ["60 calendar days"]
+  qid: q-0193
+  variety: english
+  query: "Sahla Pay closed my account with no warning and won't tell me why. Are you even allowed to do that?"
+  difficulty: medium
+- <<: *pg033
+  qid: q-0194
+  variety: msa
+  query: "أغلقت سهلة باي حسابي دون أي إشعار مسبق وترفض ذكر السبب. هل يحق لكم ذلك؟"
+  difficulty: medium
+- <<: *pg033
+  qid: q-0195
+  variety: gulf
+  query: "سكرتوا حسابي بدون ما تعلموني وما تبون تقولون ليش، يحق لكم؟"
+  difficulty: medium
+- <<: *pg033
+  qid: q-0196
+  variety: levantine_egyptian
+  query: "قفلتولي الحساب من غير ما تقولولي ومش راضيين تقولوا السبب، ده من حقكم؟"
+  difficulty: medium
+- <<: *pg033
+  qid: q-0197
+  variety: code_switched
+  query: "سكرتوا الـ account حقي بدون أي notice وما تبون تقولون السبب، مسموح لكم؟"
+  difficulty: medium
+- <<: *pg033
+  qid: q-0198
+  variety: arabizi
+  query: "2afaltooli el 7esab mn gher ma t2olooli w mesh rady teqolo el sabab, da mn 7a2ko?"
+  difficulty: hard
+
+# pg-034: is support open at 11 pm, Egypt
+- <<: &pg034
+    parallel_group: pg-034
+    type: number_sensitive
+    country: EG
+    gold_chunk_ids: [kb-0185#c0, kb-0190#c0]
+    reference_answer: >-
+      No. In Egypt, chat and phone support are open 9:00 AM to 10:00 PM Cairo time every day. You
+      can still send a chat message, which is answered when support reopens, and you can freeze
+      your card at any time.
+    critical_facts: ["9:00 AM to 10:00 PM"]
+  qid: q-0199
+  variety: english
+  query: "Is customer support open at 11 at night in Cairo? I really need to talk to someone."
+  difficulty: medium
+- <<: *pg034
+  qid: q-0200
+  variety: msa
+  query: "هل خدمة العملاء متاحة في الساعة الحادية عشرة ليلاً بتوقيت القاهرة؟"
+  difficulty: medium
+- <<: *pg034
+  qid: q-0201
+  variety: gulf
+  query: "خدمة العملاء فاتحة الساعة ١١ بالليل؟ أنا في القاهرة وأبي أكلم أحد"
+  difficulty: medium
+- <<: *pg034
+  qid: q-0202
+  variety: levantine_egyptian
+  query: "خدمة العملا شغالة الساعة ١١ بالليل؟ أنا في القاهرة ومحتاج أكلم حد ضروري"
+  difficulty: medium
+- <<: *pg034
+  qid: q-0203
+  variety: code_switched
+  query: "الـ customer support شغال الساعة 11 بالليل في القاهرة؟"
+  difficulty: medium
+- <<: *pg034
+  qid: q-0204
+  variety: arabizi
+  query: "khedmet el 3omala shaghala el sa3a 11 bel leil? ana fel cairo w me7tag akallem 7ad"
+  difficulty: medium
+
+# pg-035: guaranteed crypto returns over WhatsApp
+- <<: &pg035
+    parallel_group: pg-035
+    type: factual
+    country: null
+    gold_chunk_ids: [kb-0164#c0]
+    reference_answer: >-
+      It has the signs of an investment scam: guaranteed returns, pressure to act, contact over
+      WhatsApp and a request to pay an individual instead of a regulated business. Don't send the
+      money.
+    critical_facts: []
+  qid: q-0205
+  variety: english
+  query: "Someone on WhatsApp is promising guaranteed 20% a week on crypto and wants me to transfer to his personal account. Is this legit?"
+  difficulty: easy
+- <<: *pg035
+  qid: q-0206
+  variety: msa
+  query: "شخص على واتساب يعدني بأرباح مضمونة بنسبة ٢٠٪ أسبوعياً من العملات الرقمية، ويطلب أن أحول المال إلى حسابه الشخصي. هل هذا موثوق؟"
+  difficulty: medium
+- <<: *pg035
+  qid: q-0207
+  variety: gulf
+  query: "واحد في الواتساب يقول أرباح مضمونة ٢٠٪ بالأسبوع في الكريبتو ويبيني أحول على حسابه الشخصي، صادق ولا نصاب؟"
+  difficulty: medium
+- <<: *pg035
+  qid: q-0208
+  variety: levantine_egyptian
+  query: "واحد على الواتساب بيقولي مكسب مضمون ٢٠٪ في الأسبوع من الكريبتو وعايزني أحوله على حسابه الشخصي، ده نصب؟"
+  difficulty: medium
+- <<: *pg035
+  qid: q-0209
+  variety: code_switched
+  query: "واحد على WhatsApp يقول guaranteed profit ٢٠٪ بالأسبوع على crypto ويبيني أحول له على حسابه، هذا scam؟"
+  difficulty: easy
+- <<: *pg035
+  qid: q-0210
+  variety: arabizi
+  query: "wa7ed 3al whatsapp bey2oli arba7 madmoona 20% kol esbou3 fel crypto w 3ayezni a7awelo 3ala 7esabo, da nasb?"
+  difficulty: medium
+
+# pg-036: how long a transfer to India takes from the UAE (draft gold)
+- <<: &pg036
+    parallel_group: pg-036
+    type: number_sensitive
+    country: AE
+    gold_chunk_ids: [kb-0217#c2, kb-0039#c0]
+    reference_answer: >-
+      From the UAE, transfers to India usually arrive within 1 hour, and at most 1 business day
+      after the transfer shows Sent to bank, not counting the receiving bank's own checks.
+    critical_facts: ["1 business day"]
+  qid: q-0211
+  variety: english
+  query: "Sending money to my mum's bank account in India from Dubai. How long until she gets it?"
+  difficulty: medium
+- <<: *pg036
+  qid: q-0212
+  variety: msa
+  query: "أرسل مبلغاً من دبي إلى حساب والدتي البنكي في الهند. كم يستغرق وصوله؟"
+  difficulty: medium
+- <<: *pg036
+  qid: q-0213
+  variety: gulf
+  query: "بحول فلوس من دبي لحساب أمي في الهند، كم تاخذ لين توصلها؟"
+  difficulty: medium
+- <<: *pg036
+  qid: q-0214
+  variety: levantine_egyptian
+  query: "هبعت فلوس من دبي لحساب ماما في الهند، هتوصلها بعد قد ايه؟"
+  difficulty: medium
+- <<: *pg036
+  qid: q-0215
+  variety: code_switched
+  query: "بسوي transfer من دبي لحساب أمي في الهند، كم ياخذ وقت لين يوصل؟"
+  difficulty: medium
+- <<: *pg036
+  qid: q-0216
+  variety: arabizi
+  query: "ha7awel floos men dubai l 7esab mama fel hind, hatewsal emta?"
+  difficulty: hard
+
+# pg-037: dormancy fee after a year of no use, UAE (draft gold)
+- <<: &pg037
+    parallel_group: pg-037
+    type: number_sensitive
+    country: AE
+    gold_chunk_ids: [kb-0137#c0, kb-0216#c0]
+    reference_answer: >-
+      Yes. A UAE account with no transaction made by you for 12 months becomes dormant and is charged
+      AED 10 per month, taken only from the balance. Make any transaction, such as a small top-up, to
+      reactivate it.
+    critical_facts: ["AED 10 per month", "12 months"]
+    notes: "kb-0194#c0 says a fee applies in the UAE but not how much; partial, not gold."
+  qid: q-0217
+  variety: english
+  query: "I haven't touched my Sahla account in over a year, I'm in Dubai. Are you charging me something for that?"
+  difficulty: medium
+- <<: *pg037
+  qid: q-0218
+  variety: msa
+  query: "لم أستخدم حسابي في سهلة باي منذ أكثر من عام، وأنا مقيم في دبي. هل تفرضون رسوماً على ذلك؟"
+  difficulty: medium
+- <<: *pg037
+  qid: q-0219
+  variety: gulf
+  query: "صار لي أكثر من سنة ما استخدمت الحساب وأنا في دبي، تخصمون علي شي؟"
+  difficulty: medium
+- <<: *pg037
+  qid: q-0220
+  variety: levantine_egyptian
+  query: "بقالي أكتر من سنة مستخدمتش الحساب وأنا في دبي، بتخصموا مني حاجة؟"
+  difficulty: hard
+- <<: *pg037
+  qid: q-0221
+  variety: code_switched
+  query: "من سنة ما استخدمت الـ account وأنا في دبي، فيه fee عشان كذا؟"
+  difficulty: medium
+- <<: *pg037
+  qid: q-0222
+  variety: arabizi
+  query: "ba2ali aktar men sana ma estakhdamtsh el 7esab w ana fi dubai, bt5asmo meni 7aga?"
+  difficulty: hard
+
+# pg-038: PIN blocked after three wrong tries; do I need a new card? (draft gold)
+- <<: &pg038
+    parallel_group: pg-038
+    type: troubleshooting
+    country: null
+    gold_chunk_ids: [kb-0105#c0]
+    reference_answer: >-
+      No new card is needed. Go to Cards > Card settings > Unblock PIN, confirm it's you, then check
+      the PIN with Show PIN or set a new one. Online and phone-wallet payments keep working meanwhile.
+    critical_facts: ["Unblock PIN"]
+  qid: q-0223
+  variety: english
+  query: "Put the wrong PIN in three times and now the card says PIN blocked. Do I have to order a new card?"
+  difficulty: easy
+- <<: *pg038
+  qid: q-0224
+  variety: msa
+  query: "أدخلت الرقم السري خطأً ثلاث مرات فحُظر. هل يجب أن أطلب بطاقة جديدة؟"
+  difficulty: easy
+- <<: *pg038
+  qid: q-0225
+  variety: gulf
+  query: "دخلت الرقم السري غلط ثلاث مرات وانقفل، لازم أطلب كرت جديد؟"
+  difficulty: medium
+- <<: *pg038
+  qid: q-0226
+  variety: levantine_egyptian
+  query: "دخلت الرقم السري غلط تلات مرات والكارت اتقفل، لازم أطلب كارت جديد؟"
+  difficulty: medium
+- <<: *pg038
+  qid: q-0227
+  variety: code_switched
+  query: "دخلت الـ PIN غلط ثلاث مرات وصار blocked، لازم أطلب card جديد؟"
+  difficulty: easy
+- <<: *pg038
+  qid: q-0228
+  variety: arabizi
+  query: "da5alt el pin ghalat 3 marrat w el kart et2afal, lazem atlob kart gdeed?"
+  difficulty: medium
+
+# pg-039: fees for receiving money from abroad (draft gold; same in every country)
+- <<: &pg039
+    parallel_group: pg-039
+    type: factual
+    country: null
+    gold_chunk_ids: [kb-0040#c0, kb-0303#c0, kb-0145#c0]
+    reference_answer: >-
+      Receiving money from abroad is free on Sahla Pay's side. The sender's bank or an intermediary
+      bank may take its own fee, and money in another currency is converted at Sahla Pay's rate,
+      which includes a markup.
+    critical_facts: []
+  qid: q-0229
+  variety: english
+  query: "My brother in London wants to send me money. Do you take a cut when I receive it?"
+  difficulty: easy
+- <<: *pg039
+  qid: q-0230
+  variety: msa
+  query: "يريد أخي المقيم في لندن أن يرسل لي مبلغاً. هل تفرضون رسوماً على استلامه؟"
+  difficulty: easy
+- <<: *pg039
+  qid: q-0231
+  variety: gulf
+  query: "أخوي في لندن بيرسل لي فلوس، تاخذون شي على الاستلام؟"
+  difficulty: medium
+- <<: *pg039
+  qid: q-0232
+  variety: levantine_egyptian
+  query: "أخويا في لندن هيبعتلي فلوس، بتاخدوا حاجة لما أستلمها؟"
+  difficulty: medium
+- <<: *pg039
+  qid: q-0233
+  variety: code_switched
+  query: "أخوي في لندن بيسوي لي transfer، فيه fees على الاستلام عندكم؟"
+  difficulty: easy
+- <<: *pg039
+  qid: q-0234
+  variety: arabizi
+  query: "akhoya f london hayeb3atli floos, bt5do 7aga lama astelemha?"
+  difficulty: medium
+
+# pg-040: card payment limit when paying an Umrah package, Egypt (draft gold)
+- <<: &pg040
+    parallel_group: pg-040
+    type: number_sensitive
+    country: EG
+    gold_chunk_ids: [kb-0248#c0, kb-0203#c2]
+    reference_answer: >-
+      For accounts registered in Egypt, card payments are limited to EGP 50,000 a day, so a package
+      above that needs to be split across days or paid another way the company accepts.
+    critical_facts: ["EGP 50,000"]
+  qid: q-0235
+  variety: english
+  query: "Booking an Umrah package from Egypt and paying the company by card. How much can I pay on the card in one day?"
+  difficulty: medium
+- <<: *pg040
+  qid: q-0236
+  variety: msa
+  query: "أحجز باقة عمرة من مصر وسأدفع للشركة بالبطاقة. ما الحد الأقصى للدفع بالبطاقة في اليوم الواحد؟"
+  difficulty: medium
+- <<: *pg040
+  qid: q-0237
+  variety: gulf
+  query: "بحجز عمرة من مصر وبدفع للشركة بالكرت، كم أقدر أدفع بالكرت في اليوم؟"
+  difficulty: medium
+- <<: *pg040
+  qid: q-0238
+  variety: levantine_egyptian
+  query: "بحجز عمرة من مصر وهدفع للشركة بالفيزا، أقدر أدفع كام في اليوم بالكارت؟"
+  difficulty: medium
+- <<: *pg040
+  qid: q-0239
+  variety: code_switched
+  query: "بحجز package عمرة من مصر وبدفع بالـ card، كم الـ limit في اليوم؟"
+  difficulty: medium
+- <<: *pg040
+  qid: q-0240
+  variety: arabizi
+  query: "ba7gez 3omra men masr w hadfa3 lel sherka bel visa, a2dar adfa3 kam fel yom bel kart?"
+  difficulty: hard
