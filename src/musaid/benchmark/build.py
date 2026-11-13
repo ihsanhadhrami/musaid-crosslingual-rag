@@ -40,22 +40,25 @@ _ARABIC = re.compile(r"[ء-ي]")
 _LATIN = re.compile(r"[A-Za-z]")
 
 # Signals that imply a country (ANNOTATION.md §7). Dialect is deliberately absent.
+_LATIN_SIGNALS = {
+    "SA": r"sar|riyals?|riyadh|jeddah|dammam|mecca|makkah|iqama|e2ama|nafath|sadad|saudi|ksa",
+    "AE": r"aed|dirhams?|dubai|abu dhabi|sharjah|emirates id|uae pass|uae|emarat",
+    "EG": r"egp|pounds?|cairo|alexandria|instapay|egypt|masr|ma9r",
+}
+_ARABIC_SIGNALS = {
+    "SA": r"ريال|الرياض|جدة|الدمام|مكة|إقامة|اقامة|نفاذ|سداد|السعودية",
+    "AE": r"درهم|دراهم|دبي|أبوظبي|ابوظبي|الشارقة|الإمارات|الامارات",
+    "EG": r"جنيه|القاهرة|الاسكندرية|الإسكندرية|انستاباي|إنستاباي|مصر|الرقم القومي",
+}
+# Arabic attaches prefixes (و ف ب ل ك ال) and suffixes, so \b isn't enough:
+# "بالسعودية" and "مصرية" must match, "مصرح" (authorized) must not.
+_AR_PREFIX = r"(?<![ء-ي])(?:[وف]?(?:[بلك]|ال|بال|لل|كال)?)"
+_AR_SUFFIX = r"(?:ات|ي|ية)?(?![ء-ي])"
 COUNTRY_SIGNALS: dict[str, re.Pattern[str]] = {
-    "SA": re.compile(
-        r"\b(?:sar|riyals?|riyadh|jeddah|dammam|mecca|makkah|iqama|e2ama|nafath|sadad|saudi|ksa)\b"
-        r"|ريال|الرياض|جدة|الدمام|مكة|إقامة|اقامة|نفاذ|سداد|السعودية",
-        re.I,
-    ),
-    "AE": re.compile(
-        r"\b(?:aed|dirhams?|dubai|abu dhabi|sharjah|emirates id|uae pass|uae|emarat)\b"
-        r"|درهم|دبي|أبوظبي|ابوظبي|الشارقة|الإمارات|الامارات",
-        re.I,
-    ),
-    "EG": re.compile(
-        r"\b(?:egp|pounds?|cairo|alexandria|instapay|egypt|masr|ma9r)\b"
-        r"|جنيه|القاهرة|الاسكندرية|الإسكندرية|انستاباي|إنستاباي|مصر|الرقم القومي",
-        re.I,
-    ),
+    c: re.compile(
+        rf"\b(?:{_LATIN_SIGNALS[c]})\b|{_AR_PREFIX}(?:{_ARABIC_SIGNALS[c]}){_AR_SUFFIX}", re.I
+    )
+    for c in ("SA", "AE", "EG")
 }
 
 

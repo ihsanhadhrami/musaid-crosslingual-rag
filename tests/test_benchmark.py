@@ -111,6 +111,10 @@ def test_country_signal_warnings():
     assert implied_countries("كم رسوم التحويل بالريال") == {"SA"}
     assert implied_countries("ابعت فلوس من القاهرة") == {"EG"}
     assert implied_countries("ابي ارجع فلوسي") == set()  # dialect alone implies nothing
+    assert implied_countries("عملية غير مصرح بها") == set()  # مصرح isn't مصر
+    assert implied_countries("حسابي بالسعودية") == {"SA"}
+    assert implied_countries("سويت transfer بالدرهم") == {"AE"}
+    assert implied_countries("بطاقة مصرية") == {"EG"}
     _, _, warnings = run(q(country=None, query="Refund time for a payment in Dubai?"))
     assert any("implies AE" in m for m in warnings)
 

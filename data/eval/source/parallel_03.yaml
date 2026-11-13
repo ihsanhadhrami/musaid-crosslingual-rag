@@ -1,0 +1,419 @@
+# Parallel subset, intents pg-021 to pg-030 (ANNOTATION.md §10).
+# Claude-drafted; verified: false until a human has read the gold chunks.
+
+# pg-021: is it too late to dispute a wrong transfer after a month, UAE
+- <<: &pg021
+    parallel_group: pg-021
+    type: number_sensitive
+    country: AE
+    gold_chunk_ids: [kb-0075#c0, kb-0077#c0, kb-0201#c12]
+    reference_answer: >-
+      For UAE accounts a wrong-transfer dispute must be opened within 45 calendar days of the
+      transfer, so after about a month you can still file it in Activity > Report a problem >
+      I sent it to the wrong person.
+    critical_facts: ["45 calendar days"]
+    notes: "Also in kb-0097#c0 (Refunds FAQ); left out under the 3-chunk cap."
+  qid: q-0121
+  variety: english
+  query: "I sent dirhams to the wrong account about a month ago and only just noticed. Is it too late to open a dispute?"
+  difficulty: medium
+- <<: *pg021
+  qid: q-0122
+  variety: msa
+  query: "حوّلت دراهم إلى حساب خاطئ قبل نحو شهر ولم أنتبه إلا الآن. هل فات الأوان لتقديم اعتراض؟"
+  difficulty: medium
+- <<: *pg021
+  qid: q-0123
+  variety: gulf
+  query: "حولت دراهم لحساب غلط من شهر تقريباً وتوني انتبهت، فات الوقت على الاعتراض؟"
+  difficulty: medium
+- <<: *pg021
+  qid: q-0124
+  variety: levantine_egyptian
+  query: "حولت دراهم لحساب غلط من حوالي شهر ولسه واخد بالي، لسه ينفع أعمل شكوى؟"
+  difficulty: hard
+- <<: *pg021
+  qid: q-0125
+  variety: code_switched
+  query: "سويت transfer بالدرهم لحساب غلط من شهر وتوني انتبهت، أقدر أفتح dispute ولا فات الـ deadline؟"
+  difficulty: medium
+- <<: *pg021
+  qid: q-0126
+  variety: arabizi
+  query: "7awalt dirham l 7esab ghalat men shahr ta2riban w lessa wakhed baly, lessa yenfa3 a3mel shakwa?"
+  difficulty: hard
+
+# pg-022: failed payment deducted from the balance, Egypt
+- <<: &pg022
+    parallel_group: pg-022
+    type: number_sensitive
+    country: EG
+    gold_chunk_ids: [kb-0071#c3, kb-0072#c0, kb-0042#c0]
+    reference_answer: >-
+      For accounts registered in Egypt, a failed payment that was deducted from your balance is
+      reversed automatically within 5 business days.
+    critical_facts: ["5 business days"]
+    notes: "Also in kb-0097#c0 (Refunds FAQ); left out under the 3-chunk cap."
+  qid: q-0127
+  variety: english
+  query: "My payment failed but the money still left my balance. I'm in Egypt, when do I get it back?"
+  difficulty: easy
+- <<: *pg022
+  qid: q-0128
+  variety: msa
+  query: "فشلت عملية الدفع لكن المبلغ خُصم من رصيدي. أنا في مصر، فمتى يعود إليّ؟"
+  difficulty: easy
+- <<: *pg022
+  qid: q-0129
+  variety: gulf
+  query: "الدفع ما تم بس الفلوس انخصمت من رصيدي وأنا في مصر، متى ترجع؟"
+  difficulty: medium
+- <<: *pg022
+  qid: q-0130
+  variety: levantine_egyptian
+  query: "الدفع فشل بس الفلوس اتخصمت من الرصيد، أنا في مصر، هترجع امتى؟"
+  difficulty: medium
+- <<: *pg022
+  qid: q-0131
+  variety: code_switched
+  query: "الـ payment فشل بس المبلغ انخصم من الـ balance، أنا في مصر، متى يرجع؟"
+  difficulty: easy
+- <<: *pg022
+  qid: q-0132
+  variety: arabizi
+  query: "el daf3 feshel bas el floos et5asamet men el raseed, ana fi masr, hatrga3 emta?"
+  difficulty: medium
+
+# pg-023: scammed by a fake seller after approving the payment (buried exception)
+- <<: &pg023
+    parallel_group: pg-023
+    type: policy_eligibility
+    country: null
+    gold_chunk_ids: [kb-0090#c1, kb-0215#c0, kb-0156#c0]
+    reference_answer: >-
+      Not under the unauthorized-transaction rules: a payment you approved yourself after being
+      deceived is fraud, but it is not an unauthorized transaction. Report it through Reporting
+      fraud, and Sahla Pay will try to recover the money.
+    critical_facts: ["not an unauthorized transaction"]
+  qid: q-0133
+  variety: english
+  query: "I paid a seller on Instagram for a phone and confirmed it in the app, but it was a scam. Will you refund me like an unauthorized transaction?"
+  difficulty: hard
+- <<: *pg023
+  qid: q-0134
+  variety: msa
+  query: "دفعت لبائع على إنستغرام ثمن هاتف وأكدت العملية في التطبيق، ثم اتضح أنه احتيال. هل ستُعاد إليّ الأموال كعملية غير مصرح بها؟"
+  difficulty: hard
+- <<: *pg023
+  qid: q-0135
+  variety: gulf
+  query: "دفعت لواحد في الانستقرام قيمة جوال وأكدت الدفع من التطبيق وطلع نصاب، بترجعون لي فلوسي؟"
+  difficulty: hard
+- <<: *pg023
+  qid: q-0136
+  variety: levantine_egyptian
+  query: "دفعت لواحد على انستجرام تمن موبايل وأكدت من الأبلكيشن وطلع نصاب، هترجعولي الفلوس؟"
+  difficulty: hard
+- <<: *pg023
+  qid: q-0137
+  variety: code_switched
+  query: "دفعت لـ seller على Instagram قيمة جوال وسويت confirm من التطبيق وطلع scam، بترجعون المبلغ؟"
+  difficulty: hard
+- <<: *pg023
+  qid: q-0138
+  variety: arabizi
+  query: "dafa3t l wa7ed 3ala instagram taman mobile w akkedt mn el app w tele3 nassab, hatraga3oli el floos?"
+  difficulty: hard
+
+# pg-024: locked for the third time in a day (buried exception)
+- <<: &pg024
+    parallel_group: pg-024
+    type: troubleshooting
+    country: null
+    gold_chunk_ids: [kb-0154#c0, kb-0168#c0]
+    reference_answer: >-
+      After 3 locks in one day the account gets an extra security restriction: waiting and changing
+      the password won't remove it. Support has to verify your identity and unlock the account;
+      contact them through Help on the login screen.
+    critical_facts: ["3 locks"]
+  qid: q-0139
+  variety: english
+  query: "My account got locked for the third time today and now waiting doesn't unlock it. What now?"
+  difficulty: medium
+- <<: *pg024
+  qid: q-0140
+  variety: msa
+  query: "قُفل حسابي للمرة الثالثة اليوم، ولم يعد الانتظار يفتحه. ماذا أفعل؟"
+  difficulty: medium
+- <<: *pg024
+  qid: q-0141
+  variety: gulf
+  query: "حسابي انقفل ثالث مرة اليوم والحين حتى لو انتظرت ما ينفتح، وش الحل؟"
+  difficulty: medium
+- <<: *pg024
+  qid: q-0142
+  variety: levantine_egyptian
+  query: "الحساب اتقفل تالت مرة النهارده ومش بيفتح حتى لو استنيت، أعمل ايه؟"
+  difficulty: medium
+- <<: *pg024
+  qid: q-0143
+  variety: code_switched
+  query: "الـ account انقفل ثالث مرة اليوم والـ timer ما عاد يفتحه، وش أسوي؟"
+  difficulty: medium
+- <<: *pg024
+  qid: q-0144
+  variety: arabizi
+  query: "el 7esab et2afal talet marra el naharda w mesh byeftah 7atta law estaneet, a3mel eh?"
+  difficulty: hard
+
+# pg-025: should I resubmit my ID while it's "In review"?
+- <<: &pg025
+    parallel_group: pg-025
+    type: troubleshooting
+    country: null
+    gold_chunk_ids: [kb-0007#c0, kb-0009#c0]
+    reference_answer: >-
+      No. Submitting again starts a new review, cancels the earlier one and puts you at the end of
+      the queue. Wait for your country's review period; if it has passed, check for a request from
+      Sahla Pay, then contact Help.
+    critical_facts: []
+  qid: q-0145
+  variety: english
+  query: "My verification has been 'In review' since yesterday. Should I just upload my ID again to speed it up?"
+  difficulty: medium
+- <<: *pg025
+  qid: q-0146
+  variety: msa
+  query: "حالة التحقق من هويتي «قيد المراجعة» منذ الأمس. هل أعيد رفع الهوية لتسريع العملية؟"
+  difficulty: medium
+- <<: *pg025
+  qid: q-0147
+  variety: gulf
+  query: "توثيقي تحت المراجعة من أمس، أرفع الهوية مرة ثانية عشان يمشي أسرع؟"
+  difficulty: medium
+- <<: *pg025
+  qid: q-0148
+  variety: levantine_egyptian
+  query: "التوثيق تحت المراجعة من امبارح، أرفع البطاقة تاني عشان يخلص أسرع؟"
+  difficulty: medium
+- <<: *pg025
+  qid: q-0149
+  variety: code_switched
+  query: "الـ verification حقي In review من أمس، أسوي upload للهوية مرة ثانية عشان يسرع؟"
+  difficulty: easy
+- <<: *pg025
+  qid: q-0150
+  variety: arabizi
+  query: "el tawtheeq ta7t el moraj3a men embare7, arfa3 el beta2a tani 3ashan ykhlas asra3?"
+  difficulty: hard
+
+# pg-026: unverified in Dubai: daily sending limit + what's needed to verify (multi-hop)
+- <<: &pg026
+    parallel_group: pg-026
+    type: multi_hop
+    country: AE
+    gold_chunk_ids: [kb-0140#c0, kb-0004#c0, kb-0010#c0]
+    reference_answer: >-
+      An unverified UAE account can send up to AED 1,000 a day to other Sahla Pay users, with no
+      bank or international transfers. To verify, you need a valid Emirates ID (both sides) and a
+      selfie taken in the app.
+    critical_facts: ["AED 1,000", "Emirates ID"]
+    notes: >-
+      Hop 1 (limit): kb-0140#c0, with kb-0010#c0 as an equivalent. Hop 2 (documents): kb-0004#c0.
+      gold_source comes out mixed: rewritten + draft.
+  qid: q-0151
+  variety: english
+  query: "My account isn't verified yet and I'm in Dubai. How much can I send per day, and what do I need to get verified?"
+  difficulty: hard
+- <<: *pg026
+  qid: q-0152
+  variety: msa
+  query: "حسابي غير موثق بعد وأنا في دبي. كم يمكنني أن أرسل يومياً؟ وما المطلوب لتوثيقه؟"
+  difficulty: hard
+- <<: *pg026
+  qid: q-0153
+  variety: gulf
+  query: "حسابي للحين مو موثق وأنا في دبي، كم أقدر أحول باليوم ووش أحتاج عشان أوثقه؟"
+  difficulty: hard
+- <<: *pg026
+  qid: q-0154
+  variety: levantine_egyptian
+  query: "الحساب لسه مش متوثق وأنا في دبي، أقدر أبعت قد ايه في اليوم ومحتاج ايه عشان أوثقه؟"
+  difficulty: hard
+- <<: *pg026
+  qid: q-0155
+  variety: code_switched
+  query: "الـ account حقي مو verified وأنا في دبي، كم الـ daily limit ووش الـ documents المطلوبة؟"
+  difficulty: hard
+- <<: *pg026
+  qid: q-0156
+  variety: arabizi
+  query: "el 7esab lessa mesh mwathaq w ana fi dubai, a2dar ab3at ad eh fel yom w me7tag eh 3ashan awathe2o?"
+  difficulty: hard
+
+# pg-027: lost card replacement fee, Saudi Arabia (trap: kb-0134 2025 says SAR 35)
+- <<: &pg027
+    parallel_group: pg-027
+    type: superseded_trap
+    country: SA
+    gold_chunk_ids: [kb-0109#c0, kb-0131#c0, kb-0107#c0]
+    reference_answer: >-
+      Replacing a lost card costs SAR 25 for Saudi accounts, VAT included, deducted from your
+      balance when you order it.
+    critical_facts: ["SAR 25"]
+    notes: >-
+      Trap: kb-0134#c0 (2025) says SAR 35. Also stated in kb-0126#c0, kb-0203#c5 and kb-0275#c1;
+      left out under the 3-chunk cap.
+  qid: q-0157
+  variety: english
+  query: "Lost my card somewhere in Riyadh. How much will a replacement cost me?"
+  difficulty: hard
+- <<: *pg027
+  qid: q-0158
+  variety: msa
+  query: "فقدت بطاقتي في الرياض. كم تبلغ رسوم إصدار بطاقة بديلة؟"
+  difficulty: hard
+- <<: *pg027
+  qid: q-0159
+  variety: gulf
+  query: "ضاع كرتي في الرياض، كم بتاخذون على كرت جديد؟"
+  difficulty: hard
+- <<: *pg027
+  qid: q-0160
+  variety: levantine_egyptian
+  query: "الكارت ضاع مني في الرياض، الكارت الجديد هيكلفني كام؟"
+  difficulty: hard
+- <<: *pg027
+  qid: q-0161
+  variety: code_switched
+  query: "ضيعت الـ card في الرياض، كم الـ fee على الـ replacement؟"
+  difficulty: hard
+- <<: *pg027
+  qid: q-0162
+  variety: arabizi
+  query: "da3 karti fel riyadh, kam btakhdo 3ala kart jdeed?"
+  difficulty: hard
+
+# pg-028: can't close the account while a dispute is open (buried exception)
+- <<: &pg028
+    parallel_group: pg-028
+    type: policy_eligibility
+    country: null
+    gold_chunk_ids: [kb-0193#c0, kb-0201#c12]
+    reference_answer: >-
+      Yes. An account with an open dispute can't be closed. Wait until the dispute is resolved, or
+      cancel it, and then try again.
+    critical_facts: []
+  qid: q-0163
+  variety: english
+  query: "I tried to close my account but it won't let me. I still have a dispute going on, is that why?"
+  difficulty: medium
+- <<: *pg028
+  qid: q-0164
+  variety: msa
+  query: "حاولت إغلاق حسابي لكن التطبيق لا يسمح بذلك، ولديّ اعتراض ما زال قائماً. هل هذا هو السبب؟"
+  difficulty: medium
+- <<: *pg028
+  qid: q-0165
+  variety: gulf
+  query: "أبي أسكر حسابي بس ما رضى، وعندي اعتراض للحين مفتوح، هذا السبب؟"
+  difficulty: medium
+- <<: *pg028
+  qid: q-0166
+  variety: levantine_egyptian
+  query: "عايز أقفل حسابي والأبلكيشن مش راضي، وعندي شكوى لسه مفتوحة، ده السبب؟"
+  difficulty: medium
+- <<: *pg028
+  qid: q-0167
+  variety: code_switched
+  query: "حاولت أسوي close للحساب وما رضى، عندي dispute للحين مفتوح، هذا السبب؟"
+  difficulty: medium
+- <<: *pg028
+  qid: q-0168
+  variety: arabizi
+  query: "7awelt a2fel el 7esab w mesh rady, w 3andi shakwa lessa maftoo7a, da el sabab?"
+  difficulty: hard
+
+# pg-029: can't pay a new recipient right after setting up a new phone
+- <<: &pg029
+    parallel_group: pg-029
+    type: troubleshooting
+    country: null
+    gold_chunk_ids: [kb-0178#c0, kb-0160#c0, kb-0170#c0]
+    reference_answer: >-
+      For 24 hours after you set up Sahla Pay on a new phone, transfers to new recipients and
+      international transfers are paused. People you've paid before, card payments and QR payments
+      work normally.
+    critical_facts: ["24 hours"]
+    notes: "Close to pg-010 (SIM change) but a different trigger; kb-0161#c0 is a hard negative here."
+  qid: q-0169
+  variety: english
+  query: "Set up the app on my new phone today and now I can't send money to my cousin, I've never paid him before. Why?"
+  difficulty: medium
+- <<: *pg029
+  qid: q-0170
+  variety: msa
+  query: "ثبّتُّ التطبيق على هاتفي الجديد اليوم، ولا أستطيع الآن تحويل مبلغ إلى ابن عمي الذي لم أحوّل له من قبل. لماذا؟"
+  difficulty: medium
+- <<: *pg029
+  qid: q-0171
+  variety: gulf
+  query: "نزلت التطبيق على جوالي الجديد اليوم وما أقدر أحول لولد عمي، أول مرة أحول له. ليش؟"
+  difficulty: medium
+- <<: *pg029
+  qid: q-0172
+  variety: levantine_egyptian
+  query: "نزلت الأبلكيشن على الموبايل الجديد النهارده ومش عارف أحول لابن عمي، أول مرة أبعتله. ليه؟"
+  difficulty: medium
+- <<: *pg029
+  qid: q-0173
+  variety: code_switched
+  query: "سويت setup للتطبيق على الجوال الجديد اليوم وما أقدر أسوي transfer لولد عمي، أول مرة أحول له، ليش؟"
+  difficulty: medium
+- <<: *pg029
+  qid: q-0174
+  variety: arabizi
+  query: "nazzelt el app 3al mobile el gedid el naharda w mesh 3aref a7awel l ebn 3ammi, awel marra ab3atlo, leh?"
+  difficulty: hard
+
+# pg-030: asked for a PIN on a small tap payment
+- <<: &pg030
+    parallel_group: pg-030
+    type: troubleshooting
+    country: null
+    gold_chunk_ids: [kb-0113#c0]
+    reference_answer: >-
+      After several contactless payments in a row, the card may ask for your PIN as a security
+      check. Once you complete that PIN payment, tap payments without a PIN work again up to the
+      normal limit.
+    critical_facts: []
+    notes: "kb-0203#c2 says a PIN may be asked below the limit but not why or what to do; partial, not gold."
+  qid: q-0175
+  variety: english
+  query: "Why did the machine ask for my PIN on a small tap payment? It was way under the limit."
+  difficulty: medium
+- <<: *pg030
+  qid: q-0176
+  variety: msa
+  query: "لماذا طلب جهاز الدفع الرقم السري في عملية دفع لاتلامسي صغيرة رغم أنها أقل من الحد؟"
+  difficulty: medium
+- <<: *pg030
+  qid: q-0177
+  variety: gulf
+  query: "ليش الجهاز طلب مني الرقم السري وأنا دافع مبلغ بسيط تاب؟ تحت الحد بواجد"
+  difficulty: medium
+- <<: *pg030
+  qid: q-0178
+  variety: levantine_egyptian
+  query: "ليه المكنة طلبت الرقم السري وأنا بدفع حاجة صغيرة بالتاتش؟ ده أقل من الحد بكتير"
+  difficulty: medium
+- <<: *pg030
+  qid: q-0179
+  variety: code_switched
+  query: "ليش الـ terminal طلب الـ PIN في contactless payment صغيرة؟ أقل من الـ limit بواجد"
+  difficulty: medium
+- <<: *pg030
+  qid: q-0180
+  variety: arabizi
+  query: "leh el makana talabet el pin w ana badfa3 7aga soghayara tap? da a2al men el limit bekteer"
+  difficulty: hard
