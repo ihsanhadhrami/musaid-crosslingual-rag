@@ -12,6 +12,7 @@
       A verified account registered in Saudi Arabia can hold up to SAR 100,000, including money kept
       in Pockets.
     critical_facts: ["SAR 100,000"]
+    notes: "kb-0201#c3 (Terms) also states SAR 100,000; left out under the cap."
   qid: q-0181
   variety: english
   query: "I'm verified in Saudi. What's the most money I can keep in my Sahla wallet?"
@@ -87,13 +88,14 @@
     parallel_group: pg-033
     type: policy_eligibility
     country: null
-    gold_chunk_ids: [kb-0195#c0]
+    gold_chunk_ids: [kb-0195#c0, kb-0201#c13]
     reference_answer: >-
       Usually Sahla Pay gives at least 60 calendar days notice before closing an account. When the
       closure relates to suspected fraud or a legal requirement it can act immediately without
       notice and may be unable to give the reason; the balance is then sent to a bank account in
       your name, or held if the authorities require it.
     critical_facts: ["60 calendar days"]
+    notes: "kb-0201#c13 (Terms 13.3) covers notice and immediate closure."
   qid: q-0193
   variety: english
   query: "Sahla Pay closed my account with no warning and won't tell me why. Are you even allowed to do that?"
@@ -129,7 +131,7 @@
     parallel_group: pg-034
     type: number_sensitive
     country: EG
-    gold_chunk_ids: [kb-0185#c0, kb-0190#c0]
+    gold_chunk_ids: [kb-0185#c0, kb-0190#c0, kb-0309#c0]
     reference_answer: >-
       No. In Egypt, chat and phone support are open 9:00 AM to 10:00 PM Cairo time every day. You
       can still send a chat message, which is answered when support reopens, and you can freeze

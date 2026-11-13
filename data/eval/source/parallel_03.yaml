@@ -53,7 +53,8 @@
       For accounts registered in Egypt, a failed payment that was deducted from your balance is
       reversed automatically within 5 business days.
     critical_facts: ["5 business days"]
-    notes: "Also in kb-0097#c0 (Refunds FAQ); left out under the 3-chunk cap."
+    notes: >-
+      Also in kb-0097#c0 (Refunds FAQ); left out under the 3-chunk cap. Also stated in kb-0208#c1 (Dispute policy).
   qid: q-0127
   variety: english
   query: "My payment failed but the money still left my balance. I'm in Egypt, when do I get it back?"
@@ -219,8 +220,7 @@
       selfie taken in the app.
     critical_facts: ["AED 1,000", "Emirates ID"]
     notes: >-
-      Hop 1 (limit): kb-0140#c0, with kb-0010#c0 as an equivalent. Hop 2 (documents): kb-0004#c0.
-      gold_source comes out mixed: rewritten + draft.
+      Hop 1 (limit): kb-0140#c0, with kb-0010#c0 as an equivalent. Hop 2 (documents): kb-0004#c0. gold_source comes out mixed: rewritten + draft. kb-0068#c0 is a second equivalent for hop 1; left out under the cap.
   qid: q-0151
   variety: english
   query: "My account isn't verified yet and I'm in Dubai. How much can I send per day, and what do I need to get verified?"
@@ -262,8 +262,7 @@
       balance when you order it.
     critical_facts: ["SAR 25"]
     notes: >-
-      Trap: kb-0134#c0 (2025) says SAR 35. Also stated in kb-0126#c0, kb-0203#c5 and kb-0275#c1;
-      left out under the 3-chunk cap.
+      Trap: kb-0134#c0 (2025) says SAR 35. Also stated in kb-0126#c0, kb-0203#c5 and kb-0275#c1; left out under the 3-chunk cap. kb-0206#c1 (2026 schedule) also states SAR 25.
   qid: q-0157
   variety: english
   query: "Lost my card somewhere in Riyadh. How much will a replacement cost me?"
@@ -345,7 +344,8 @@
       international transfers are paused. People you've paid before, card payments and QR payments
       work normally.
     critical_facts: ["24 hours"]
-    notes: "Close to pg-010 (SIM change) but a different trigger; kb-0161#c0 is a hard negative here."
+    notes: >-
+      Close to pg-010 (SIM change) but a different trigger; kb-0161#c0 is a hard negative here. kb-0013#c0 (changing phone number) has a 24-hour pause for a different trigger; hard negative.
   qid: q-0169
   variety: english
   query: "Set up the app on my new phone today and now I can't send money to my cousin, I've never paid him before. Why?"

@@ -161,3 +161,13 @@ def test_committed_eval_set_builds_and_outputs_are_current():
         assert path.exists() and path.read_text(encoding="utf-8") == content, (
             f"{path.name} is stale: run `uv run python -m musaid.benchmark.build`"
         )
+
+
+def test_competitor_check_flags_equivalent_chunks():
+    from musaid.benchmark.review import competitors
+
+    chunks = dict(CHUNKS)
+    chunks["kb-0400#c0"] = chunk("kb-0400#c0", rewritten=False, title="Refunds FAQ")
+    flagged = competitors(q(), chunks)
+    assert [c.chunk_id for c in flagged] == ["kb-0400#c0"]
+    assert competitors(q(gold_chunk_ids=["kb-0071#c0", "kb-0400#c0"]), chunks) == []

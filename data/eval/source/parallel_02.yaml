@@ -72,7 +72,7 @@
 - <<: *pg012
   qid: q-0070
   variety: levantine_egyptian
-  query: "أنا ساكن في السعودية، التحويل لبنك برا بكام عندكم؟"
+  query: "أنا ساكن في السعودية، التحويل لبنك برا قديش عندكم؟"
   difficulty: hard
 - <<: *pg012
   qid: q-0071

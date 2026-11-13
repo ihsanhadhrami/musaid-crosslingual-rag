@@ -14,7 +14,8 @@
       In Saudi Arabia, once a wrong-transfer dispute is approved, the money is returned within
       5 business days, counted from the approval date.
     critical_facts: ["5 business days"]
-    notes: "Competitor kb-0075#c0 has deadlines and investigation times, not the return time."
+    notes: >-
+      Competitor kb-0075#c0 has deadlines and investigation times, not the return time. Also stated in kb-0208#c1 (Dispute policy); left out under the 3-chunk cap.
   qid: q-0001
   variety: english
   query: "I sent 800 riyals to the wrong guy by mistake. You approved my dispute yesterday, how long before the money is back in my wallet?"
@@ -224,7 +225,8 @@
       For UAE accounts, a merchant refund reaches your Sahla Pay balance within 10 business days
       after the merchant sends it.
     critical_facts: ["10 business days"]
-    notes: "Trap: kb-0073#c0 (2025) says up to 14 business days."
+    notes: >-
+      Trap: kb-0073#c0 (2025) says up to 14 business days. Also stated in kb-0097#c0 (Refunds FAQ) and kb-0208#c0 (Dispute policy); left out under the cap.
   qid: q-0031
   variety: english
   query: "A shop in Dubai says they refunded my card purchase. How many days until it shows up in my Sahla balance?"
@@ -348,7 +350,8 @@
       Replacing a damaged card costs AED 25 for UAE accounts, VAT included, taken from your balance
       when you order it.
     critical_facts: ["AED 25"]
-    notes: "kb-0203#c5 (Card Terms 2026) also states AED 25; left out under the 3-chunk cap."
+    notes: >-
+      kb-0203#c5 (Card Terms 2026) also states AED 25; left out under the 3-chunk cap. kb-0206#c2 and kb-0132#c0 (UAE fee schedules) also state AED 25; left out under the cap.
   qid: q-0049
   variety: english
   query: "My card cracked down the middle. How much is a replacement in the UAE?"
