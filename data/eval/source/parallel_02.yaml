@@ -1,0 +1,414 @@
+# Parallel subset, intents pg-011 to pg-020 (ANNOTATION.md §10).
+# Claude-drafted; verified: false until a human has read the gold chunks.
+
+# pg-011: cancelling a transfer just sent to the wrong number
+- <<: &pg011
+    parallel_group: pg-011
+    type: number_sensitive
+    country: null
+    gold_chunk_ids: [kb-0044#c0, kb-0043#c0, kb-0062#c0]
+    reference_answer: >-
+      Yes, if it still shows Pending and was sent less than 30 minutes ago: open it in Activity and
+      select Cancel transfer, and the full amount goes straight back to your balance.
+    critical_facts: ["30 minutes", "Cancel transfer"]
+    notes: "Three help articles each answer it. Also stated in kb-0201#c5 (Terms) and kb-0070#c0 (FAQ)."
+  qid: q-0061
+  variety: english
+  query: "I sent money to the wrong number like 5 minutes ago!! Can I still cancel it?"
+  difficulty: easy
+- <<: *pg011
+  qid: q-0062
+  variety: msa
+  query: "أرسلت مبلغاً إلى رقم خاطئ قبل خمس دقائق. هل ما زال بإمكاني إلغاء التحويل؟"
+  difficulty: easy
+- <<: *pg011
+  qid: q-0063
+  variety: gulf
+  query: "توني حولت لرقم غلط قبل خمس دقايق، أقدر ألغيها؟"
+  difficulty: medium
+- <<: *pg011
+  qid: q-0064
+  variety: levantine_egyptian
+  query: "لسه باعت فلوس لرقم غلط من خمس دقايق، ينفع ألغيها؟"
+  difficulty: medium
+- <<: *pg011
+  qid: q-0065
+  variety: code_switched
+  query: "توني سويت transfer لرقم غلط قبل 5 دقايق، أقدر أسوي cancel؟"
+  difficulty: easy
+- <<: *pg011
+  qid: q-0066
+  variety: arabizi
+  query: "lessa ba3et floos l rakam ghalat men 5 da2aye2, yenfa3 alghiha?"
+  difficulty: medium
+
+# pg-012: international transfer fee from Saudi Arabia (trap: kb-0038 2025 says 2%)
+- <<: &pg012
+    parallel_group: pg-012
+    type: superseded_trap
+    country: SA
+    gold_chunk_ids: [kb-0037#c0, kb-0206#c1, kb-0147#c0]
+    reference_answer: >-
+      From a Saudi account the international transfer fee is 1.5% of the amount sent, minimum
+      SAR 15, plus VAT. The exchange rate also includes a 2.5% markup.
+    critical_facts: ["1.5%", "SAR 15"]
+    notes: >-
+      Traps: kb-0038#c0, kb-0134#c0 and kb-0207#c1 (2025 editions). Corridor guides such as
+      kb-0218#c1 (Pakistan) repeat the fee; left out under the 3-chunk cap.
+  qid: q-0067
+  variety: english
+  query: "how much is your fee for sending money from saudi to a bank account overseas?"
+  difficulty: hard
+- <<: *pg012
+  qid: q-0068
+  variety: msa
+  query: "ما رسوم التحويل الدولي من حساب مسجل في السعودية إلى حساب بنكي في الخارج؟"
+  difficulty: hard
+- <<: *pg012
+  qid: q-0069
+  variety: gulf
+  query: "كم تاخذون على الحوالة لبرا من السعودية؟"
+  difficulty: hard
+- <<: *pg012
+  qid: q-0070
+  variety: levantine_egyptian
+  query: "أنا ساكن في السعودية، التحويل لبنك برا بكام عندكم؟"
+  difficulty: hard
+- <<: *pg012
+  qid: q-0071
+  variety: code_switched
+  query: "كم الـ fee على الـ international transfer من السعودية؟"
+  difficulty: hard
+- <<: *pg012
+  qid: q-0072
+  variety: arabizi
+  query: "kam rsoom el 7awala l barra men el saudi?"
+  difficulty: hard
+
+# pg-013: sending money abroad from Egypt (not available)
+- <<: &pg013
+    parallel_group: pg-013
+    type: country_specific
+    country: EG
+    gold_chunk_ids: [kb-0036#c0, kb-0201#c6, kb-0070#c0]
+    reference_answer: >-
+      No. International transfers aren't available for accounts registered in Egypt, although you
+      can receive money from abroad.
+    critical_facts: ["not available"]
+  qid: q-0073
+  variety: english
+  query: "I live in Cairo. Can I send money from Sahla Pay to my brother's bank account in Germany?"
+  difficulty: medium
+- <<: *pg013
+  qid: q-0074
+  variety: msa
+  query: "أقيم في القاهرة. هل يمكنني تحويل أموال من حسابي في سهلة باي إلى حساب أخي البنكي في ألمانيا؟"
+  difficulty: medium
+- <<: *pg013
+  qid: q-0075
+  variety: gulf
+  query: "أنا في القاهرة، أقدر أحول من سهلة باي لحساب أخوي في ألمانيا؟"
+  difficulty: medium
+- <<: *pg013
+  qid: q-0076
+  variety: levantine_egyptian
+  query: "انا في القاهرة، ينفع ابعت فلوس من سهلة باي لحساب أخويا في ألمانيا؟"
+  difficulty: medium
+- <<: *pg013
+  qid: q-0077
+  variety: code_switched
+  query: "أنا عايش في القاهرة، ينفع أعمل international transfer لأخويا في ألمانيا؟"
+  difficulty: medium
+- <<: *pg013
+  qid: q-0078
+  variety: arabizi
+  query: "ana fel cairo, yenfa3 ab3at floos men sahla pay le 7esab akhoya fi almanya?"
+  difficulty: hard
+
+# pg-014: adding the card to Apple Pay, UAE (availability differs by country, so it's stated)
+- <<: &pg014
+    parallel_group: pg-014
+    type: procedural
+    country: AE
+    gold_chunk_ids: [kb-0111#c0]
+    reference_answer: >-
+      Apple Pay is available in the UAE. Open Cards, pick the card, choose Add to Apple Wallet and
+      follow the on-screen steps.
+    critical_facts: ["Add to Apple Wallet"]
+    notes: "kb-0203#c3 (Card Terms) gives availability only, not the steps, so it isn't gold."
+  qid: q-0079
+  variety: english
+  query: "I'm in Abu Dhabi with an iPhone. How do I put my Sahla card on Apple Pay?"
+  difficulty: easy
+- <<: *pg014
+  qid: q-0080
+  variety: msa
+  query: "أقيم في أبوظبي ولدي هاتف آيفون. كيف أضيف بطاقتي إلى أبل باي؟"
+  difficulty: easy
+- <<: *pg014
+  qid: q-0081
+  variety: gulf
+  query: "أنا في أبوظبي وعندي ايفون، كيف أضيف الكرت على ابل باي؟"
+  difficulty: easy
+- <<: *pg014
+  qid: q-0082
+  variety: levantine_egyptian
+  query: "انا ساكن في أبوظبي ومعايا ايفون، ازاي أحط الكارت على ابل باي؟"
+  difficulty: easy
+- <<: *pg014
+  qid: q-0083
+  variety: code_switched
+  query: "أنا في أبوظبي، كيف أضيف الـ card على Apple Pay؟"
+  difficulty: easy
+- <<: *pg014
+  qid: q-0084
+  variety: arabizi
+  query: "ana fi abu dhabi w 3andi iphone, kef a7ot el kart 3ala apple pay?"
+  difficulty: easy
+
+# pg-015: a card payment the customer didn't make, UAE (dirhams)
+- <<: &pg015
+    parallel_group: pg-015
+    type: number_sensitive
+    country: AE
+    gold_chunk_ids: [kb-0090#c0, kb-0215#c0, kb-0170#c0]
+    reference_answer: >-
+      Freeze the card, change your password and report it in Activity with Report a problem >
+      I didn't make this. If you report it within 2 calendar days and didn't share your password,
+      PIN or one-time password, it's refunded in full once confirmed as unauthorized.
+    critical_facts: ["2 calendar days", "I didn't make this"]
+  qid: q-0085
+  variety: english
+  query: "There's a 1,200 dirham charge on my card that I never made. What do I do and will I get the money back?"
+  difficulty: medium
+- <<: *pg015
+  qid: q-0086
+  variety: msa
+  query: "ظهرت على بطاقتي عملية بقيمة ١٢٠٠ درهم لم أقم بها. ماذا أفعل؟ وهل سأسترد المبلغ؟"
+  difficulty: medium
+- <<: *pg015
+  qid: q-0087
+  variety: gulf
+  query: "طالع لي خصم ١٢٠٠ درهم على الكرت وأنا ما سويته، وش أسوي وبترجع لي الفلوس؟"
+  difficulty: medium
+- <<: *pg015
+  qid: q-0088
+  variety: levantine_egyptian
+  query: "في عملية ب١٢٠٠ درهم على الكارت أنا ما عملتهاش، أعمل ايه والفلوس هترجع؟"
+  difficulty: medium
+- <<: *pg015
+  qid: q-0089
+  variety: code_switched
+  query: "في transaction بـ 1200 درهم على الـ card أنا ما سويتها، وش أسوي؟ بيرجع المبلغ؟"
+  difficulty: medium
+- <<: *pg015
+  qid: q-0090
+  variety: arabizi
+  query: "fi 3amaleya b 1200 dirham 3al kart ana ma 3amaltehash, a3mel eh w el floos hatrga3?"
+  difficulty: hard
+
+# pg-016: temporary daily limit increase for a car payment, Saudi Arabia
+- <<: &pg016
+    parallel_group: pg-016
+    type: number_sensitive
+    country: SA
+    gold_chunk_ids: [kb-0150#c0, kb-0069#c0, kb-0308#c0]
+    reference_answer: >-
+      Yes, if your account is verified: request it in Profile > Limits > Request a temporary
+      increase and upload a document showing the payment. In Saudi Arabia the daily limit can go up
+      to SAR 50,000 for 7 calendar days.
+    critical_facts: ["SAR 50,000", "7 calendar days"]
+    notes: "Also stated in kb-0201#c7 (Terms) and kb-0250#c4 (rent guide); left out under the 3-chunk cap."
+  qid: q-0091
+  variety: english
+  query: "I need to pay 45,000 riyals for a car this week but my daily limit is lower. Can I raise it?"
+  difficulty: medium
+- <<: *pg016
+  qid: q-0092
+  variety: msa
+  query: "أحتاج إلى دفع ٤٥ ألف ريال ثمناً لسيارة هذا الأسبوع، لكن حدّي اليومي أقل من ذلك. هل يمكن رفعه؟"
+  difficulty: medium
+- <<: *pg016
+  qid: q-0093
+  variety: gulf
+  query: "بدفع ٤٥ ألف ريال قيمة سيارة هالأسبوع والحد اليومي ما يكفي، أقدر أرفعه؟"
+  difficulty: medium
+- <<: *pg016
+  qid: q-0094
+  variety: levantine_egyptian
+  query: "محتاج أدفع ٤٥ ألف ريال تمن عربية الأسبوع ده والحد اليومي مش مكفي، ينفع أزوده؟"
+  difficulty: hard
+- <<: *pg016
+  qid: q-0095
+  variety: code_switched
+  query: "لازم أدفع 45 ألف ريال للسيارة هالأسبوع والـ daily limit ما يكفي، أقدر أسوي increase؟"
+  difficulty: medium
+- <<: *pg016
+  qid: q-0096
+  variety: arabizi
+  query: "lazem adfa3 45 alf riyal lel sayara hal esbou3 w el limit el yawmi ma yekfi, agdar arfa3o?"
+  difficulty: hard
+
+# pg-017: extra checks and held transfers caused by a VPN
+- <<: &pg017
+    parallel_group: pg-017
+    type: troubleshooting
+    country: null
+    gold_chunk_ids: [kb-0187#c0]
+    reference_answer: >-
+      Probably. A VPN can make it look like you're signing in from another country, which can trigger
+      extra security checks, a transfer held for review or a blocked login. Turn off the VPN while
+      using Sahla Pay.
+    critical_facts: ["Turn off the VPN"]
+  qid: q-0097
+  variety: english
+  query: "I always have a VPN on and now the app keeps asking for selfies and my transfer is on hold. Is the VPN the problem?"
+  difficulty: easy
+- <<: *pg017
+  qid: q-0098
+  variety: msa
+  query: "أستخدم في بي إن باستمرار، وأصبح التطبيق يطلب مني صورة شخصية للتحقق وأوقف أحد تحويلاتي للمراجعة. هل السبب هو الشبكة الافتراضية؟"
+  difficulty: medium
+- <<: *pg017
+  qid: q-0099
+  variety: gulf
+  query: "دايم مشغل في بي ان، والحين التطبيق كل شوي يطلب سيلفي والحوالة معلقة، السبب من الفي بي ان؟"
+  difficulty: medium
+- <<: *pg017
+  qid: q-0100
+  variety: levantine_egyptian
+  query: "انا دايماً مشغل في بي ان، والأبلكيشن بقى يطلب سيلفي كل شوية والتحويل متعلق، ده بسبب الفي بي ان؟"
+  difficulty: medium
+- <<: *pg017
+  qid: q-0101
+  variety: code_switched
+  query: "دايم الـ VPN شغال عندي والحين التطبيق يطلب selfie والـ transfer صار on hold، المشكلة من الـ VPN؟"
+  difficulty: easy
+- <<: *pg017
+  qid: q-0102
+  variety: arabizi
+  query: "ana dayman mshaghel vpn w el app kol shwaya yotlob selfie w el ta7weel m3alla2, el moshkla mn el vpn?"
+  difficulty: medium
+
+# pg-018: what happens to the balance when you close your account, Egypt
+- <<: &pg018
+    parallel_group: pg-018
+    type: number_sensitive
+    country: EG
+    gold_chunk_ids: [kb-0193#c0]
+    reference_answer: >-
+      When you close the account you choose a bank account in your own name, and in Egypt the
+      remaining balance is paid to it within 7 business days.
+    critical_facts: ["7 business days"]
+    notes: "kb-0195#c0 gives the same times but for closures Sahla Pay starts; it's a hard negative."
+  qid: q-0103
+  variety: english
+  query: "If I close my account in Egypt, what happens to the money still in it and how long does it take?"
+  difficulty: easy
+- <<: *pg018
+  qid: q-0104
+  variety: msa
+  query: "إذا أغلقت حسابي في مصر، فماذا يحدث للرصيد المتبقي؟ وكم يستغرق تحويله إليّ؟"
+  difficulty: easy
+- <<: *pg018
+  qid: q-0105
+  variety: gulf
+  query: "لو سكرت حسابي وأنا في مصر، الفلوس اللي فيه وين تروح وكم تاخذ؟"
+  difficulty: medium
+- <<: *pg018
+  qid: q-0106
+  variety: levantine_egyptian
+  query: "لو قفلت الحساب وانا في مصر، الفلوس اللي فيه هتروح فين وهتاخد قد ايه؟"
+  difficulty: medium
+- <<: *pg018
+  qid: q-0107
+  variety: code_switched
+  query: "لو عملت close للـ account وأنا في مصر، الـ balance اللي فاضل يروح فين وامتى؟"
+  difficulty: medium
+- <<: *pg018
+  qid: q-0108
+  variety: arabizi
+  query: "law 2afalt el 7esab w ana fi masr, el floos elli fih hatro7 fen w btakhod ad eh?"
+  difficulty: medium
+
+# pg-019: contactless payment limit without a PIN, UAE (2025 card terms agree, so no trap)
+- <<: &pg019
+    parallel_group: pg-019
+    type: number_sensitive
+    country: AE
+    gold_chunk_ids: [kb-0113#c0, kb-0148#c0, kb-0203#c2]
+    reference_answer: >-
+      In the UAE, contactless card payments up to AED 500 don't need a PIN; above that the terminal
+      asks for it. Phone wallets such as Apple Pay don't use this limit.
+    critical_facts: ["AED 500"]
+  qid: q-0109
+  variety: english
+  query: "Up to what amount can I tap my card without a PIN in the UAE?"
+  difficulty: easy
+- <<: *pg019
+  qid: q-0110
+  variety: msa
+  query: "ما الحد الأقصى للدفع اللاتلامسي بالبطاقة دون إدخال الرقم السري في الإمارات؟"
+  difficulty: easy
+- <<: *pg019
+  qid: q-0111
+  variety: gulf
+  query: "لين كم أقدر أدفع بالكرت تاب بدون الرقم السري في الإمارات؟"
+  difficulty: medium
+- <<: *pg019
+  qid: q-0112
+  variety: levantine_egyptian
+  query: "أقدر أدفع بالكارت من غير ما أدخل الرقم السري لحد كام في الإمارات؟"
+  difficulty: medium
+- <<: *pg019
+  qid: q-0113
+  variety: code_switched
+  query: "كم الـ limit للـ contactless بدون PIN في الإمارات؟"
+  difficulty: easy
+- <<: *pg019
+  qid: q-0114
+  variety: arabizi
+  query: "le7ad kam a2dar adfa3 bel kart tap mn gher el pin fel emarat?"
+  difficulty: medium
+
+# pg-020: paid online, goods never arrived, seller silent (steps are the same everywhere)
+- <<: &pg020
+    parallel_group: pg-020
+    type: procedural
+    country: null
+    gold_chunk_ids: [kb-0099#c0]
+    reference_answer: >-
+      Contact the merchant and keep their replies. Once the promised delivery date has passed, open
+      the payment in Activity, choose Report a problem > I didn't receive it, add the expected date
+      and your messages, and submit.
+    critical_facts: ["I didn't receive it"]
+    notes: "Deadlines differ by country but the question asks for the steps (ruling, pg-004)."
+  qid: q-0115
+  variety: english
+  query: "Paid online for headphones a month ago, they never came and the seller isn't answering. What can I do?"
+  difficulty: medium
+- <<: *pg020
+  qid: q-0116
+  variety: msa
+  query: "دفعت عبر الإنترنت ثمن سماعات قبل شهر ولم تصلني، والبائع لا يرد. ماذا يمكنني أن أفعل؟"
+  difficulty: medium
+- <<: *pg020
+  qid: q-0117
+  variety: gulf
+  query: "شريت سماعات أونلاين من شهر وما وصلت والبايع ما يرد، وش أسوي؟"
+  difficulty: medium
+- <<: *pg020
+  qid: q-0118
+  variety: levantine_egyptian
+  query: "اشتريت سماعات أونلاين من شهر ومجتش والبياع مش بيرد، أعمل ايه؟"
+  difficulty: medium
+- <<: *pg020
+  qid: q-0119
+  variety: code_switched
+  query: "اشتريت headphones أونلاين من شهر وما وصلت والـ seller ما يرد، شو الحل؟"
+  difficulty: medium
+- <<: *pg020
+  qid: q-0120
+  variety: arabizi
+  query: "eshtarait sama3at online men shahr w ma wesletsh w el bayya3 mesh byrod, a3mel eh?"
+  difficulty: hard
