@@ -3,6 +3,7 @@
 uv run python -m musaid.benchmark.review                 # write data/eval/REVIEW.md
 uv run python -m musaid.benchmark.review --unverified    # only queries not yet verified
 uv run python -m musaid.benchmark.review --split test    # only test queries (verify these first)
+uv run python -m musaid.benchmark.review --split test --unverified --pdf   # A5 PDF for a tablet
 uv run python -m musaid.benchmark.review --competitors   # print only queries with competitors
 
 A *competitor* is a chunk that isn't gold, isn't superseded, covers the query's country,
@@ -89,12 +90,14 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--unverified", action="store_true")
     parser.add_argument("--split", choices=["dev", "test"], help="only queries in this split")
     parser.add_argument("--competitors", action="store_true", help="print flagged queries only")
+    parser.add_argument("--pdf", action="store_true", help="also write REVIEW.html and REVIEW.pdf")
     args = parser.parse_args(argv)
     sys.stdout.reconfigure(encoding="utf-8")
 
     chunks = load_chunks(args.root)
     pairs, _ = load_sources(args.root / "data" / "eval" / "source")
     raws = [r for _, r in pairs if isinstance(r, dict)]
+    files = {r.get("qid"): where.split(":")[0] for where, r in pairs if isinstance(r, dict)}
     if args.unverified:
         raws = [r for r in raws if not r.get("verified")]
     if args.split:
@@ -120,6 +123,18 @@ def main(argv: list[str] | None = None) -> int:
     out = args.root / "data" / "eval" / "REVIEW.md"
     out.write_text(text, encoding="utf-8", newline="\n")
     print(f"wrote {out.relative_to(args.root).as_posix()}: {len(raws)} queries, {flagged} flagged")
+    if args.pdf:
+        from musaid.benchmark.review_pdf import print_pdf, render_html
+
+        scope = " ".join(x for x in [args.split, "unverified" if args.unverified else ""] if x)
+        title = f"Musaid query review ({scope or 'all queries'})"
+        html_path = out.with_suffix(".html")
+        html_path.write_text(
+            render_html(raws, chunks, files, competitors, title), encoding="utf-8", newline="\n"
+        )
+        pdf_path = out.with_suffix(".pdf")
+        print_pdf(html_path, pdf_path)
+        print(f"wrote {pdf_path.relative_to(args.root).as_posix()}")
     return 0
 
 
