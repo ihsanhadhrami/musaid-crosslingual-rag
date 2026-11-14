@@ -11,6 +11,9 @@ dependencies = [
     "pydantic-settings>=2.6",
     "psycopg[binary]>=3.2",
     "pyyaml>=6.0",
+    "ranx>=0.3.21",
+    "bm25s>=0.3.16",
+    "pystemmer>=3.1.0",
 ]
 
 [dependency-groups]
