@@ -31,7 +31,8 @@ class RunResult:
     config: dict
     split: str
     rankings: dict[str, dict[str, float]]
-    seconds: float
+    seconds: float  # query-time only: encoding + search for every query in the split
+    index_seconds: float = 0.0  # building or loading the index (one-off, not per query)
 
 
 def load_split(root: Path, split: str) -> list[Query]:
@@ -116,6 +117,7 @@ def save(root: Path, result: RunResult, queries: list[Query]) -> Path:
         "git": git_sha(root),
         "queries_total": len(queries),
         "queries_scored": len(ids),
+        "index_seconds": round(result.index_seconds, 2),
         "seconds": round(result.seconds, 2),
         "ms_per_query": round(1000 * result.seconds / max(len(queries), 1), 2),
         "metrics": breakdown(ids, result.rankings),

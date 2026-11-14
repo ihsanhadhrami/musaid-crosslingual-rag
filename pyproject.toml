@@ -17,6 +17,10 @@ dependencies = [
 ]
 
 [dependency-groups]
+dense = [
+    "sentence-transformers>=6.3.0",
+    "torch>=2.15.0",
+]
 dev = [
     "ruff>=0.7",
     "pytest>=8.3",

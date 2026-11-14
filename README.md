@@ -35,6 +35,13 @@ uv run python -m musaid.benchmark.split assign      # dev/test split (ADR-012); 
 uv run python -m musaid.benchmark.agreement score   # second-annotator agreement
 ```
 
+Retrieval runs (Phase 3). Dense retrieval needs the optional group: `uv sync --group dense` (PyTorch, CPU is fine).
+
+```bash
+uv run python -m musaid.evaluation.run bm25_raw            # Baseline A on dev
+uv run python -m musaid.evaluation.run dense_bge_m3_raw    # Baseline B on dev
+```
+
 Labeling rules are in [docs/ANNOTATION.md](docs/ANNOTATION.md).
 
 ## Repository layout

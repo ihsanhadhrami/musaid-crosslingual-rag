@@ -25,17 +25,41 @@ CONFIGS: dict[str, dict] = {
         "b": 0.75,
         "k": 100,
     },
+    "dense_bge_m3_raw": {
+        "name": "dense_bge_m3_raw",
+        "description": "Baseline B: dense BAAI/bge-m3 on the raw query (direct cross-lingual)",
+        "retriever": "dense",
+        "model": "BAAI/bge-m3",
+        "query": "raw",
+        "max_seq_length": 512,
+        "k": 100,
+    },
 }
 
 
-def retrieve(config: dict, queries, root: Path) -> dict[str, dict[str, float]]:
-    if config["retriever"] == "bm25":
-        from musaid.retrieval.bm25 import BM25Retriever, load_chunks
+def build_retriever(config: dict, root: Path):
+    from musaid.retrieval.bm25 import load_chunks
 
-        r = BM25Retriever(load_chunks(root), k1=config["k1"], b=config["b"])
-        hits = r.search([q.query for q in queries], k=config["k"])
-        return {q.qid: h for q, h in zip(queries, hits, strict=True)}
+    chunks = load_chunks(root)
+    if config["retriever"] == "bm25":
+        from musaid.retrieval.bm25 import BM25Retriever
+
+        return BM25Retriever(chunks, k1=config["k1"], b=config["b"])
+    if config["retriever"] == "dense":
+        from musaid.retrieval.dense import DenseRetriever
+
+        return DenseRetriever(
+            chunks,
+            model_name=config["model"],
+            cache_dir=root / "data" / "cache",
+            max_seq_length=config["max_seq_length"],
+        )
     raise ValueError(f"unknown retriever {config['retriever']!r}")
+
+
+def retrieve(retriever, config: dict, queries) -> dict[str, dict[str, float]]:
+    hits = retriever.search([q.query for q in queries], k=config["k"])
+    return {q.qid: h for q, h in zip(queries, hits, strict=True)}
 
 
 def format_table(metrics: dict) -> str:
@@ -67,8 +91,15 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     config = CONFIGS[args.config]
     queries = load_split(args.root, args.split)
-    rankings, seconds = timed(retrieve, config, queries, args.root)
-    result = RunResult(config=config, split=args.split, rankings=rankings, seconds=seconds)
+    retriever, index_seconds = timed(build_retriever, config, args.root)
+    rankings, seconds = timed(retrieve, retriever, config, queries)
+    result = RunResult(
+        config=config,
+        split=args.split,
+        rankings=rankings,
+        seconds=seconds,
+        index_seconds=index_seconds,
+    )
     out = save(args.root, result, queries)
 
     import json

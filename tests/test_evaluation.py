@@ -40,3 +40,20 @@ def test_metrics_and_breakdown():
     b = breakdown(queries, rankings)
     assert b["variety"]["gulf"]["recall@10"] == 0.0
     assert b["parallel_group_recall@10"]["pg-001"] == {"english": 1.0, "gulf": 0.0}
+
+
+def test_dense_search_ranks_by_cosine_without_loading_a_model():
+    import numpy as np
+
+    from musaid.retrieval.dense import DenseRetriever
+
+    class Stub:
+        def encode(self, texts, **_):
+            table = {"refund": [1.0, 0.0], "card": [0.0, 1.0]}
+            return np.array([table[t] for t in texts], dtype=np.float32)
+
+    r = DenseRetriever.__new__(DenseRetriever)
+    r.ids, r.model, r.batch_size = ["kb-0001#c0", "kb-0002#c0"], Stub(), 8
+    r.matrix = np.array([[0.9, 0.1], [0.1, 0.9]], dtype=np.float32)
+    (hits,) = r.search(["card"], k=2)
+    assert list(hits) == ["kb-0002#c0", "kb-0001#c0"]

@@ -9,12 +9,13 @@
   "k": 100
  },
  "split": "dev",
- "created": "2026-11-14T08:01:34+00:00",
- "git": "d1ccba5",
+ "created": "2026-11-14T08:18:09+00:00",
+ "git": "ff3bfbd",
  "queries_total": 187,
  "queries_scored": 165,
- "seconds": 0.17,
- "ms_per_query": 0.88,
+ "index_seconds": 0.23,
+ "seconds": 0.01,
+ "ms_per_query": 0.08,
  "metrics": {
   "overall": {
    "n": 165,
