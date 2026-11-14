@@ -2,6 +2,7 @@
 
 uv run python -m musaid.benchmark.review                 # write data/eval/REVIEW.md
 uv run python -m musaid.benchmark.review --unverified    # only queries not yet verified
+uv run python -m musaid.benchmark.review --split test    # only test queries (verify these first)
 uv run python -m musaid.benchmark.review --competitors   # print only queries with competitors
 
 A *competitor* is a chunk that isn't gold, isn't superseded, covers the query's country,
@@ -11,6 +12,7 @@ hard negative (say so in notes). The sheet is a reading aid; it's not committed.
 """
 
 import argparse
+import json
 import re
 import sys
 from pathlib import Path
@@ -85,6 +87,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="python -m musaid.benchmark.review")
     parser.add_argument("--root", type=Path, default=ROOT)
     parser.add_argument("--unverified", action="store_true")
+    parser.add_argument("--split", choices=["dev", "test"], help="only queries in this split")
     parser.add_argument("--competitors", action="store_true", help="print flagged queries only")
     args = parser.parse_args(argv)
     sys.stdout.reconfigure(encoding="utf-8")
@@ -94,6 +97,10 @@ def main(argv: list[str] | None = None) -> int:
     raws = [r for _, r in pairs if isinstance(r, dict)]
     if args.unverified:
         raws = [r for r in raws if not r.get("verified")]
+    if args.split:
+        split_path = args.root / "data" / "eval" / "split.json"
+        split = json.loads(split_path.read_text(encoding="utf-8")) if split_path.exists() else {}
+        raws = [r for r in raws if split.get(r.get("qid")) == args.split]
     raws.sort(key=lambda r: r.get("qid", ""))
 
     if args.competitors:
