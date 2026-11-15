@@ -223,6 +223,8 @@ The same inspection found three content problems, fixed in the articles: a repea
 - Duplicates are found after light Arabic folding (hamza forms, alef maqsura, ta marbuta, diacritics). A repeat inside one entry is an error. A form shared by two concepts is a warning, because real customer words can be ambiguous.
 - Levantine and Egyptian share one list, as in the spec. `notes` says which dialect a form belongs to when that matters.
 
+**Amended by ADR-013:** the `arabizi` variants are removed. The `levantine_egyptian` key stays as it is.
+
 **Consequences:**
 - The translator never gets pointed at English the KB doesn't use.
 - Folding here is deliberately light. The full query normalizer (CAMeL Tools) comes in Phase 4 and isn't needed to keep the glossary clean.
@@ -245,3 +247,25 @@ The same inspection found three content problems, fixed in the articles: a repea
 - No intent appears in both dev and test, in any variety.
 - The single multi-hop parallel group lands wholly in one split (test). Dev keeps one single multi-hop query, which is thin; results on multi-hop are reported from test only.
 - Fixing a test label after locking takes an ADR and a deliberate re-lock, which is the point.
+- **Amended by ADR-013:** 58 Arabizi queries were removed before the lock (37 test, 21 dev), so test is 238 and dev 166. No remaining query changed sides.
+
+## ADR-013: Drop Arabizi and Levantine; the dialect variety is Egyptian
+
+**Status:** Accepted (2026-11-15)
+
+**Context:** The spec covered six query varieties: English, MSA, Gulf, Levantine/Egyptian, code-switched and Arabizi. The project is narrowing to Arabic-script queries over the English KB. Splitting Levantine from Egyptian was considered, but labeling the 68 `levantine_egyptian` queries showed about 66 are Egyptian and only one or two are Levantine, too few to measure.
+
+**Decision:**
+- Query varieties are `english`, `msa`, `gulf`, `egyptian` and `code_switched`.
+- The 58 Arabizi queries are deleted. Their qids are retired, never reused. They are also removed from `split.json`, the one deliberate exception to its append-only rule, made before the lock.
+- `levantine_egyptian` is renamed `egyptian`. q-0070, the one query built around a Levantine word (قديش), is reworded into Egyptian. Borrowed Levantine words inside otherwise Egyptian queries stay (Rulings log, 2026-11-14).
+- Each parallel group has five versions, so the parallel subset is 200 queries. Target shares for the other queries are the spec's, with Arabizi's 8% rescaled across the rest: English 33%, MSA 22%, Gulf 19%, Egyptian 13%, code-switched 13%.
+- The glossary drops its `arabizi` forms. Its `levantine_egyptian` key stays: Levantine forms do no harm in a translation prompt, and splitting 307 forms by dialect isn't worth the work.
+- The Arabizi-transliteration ablation (#9) is removed, and the metadata ablation becomes #9.
+- KB article kb-0309 still says agents understand Arabizi. KB content is the fictional company's, not the benchmark's scope, and the chunker is frozen (ADR-009).
+
+**Consequences:**
+- 404 queries: test 238, dev 166. The benchmark is below the spec's 450; that target counted Arabizi.
+- Results from before this ADR aren't comparable to later ones. The Phase 3 baselines and ablation #3 were rerun on the new dev set.
+- The weakest variety is no longer Arabizi, so the headline gap is dialect (Gulf, Egyptian) against MSA and English.
+- The agreement sample was redrawn (the sheet was still blank).

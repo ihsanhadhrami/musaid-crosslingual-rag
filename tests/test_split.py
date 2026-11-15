@@ -5,9 +5,9 @@ import json
 
 from musaid.benchmark.build import ROOT
 from musaid.benchmark.schema import Query
-from musaid.benchmark.split import assign, make_lock, verify_lock
+from musaid.benchmark.split import TEST_SIZE, assign, make_lock, verify_lock
 
-VARIETIES = ["english", "msa", "gulf", "levantine_egyptian", "code_switched", "arabizi"]
+VARIETIES = ["english", "msa", "gulf", "egyptian", "code_switched"]
 
 
 def mk(qid, variety="english", type_="factual", pg=None, gold_source="rewritten"):
@@ -27,7 +27,7 @@ def sample():
             qs.append(mk(f"q-{n:04d}", v, "number_sensitive", pg=f"pg-{g + 1:03d}"))
     for i in range(90):
         n += 1
-        qs.append(mk(f"q-{n:04d}", VARIETIES[i % 6], ["factual", "procedural"][i % 2]))
+        qs.append(mk(f"q-{n:04d}", VARIETIES[i % len(VARIETIES)], ["factual", "procedural"][i % 2]))
     return qs
 
 
@@ -43,9 +43,9 @@ def test_exact_size_whole_groups_and_deterministic():
 def test_existing_assignments_are_kept_and_ties_respected():
     qs = sample()
     first = assign(qs[:-10], {}, {}, test_size=80)
-    second = assign(qs, first, {"q-0150": "q-0149"}, test_size=90)
+    second = assign(qs, first, {"q-0140": "q-0139"}, test_size=90)
     assert all(second[k] == v for k, v in first.items())
-    assert second["q-0150"] == second["q-0149"]
+    assert second["q-0140"] == second["q-0139"]
 
 
 def test_lock_detects_changed_test_file_and_chunks():
@@ -61,9 +61,9 @@ def test_lock_detects_changed_test_file_and_chunks():
 
 def test_committed_split_is_complete_and_sized():
     split = json.loads((ROOT / "data" / "eval" / "split.json").read_text(encoding="utf-8"))
-    assert sum(v == "test" for v in split.values()) == 275
+    assert sum(v == "test" for v in split.values()) == TEST_SIZE
     test = (ROOT / "data" / "eval" / "test.jsonl").read_text(encoding="utf-8").splitlines()
-    assert len(test) == 275
+    assert len(test) == TEST_SIZE
 
 
 def test_agreement_sample_and_scoring():

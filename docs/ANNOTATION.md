@@ -2,7 +2,7 @@
 
 This guide is for anyone who writes or labels queries for the Musaid benchmark. That includes the second annotator, who labels 50 queries on their own for the agreement check. Read it in full before writing your first query. When a query doesn't fit a rule, ask; don't guess. Every new ruling gets added to the [Rulings log](#rulings-log) at the end so the next person applies it the same way.
 
-**The benchmark in one paragraph.** The knowledge base (KB) is 354 English help articles for a fictional e-wallet, Sahla Pay, operating in Saudi Arabia (SA), the UAE (AE) and Egypt (EG). It is split into 600 chunks. Customers ask in English or in one of five Arabic varieties. For each query we record which chunks answer it (the *gold chunks*), a short English reference answer, and the facts any correct answer must contain. Retrieval systems are then scored on whether they find the gold chunks.
+**The benchmark in one paragraph.** The knowledge base (KB) is 354 English help articles for a fictional e-wallet, Sahla Pay, operating in Saudi Arabia (SA), the UAE (AE) and Egypt (EG). It is split into 600 chunks. Customers ask in English or in one of four Arabic varieties: MSA, Gulf, Egyptian and code-switched (ADR-013). For each query we record which chunks answer it (the *gold chunks*), a short English reference answer, and the facts any correct answer must contain. Retrieval systems are then scored on whether they find the gold chunks.
 
 ---
 
@@ -56,14 +56,13 @@ Every query gets exactly one `variety`. Label the variety the query is written i
 | `english` | English only. Arabic place or product names in Latin letters are fine ("Riyadh", "Nafath"). | — |
 | `msa` | Modern Standard Arabic, the register of formal writing. No dialect words. | أريد، كيف يمكنني، هل، لماذا، لم أستلم |
 | `gulf` | Saudi, Emirati or other Gulf dialect in Arabic script. | ابي/أبغى، وش، ليش، حق، للحين، مو، سويت |
-| `levantine_egyptian` | Levantine or Egyptian dialect in Arabic script. | عايز، ازاي، ليه، بتاع، لسه، مش / بدي، شو، كيف، هلق، تبع |
+| `egyptian` | Egyptian dialect in Arabic script. | عايز، ازاي، ليه، بتاع، لسه، مش، ده، هـ + verb (هترجع)، ينفع، قد ايه |
 | `code_switched` | Arabic script (any register) with at least one English word **in Latin letters** that a speaker would naturally switch to. | "الـ card حقي blocked"، "ابي اسوي transfer" |
-| `arabizi` | Arabic written in Latin letters, usually with digit letters (2, 3, 5, 7…). English words mixed in are still Arabizi. | "kif arja3 floosi", "el card mesh shaghal" |
 
 **Edge cases**
 - English loanwords written in Arabic script ("الكرت"، "الأبلكيشن") don't make a query code-switched. The English has to be in Latin letters.
 - A dialect query with one MSA phrase is still dialect. An MSA query with one dialect word is dialect: label by the most dialectal word.
-- Arabizi that is really English with one Arabic word ("my 7awala failed") counts as Arabizi only if most content words are Arabic. Otherwise it is English.
+- Arabizi (Arabic in Latin letters) and Levantine are out of scope (ADR-013). Don't write them; an Egyptian query with one borrowed Levantine word is still Egyptian (Rulings log, 2026-11-14).
 - `script` is derived by the builder (`arabic`, `latin` or `mixed`), so you don't set it.
 
 **Dialect is not a country.** A Gulf-dialect query doesn't mean the customer is in SA or AE: Egyptians and Syrians live in Riyadh, and Saudis live in Dubai. Never infer `country` from dialect alone (§7).
@@ -174,14 +173,14 @@ Near-misses are the valuable ones: a question that *looks* covered but isn't (fo
 
 ## 10. The parallel subset
 
-Forty intents are written in **all six varieties**: 240 queries that let us compare varieties on the same question.
+Forty intents are written in **all five varieties**: 200 queries that let us compare varieties on the same question.
 
-- Give all six queries the same `parallel_group` (`pg-001` to `pg-040`), the same gold chunks, `country`, `type`, `reference_answer` and `critical_facts`.
-- Write each variety natively (§2 rule 4). The six queries should carry the same intent, not be translations of each other.
+- Give all five queries the same `parallel_group` (`pg-001` to `pg-040`), the same gold chunks, `country`, `type`, `reference_answer` and `critical_facts`.
+- Write each variety natively (§2 rule 4). The five queries should carry the same intent, not be translations of each other.
 - If the intent implies a country, every version must imply it. Don't let the English version say "in Dubai" while the Gulf version says nothing.
 - Spread the 40 intents across types and categories. Most of them should point at the rewritten articles (ADR-010). Include a few superseded traps and a few number-sensitive intents. Leave out ambiguous and unanswerable intents: the parallel subset compares retrieval quality on identical answers.
 
-The remaining ~220 queries follow this variety mix: English 30%, MSA 20%, Gulf 18%, Levantine/Egyptian 12%, code-switched 12%, Arabizi 8%.
+The remaining ~200 queries follow this variety mix: English 33%, MSA 22%, Gulf 19%, Egyptian 13%, code-switched 13% (the spec's mix with Arabizi removed and rescaled, ADR-013).
 
 ---
 
@@ -227,7 +226,7 @@ You write YAML in `data/eval/source/`. The builder adds `script`, `gold_source` 
 
 ## 13. Dev/test split and lock
 
-- **Test: 275 queries. Dev: everything else (at least 175).** Never tune anything on test.
+- **Test: 238 queries. Dev: everything else (166).** (275 before the Arabizi queries were removed, ADR-013.) Never tune anything on test.
 - The split is stratified by variety and type, using a fixed seed.
 - **A parallel group goes entirely to one split.** So do queries written as near-paraphrases of each other.
 - Tie near-paraphrases with `split_with: q-NNNN` in the source; the split keeps tied queries together.
@@ -265,3 +264,4 @@ Add one line per decision that the rules above didn't settle: date, query id, ru
 - 2026-11-12, pg-003 and pg-009: **when more than 3 chunks each fully answer a query**, keep 3 in this order: the help article that owns the topic, then the legal document, then a FAQ, then an announcement or release note. Name the chunks you left out in `notes`, so a retriever that returns them isn't misread as wrong when reading failures.
 - 2026-11-12, pg-004: **a procedure that is the same in every country isn't ambiguous**, even when a number in the same chunk differs by country (delivery times), as long as the question asks for the steps and not the number.
 - 2026-11-14, q-0021 and q-0040: **words borrowed across dialects are realistic; keep them.** Gulf speakers often say أي حاجة, and لألوه is Levantine for "for himself" (as in إلو / حقه). Label by the dialect of the query as a whole (§3), and don't "correct" a borrowed word into a textbook form. The native annotator's judgment on what people actually say wins.
+- 2026-11-15, all queries: **Arabizi and Levantine are dropped** (ADR-013). The 58 Arabizi queries are deleted; `levantine_egyptian` becomes `egyptian`. q-0022 keeps its borrowed "شو بعمل" (Egyptian as a whole, per the ruling above); q-0070 was reworded from قديش to Egyptian "بتاخدوا عليه كام".

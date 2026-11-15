@@ -196,9 +196,9 @@ def check_queries(raws: list[tuple[str, dict]], chunks: dict[str, ChunkInfo]) ->
 def _check_one(q: QuerySource, chunks: dict[str, ChunkInfo], err, warn) -> None:
     # Variety vs script (ANNOTATION.md §3).
     sc = script_of(q.query)
-    if q.variety in (Variety.ENGLISH, Variety.ARABIZI) and sc != "latin":
+    if q.variety == Variety.ENGLISH and sc != "latin":
         err(f"{q.variety} query must be Latin script only")
-    if q.variety in (Variety.MSA, Variety.GULF, Variety.LEVANTINE_EGYPTIAN) and sc != "arabic":
+    if q.variety in (Variety.MSA, Variety.GULF, Variety.EGYPTIAN) and sc != "arabic":
         err(f"{q.variety} query has Latin letters; label it code_switched or remove them")
     if q.variety == Variety.CODE_SWITCHED and sc != "mixed":
         err("code_switched query needs Arabic script plus English in Latin letters")
@@ -328,7 +328,7 @@ def render_stats(queries: list[Query]) -> str:
         "",
         "| | Count | Share | Target |",
         "|---|---|---|---|",
-        f"| Queries | {n} | | ≥450 |",
+        f"| Queries | {n} | | ≥400 (ADR-013) |",
         f"| Answerable (clear) | {len(answerable)} | {_pct(len(answerable), n)} | |",
         f"| Ambiguous | {len(ambiguous)} | {_pct(len(ambiguous), n)} | ~8% |",
         f"| Unanswerable | {len(unans)} | {_pct(len(unans), n)} | 10–15% |",

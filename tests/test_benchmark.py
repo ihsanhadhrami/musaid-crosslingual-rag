@@ -135,7 +135,7 @@ def test_parallel_group_must_agree():
     _, errors, warnings = run(a, b)
     assert errors == []
     assert any("missing varieties" in m for m in warnings)
-    c = q(qid="q-0003", query="عايز فلوسي", variety="levantine_egyptian",
+    c = q(qid="q-0003", query="عايز فلوسي", variety="egyptian",
           parallel_group="pg-001", difficulty="hard", country="AE")  # fmt: skip
     _, errors, _ = run(a, b, c)
     assert any("differs" in m and "country" in m for m in errors)

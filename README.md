@@ -1,6 +1,6 @@
 # Musaid (مساعد)
 
-Cross-lingual support RAG that answers Arabic (MSA, Gulf, Levantine/Egyptian, code-switched, Arabizi) and English questions from an English-only knowledge base, with a public benchmark.
+Cross-lingual support RAG that answers Arabic (MSA, Gulf, Egyptian, code-switched) and English questions from an English-only knowledge base, with a public benchmark.
 
 > **Status: Phase 2 (glossary and benchmark).** The KB is frozen at 354 articles and 600 chunks ([docs/KB_STATS.md](docs/KB_STATS.md)). The glossary has 153 entries, and 462 evaluation queries are drafted ([docs/EVAL_STATS.md](docs/EVAL_STATS.md)); human verification is in progress and the test set isn't locked yet. Full plan: [project-1-bilingual-support-rag.md](project-1-bilingual-support-rag.md).
 

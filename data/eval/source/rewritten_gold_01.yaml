@@ -47,7 +47,7 @@
   difficulty: easy
 - qid: q-0319
   query: "حد بعتلي ٢٥ ألف جنيه والحساب لسه مش متوثق، الفلوس هتنزل؟"
-  variety: levantine_egyptian
+  variety: egyptian
   type: number_sensitive
   country: EG
   gold_chunk_ids: [kb-0010#c0, kb-0135#c0]
@@ -88,15 +88,6 @@
   gold_chunk_ids: [kb-0028#c4, kb-0135#c0]
   reference_answer: "Yes. The balance limit covers all money in your account, including funds in Pockets."
   critical_facts: []
-  difficulty: medium
-- qid: q-0324
-  query: "a2sa raseed lel 7esab el mwathaq fi masr kam?"
-  variety: arabizi
-  type: number_sensitive
-  country: EG
-  gold_chunk_ids: [kb-0028#c3, kb-0010#c0, kb-0135#c0]
-  reference_answer: "A verified account registered in Egypt can hold up to EGP 300,000."
-  critical_facts: ["EGP 300,000"]
   difficulty: medium
 - qid: q-0325
   query: "Do transfers to my own bank account count toward my monthly transfer limit?"
@@ -142,7 +133,7 @@
   difficulty: easy
 - qid: q-0330
   query: "لو سعر الدولار اتغير بعد ما أكدت التحويل الدولي، المبلغ اللي هيوصل هيتغير؟"
-  variety: levantine_egyptian
+  variety: egyptian
   type: factual
   gold_chunk_ids: [kb-0036#c0, kb-0064#c0]
   reference_answer: "No. The exchange rate is fixed when you confirm, so the recipient gets the amount shown."
@@ -175,14 +166,6 @@
   reference_answer: "In Saudi Arabia, 15% VAT applies to the transfer fee only; the exchange rate markup isn't subject to VAT."
   critical_facts: ["15%"]
   difficulty: hard
-- qid: q-0334
-  query: "arkhas law 2assamt el 7awala el kbeera l kaza 7awala soghayara barra?"
-  variety: arabizi
-  type: factual
-  gold_chunk_ids: [kb-0037#c0]
-  reference_answer: "No. The minimum fee is charged on every transfer, so splitting one large transfer into smaller ones can cost more overall."
-  critical_facts: []
-  difficulty: hard
 - qid: q-0335
   query: "حولت لـ bank account غلط بالغلط، نفس طريقة الـ dispute؟"
   variety: code_switched
@@ -202,7 +185,7 @@
   difficulty: easy
 - qid: q-0337
   query: "ينفع حد يبعتلي فلوس على سهلة باي عن طريق انستاباي؟"
-  variety: levantine_egyptian
+  variety: egyptian
   type: procedural
   country: EG
   gold_chunk_ids: [kb-0059#c0]
@@ -228,21 +211,12 @@
   difficulty: hard
 - qid: q-0340
   query: "كام مرة في السنة أقدر أطلب رفع مؤقت للحد وأنا في السعودية؟"
-  variety: levantine_egyptian
+  variety: egyptian
   type: number_sensitive
   country: SA
   gold_chunk_ids: [kb-0150#c0]
   reference_answer: "No more than 2 times in a calendar year."
   critical_facts: ["2 times"]
-  difficulty: medium
-- qid: q-0341
-  query: "fi masr a2dar atlob zyada mo2aqata fel limit?"
-  variety: arabizi
-  type: country_specific
-  country: EG
-  gold_chunk_ids: [kb-0150#c0, kb-0069#c0]
-  reference_answer: "No. Temporary limit increases are not available for Egypt-registered accounts."
-  critical_facts: ["not available"]
   difficulty: medium
 - qid: q-0342
   query: "كم تستغرق مراجعة طلب رفع الحد المؤقت في الإمارات؟"
@@ -325,7 +299,7 @@
   difficulty: easy
 - qid: q-0351
   query: "الكارت وقف يشتغل لوحده من غير ما يتكسر وعمره ٨ شهور، البدل بفلوس؟"
-  variety: levantine_egyptian
+  variety: egyptian
   type: number_sensitive
   gold_chunk_ids: [kb-0108#c0, kb-0109#c0, kb-0203#c5]
   reference_answer: "No. A card that stops working within 12 months of issue without physical damage is replaced free; choose It stopped working."
@@ -406,17 +380,9 @@
   reference_answer: "Debit card top-ups cost 1% plus VAT for Saudi accounts; bank transfer top-ups are free."
   critical_facts: ["1%"]
   difficulty: easy
-- qid: q-0361
-  query: "el app et2afal 3ashan katabt el password ghalat, bas el kart lessa shaghal?"
-  variety: arabizi
-  type: factual
-  gold_chunk_ids: [kb-0154#c0]
-  reference_answer: "Yes. The lock only affects app access; your physical card and scheduled transfers keep working."
-  critical_facts: []
-  difficulty: medium
 - qid: q-0362
   query: "بعد ما غيرت الشريحة، أقدر أدفع بالكارت في المحلات في الأربعة وعشرين ساعة دول؟"
-  variety: levantine_egyptian
+  variety: egyptian
   type: factual
   gold_chunk_ids: [kb-0161#c0]
   reference_answer: "Yes. Card payments in shops keep working during the 24-hour transfer hold because they don't rely on SMS verification."
@@ -449,7 +415,7 @@
   difficulty: easy
 - qid: q-0366
   query: "غيرت الموبايل، الكارت هيظهر في جوجل باي لوحده؟"
-  variety: levantine_egyptian
+  variety: egyptian
   type: factual
   gold_chunk_ids: [kb-0178#c0]
   reference_answer: "No. Cards don't move between phones in mobile wallets; add your Sahla Pay card again on the new phone."

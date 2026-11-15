@@ -2,7 +2,7 @@
 # Fill in every field from the query text alone, using docs/ANNOTATION.md and
 #   python -m musaid.benchmark.search "..."   to find chunks.
 # Don't open data/eval/source, queries.jsonl, dev.jsonl or test.jsonl.
-# variety: english | msa | gulf | levantine_egyptian | code_switched | arabizi
+# variety: english | msa | gulf | egyptian | code_switched
 # type: see ANNOTATION.md §4. answerable / needs_clarification: true or false.
 # gold_chunk_ids: 1-3 chunk ids, or [] if unanswerable.
 
@@ -22,16 +22,16 @@
   needs_clarification: null
   gold_chunk_ids: []
   notes: ''
-- qid: q-0361
-  query: el app et2afal 3ashan katabt el password ghalat, bas el kart lessa shaghal?
+- qid: q-0326
+  query: إذا اعترضت على تحويل، هل يعود مبلغه إلى حدي اليومي فوراً؟
   variety: null
   type: null
   answerable: null
   needs_clarification: null
   gold_chunk_ids: []
   notes: ''
-- qid: q-0326
-  query: إذا اعترضت على تحويل، هل يعود مبلغه إلى حدي اليومي فوراً؟
+- qid: q-0113
+  query: كم الـ limit للـ contactless بدون PIN في الإمارات؟
   variety: null
   type: null
   answerable: null
@@ -41,14 +41,6 @@
 - qid: q-0134
   query: دفعت لبائع على إنستغرام ثمن هاتف وأكدت العملية في التطبيق، ثم اتضح أنه احتيال. هل ستُعاد إليّ
     الأموال كعملية غير مصرح بها؟
-  variety: null
-  type: null
-  answerable: null
-  needs_clarification: null
-  gold_chunk_ids: []
-  notes: ''
-- qid: q-0461
-  query: anhi mobile a7san a2tareh, iphone wala samsung?
   variety: null
   type: null
   answerable: null
@@ -193,6 +185,14 @@
   needs_clarification: null
   gold_chunk_ids: []
   notes: ''
+- qid: q-0454
+  query: حول ٥٠٠ درهم لأخوي من حسابي please
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
 - qid: q-0440
   query: ينفع أوقف الحساب كله كام شهر وأنا مسافر وبعدين أرجعه؟
   variety: null
@@ -201,8 +201,8 @@
   needs_clarification: null
   gold_chunk_ids: []
   notes: ''
-- qid: q-0114
-  query: le7ad kam a2dar adfa3 bel kart tap mn gher el pin fel emarat?
+- qid: q-0311
+  query: وصلني الـ card الجديد، كيف أسوي activate؟
   variety: null
   type: null
   answerable: null
@@ -250,6 +250,14 @@
   needs_clarification: null
   gold_chunk_ids: []
   notes: ''
+- qid: q-0253
+  query: هل توجد رسوم على دفع الفواتير من رصيد المحفظة في مصر؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
 - qid: q-0282
   query: I'm traveling in London at the moment. Does my daily limit reset at midnight London time or Riyadh
     time?
@@ -259,24 +267,8 @@
   needs_clarification: null
   gold_chunk_ids: []
   notes: ''
-- qid: q-0334
-  query: arkhas law 2assamt el 7awala el kbeera l kaza 7awala soghayara barra?
-  variety: null
-  type: null
-  answerable: null
-  needs_clarification: null
-  gold_chunk_ids: []
-  notes: ''
 - qid: q-0250
   query: كم رسوم التحويل لحساب بنكي داخل الإمارات؟
-  variety: null
-  type: null
-  answerable: null
-  needs_clarification: null
-  gold_chunk_ids: []
-  notes: ''
-- qid: q-0006
-  query: 7awalt 800 riyal l wa7ed ghalat w el dispute etwafa2 3aleh, meta tarja3 floosi?
   variety: null
   type: null
   answerable: null
@@ -340,16 +332,16 @@
   needs_clarification: null
   gold_chunk_ids: []
   notes: ''
-- qid: q-0187
-  query: What's the daily limit for ATM cash withdrawals in Egypt?
+- qid: q-0070
+  query: أنا ساكن في السعودية، التحويل لبنك برا بتاخدوا عليه كام؟
   variety: null
   type: null
   answerable: null
   needs_clarification: null
   gold_chunk_ids: []
   notes: ''
-- qid: q-0120
-  query: eshtarait sama3at online men shahr w ma wesletsh w el bayya3 mesh byrod, a3mel eh?
+- qid: q-0187
+  query: What's the daily limit for ATM cash withdrawals in Egypt?
   variety: null
   type: null
   answerable: null
@@ -398,6 +390,14 @@
   notes: ''
 - qid: q-0367
   query: لو سويت close للحساب، أقدر آخذ الـ statements القديمة بعدين؟
+  variety: null
+  type: null
+  answerable: null
+  needs_clarification: null
+  gold_chunk_ids: []
+  notes: ''
+- qid: q-0178
+  query: ليه المكنة طلبت الرقم السري وأنا بدفع حاجة صغيرة بالتاتش؟ ده أقل من الحد بكتير
   variety: null
   type: null
   answerable: null

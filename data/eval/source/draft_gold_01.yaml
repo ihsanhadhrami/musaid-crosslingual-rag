@@ -38,7 +38,7 @@
   difficulty: medium
 - qid: q-0245
   query: "لابسة حجاب، ينفع أعمل السيلفي بتاع التوثيق وأنا لابساه؟"
-  variety: levantine_egyptian
+  variety: egyptian
   type: policy_eligibility
   gold_chunk_ids: [kb-0017#c0]
   reference_answer: "Yes. A headscarf is fine as long as your face is fully visible from forehead to chin; remove glasses, hats and face coverings."
@@ -51,15 +51,6 @@
   gold_chunk_ids: [kb-0021#c0]
   reference_answer: "Use your original account; verification of the second one will fail. If both hold money, contact support and they'll close the newer one and move its balance."
   critical_facts: []
-  difficulty: medium
-- qid: q-0247
-  query: "kif awathe2 7sabi b nafath?"
-  variety: arabizi
-  type: procedural
-  country: SA
-  gold_chunk_ids: [kb-0023#c0]
-  reference_answer: "Go to Profile > Verify identity > Verify with Nafath, enter your national ID or Iqama number, then confirm the number shown in the Nafath app."
-  critical_facts: ["Verify with Nafath"]
   difficulty: medium
 - qid: q-0248
   query: "UAE Pass verification keeps failing for me. My UAE Pass is only basic level, is that the problem?"
@@ -98,7 +89,7 @@
   difficulty: easy
 - qid: q-0252
   query: "ازاي أطلب فلوس من صاحبي عن طريق الأبلكيشن بدل ما أديله رقم حسابي؟"
-  variety: levantine_egyptian
+  variety: egyptian
   type: procedural
   gold_chunk_ids: [kb-0045#c0]
   reference_answer: "Tap Request, choose the contact, enter the amount and a note, then tap Send request; they can pay with one tap."
@@ -157,21 +148,13 @@
   difficulty: easy
 - qid: q-0259
   query: "لو حولت لحساب بنك في الإمارات يوم السبت، الفلوس هتوصل امتى؟"
-  variety: levantine_egyptian
+  variety: egyptian
   type: number_sensitive
   country: AE
   gold_chunk_ids: [kb-0061#c0, kb-0351#c0]
   reference_answer: "In the UAE, local bank transfers made on a weekend or holiday arrive on the next business day; business days are Monday to Friday."
   critical_facts: ["next business day"]
   difficulty: medium
-- qid: q-0260
-  query: "7awelt l sa7bi w maktoob completed bas howa bey2ool el floos ma weseletsh"
-  variety: arabizi
-  type: troubleshooting
-  gold_chunk_ids: [kb-0063#c0]
-  reference_answer: "Completed means it arrived. A Sahla Pay user should pull down to refresh; for a bank transfer, some banks take a few hours, so share the receipt so their bank can trace it."
-  critical_facts: []
-  difficulty: hard
 - qid: q-0261
   query: "What markup do you add to the exchange rate when I pay in dollars with my card? My account is in Egypt."
   variety: english
@@ -240,20 +223,12 @@
   difficulty: medium
 - qid: q-0269
   query: "المكنة خصمت الفلوس من رصيدي ومطلعتش كاش، أعمل ايه؟"
-  variety: levantine_egyptian
+  variety: egyptian
   type: troubleshooting
   gold_chunk_ids: [kb-0089#c0]
   reference_answer: "Most failed withdrawals reverse automatically, often the same day. If not by the next day, open it in Activity > Report a problem > ATM didn't give me cash."
   critical_facts: ["ATM didn't give me cash"]
   difficulty: medium
-- qid: q-0270
-  query: "raga3oli el floos bel dollar bas wasalni a2al men elli dafa3to, leh?"
-  variety: arabizi
-  type: troubleshooting
-  gold_chunk_ids: [kb-0091#c0]
-  reference_answer: "The refund is converted on the day it arrives, not the day you paid, and the exchange rate markup applies again, so the amount can differ."
-  critical_facts: []
-  difficulty: hard
 - qid: q-0271
   query: "The merchant refunded me after I'd already opened a dispute. How do I cancel the dispute?"
   variety: english
@@ -290,7 +265,7 @@
   difficulty: hard
 - qid: q-0275
   query: "عندي موبايل سامسونج وأنا في مصر، ينفع أضيف الكارت على سامسونج باي؟"
-  variety: levantine_egyptian
+  variety: egyptian
   type: country_specific
   country: EG
   gold_chunk_ids: [kb-0112#c0, kb-0203#c3]
@@ -339,7 +314,7 @@
   difficulty: medium
 - qid: q-0281
   query: "ينفع اسمي يتكتب بالعربي على الكارت؟"
-  variety: levantine_egyptian
+  variety: egyptian
   type: factual
   gold_chunk_ids: [kb-0129#c0]
   reference_answer: "No. Card networks only support Latin letters, so your name is printed in English capitals from your verified ID."
@@ -363,15 +338,6 @@
   reference_answer: "VAT on fees for Egypt accounts is 14%."
   critical_facts: ["14%"]
   difficulty: easy
-- qid: q-0284
-  query: "kam a2sa mablagh adfa3o bel qr fel yom w ana fel saudi?"
-  variety: arabizi
-  type: number_sensitive
-  country: SA
-  gold_chunk_ids: [kb-0144#c0]
-  reference_answer: "In Saudi Arabia QR payments are limited to SAR 5,000 per payment and SAR 10,000 per day."
-  critical_facts: ["SAR 10,000"]
-  difficulty: medium
 - qid: q-0285
   query: "لو بتزيدون الرسوم، كم مدة تبلغونا قبلها؟"
   variety: gulf
@@ -415,7 +381,7 @@
   difficulty: easy
 - qid: q-0290
   query: "الموبايل اتسرق مني، أعمل ايه الأول عشان أحمي حسابي؟"
-  variety: levantine_egyptian
+  variety: egyptian
   type: procedural
   gold_chunk_ids: [kb-0165#c0]
   reference_answer: "Block your SIM with your operator, call the fraud line from another phone so they block the device and freeze your card, and remove the stolen phone from Trusted devices if you can."
@@ -429,14 +395,6 @@
   reference_answer: "No. Phones without Google Play services can't install the app from an official store and aren't supported."
   critical_facts: []
   difficulty: easy
-- qid: q-0292
-  query: "el notifications mesh btewsalni 3al android, a3mel eh?"
-  variety: arabizi
-  type: troubleshooting
-  gold_chunk_ids: [kb-0174#c0]
-  reference_answer: "In Android Settings > Apps > Sahla Pay > Notifications allow them and make sure battery saving isn't stopping the app, then check Profile > Notifications in the app."
-  critical_facts: []
-  difficulty: medium
 - qid: q-0293
   query: "كيف أغيّر لغة التطبيق إلى العربية؟"
   variety: msa
@@ -463,7 +421,7 @@
   difficulty: medium
 - qid: q-0296
   query: "لو مسحت الأبلكيشن من الموبايل، الحساب بيتقفل؟"
-  variety: levantine_egyptian
+  variety: egyptian
   type: factual
   gold_chunk_ids: [kb-0189#c0, kb-0193#c0]
   reference_answer: "No. Deleting the app only removes it from your phone; your account, balance and card stay active."
@@ -513,7 +471,7 @@
   difficulty: medium
 - qid: q-0302
   query: "عايز مرتبي ينزل على سهلة باي، أدي الشركة ايه بالظبط؟"
-  variety: levantine_egyptian
+  variety: egyptian
   type: procedural
   gold_chunk_ids: [kb-0252#c0]
   reference_answer: "Give your employer your Sahla Pay IBAN and the name on your account, from Add money > Bank transfer; your employer must pay by bank transfer."
@@ -535,14 +493,6 @@
   reference_answer: "Not yet, and there's no date. Occasional sellers can get paid with payment links, but a personal account can't be used as a shop's or company's main account."
   critical_facts: []
   difficulty: medium
-- qid: q-0305
-  query: "wasaletni resala men SAHLAPAY fiha code, di men 3andko bgad?"
-  variety: arabizi
-  type: factual
-  gold_chunk_ids: [kb-0290#c0]
-  reference_answer: "Sahla Pay codes come from the sender name SAHLAPAY, but sender names can be faked. Sahla Pay never asks for a code or sends a login link, so never share a code."
-  critical_facts: []
-  difficulty: hard
 - qid: q-0306
   query: "أنا جديد بالسعودية، وش أسوي عشان آخذ الكاش باك على أول دفعة بالكرت؟"
   variety: gulf
@@ -599,7 +549,7 @@
   difficulty: easy
 - qid: q-0312
   query: "لو جمدت الكارت، أقدر أحول فلوس لحد عادي؟"
-  variety: levantine_egyptian
+  variety: egyptian
   type: policy_eligibility
   gold_chunk_ids: [kb-0106#c0]
   reference_answer: "Yes. Freezing stops card payments and ATM withdrawals only; you can still send money and pay with QR codes."

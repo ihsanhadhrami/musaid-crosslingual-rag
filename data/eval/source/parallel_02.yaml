@@ -28,7 +28,7 @@
   difficulty: medium
 - <<: *pg011
   qid: q-0064
-  variety: levantine_egyptian
+  variety: egyptian
   query: "لسه حولت فلوسي لرقم غلط قبل خمس دقايق، ينفع ألغيها؟"
   difficulty: medium
 - <<: *pg011
@@ -36,11 +36,6 @@
   variety: code_switched
   query: "توني سويت transfer لرقم غلط قبل 5 دقايق، أقدر أسوي cancel؟"
   difficulty: easy
-- <<: *pg011
-  qid: q-0066
-  variety: arabizi
-  query: "lessa ba3et floos l rakam ghalat men 5 da2aye2, yenfa3 alghiha?"
-  difficulty: medium
 
 # pg-012: international transfer fee from Saudi Arabia (trap: kb-0038 2025 says 2%)
 - <<: &pg012
@@ -71,18 +66,13 @@
   difficulty: hard
 - <<: *pg012
   qid: q-0070
-  variety: levantine_egyptian
-  query: "أنا ساكن في السعودية، التحويل لبنك برا قديش عندكم؟"
+  variety: egyptian
+  query: "أنا ساكن في السعودية، التحويل لبنك برا بتاخدوا عليه كام؟"
   difficulty: hard
 - <<: *pg012
   qid: q-0071
   variety: code_switched
   query: "كم الـ fee على الـ international transfer من السعودية؟"
-  difficulty: hard
-- <<: *pg012
-  qid: q-0072
-  variety: arabizi
-  query: "kam rsoom el 7awala l barra men el saudi?"
   difficulty: hard
 
 # pg-013: sending money abroad from Egypt (not available)
@@ -111,7 +101,7 @@
   difficulty: medium
 - <<: *pg013
   qid: q-0076
-  variety: levantine_egyptian
+  variety: egyptian
   query: "انا في القاهرة، ينفع ابعت فلوس من سهلة باي لحساب أخويا في ألمانيا؟"
   difficulty: medium
 - <<: *pg013
@@ -119,11 +109,6 @@
   variety: code_switched
   query: "أنا عايش في القاهرة، ينفع أعمل international transfer لأخويا في ألمانيا؟"
   difficulty: medium
-- <<: *pg013
-  qid: q-0078
-  variety: arabizi
-  query: "ana fel cairo, yenfa3 ab3at floos men sahla pay le 7esab akhoya fi almanya?"
-  difficulty: hard
 
 # pg-014: adding the card to Apple Pay, UAE (availability differs by country, so it's stated)
 - <<: &pg014
@@ -152,18 +137,13 @@
   difficulty: easy
 - <<: *pg014
   qid: q-0082
-  variety: levantine_egyptian
+  variety: egyptian
   query: "انا ساكن في أبوظبي ومعايا ايفون، ازاي أحط الكارت على ابل باي؟"
   difficulty: easy
 - <<: *pg014
   qid: q-0083
   variety: code_switched
   query: "أنا في أبوظبي، كيف أضيف الـ card على Apple Pay؟"
-  difficulty: easy
-- <<: *pg014
-  qid: q-0084
-  variety: arabizi
-  query: "ana fi abu dhabi w 3andi iphone, kef a7ot el kart 3ala apple pay?"
   difficulty: easy
 
 # pg-015: a card payment the customer didn't make, UAE (dirhams)
@@ -193,7 +173,7 @@
   difficulty: medium
 - <<: *pg015
   qid: q-0088
-  variety: levantine_egyptian
+  variety: egyptian
   query: "في عملية ب١٢٠٠ درهم على الكارت أنا ما عملتهاش، أعمل ايه والفلوس هترجع؟"
   difficulty: medium
 - <<: *pg015
@@ -201,11 +181,6 @@
   variety: code_switched
   query: "في transaction بـ 1200 درهم على الـ card أنا ما سويتها، وش أسوي؟ بيرجع المبلغ؟"
   difficulty: medium
-- <<: *pg015
-  qid: q-0090
-  variety: arabizi
-  query: "fi 3amaleya b 1200 dirham 3al kart ana ma 3amaltehash, a3mel eh w el floos hatrga3?"
-  difficulty: hard
 
 # pg-016: temporary daily limit increase for a car payment, Saudi Arabia
 - <<: &pg016
@@ -235,7 +210,7 @@
   difficulty: medium
 - <<: *pg016
   qid: q-0094
-  variety: levantine_egyptian
+  variety: egyptian
   query: "محتاج أدفع ٤٥ ألف ريال تمن عربية الأسبوع ده والحد اليومي مش مكفي، ينفع أزوده؟"
   difficulty: hard
 - <<: *pg016
@@ -243,11 +218,6 @@
   variety: code_switched
   query: "لازم أدفع 45 ألف ريال للسيارة هالأسبوع والـ daily limit ما يكفي، أقدر أسوي increase؟"
   difficulty: medium
-- <<: *pg016
-  qid: q-0096
-  variety: arabizi
-  query: "lazem adfa3 45 alf riyal lel sayara hal esbou3 w el limit el yawmi ma yekfi, agdar arfa3o?"
-  difficulty: hard
 
 # pg-017: extra checks and held transfers caused by a VPN
 - <<: &pg017
@@ -276,7 +246,7 @@
   difficulty: medium
 - <<: *pg017
   qid: q-0100
-  variety: levantine_egyptian
+  variety: egyptian
   query: "انا دايماً مشغل في بي ان، والأبلكيشن بقى يطلب سيلفي كل شوية والتحويل متعلق، ده بسبب الفي بي ان؟"
   difficulty: medium
 - <<: *pg017
@@ -284,11 +254,6 @@
   variety: code_switched
   query: "دايم الـ VPN شغال عندي والحين التطبيق يطلب selfie والـ transfer صار on hold، المشكلة من الـ VPN؟"
   difficulty: easy
-- <<: *pg017
-  qid: q-0102
-  variety: arabizi
-  query: "ana dayman mshaghel vpn w el app kol shwaya yotlob selfie w el ta7weel m3alla2, el moshkla mn el vpn?"
-  difficulty: medium
 
 # pg-018: what happens to the balance when you close your account, Egypt
 - <<: &pg018
@@ -317,18 +282,13 @@
   difficulty: medium
 - <<: *pg018
   qid: q-0106
-  variety: levantine_egyptian
+  variety: egyptian
   query: "لو قفلت الحساب وانا في مصر، الفلوس اللي فيه هتروح فين وهتاخد قد ايه؟"
   difficulty: medium
 - <<: *pg018
   qid: q-0107
   variety: code_switched
   query: "لو عملت close للـ account وأنا في مصر، الـ balance اللي فاضل يروح فين وامتى؟"
-  difficulty: medium
-- <<: *pg018
-  qid: q-0108
-  variety: arabizi
-  query: "law 2afalt el 7esab w ana fi masr, el floos elli fih hatro7 fen w btakhod ad eh?"
   difficulty: medium
 
 # pg-019: contactless payment limit without a PIN, UAE (2025 card terms agree, so no trap)
@@ -357,7 +317,7 @@
   difficulty: medium
 - <<: *pg019
   qid: q-0112
-  variety: levantine_egyptian
+  variety: egyptian
   query: "أقدر أدفع بالكارت من غير ما أدخل الرقم السري لحد كام في الإمارات؟"
   difficulty: medium
 - <<: *pg019
@@ -365,11 +325,6 @@
   variety: code_switched
   query: "كم الـ limit للـ contactless بدون PIN في الإمارات؟"
   difficulty: easy
-- <<: *pg019
-  qid: q-0114
-  variety: arabizi
-  query: "le7ad kam a2dar adfa3 bel kart tap mn gher el pin fel emarat?"
-  difficulty: medium
 
 # pg-020: paid online, goods never arrived, seller silent (steps are the same everywhere)
 - <<: &pg020
@@ -399,7 +354,7 @@
   difficulty: medium
 - <<: *pg020
   qid: q-0118
-  variety: levantine_egyptian
+  variety: egyptian
   query: "اشتريت سماعات أونلاين من شهر ومجتش والبياع مش بيرد، أعمل ايه؟"
   difficulty: medium
 - <<: *pg020
@@ -407,8 +362,3 @@
   variety: code_switched
   query: "اشتريت headphones أونلاين من شهر وما وصلت والـ seller ما يرد، شو الحل؟"
   difficulty: medium
-- <<: *pg020
-  qid: q-0120
-  variety: arabizi
-  query: "eshtarait sama3at online men shahr w ma wesletsh w el bayya3 mesh byrod, a3mel eh?"
-  difficulty: hard

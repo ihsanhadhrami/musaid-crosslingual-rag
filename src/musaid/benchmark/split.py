@@ -6,8 +6,8 @@ uv run python -m musaid.benchmark.build            # applies split.json, writes 
 
 Rules:
 - A parallel group, and any queries tied with `split_with`, move as one unit.
-- 275 queries go to test, the rest to dev, stratified with a fixed seed: parallel groups
-  by query type, single queries by (variety, type).
+- 238 queries go to test (275 before ADR-013), the rest to dev, stratified with a fixed
+  seed: parallel groups by query type, single queries by (variety, type).
 - Assignments are append-only: rerunning `assign` keeps every existing qid where it is.
 - Once test.lock.json exists, the build fails if test.jsonl or any of its gold chunks change.
 """
@@ -22,7 +22,7 @@ from pathlib import Path
 
 from musaid.benchmark.schema import Query
 
-TEST_SIZE = 275
+TEST_SIZE = 238  # 275 before the Arabizi queries were removed (ADR-013)
 SEED = "musaid-2026"
 
 
@@ -126,7 +126,7 @@ def assign(
     test_now = sum(1 for v in out.values() if v == "test")
     want = max(0, min(test_size - test_now, sum(len(u) for u in fresh)))
 
-    # Allocate in units of queries: parallel units are 6 queries, singles 1.
+    # Allocate in units of queries: parallel units are 5 queries, singles 1.
     families: dict[str, list[list[Query]]] = defaultdict(list)
     for u in fresh:
         families["parallel" if u[0].parallel_group else "single"].append(u)

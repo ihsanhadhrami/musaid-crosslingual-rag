@@ -13,7 +13,7 @@ Get hired as an **AI Engineer / AI Implementation Engineer / Applied AI Engineer
 
 ### Product goal
 A support assistant for a fictional payments company whose knowledge base is **100% English**, which:
-- accepts questions in **English, Modern Standard Arabic (MSA), Gulf and Levantine/Egyptian dialects, code-switched Arabic–English, and Arabizi** (Arabic in Latin script, e.g., "kif arja3 floosi"),
+- accepts questions in **English, Modern Standard Arabic (MSA), Gulf and Egyptian dialects, and code-switched Arabic–English** (Arabizi and Levantine are out of scope, ADR-013),
 - retrieves the correct **English** policy passage regardless of query language,
 - answers **in the user's language**, preserving numbers, fees, deadlines, and country-specific rules exactly,
 - cites the English source passage behind every answer,
@@ -22,7 +22,7 @@ A support assistant for a fictional payments company whose knowledge base is **1
 - runs in production with cost, latency, and quality monitoring.
 
 ### The core research question
-> **What is the most accurate and cost-effective way to retrieve English policy documents from dialectal Arabic, code-switched, and Arabizi queries?**
+> **What is the most accurate and cost-effective way to retrieve English policy documents from dialectal and code-switched Arabic queries?**
 
 Every experiment in this project serves that question.
 
@@ -35,8 +35,8 @@ Every experiment in this project serves that question.
 | Area | Criterion |
 |---|---|
 | Knowledge base | 150–300 English articles, deliberately realistic and messy, published |
-| Benchmark | ≥450 labeled queries across 6 language varieties, dev/test split, dataset card |
-| Glossary | ≥150 Arabic/dialect/Arabizi → English term mappings, published |
+| Benchmark | ≥400 labeled queries across 5 language varieties, dev/test split, dataset card |
+| Glossary | ≥150 Arabic/dialect → English term mappings, published |
 | Retrieval | Ablation table covering ≥8 configurations on the locked test set |
 | Answers | Faithfulness, cross-lingual fidelity (numbers/terms), and language match measured |
 | Escalation | Unanswerable and ambiguous queries handled correctly, measured |
@@ -51,7 +51,7 @@ Every experiment in this project serves that question.
 
 **In scope**
 - Single-turn and short multi-turn Q&A over a fixed English KB
-- Queries in English and five Arabic varieties
+- Queries in English and four Arabic varieties (MSA, Gulf, Egyptian, code-switched)
 - Cross-lingual retrieval (direct multilingual embeddings, query translation, combined)
 - Terminology-glossary-assisted query rewriting
 - Metadata-aware retrieval (country, effective date)
@@ -73,9 +73,9 @@ Cutting scope is a senior engineering signal. Say so in the README.
 
 ```mermaid
 flowchart LR
-    U[User query] --> LID[Language + variety detection\nEN / MSA / dialect / code-switch / Arabizi]
+    U[User query] --> LID[Language + variety detection\nEN / MSA / dialect / code-switch]
     LID -- English --> Q[Query set]
-    LID -- Arabic variety --> N[Query normalization\nArabic + Arabizi]
+    LID -- Arabic variety --> N[Query normalization\nArabic]
     N --> T[Translate to English\nglossary-assisted]
     N --> Q
     T --> Q
@@ -112,7 +112,6 @@ flowchart LR
 | Reranker | **BAAI/bge-reranker-v2-m3** | Multilingual cross-encoder; can score Arabic query vs. English passage directly | Commercial rerank API |
 | Fusion | Reciprocal Rank Fusion (RRF) | Combines multiple query versions and retrievers without tuning weights | Weighted fusion |
 | Query-side Arabic NLP | **CAMeL Tools** (normalization, dediacritization, dialect ID), PyArabic | Purpose-built Arabic tooling | Custom regex normalizer |
-| Arabizi handling | Rule-based transliteration map + LLM fallback | Arabizi is where most systems fail; a measurable weakness to fix | LLM-only |
 | Language ID | fastText LID + CAMeL dialect ID + script check | Routes queries; tags results for per-variety analysis | — |
 | Query translation | Small, cheap LLM with glossary injected into the prompt | Handles dialect and support jargon better than generic MT | Dedicated MT model (ablation only) |
 | Generation LLM | One current frontier API model (e.g., Claude Sonnet) | Best Arabic generation from English sources | One open Arabic-capable model (e.g., Qwen, ALLaM, Jais) as ablation |
@@ -121,7 +120,7 @@ flowchart LR
 | Observability | **Langfuse** (self-hosted) | Traces, cost, latency, scores per request | LangSmith, Helicone |
 | Frontend | React (Vite) + Tailwind, RTL/bidi-aware | Arabic answers + English citations in one view break naive UIs | Gradio (internal demo) |
 | Eval dashboard | Streamlit (internal) | Browse failures by variety/type | — |
-| Testing | pytest | Normalizer, transliteration, chunker, fidelity checker, API | — |
+| Testing | pytest | Normalizer, chunker, fidelity checker, API | — |
 | CI/CD | GitHub Actions: ruff, tests, **eval regression gate** | Production discipline | — |
 | Packaging | Docker + Docker Compose | One-command local run | — |
 | Deployment | Azure (preferred in Gulf postings) or AWS; small VPS acceptable for demo | Cloud name on CV matters for MENA roles | Hetzner / DigitalOcean |
@@ -190,7 +189,7 @@ Customers don't use policy vocabulary. The glossary maps how people ask to how t
 | Requirement | Target |
 |---|---|
 | Size | ≥150 entries |
-| Coverage | MSA, Gulf, Levantine/Egyptian variants, and Arabizi spellings per concept |
+| Coverage | MSA, Gulf and Levantine/Egyptian variants per concept (the glossary keeps Levantine forms, ADR-013) |
 | Use | Injected into the query-translation prompt; tested as an ablation |
 
 **Schema (`glossary.jsonl`):**
@@ -200,8 +199,7 @@ Customers don't use policy vocabulary. The glossary maps how people ask to how t
   "variants": {
     "msa": ["استرداد", "استرداد المبلغ"],
     "gulf": ["ارجاع الفلوس", "ترجع فلوسي"],
-    "levantine_egyptian": ["رجوع الفلوس", "ترجيع الفلوس"],
-    "arabizi": ["arja3 floosi", "tarja3 el floos"]
+    "levantine_egyptian": ["رجوع الفلوس", "ترجيع الفلوس"]
   }
 }
 ```
@@ -210,24 +208,23 @@ Customers don't use policy vocabulary. The glossary maps how people ask to how t
 
 | Requirement | Target |
 |---|---|
-| Size | ≥450 queries (dev 175 / **test 275, locked**; never tune on test) |
+| Size | ≥400 queries (dev 166 / **test 238, locked**; never tune on test; ADR-013) |
 | Author | You, writing as a real customer would |
 | Gold labels | 1–3 gold `chunk_id`s per answerable query + short reference answer in English |
 | Unanswerable | 10–15% have no answer in the KB (tests escalation) |
 | Ambiguous | ~8% depend on country but don't state it (tests clarifying questions) |
 | Gold source split | ~70% of answerable queries have their gold answer in one of the 40 hand-rewritten articles (`status: rewritten`), ~30% in draft articles; retrieval always searches the full KB (ADR-010) |
-| Parallel subset | 40 intents written in **all six varieties** (240 queries, counted within the 450), so you can compare varieties on identical intent; the remaining queries follow the distribution below |
+| Parallel subset | 40 intents written in **all five varieties** (200 queries, counted within the total), so you can compare varieties on identical intent; the remaining queries follow the distribution below |
 | Agreement check | A second Arabic speaker independently labels 50 queries; report agreement |
 
 **Language variety distribution (target):**
 | Variety | Share |
 |---|---|
-| English | 30% |
-| MSA | 20% |
-| Gulf dialect | 18% |
-| Levantine / Egyptian | 12% |
-| Code-switched Arabic–English | 12% |
-| Arabizi | 8% |
+| English | 33% |
+| MSA | 22% |
+| Gulf dialect | 19% |
+| Egyptian | 13% |
+| Code-switched Arabic–English | 13% |
 
 **Query types:** factual, procedural, troubleshooting, policy/eligibility, country-specific, number-sensitive (fees/limits/deadlines), multi-hop (answer spans 2 chunks), superseded-policy trap (old article looks relevant), ambiguous, unanswerable.
 
@@ -283,14 +280,14 @@ Customers don't use policy vocabulary. The glossary maps how people ask to how t
 **Done when:** `kb.jsonl`, `chunks.jsonl`, `facts.csv` exist; 30 random chunks inspected by hand.
 
 ### Phase 2: Glossary + evaluation dataset, **before** building retrieval (Weeks 3–4)
-1. Build the glossary from the KB's key terms; add dialect and Arabizi variants you'd actually hear.
+1. Build the glossary from the KB's key terms; add dialect variants you'd actually hear.
 2. Write `docs/ANNOTATION.md`: gold chunk rules, variety definitions, what counts as ambiguous/unanswerable, how to write `critical_facts`.
 3. Write queries per 5.4, including the parallel subset. Aim ~70% of answerable queries at the 40 rewritten articles and ~30% at drafts (ADR-010).
 4. Label gold chunks with a search helper; verify each by reading it.
 5. Second-annotator check on 50 queries; compute agreement.
 6. Split dev/test; hash and lock the test file.
 
-**Done when:** ≥450 validated queries, glossary ≥150 entries, test set locked.
+**Done when:** ≥400 validated queries, glossary ≥150 entries, test set locked.
 **Why first:** writing queries before the system exists stops you from unconsciously writing only what the system already handles.
 
 ### Phase 3: Baselines (Weeks 4–5)
@@ -314,8 +311,7 @@ Change **one variable at a time**; measure on dev:
 | 6 | **Multi-query fusion**: dense(original) + BM25(translated) + dense(translated), RRF | Does combining both routes beat either? |
 | 7 | #6 + reranker | How much does reranking add cross-lingually? |
 | 8 | #7 + glossary-assisted translation | Does domain terminology fix jargon failures? |
-| 9 | #8 + Arabizi transliteration step | Does explicit Arabizi handling close the worst gap? |
-| 10 | #9 + metadata filter/boost (country, effective date) | Does metadata fix country and superseded-policy errors? |
+| 9 | #8 + metadata filter/boost (country, effective date) | Does metadata fix country and superseded-policy errors? |
 
 Also track for each configuration: **added latency and cost per query** (translation is an extra LLM call). The best configuration must justify its cost.
 
@@ -352,12 +348,12 @@ Then run the top 3 configurations **once** on the locked test set, with `ranx` s
 2. Deploy API + DB + UI (container service + managed Postgres), HTTPS, env-based secrets.
 3. Spending cap and per-IP rate limit on the public demo.
 
-**Done when:** a stranger can open the URL on a phone, ask in Gulf dialect or Arabizi, and get a correct Arabic answer with an English citation.
+**Done when:** a stranger can open the URL on a phone, ask in Gulf or Egyptian dialect, and get a correct Arabic answer with an English citation.
 
 ### Phase 8: Packaging for hiring (Week 10)
 1. Publish KB, glossary, and query benchmark to Hugging Face with a dataset card.
 2. README (section 9).
-3. 3-minute video: same question asked in English, Gulf, and Arabizi → same correct answer; ablation table; clarifying question; escalation; CI catching a regression.
+3. 3-minute video: same question asked in English, Gulf, and Egyptian → same correct answer; ablation table; clarifying question; escalation; CI catching a regression.
 4. Technical write-up: *"English docs, Arabic customers: what actually works for cross-lingual support RAG."*
 5. Post on LinkedIn and in Arabic NLP communities.
 
@@ -418,7 +414,7 @@ musaid/
 │   ├── eval/                 # queries.jsonl, judge_calibration.jsonl
 │   └── sanity_check/         # gitignored: real-world queries + scripts only
 ├── src/musaid/
-│   ├── lang/                 # language/variety ID, normalization, Arabizi transliteration
+│   ├── lang/                 # language/variety ID, normalization
 │   ├── translate/            # glossary-assisted query translation, caching
 │   ├── ingest/               # chunking, metadata, embedding, indexing
 │   ├── retrieval/            # bm25, dense, multi-query fusion, metadata filters, rerank
@@ -440,18 +436,18 @@ musaid/
 
 ## 9. README Template (what hiring managers see first)
 
-1. **One-line pitch:** Cross-lingual support RAG that answers Arabic (MSA, dialects, Arabizi) and English questions from an English-only knowledge base, with a public benchmark.
+1. **One-line pitch:** Cross-lingual support RAG that answers Arabic (MSA, Gulf, Egyptian, code-switched) and English questions from an English-only knowledge base, with a public benchmark.
 2. **Results table:** best config vs. baselines; English vs. each Arabic variety; cross-lingual gap; latency and cost.
 3. **Live demo link + 3-min video.**
 4. **Architecture diagram.**
-5. **Key findings** (3 bullets, e.g., direct multilingual vs. translation, what the glossary fixed, how Arabizi was handled).
+5. **Key findings** (3 bullets, e.g., direct multilingual vs. translation, what the glossary fixed, which dialect was hardest).
 6. **Benchmark:** KB, glossary, queries; links, sizes, distribution, reproduction steps.
 7. **Production:** observability screenshot, CI gate screenshot, p95 latency, cost per 1,000 queries.
 8. **Limitations and next steps** (honest; this reads as seniority).
 9. **Run locally:** `docker compose up`.
 
 ### CV bullet template (fill with real numbers only)
-> Built a cross-lingual support RAG system answering Arabic (MSA, Gulf/Levantine dialects, Arabizi) and English queries from an English knowledge base (FastAPI, pgvector, multi-query hybrid retrieval, reranking); cut the Arabic–English retrieval gap from [X] to [Y] points and reached [Z]% factual fidelity on fees and deadlines; published a [N]-query benchmark with CI eval gating and Langfuse monitoring on a live deployment.
+> Built a cross-lingual support RAG system answering Arabic (MSA, Gulf and Egyptian dialects, code-switched) and English queries from an English knowledge base (FastAPI, pgvector, multi-query hybrid retrieval, reranking); cut the Arabic–English retrieval gap from [X] to [Y] points and reached [Z]% factual fidelity on fees and deadlines; published a [N]-query benchmark with CI eval gating and Langfuse monitoring on a live deployment.
 
 ---
 
@@ -476,8 +472,8 @@ musaid/
 
 - [ ] KB style guide, country matrix, `facts.csv`
 - [ ] 150–300 English articles with mandatory mess; chunked with metadata
-- [ ] Glossary ≥150 entries across varieties and Arabizi
-- [ ] ≥450 queries incl. parallel subset, ambiguous, unanswerable; annotation guide; agreement check; test locked
+- [ ] Glossary ≥150 entries across varieties
+- [ ] ≥400 queries incl. parallel subset, ambiguous, unanswerable; annotation guide; agreement check; test locked
 - [ ] Baselines + ≥8 cross-lingual ablations with latency/cost columns and significance tests
 - [ ] English performance verified non-regressed
 - [ ] Citation, fidelity, language-match, clarification, escalation all measured

@@ -14,7 +14,6 @@ def entry(**overrides):
             "msa": ["استرداد"],
             "gulf": ["ترجع فلوسي"],
             "levantine_egyptian": ["ترجيع الفلوس"],
-            "arabizi": ["arja3 floosi"],
         },
     }
     raw.update(overrides)
@@ -41,18 +40,16 @@ def test_kb_term_must_appear_in_kb_as_a_whole_word():
 
 def test_every_variety_needs_a_form():
     raw = entry()
-    raw["variants"]["arabizi"] = []
+    raw["variants"]["levantine_egyptian"] = []
     _, errors, _ = messages([raw])
-    assert any("arabizi" in m for m in errors)
+    assert any("levantine_egyptian" in m for m in errors)
 
 
 def test_script_rules():
     raw = entry()
     raw["variants"]["gulf"] = ["refund حقي"]
-    raw["variants"]["arabizi"] = ["Arja3 Floosi"]
     _, errors, _ = messages([raw])
     assert any("Arabic script only" in m for m in errors)
-    assert any("lowercase Latin" in m for m in errors)
 
 
 def test_duplicates_after_folding_are_errors_within_an_entry():

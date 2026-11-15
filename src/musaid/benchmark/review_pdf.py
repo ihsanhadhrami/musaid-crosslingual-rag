@@ -12,6 +12,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from musaid.benchmark.build import ChunkInfo
+from musaid.benchmark.schema import Variety
 
 BROWSERS = [
     Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"),
@@ -20,7 +21,7 @@ BROWSERS = [
     Path("/usr/bin/chromium"),
     Path("/usr/bin/google-chrome"),
 ]
-VARIETY_ORDER = ["english", "msa", "gulf", "levantine_egyptian", "code_switched", "arabizi"]
+VARIETY_ORDER = [str(v) for v in Variety]
 
 CSS = """
 @page { size: A5; margin: 9mm 8mm; }

@@ -16,19 +16,18 @@ class Variety(StrEnum):
     ENGLISH = "english"
     MSA = "msa"
     GULF = "gulf"
-    LEVANTINE_EGYPTIAN = "levantine_egyptian"
+    EGYPTIAN = "egyptian"
     CODE_SWITCHED = "code_switched"
-    ARABIZI = "arabizi"
 
 
-# Target share of the non-parallel queries (spec §5.4).
+# Target share of the non-parallel queries (spec §5.4, rescaled after Arabizi and Levantine
+# were dropped, ADR-013).
 VARIETY_TARGET_SHARE: dict[Variety, float] = {
-    Variety.ENGLISH: 0.30,
-    Variety.MSA: 0.20,
-    Variety.GULF: 0.18,
-    Variety.LEVANTINE_EGYPTIAN: 0.12,
-    Variety.CODE_SWITCHED: 0.12,
-    Variety.ARABIZI: 0.08,
+    Variety.ENGLISH: 0.33,
+    Variety.MSA: 0.22,
+    Variety.GULF: 0.19,
+    Variety.EGYPTIAN: 0.13,
+    Variety.CODE_SWITCHED: 0.13,
 }
 
 

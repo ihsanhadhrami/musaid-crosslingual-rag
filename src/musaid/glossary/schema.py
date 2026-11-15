@@ -6,9 +6,8 @@ from pydantic import BaseModel, ConfigDict, Field
 
 CONCEPT_ID_PATTERN = r"^[a-z0-9]+(?:_[a-z0-9]+)*$"
 
-# Keys of `variants`, in the order the spec lists them.
-ARABIC_SCRIPT_VARIETIES = ("msa", "gulf", "levantine_egyptian")
-VARIETIES = (*ARABIC_SCRIPT_VARIETIES, "arabizi")
+# Keys of `variants`, all Arabic script. Levantine and Egyptian forms share one key (ADR-013).
+VARIETIES = ("msa", "gulf", "levantine_egyptian")
 
 # KB categories plus "general" for terms that cut across all of them (account, fee, app).
 GlossaryCategory = Literal[
@@ -34,7 +33,6 @@ class Variants(_Strict):
     msa: list[str] = Field(min_length=1)
     gulf: list[str] = Field(min_length=1)
     levantine_egyptian: list[str] = Field(min_length=1)
-    arabizi: list[str] = Field(min_length=1)
 
     def items(self) -> list[tuple[str, list[str]]]:
         return [(v, getattr(self, v)) for v in VARIETIES]

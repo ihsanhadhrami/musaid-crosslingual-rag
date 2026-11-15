@@ -7,7 +7,6 @@
     msa: [البطاقة المصرفية, بطاقة الدفع]
     gulf: [الكرت, البطاقة حقتي]
     levantine_egyptian: [الكارت بتاعي, الفيزا, البطاقة تبعي]
-    arabizi: [el kart, el card, el visa, beta2ti]
   notes: "Egyptians often call any payment card الفيزا."
 
 - concept_id: physical_card
@@ -17,7 +16,6 @@
     msa: [بطاقة مادية, بطاقة بلاستيكية]
     gulf: [الكرت الحقيقي, أطلب كرت]
     levantine_egyptian: [كارت حقيقي, كارت أمسكه بإيدي]
-    arabizi: [kart 7a2i2i, atlob kart, physical card]
 
 - concept_id: virtual_card
   kb_term: virtual card
@@ -26,7 +24,6 @@
     msa: [بطاقة افتراضية, بطاقة رقمية]
     gulf: [كرت افتراضي, الفيرتشوال كارد]
     levantine_egyptian: [كارت أونلاين, فيزا أونلاين]
-    arabizi: [kart eftradi, virtual card, visa online]
 
 - concept_id: card_activation
   kb_term: activating your card
@@ -36,7 +33,6 @@
     msa: [تفعيل البطاقة]
     gulf: [أفعل الكرت, تشغيل الكرت]
     levantine_egyptian: [أفعّل الكارت, الكارت مش شغال]
-    arabizi: [afa3el el kart, taf3eel el beta2a, el kart mesh shaghal]
 
 - concept_id: pin
   kb_term: PIN
@@ -45,7 +41,6 @@
     msa: [الرقم السري, رمز التعريف الشخصي]
     gulf: [الرقم السري حق الكرت, البن]
     levantine_egyptian: [الباسورد بتاع الكارت, الرقم السري تبع البطاقة]
-    arabizi: [el ra2am el serri, el pin, el pin code, ra2m sirri]
 
 - concept_id: card_blocked_pin
   kb_term: wrong PIN
@@ -54,7 +49,6 @@
     msa: [حظر البطاقة بسبب الرقم السري الخاطئ]
     gulf: [الكرت انقفل, دخلت الرقم السري غلط]
     levantine_egyptian: [الكارت اتقفل, دخلت الباسورد غلط كذا مرة]
-    arabizi: [el kart en2afal, el kart et2afal, da5alt el pin ghalat]
 
 - concept_id: freeze_card
   kb_term: freeze
@@ -64,7 +58,6 @@
     msa: [تجميد البطاقة, إيقاف البطاقة مؤقتاً]
     gulf: [أوقف الكرت مؤقت, أجمد الكرت]
     levantine_egyptian: [أوقف الكارت شوية, أجمّد البطاقة]
-    arabizi: [ajamed el kart, aw2af el kart, freeze]
 
 - concept_id: lost_stolen_card
   kb_term: lost or stolen card
@@ -73,7 +66,6 @@
     msa: [بطاقة مفقودة, بطاقة مسروقة]
     gulf: [ضاع الكرت, انسرق كرتي]
     levantine_egyptian: [الكارت ضاع, اتسرق مني الكارت, ضيعت البطاقة]
-    arabizi: [da3 el kart, ensara2 karti, el kart etsara2]
 
 - concept_id: card_replacement
   kb_term: replacement
@@ -83,7 +75,6 @@
     msa: [استبدال البطاقة, بطاقة بديلة]
     gulf: [أبي كرت جديد, بدل الكرت]
     levantine_egyptian: [عايز كارت جديد, بدي بطاقة بدالها]
-    arabizi: [abi kart jdeed, 3ayez kart gedid, badal fa2ed]
 
 - concept_id: damaged_card
   kb_term: damaged card
@@ -92,7 +83,6 @@
     msa: [بطاقة تالفة]
     gulf: [الكرت خربان, الكرت انكسر]
     levantine_egyptian: [الكارت باظ, الكارت مكسور, البطاقة خربانة]
-    arabizi: [el kart 5arban, el kart baz, el kart maksour]
 
 - concept_id: card_delivery
   kb_term: delivery
@@ -101,7 +91,6 @@
     msa: [توصيل البطاقة, شحن البطاقة]
     gulf: [متى يوصل الكرت, التوصيل]
     levantine_egyptian: [الكارت هيوصل امتى, الدليفري]
-    arabizi: [meta yawsal el kart, el delivery, el kart hywsal emta]
 
 - concept_id: card_not_arrived
   kb_term: hasn't arrived
@@ -110,7 +99,6 @@
     msa: [البطاقة لم تصل]
     gulf: [الكرت ما وصلني]
     levantine_egyptian: [الكارت لسه موصلش, البطاقة لسا ما وصلت]
-    arabizi: [el kart ma waslni, el kart lessa mawslsh]
 
 - concept_id: courier
   kb_term: courier
@@ -119,7 +107,6 @@
     msa: [شركة الشحن, مندوب التوصيل]
     gulf: [المندوب, شركة التوصيل]
     levantine_egyptian: [المندوب بتاع الشحن, الكورير]
-    arabizi: [el mandoob, el courier, sherket el sha7n]
 
 - concept_id: card_declined
   kb_term: declined
@@ -128,7 +115,6 @@
     msa: [رفض البطاقة, رُفضت العملية]
     gulf: [الكرت ما مشى, رفض الكرت]
     levantine_egyptian: [الكارت اترفض, الفيزا مش راضية تدفع]
-    arabizi: [el kart ma mesha, el kart etrafad, declined]
 
 - concept_id: contactless
   kb_term: contactless
@@ -137,7 +123,6 @@
     msa: [الدفع اللاتلامسي, الدفع بدون تلامس]
     gulf: [أدفع بالتقريب, التاب]
     levantine_egyptian: [أدفع بالتاتش, أقرّب الكارت من المكنة]
-    arabizi: [tap, contactless, adfa3 bel ta2reeb]
 
 - concept_id: apple_pay
   kb_term: Apple Pay
@@ -146,7 +131,6 @@
     msa: [أبل باي]
     gulf: [ابل باي حقي, ابل باي حق الايفون]
     levantine_egyptian: [آبل باي على الايفون]
-    arabizi: [apple pay, abel pay]
 
 - concept_id: google_samsung_pay
   kb_term: Google Pay
@@ -156,7 +140,6 @@
     msa: [جوجل باي, سامسونج باي]
     gulf: [قوقل باي]
     levantine_egyptian: [جوجل باي على الأندرويد, سامسونج باي على الموبايل]
-    arabizi: [google pay, samsung pay, gogel pay]
 
 - concept_id: card_abroad
   kb_term: card abroad
@@ -165,7 +148,6 @@
     msa: [استخدام البطاقة في الخارج]
     gulf: [الكرت في السفر, أستخدم الكرت برا]
     levantine_egyptian: [الكارت بيشتغل برا؟, استعمل البطاقة بالسفر]
-    arabizi: [el kart barra, el kart fel safar, ast3mel el beta2a bel safar]
 
 - concept_id: atm_withdrawal
   kb_term: ATM
@@ -175,7 +157,6 @@
     msa: [السحب النقدي, الصراف الآلي]
     gulf: [أسحب كاش, الصراف]
     levantine_egyptian: [المكنة, أسحب من الصراف الآلي, السحب من الصراف]
-    arabizi: [as7ab cash, el sarraf, el makana, sa7b]
 
 - concept_id: three_d_secure
   kb_term: 3-D Secure
@@ -184,7 +165,6 @@
     msa: [التحقق الآمن للدفع الإلكتروني]
     gulf: [رمز التحقق للشراء أونلاين]
     levantine_egyptian: [الكود اللي بيجي وأنا بشتري أونلاين]
-    arabizi: [3d secure, code el shera2 online]
 
 - concept_id: online_payment
   kb_term: online payments
@@ -194,7 +174,6 @@
     msa: [الدفع الإلكتروني, الشراء عبر الإنترنت]
     gulf: [أشتري أونلاين, الدفع من المواقع]
     levantine_egyptian: [أشتري من النت, ادفع أونلاين]
-    arabizi: [ashtery online, el daf3 online, men el net]
 
 - concept_id: merchant_hold
   kb_term: pre-authorization
@@ -204,7 +183,6 @@
     msa: [حجز مبلغ, تفويض مسبق]
     gulf: [المبلغ محجوز, حجزوا مبلغ في الفندق]
     levantine_egyptian: [في مبلغ متعلّق, حاجزين فلوس عليّا]
-    arabizi: [mablagh ma7jooz, 7agzeen floos, el mablagh m3alla2]
 
 - concept_id: card_expiry
   kb_term: expiry date
@@ -214,7 +192,6 @@
     msa: [انتهاء صلاحية البطاقة, تجديد البطاقة]
     gulf: [الكرت بينتهي, أجدد الكرت]
     levantine_egyptian: [الكارت خلصت مدته, أجدد الفيزا]
-    arabizi: [el kart bayentehi, ajadded el kart, tagdeed el visa]
 
 - concept_id: cvv
   kb_term: CVV
@@ -223,7 +200,6 @@
     msa: [رمز التحقق من البطاقة]
     gulf: [الثلاث أرقام ورا الكرت]
     levantine_egyptian: [التلت أرقام اللي ورا الكارت]
-    arabizi: [cvv, el 3 ar2am, el talat ar2am]
 
 - concept_id: spending_controls
   kb_term: spending controls
@@ -232,4 +208,3 @@
     msa: [التحكم في الإنفاق, ضوابط البطاقة]
     gulf: [أوقف الشراء أونلاين, أحدد صرف الكرت]
     levantine_egyptian: [أقفل الشراء من برا, أتحكم في الكارت]
-    arabizi: [at7akkam fel kart, aw2af el shera2 online]

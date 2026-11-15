@@ -17,14 +17,14 @@ from pathlib import Path
 
 import yaml
 
-from musaid.benchmark.schema import Query
+from musaid.benchmark.schema import Query, Variety
 
 SEED = "musaid-agreement-2026"
 PLAN = {
-    "answerable": {"english": 9, "msa": 7, "gulf": 7, "levantine_egyptian": 5,
-                   "code_switched": 5, "arabizi": 5},
-    "ambiguous": {"english": 2, "msa": 1, "gulf": 1, "levantine_egyptian": 1, "code_switched": 1},
-    "unanswerable": {"english": 2, "msa": 1, "gulf": 1, "levantine_egyptian": 1, "arabizi": 1},
+    "answerable": {"english": 9, "msa": 8, "gulf": 7, "egyptian": 7,
+                   "code_switched": 7},
+    "ambiguous": {"english": 2, "msa": 1, "gulf": 1, "egyptian": 1, "code_switched": 1},
+    "unanswerable": {"english": 2, "msa": 1, "gulf": 1, "egyptian": 1, "code_switched": 1},
 }  # fmt: skip
 LABELS = ("variety", "type", "answerable", "needs_clarification")
 
@@ -66,7 +66,7 @@ def blank_sheet(sample: list[Query]) -> str:
         "# Fill in every field from the query text alone, using docs/ANNOTATION.md and\n"
         '#   python -m musaid.benchmark.search "..."   to find chunks.\n'
         "# Don't open data/eval/source, queries.jsonl, dev.jsonl or test.jsonl.\n"
-        "# variety: english | msa | gulf | levantine_egyptian | code_switched | arabizi\n"
+        f"# variety: {' | '.join(Variety)}\n"
         "# type: see ANNOTATION.md §4. answerable / needs_clarification: true or false.\n"
         "# gold_chunk_ids: 1-3 chunk ids, or [] if unanswerable.\n\n"
     )

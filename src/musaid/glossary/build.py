@@ -15,15 +15,13 @@ from pathlib import Path
 import yaml
 from pydantic import ValidationError
 
-from musaid.glossary.schema import ARABIC_SCRIPT_VARIETIES, VARIETIES, GlossaryEntry
+from musaid.glossary.schema import VARIETIES, GlossaryEntry
 from musaid.ingest.validate import Issue
 
 ROOT = Path(__file__).resolve().parents[3]
 
 _ARABIC_LETTER = re.compile(r"[ء-ي]")
 _LATIN_LETTER = re.compile(r"[A-Za-z]")
-# Arabizi: lowercase Latin letters and the usual digit letters (2 3 5 6 7 8 9).
-_ARABIZI = re.compile(r"^[a-z0-9]+(?:[ '-][a-z0-9]+)*$")
 _DIACRITICS = re.compile(r"[ً-ْٰـ]")  # harakat, dagger alef, tatweel
 _FOLD = str.maketrans({"أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا", "ى": "ي", "ة": "ه", "ؤ": "و"})
 
@@ -104,14 +102,9 @@ def check_glossary(raws: list[tuple[str, dict]], kb_text: str) -> GlossaryResult
             for form in forms:
                 if form != form.strip() or "  " in form:
                     err(where, f"{variety} {form!r}: stray whitespace")
-                if variety in ARABIC_SCRIPT_VARIETIES:
-                    if not _ARABIC_LETTER.search(form) or _LATIN_LETTER.search(form):
-                        err(where, f"{variety} {form!r}: must be Arabic script only")
-                    key = fold_arabic(form)
-                else:
-                    if not _ARABIZI.match(form):
-                        err(where, f"arabizi {form!r}: use lowercase Latin letters and digits")
-                    key = form
+                if not _ARABIC_LETTER.search(form) or _LATIN_LETTER.search(form):
+                    err(where, f"{variety} {form!r}: must be Arabic script only")
+                key = fold_arabic(form)
                 folded_here[key] += 1
                 seen[variety][key].append(e.concept_id)
             for key, n in folded_here.items():

@@ -1,7 +1,7 @@
 [project]
 name = "musaid"
 version = "0.1.0"
-description = "Cross-lingual support copilot: Arabic (MSA, dialects, Arabizi) and English queries over an English knowledge base."
+description = "Cross-lingual support copilot: Arabic (MSA, Gulf, Egyptian, code-switched) and English queries over an English knowledge base."
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 license = { text = "MIT" }

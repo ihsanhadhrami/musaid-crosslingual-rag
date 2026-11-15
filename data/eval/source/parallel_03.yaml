@@ -29,7 +29,7 @@
   difficulty: medium
 - <<: *pg021
   qid: q-0124
-  variety: levantine_egyptian
+  variety: egyptian
   query: "حولت دراهم لحساب غلط من حوالي شهر ولسه واخد بالي، لسه ينفع أعمل شكوى؟"
   difficulty: hard
 - <<: *pg021
@@ -37,11 +37,6 @@
   variety: code_switched
   query: "سويت transfer بالدرهم لحساب غلط من شهر وتوني انتبهت، أقدر أفتح dispute ولا فات الـ deadline؟"
   difficulty: medium
-- <<: *pg021
-  qid: q-0126
-  variety: arabizi
-  query: "7awalt dirham l 7esab ghalat men shahr ta2riban w lessa wakhed baly, lessa yenfa3 a3mel shakwa?"
-  difficulty: hard
 
 # pg-022: failed payment deducted from the balance, Egypt
 - <<: &pg022
@@ -71,7 +66,7 @@
   difficulty: medium
 - <<: *pg022
   qid: q-0130
-  variety: levantine_egyptian
+  variety: egyptian
   query: "الدفع فشل بس الفلوس اتخصمت من الرصيد، أنا في مصر، هترجع امتى؟"
   difficulty: medium
 - <<: *pg022
@@ -79,11 +74,6 @@
   variety: code_switched
   query: "الـ payment فشل بس المبلغ انخصم من الـ balance، أنا في مصر، متى يرجع؟"
   difficulty: easy
-- <<: *pg022
-  qid: q-0132
-  variety: arabizi
-  query: "el daf3 feshel bas el floos et5asamet men el raseed, ana fi masr, hatrga3 emta?"
-  difficulty: medium
 
 # pg-023: scammed by a fake seller after approving the payment (buried exception)
 - <<: &pg023
@@ -112,18 +102,13 @@
   difficulty: hard
 - <<: *pg023
   qid: q-0136
-  variety: levantine_egyptian
+  variety: egyptian
   query: "دفعت لواحد على انستجرام تمن موبايل وأكدت من الأبلكيشن وطلع نصاب، هترجعولي الفلوس؟"
   difficulty: hard
 - <<: *pg023
   qid: q-0137
   variety: code_switched
   query: "دفعت لـ seller على Instagram قيمة جوال وسويت confirm من التطبيق وطلع scam، بترجعون المبلغ؟"
-  difficulty: hard
-- <<: *pg023
-  qid: q-0138
-  variety: arabizi
-  query: "dafa3t l wa7ed 3ala instagram taman mobile w akkedt mn el app w tele3 nassab, hatraga3oli el floos?"
   difficulty: hard
 
 # pg-024: locked for the third time in a day (buried exception)
@@ -153,7 +138,7 @@
   difficulty: medium
 - <<: *pg024
   qid: q-0142
-  variety: levantine_egyptian
+  variety: egyptian
   query: "الحساب اتقفل تالت مرة النهارده ومش بيفتح حتى لو استنيت، أعمل ايه؟"
   difficulty: medium
 - <<: *pg024
@@ -161,11 +146,6 @@
   variety: code_switched
   query: "الـ account انقفل ثالث مرة اليوم والـ timer ما عاد يفتحه، وش أسوي؟"
   difficulty: medium
-- <<: *pg024
-  qid: q-0144
-  variety: arabizi
-  query: "el 7esab et2afal talet marra el naharda w mesh byeftah 7atta law estaneet, a3mel eh?"
-  difficulty: hard
 
 # pg-025: should I resubmit my ID while it's "In review"?
 - <<: &pg025
@@ -194,7 +174,7 @@
   difficulty: medium
 - <<: *pg025
   qid: q-0148
-  variety: levantine_egyptian
+  variety: egyptian
   query: "التوثيق تحت المراجعة من امبارح، أرفع البطاقة تاني عشان يخلص أسرع؟"
   difficulty: medium
 - <<: *pg025
@@ -202,11 +182,6 @@
   variety: code_switched
   query: "الـ verification حقي In review من أمس، أسوي upload للهوية مرة ثانية عشان يسرع؟"
   difficulty: easy
-- <<: *pg025
-  qid: q-0150
-  variety: arabizi
-  query: "el tawtheeq ta7t el moraj3a men embare7, arfa3 el beta2a tani 3ashan ykhlas asra3?"
-  difficulty: hard
 
 # pg-026: unverified in Dubai: daily sending limit + what's needed to verify (multi-hop)
 - <<: &pg026
@@ -237,18 +212,13 @@
   difficulty: hard
 - <<: *pg026
   qid: q-0154
-  variety: levantine_egyptian
+  variety: egyptian
   query: "الحساب لسه مش متوثق وأنا في دبي، أقدر أبعت قد ايه في اليوم ومحتاج ايه عشان أوثقه؟"
   difficulty: hard
 - <<: *pg026
   qid: q-0155
   variety: code_switched
   query: "الـ account حقي مو verified وأنا في دبي، كم الـ daily limit ووش الـ documents المطلوبة؟"
-  difficulty: hard
-- <<: *pg026
-  qid: q-0156
-  variety: arabizi
-  query: "el 7esab lessa mesh mwathaq w ana fi dubai, a2dar ab3at ad eh fel yom w me7tag eh 3ashan awathe2o?"
   difficulty: hard
 
 # pg-027: lost card replacement fee, Saudi Arabia (trap: kb-0134 2025 says SAR 35)
@@ -279,18 +249,13 @@
   difficulty: hard
 - <<: *pg027
   qid: q-0160
-  variety: levantine_egyptian
+  variety: egyptian
   query: "الكارت ضاع مني في الرياض، الكارت الجديد هيكلفني كام؟"
   difficulty: hard
 - <<: *pg027
   qid: q-0161
   variety: code_switched
   query: "ضيعت الـ card في الرياض، كم الـ fee على الـ replacement؟"
-  difficulty: hard
-- <<: *pg027
-  qid: q-0162
-  variety: arabizi
-  query: "da3 karti fel riyadh, kam btakhdo 3ala kart jdeed?"
   difficulty: hard
 
 # pg-028: can't close the account while a dispute is open (buried exception)
@@ -319,7 +284,7 @@
   difficulty: medium
 - <<: *pg028
   qid: q-0166
-  variety: levantine_egyptian
+  variety: egyptian
   query: "عايز أقفل حسابي والأبلكيشن مش راضي، وعندي شكوى لسه مفتوحة، ده السبب؟"
   difficulty: medium
 - <<: *pg028
@@ -327,11 +292,6 @@
   variety: code_switched
   query: "حاولت أسوي close للحساب وما رضى، عندي dispute للحين مفتوح، هذا السبب؟"
   difficulty: medium
-- <<: *pg028
-  qid: q-0168
-  variety: arabizi
-  query: "7awelt a2fel el 7esab w mesh rady, w 3andi shakwa lessa maftoo7a, da el sabab?"
-  difficulty: hard
 
 # pg-029: can't pay a new recipient right after setting up a new phone
 - <<: &pg029
@@ -362,7 +322,7 @@
   difficulty: medium
 - <<: *pg029
   qid: q-0172
-  variety: levantine_egyptian
+  variety: egyptian
   query: "نزلت الأبلكيشن على الموبايل الجديد النهارده ومش عارف أحول لابن عمي، أول مرة أبعتله. ليه؟"
   difficulty: medium
 - <<: *pg029
@@ -370,11 +330,6 @@
   variety: code_switched
   query: "سويت setup للتطبيق على الجوال الجديد اليوم وما أقدر أسوي transfer لولد عمي، أول مرة أحول له، ليش؟"
   difficulty: medium
-- <<: *pg029
-  qid: q-0174
-  variety: arabizi
-  query: "nazzelt el app 3al mobile el gedid el naharda w mesh 3aref a7awel l ebn 3ammi, awel marra ab3atlo, leh?"
-  difficulty: hard
 
 # pg-030: asked for a PIN on a small tap payment
 - <<: &pg030
@@ -404,7 +359,7 @@
   difficulty: medium
 - <<: *pg030
   qid: q-0178
-  variety: levantine_egyptian
+  variety: egyptian
   query: "ليه المكنة طلبت الرقم السري وأنا بدفع حاجة صغيرة بالتاتش؟ ده أقل من الحد بكتير"
   difficulty: medium
 - <<: *pg030
@@ -412,8 +367,3 @@
   variety: code_switched
   query: "ليش الـ terminal طلب الـ PIN في contactless payment صغيرة؟ أقل من الـ limit بواجد"
   difficulty: medium
-- <<: *pg030
-  qid: q-0180
-  variety: arabizi
-  query: "leh el makana talabet el pin w ana badfa3 7aga soghayara tap? da a2al men el limit bekteer"
-  difficulty: hard

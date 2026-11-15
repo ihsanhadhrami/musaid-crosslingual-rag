@@ -1,1 +1,1 @@
-"""Language/variety identification, Arabic normalization, Arabizi transliteration."""
+"""Language/variety identification and Arabic normalization."""
