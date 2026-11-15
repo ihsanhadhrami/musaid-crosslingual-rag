@@ -45,6 +45,16 @@ CONFIGS: dict[str, dict] = {
         "passage_prefix": "passage: ",
         "k": 100,
     },
+    "bm25_translated": {
+        "name": "bm25_translated",
+        "description": "Ablation #4: translate Arabic queries to English (DeepSeek), then BM25",
+        "retriever": "bm25",
+        "query": "translated",
+        "translator": {"model": "deepseek-flash", "prompt_version": "v1"},
+        "k1": 1.5,
+        "b": 0.75,
+        "k": 100,
+    },
 }
 
 
@@ -70,8 +80,40 @@ def build_retriever(config: dict, root: Path):
     raise ValueError(f"unknown retriever {config['retriever']!r}")
 
 
-def retrieve(retriever, config: dict, queries) -> dict[str, dict[str, float]]:
-    hits = retriever.search([q.query for q in queries], k=config["k"])
+def query_texts(config: dict, queries, root: Path) -> tuple[list[str], dict | None]:
+    """The text each query is searched with, and translation stats when translated."""
+    raw = [q.query for q in queries]
+    if config["query"] == "raw":
+        return raw, None
+    if config["query"] != "translated":
+        raise ValueError(f"unknown query mode {config['query']!r}")
+    from musaid.config import get_settings
+    from musaid.translate.llm import (
+        DeepSeekTranslator,
+        TranslationCache,
+        translate_all,
+        translation_stats,
+    )
+
+    tr = config["translator"]
+    cache = TranslationCache(
+        root / "eval" / "translations" / f"{tr['model']}__{tr['prompt_version']}.jsonl"
+    )
+
+    def make():
+        s = get_settings()
+        return DeepSeekTranslator(
+            s.deepseek_api_key.get_secret_value(), model=tr["model"], base_url=s.deepseek_base_url
+        )
+
+    texts, records = translate_all(raw, cache, tr["model"], tr["prompt_version"], make)
+    stats = translation_stats(records)
+    stats["texts"] = {q.qid: t for q, t, r in zip(queries, texts, records, strict=True) if r}
+    return texts, stats
+
+
+def retrieve(retriever, config: dict, texts: list[str], queries) -> dict[str, dict[str, float]]:
+    hits = retriever.search(texts, k=config["k"])
     return {q.qid: h for q, h in zip(queries, hits, strict=True)}
 
 
@@ -104,14 +146,16 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     config = CONFIGS[args.config]
     queries = load_split(args.root, args.split)
+    texts, translation = query_texts(config, queries, args.root)
     retriever, index_seconds = timed(build_retriever, config, args.root)
-    rankings, seconds = timed(retrieve, retriever, config, queries)
+    rankings, seconds = timed(retrieve, retriever, config, texts, queries)
     result = RunResult(
         config=config,
         split=args.split,
         rankings=rankings,
         seconds=seconds,
         index_seconds=index_seconds,
+        translation=translation,
     )
     out = save(args.root, result, queries)
 
@@ -120,6 +164,9 @@ def main(argv: list[str] | None = None) -> int:
     metrics = json.loads(out.read_text(encoding="utf-8"))["metrics"]
     print(f"{config['description']}  [{args.split}, {len(scored(queries))} scored queries]\n")
     print(format_table(metrics))
+    if translation:
+        t = {k: v for k, v in translation.items() if k != "texts"}
+        print(f"\ntranslation: {t}")
     print(f"\nwrote {out.relative_to(args.root).as_posix()}")
     return 0
 

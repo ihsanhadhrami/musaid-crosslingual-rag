@@ -33,6 +33,9 @@ class RunResult:
     rankings: dict[str, dict[str, float]]
     seconds: float  # query-time only: encoding + search for every query in the split
     index_seconds: float = 0.0  # building or loading the index (one-off, not per query)
+    # Query translation stats (cost, latency, tokens) and the English text per qid.
+    # Latency is the original API call's, from the cache, so it isn't in `seconds`.
+    translation: dict | None = None
 
 
 def load_split(root: Path, split: str) -> list[Query]:
@@ -120,6 +123,7 @@ def save(root: Path, result: RunResult, queries: list[Query]) -> Path:
         "index_seconds": round(result.index_seconds, 2),
         "seconds": round(result.seconds, 2),
         "ms_per_query": round(1000 * result.seconds / max(len(queries), 1), 2),
+        **({"translation": result.translation} if result.translation else {}),
         "metrics": breakdown(ids, result.rankings),
         "per_query": per_query(ids, result.rankings),
     }

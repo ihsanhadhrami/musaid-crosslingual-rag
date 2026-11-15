@@ -21,6 +21,10 @@ class Settings(BaseSettings):
     langfuse_public_key: str = ""
     langfuse_secret_key: SecretStr = SecretStr("")
 
+    # Query translation (Phase 4): DeepSeek, OpenAI-compatible API
+    deepseek_api_key: SecretStr = SecretStr("")
+    deepseek_base_url: str = "https://api.deepseek.com"
+
     @property
     def database_url(self) -> str:
         return (
