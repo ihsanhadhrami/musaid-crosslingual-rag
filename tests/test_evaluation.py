@@ -76,3 +76,14 @@ def test_dense_query_prefix_is_prepended_before_encoding():
     r.matrix = np.ones((1, 2), dtype=np.float32)
     r.search(["refund"], k=1)
     assert seen == ["query: refund"]
+
+
+def test_rrf_uses_ranks_not_scores():
+    from musaid.retrieval.fusion import rrf
+
+    bm25 = {"a": 30.0, "b": 20.0, "c": 10.0}  # unbounded scores
+    dense = {"b": 0.9, "c": 0.8, "d": 0.1}  # cosine
+    fused = rrf([bm25, dense], k=60)
+    assert list(fused) == ["b", "c", "a", "d"]  # b: ranks 2+1, c: 3+2, a: 1, d: 3
+    assert abs(fused["b"] - (1 / 62 + 1 / 61)) < 1e-12
+    assert len(rrf([bm25, dense], k=60, depth=2)) == 2

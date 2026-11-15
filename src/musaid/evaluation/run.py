@@ -9,11 +9,16 @@ metrics (overall and by variety, type, gold source, parallel group) and per-quer
 
 import argparse
 import sys
+import time
 from pathlib import Path
 
 from musaid.evaluation.harness import RunResult, load_split, save, scored, timed
 
 ROOT = Path(__file__).resolve().parents[3]
+
+TRANSLATOR = {"model": "deepseek-flash", "prompt_version": "v1"}
+BM25 = {"retriever": "bm25", "k1": 1.5, "b": 0.75}
+BGE_M3 = {"retriever": "dense", "model": "BAAI/bge-m3", "max_seq_length": 512}
 
 CONFIGS: dict[str, dict] = {
     "bm25_raw": {
@@ -50,9 +55,28 @@ CONFIGS: dict[str, dict] = {
         "description": "Ablation #4: translate Arabic queries to English (DeepSeek), then BM25",
         "retriever": "bm25",
         "query": "translated",
-        "translator": {"model": "deepseek-flash", "prompt_version": "v1"},
+        "translator": TRANSLATOR,
         "k1": 1.5,
         "b": 0.75,
+        "k": 100,
+    },
+    "dense_bge_m3_translated": {
+        "name": "dense_bge_m3_translated",
+        "description": "Diagnostic for #5: translate (DeepSeek), then dense bge-m3 only",
+        **BGE_M3,
+        "query": "translated",
+        "translator": TRANSLATOR,
+        "k": 100,
+    },
+    "hybrid_translated": {
+        "name": "hybrid_translated",
+        "description": "Ablation #5: translate (DeepSeek), then BM25 + dense bge-m3, fused by RRF",
+        "retriever": "fusion",
+        "routes": [
+            {**BM25, "query": "translated", "translator": TRANSLATOR},
+            {**BGE_M3, "query": "translated", "translator": TRANSLATOR},
+        ],
+        "rrf_k": 60,
         "k": 100,
     },
 }
@@ -117,6 +141,35 @@ def retrieve(retriever, config: dict, texts: list[str], queries) -> dict[str, di
     return {q.qid: h for q, h in zip(queries, hits, strict=True)}
 
 
+def run_config(config: dict, queries, root: Path) -> tuple[dict, float, float, dict | None]:
+    """Rankings, query seconds, index seconds and translation stats for one config.
+
+    A fusion config runs each route (its own retriever and query text) and fuses them by
+    RRF. Query seconds add up over routes, as if they ran one after another.
+    """
+    if config["retriever"] != "fusion":
+        texts, translation = query_texts(config, queries, root)
+        retriever, index_seconds = timed(build_retriever, config, root)
+        rankings, seconds = timed(retrieve, retriever, config, texts, queries)
+        return rankings, seconds, index_seconds, translation
+
+    from musaid.retrieval.fusion import rrf
+
+    per_route, seconds, index_seconds, translation = [], 0.0, 0.0, None
+    for route in config["routes"]:
+        route = {**route, "k": config["k"]}
+        r, s, i, t = run_config(route, queries, root)
+        per_route.append(r)
+        seconds, index_seconds = seconds + s, index_seconds + i
+        translation = translation or t  # every translated route shares one cache
+    t0 = time.perf_counter()
+    fused = {
+        q.qid: rrf([r[q.qid] for r in per_route], k=config["rrf_k"], depth=config["k"])
+        for q in queries
+    }
+    return fused, seconds + time.perf_counter() - t0, index_seconds, translation
+
+
 def format_table(metrics: dict) -> str:
     cols = ["n", "recall@10", "mrr@10", "ndcg@10"]
     lines = [f"{'':24}" + "".join(f"{c:>11}" for c in cols)]
@@ -146,9 +199,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     config = CONFIGS[args.config]
     queries = load_split(args.root, args.split)
-    texts, translation = query_texts(config, queries, args.root)
-    retriever, index_seconds = timed(build_retriever, config, args.root)
-    rankings, seconds = timed(retrieve, retriever, config, texts, queries)
+    rankings, seconds, index_seconds, translation = run_config(config, queries, args.root)
     result = RunResult(
         config=config,
         split=args.split,
