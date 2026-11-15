@@ -1,0 +1,2066 @@
+{
+ "config": {
+  "name": "bm25_translated",
+  "description": "Ablation #4: translate Arabic queries to English (DeepSeek), then BM25",
+  "retriever": "bm25",
+  "query": "translated",
+  "translator": {
+   "model": "deepseek-flash",
+   "prompt_version": "v1"
+  },
+  "k1": 1.5,
+  "b": 0.75,
+  "k": 100
+ },
+ "split": "dev",
+ "created": "2026-11-15T11:10:43+00:00",
+ "git": "ca60fc7",
+ "queries_total": 166,
+ "queries_scored": 146,
+ "index_seconds": 0.24,
+ "seconds": 0.02,
+ "ms_per_query": 0.12,
+ "translation": {
+  "queries": 166,
+  "translated": 121,
+  "model": "deepseek-flash",
+  "prompt_version": "v1",
+  "mean_input_tokens": 172.1,
+  "mean_output_tokens": 18.8,
+  "mean_latency_ms": 893.9,
+  "p95_latency_ms": 1321.3,
+  "usd_per_1k_queries": 0.027,
+  "mean_added_latency_ms": 651.6,
+  "texts": {
+   "q-0008": "My identity verification has been referred to manual review, and I'm a resident of Egypt. What is the maximum duration for this review?",
+   "q-0009": "My account verification went into manual review and I live in Egypt, what's the maximum time it takes?",
+   "q-0010": "My verification is still being reviewed manually and I'm in Egypt, what's the maximum time it takes?",
+   "q-0011": "My verification went into manual review and I'm in Egypt, what's the maximum time it takes?",
+   "q-0014": "What is the daily transfer limit from a verified account in Saudi Arabia?",
+   "q-0015": "My account is verified in Saudi Arabia, how much can I transfer per day?",
+   "q-0016": "I live in Saudi Arabia and my account is verified, how much can I transfer per day?",
+   "q-0017": "What is the daily limit for transfers if the account is verified in Saudi Arabia?",
+   "q-0020": "I requested the card about three weeks ago and it hasn't arrived yet. What should I do?",
+   "q-0021": "I requested the card three weeks ago and I still haven't received anything, what should I do?",
+   "q-0022": "I ordered the card three weeks ago and it still hasn't arrived, what do I do or what should I do?",
+   "q-0023": "I requested the card three weeks ago and it hasn't arrived yet, what am I supposed to do?",
+   "q-0038": "My son is 17 years old and we live in Egypt. Can he open his own account?",
+   "q-0039": "My son is 17 and we live in Egypt, can he open an account for himself?",
+   "q-0040": "My son is 17 years old and we're in Egypt, can he open an account for Alo?",
+   "q-0041": "My son is 17 and we live in Egypt, can he open an account on his own?",
+   "q-0068": "What are the international transfer fees from an account registered in Saudi Arabia to a bank account abroad?",
+   "q-0069": "How much do you charge for a transfer outside Saudi Arabia?",
+   "q-0070": "I live in Saudi Arabia, how much do you charge for a transfer to a bank abroad?",
+   "q-0071": "How much is the fee on the international transfer from Saudi Arabia?",
+   "q-0086": "A transaction for 1,200 dirhams appeared on my card that I didn't make. What should I do? And will I get the amount back?",
+   "q-0087": "A deduction of 1200 dirhams showed up on the card and I didn't make it, what should I do and will I get my money back?",
+   "q-0088": "There's a 1200 AED transaction on the card that I didn't make, what do I do and will the money come back?",
+   "q-0089": "There's a transaction of 1200 dirhams on the card that I didn't make, what should I do? Will the amount be refunded?",
+   "q-0104": "If I close my account in Egypt, what happens to the remaining balance? And how long does it take to transfer it to me?",
+   "q-0105": "If my account is closed while I'm in Egypt, where does the money in it go and how much does it take?",
+   "q-0106": "If I close the account while I'm in Egypt, where will the money in it go and how much will it take?",
+   "q-0107": "If I close the account while I'm in Egypt, where does the remaining balance go and when?",
+   "q-0110": "What is the maximum contactless card payment limit without entering the PIN in the UAE?",
+   "q-0111": "How long can I pay with the card tap without the PIN in the UAE?",
+   "q-0112": "Can I pay by card without entering the PIN up to how much in the UAE?",
+   "q-0113": "What is the contactless limit without a PIN in the UAE?",
+   "q-0116": "I paid online for headphones a month ago and they haven't arrived, and the seller isn't responding. What can I do?",
+   "q-0117": "I bought headphones online a month ago and they haven't arrived, and the seller isn't responding. What should I do?",
+   "q-0118": "I bought headphones online a month ago and they never arrived, and the seller isn't responding. What should I do?",
+   "q-0119": "I bought headphones online a month ago and they haven't arrived and the seller isn't responding, what's the solution?",
+   "q-0122": "I transferred money to the wrong account about a month ago and only noticed now. Is it too late to file a dispute?",
+   "q-0123": "I transferred dirhams to the wrong account about a month ago and just noticed, is it too late to dispute?",
+   "q-0124": "I transferred dirhams to the wrong account about a month ago and just noticed now, can I still file a complaint?",
+   "q-0125": "I made a transfer in dirhams to the wrong account a month ago and just noticed now, can I open a dispute or has the deadline passed?",
+   "q-0134": "I paid a seller on Instagram for a phone and confirmed the transaction in the app, then it turned out to be a scam. Will I get my money back as an unauthorized transaction?",
+   "q-0135": "I paid someone on Instagram for a phone and confirmed the payment from the app and it turned out to be a scam, will you give me my money back?",
+   "q-0136": "I paid someone on Instagram for a phone and confirmed it through the app, and he turned out to be a scammer. Will you give me my money back?",
+   "q-0137": "I paid a seller on Instagram for a phone and completed the confirm in the app and it turned out to be a scam, will you refund the amount?",
+   "q-0146": "My identity verification has been \"under review\" since yesterday. Should I re-upload my ID to speed up the process?",
+   "q-0147": "My verification has been under review since yesterday, should I upload the ID again so it goes faster?",
+   "q-0148": "The verification has been under review since yesterday, should I upload the card again so it gets done faster?",
+   "q-0149": "My verification has been In review since yesterday, should I upload the ID again to speed it up?",
+   "q-0176": "Why did the payment device ask for the PIN on a small contactless payment even though it's below the limit?",
+   "q-0177": "Why did the device ask me for the PIN when I paid a small amount, Tab? It's way below the limit.",
+   "q-0178": "Why did the machine ask for the PIN when I'm paying for something small with tap? That's way below the limit.",
+   "q-0179": "Why did the terminal ask for the PIN on a small contactless payment? It's way below the limit",
+   "q-0188": "What is the daily limit for cash withdrawals from ATMs in Egypt?",
+   "q-0189": "How much cash can I withdraw from the ATM per day while I'm in Egypt?",
+   "q-0190": "How much can I withdraw per day from the ATM in Egypt?",
+   "q-0191": "What is the daily limit for ATM withdrawals in Egypt?",
+   "q-0212": "Send an amount from Dubai to my mother's bank account in India. How long does it take to arrive?",
+   "q-0213": "I want to transfer money from Dubai to my mother's account in India, how long does it take to reach her?",
+   "q-0214": "I'll send money from Dubai to my mom's account in India, how long will it take to reach her?",
+   "q-0215": "I'm going to make a transfer from Dubai to my mom's account in India, how long does it take to arrive?",
+   "q-0218": "I haven't used my Sahla Pay account for more than a year, and I live in Dubai. Do you charge a fee for that?",
+   "q-0219": "I haven't used the account for more than a year and I'm in Dubai, will you charge me anything?",
+   "q-0220": "I haven't used the account for more than a year and I'm in Dubai, are you charging me anything?",
+   "q-0221": "I haven't used the account in a year and I'm in Dubai, is there a fee for that?",
+   "q-0243": "I changed my number and I no longer have the old number, how do I log into my account?",
+   "q-0249": "How many bank accounts can I link to my account in the app?",
+   "q-0253": "Are there fees for paying bills from the wallet balance in Egypt?",
+   "q-0256": "How much is the fee if I top up with a debit card in the UAE?",
+   "q-0262": "The payment link I sent to the customer, when does it expire?",
+   "q-0266": "I returned one item from the order and the refund I received was less than I expected, why?",
+   "q-0272": "I sent an international transfer from Saudi Arabia to the wrong person, can you return it?",
+   "q-0273": "If the beneficiary's bank returns the transfer, are the transfer fees also refunded?",
+   "q-0285": "If you're going to increase the fees, how much notice will you give us beforehand?",
+   "q-0287": "I received a message saying my package is waiting for a delivery fee payment via a link. Is it a scam message?",
+   "q-0288": "Someone accessed my account and changed the email, what do I do quickly?",
+   "q-0290": "My phone was stolen from me, what should I do first to protect my account?",
+   "q-0293": "How do I change the app language to Arabic?",
+   "q-0295": "My father is blind, can he use the app with a screen reader?",
+   "q-0296": "If I delete the app from my phone, will the account be closed?",
+   "q-0298": "After my account in Saudi Arabia was closed, how many years do you keep my data?",
+   "q-0301": "I want to send Eid money to more than one person at once, how do I do it from the app?",
+   "q-0310": "Do I automatically get a virtual card if my account is in Egypt?",
+   "q-0313": "How much does the plastic card cost in Egypt?",
+   "q-0316": "I submitted the verification documents on Thursday night while I was in Riyadh, when will they review them?",
+   "q-0326": "If I dispute a transfer, does its amount return to my daily limit immediately?",
+   "q-0327": "What is the monthly transfer limit to a verified account in the UAE?",
+   "q-0335": "I transferred to the wrong bank account by mistake, is it the same as the dispute process?",
+   "q-0337": "Can someone send me money on Sahla Pay through InstaPay?",
+   "q-0338": "What are the transfer fees via InstaPay?",
+   "q-0339": "If you agree to raise the temporary limit, will the monthly limit increase afterward?",
+   "q-0340": "How many times a year can I request a temporary limit increase while I'm in Saudi Arabia?",
+   "q-0342": "How long does it take to review a temporary limit increase request in the UAE?",
+   "q-0348": "If I gave the verification code to someone who called me, do I lose my right to get the money back?",
+   "q-0352": "My card is expiring soon, is the renewal for a fee?",
+   "q-0354": "Is Apple Pay available for Egypt accounts?",
+   "q-0356": "Is it true that the first two withdrawals each month are free in Saudi Arabia?",
+   "q-0359": "The agent came twice and didn't find me, where did the card end up?",
+   "q-0365": "I got error E600 while transferring, what does it mean?",
+   "q-0366": "I changed my phone, will the card show up in Google Pay on its own?",
+   "q-0370": "What was the duration for refunding merchant amounts to UAE accounts during 2025?",
+   "q-0374": "What is the daily transfer limit?",
+   "q-0380": "How long does manual review take for identity verification?",
+   "q-0381": "How much can I pay with the card without the PIN?",
+   "q-0383": "Can I add the card to Apple Pay?",
+   "q-0386": "What is the maximum wallet balance after account verification?",
+   "q-0398": "What is the maximum amount I can pay by barcode in a single transaction?",
+   "q-0404": "How much are the bill payment fees?",
+   "q-0405": "What is the maximum balance for an unverified account?",
+   "q-0409": "Can I get a salary advance through Sahla Pay?",
+   "q-0413": "Do you offer real estate financing for buying a home?",
+   "q-0421": "Is there a dark mode in the app? The brightness hurts my eyes at night.",
+   "q-0422": "Can I put a balance widget on my phone's home screen?",
+   "q-0424": "Do you have an official channel on Telegram?",
+   "q-0429": "Can I donate to a charity directly from within the app?",
+   "q-0430": "Is there a zakat calculator in the app that calculates the zakat on my balance?",
+   "q-0433": "Can I link Sahla Pay with my accounting software like QuickBooks?",
+   "q-0436": "Is there a machine where I can print the card immediately instead of waiting for delivery?",
+   "q-0440": "Can I suspend the whole account for a few months while I'm traveling and then reactivate it later?",
+   "q-0447": "Why was a restriction placed on my account yesterday?",
+   "q-0451": "Did you approve the limit increase request I sent yesterday?",
+   "q-0454": "Transfer 500 dirhams to my brother from my account please"
+  }
+ },
+ "metrics": {
+  "overall": {
+   "n": 146,
+   "recall@5": 0.5251,
+   "recall@10": 0.6233,
+   "recall@20": 0.7009,
+   "mrr@10": 0.553,
+   "ndcg@10": 0.5173
+  },
+  "variety": {
+   "code_switched": {
+    "n": 23,
+    "recall@5": 0.6014,
+    "recall@10": 0.7029,
+    "recall@20": 0.7826,
+    "mrr@10": 0.6348,
+    "ndcg@10": 0.5865
+   },
+   "egyptian": {
+    "n": 23,
+    "recall@5": 0.4638,
+    "recall@10": 0.6014,
+    "recall@20": 0.6377,
+    "mrr@10": 0.5251,
+    "ndcg@10": 0.4956
+   },
+   "english": {
+    "n": 38,
+    "recall@5": 0.4518,
+    "recall@10": 0.5526,
+    "recall@20": 0.693,
+    "mrr@10": 0.5718,
+    "ndcg@10": 0.4871
+   },
+   "gulf": {
+    "n": 30,
+    "recall@5": 0.5,
+    "recall@10": 0.5722,
+    "recall@20": 0.6278,
+    "mrr@10": 0.4048,
+    "ndcg@10": 0.4121
+   },
+   "msa": {
+    "n": 32,
+    "recall@5": 0.625,
+    "recall@10": 0.7135,
+    "recall@20": 0.7656,
+    "mrr@10": 0.6309,
+    "ndcg@10": 0.6178
+   }
+  },
+  "type": {
+   "ambiguous": {
+    "n": 13,
+    "recall@5": 0.6154,
+    "recall@10": 0.6923,
+    "recall@20": 0.6923,
+    "mrr@10": 0.4321,
+    "ndcg@10": 0.4999
+   },
+   "country_specific": {
+    "n": 8,
+    "recall@5": 0.3333,
+    "recall@10": 0.625,
+    "recall@20": 0.6667,
+    "mrr@10": 0.4857,
+    "ndcg@10": 0.4261
+   },
+   "factual": {
+    "n": 11,
+    "recall@5": 0.7727,
+    "recall@10": 0.8182,
+    "recall@20": 0.9091,
+    "mrr@10": 0.7212,
+    "ndcg@10": 0.709
+   },
+   "multi_hop": {
+    "n": 1,
+    "recall@5": 0.0,
+    "recall@10": 0.0,
+    "recall@20": 0.0,
+    "mrr@10": 0.0,
+    "ndcg@10": 0.0
+   },
+   "number_sensitive": {
+    "n": 56,
+    "recall@5": 0.5,
+    "recall@10": 0.628,
+    "recall@20": 0.6964,
+    "mrr@10": 0.5761,
+    "ndcg@10": 0.5268
+   },
+   "policy_eligibility": {
+    "n": 13,
+    "recall@5": 0.641,
+    "recall@10": 0.6923,
+    "recall@20": 0.7692,
+    "mrr@10": 0.5769,
+    "ndcg@10": 0.5868
+   },
+   "procedural": {
+    "n": 12,
+    "recall@5": 0.5833,
+    "recall@10": 0.5833,
+    "recall@20": 0.5833,
+    "mrr@10": 0.5417,
+    "ndcg@10": 0.5526
+   },
+   "superseded_trap": {
+    "n": 10,
+    "recall@5": 0.2667,
+    "recall@10": 0.4333,
+    "recall@20": 0.6,
+    "mrr@10": 0.6194,
+    "ndcg@10": 0.3806
+   },
+   "troubleshooting": {
+    "n": 22,
+    "recall@5": 0.5227,
+    "recall@10": 0.5682,
+    "recall@20": 0.7273,
+    "mrr@10": 0.4929,
+    "ndcg@10": 0.4664
+   }
+  },
+  "gold_source": {
+   "draft": {
+    "n": 45,
+    "recall@5": 0.5889,
+    "recall@10": 0.7333,
+    "recall@20": 0.8111,
+    "mrr@10": 0.6301,
+    "ndcg@10": 0.6183
+   },
+   "rewritten": {
+    "n": 101,
+    "recall@5": 0.4967,
+    "recall@10": 0.5743,
+    "recall@20": 0.6518,
+    "mrr@10": 0.5186,
+    "ndcg@10": 0.4723
+   }
+  },
+  "parallel_by_variety": {
+   "code_switched": {
+    "n": 16,
+    "recall@5": 0.4896,
+    "recall@10": 0.6042,
+    "recall@20": 0.7188,
+    "mrr@10": 0.6094,
+    "ndcg@10": 0.5207
+   },
+   "egyptian": {
+    "n": 16,
+    "recall@5": 0.2917,
+    "recall@10": 0.4271,
+    "recall@20": 0.4792,
+    "mrr@10": 0.4006,
+    "ndcg@10": 0.3459
+   },
+   "english": {
+    "n": 16,
+    "recall@5": 0.3229,
+    "recall@10": 0.4688,
+    "recall@20": 0.6146,
+    "mrr@10": 0.4623,
+    "ndcg@10": 0.3615
+   },
+   "gulf": {
+    "n": 16,
+    "recall@5": 0.2396,
+    "recall@10": 0.375,
+    "recall@20": 0.4583,
+    "mrr@10": 0.2881,
+    "ndcg@10": 0.2566
+   },
+   "msa": {
+    "n": 16,
+    "recall@5": 0.4271,
+    "recall@10": 0.5729,
+    "recall@20": 0.6458,
+    "mrr@10": 0.5117,
+    "ndcg@10": 0.4725
+   }
+  },
+  "parallel_group_recall@10": {
+   "pg-002": {
+    "english": 1.0,
+    "msa": 1.0,
+    "gulf": 1.0,
+    "egyptian": 1.0,
+    "code_switched": 1.0
+   },
+   "pg-003": {
+    "english": 0.3333,
+    "msa": 0.6667,
+    "gulf": 0.3333,
+    "egyptian": 0.3333,
+    "code_switched": 0.6667
+   },
+   "pg-004": {
+    "english": 0.0,
+    "msa": 0.0,
+    "gulf": 0.0,
+    "egyptian": 0.0,
+    "code_switched": 0.0
+   },
+   "pg-007": {
+    "english": 0.3333,
+    "msa": 0.3333,
+    "gulf": 0.6667,
+    "egyptian": 0.3333,
+    "code_switched": 0.3333
+   },
+   "pg-012": {
+    "english": 0.3333,
+    "msa": 0.3333,
+    "gulf": 0.6667,
+    "egyptian": 0.3333,
+    "code_switched": 0.3333
+   },
+   "pg-015": {
+    "english": 0.3333,
+    "msa": 0.3333,
+    "gulf": 0.0,
+    "egyptian": 0.6667,
+    "code_switched": 0.6667
+   },
+   "pg-018": {
+    "english": 0.0,
+    "msa": 1.0,
+    "gulf": 0.0,
+    "egyptian": 0.0,
+    "code_switched": 1.0
+   },
+   "pg-019": {
+    "english": 1.0,
+    "msa": 1.0,
+    "gulf": 0.6667,
+    "egyptian": 0.6667,
+    "code_switched": 1.0
+   },
+   "pg-020": {
+    "english": 0.0,
+    "msa": 0.0,
+    "gulf": 0.0,
+    "egyptian": 0.0,
+    "code_switched": 0.0
+   },
+   "pg-021": {
+    "english": 0.3333,
+    "msa": 0.3333,
+    "gulf": 0.0,
+    "egyptian": 0.3333,
+    "code_switched": 0.6667
+   },
+   "pg-023": {
+    "english": 0.6667,
+    "msa": 1.0,
+    "gulf": 0.0,
+    "egyptian": 0.0,
+    "code_switched": 0.3333
+   },
+   "pg-025": {
+    "english": 0.5,
+    "msa": 0.5,
+    "gulf": 0.5,
+    "egyptian": 1.0,
+    "code_switched": 0.5
+   },
+   "pg-030": {
+    "english": 1.0,
+    "msa": 1.0,
+    "gulf": 1.0,
+    "egyptian": 1.0,
+    "code_switched": 1.0
+   },
+   "pg-032": {
+    "english": 0.6667,
+    "msa": 0.6667,
+    "gulf": 0.6667,
+    "egyptian": 0.6667,
+    "code_switched": 0.6667
+   },
+   "pg-036": {
+    "english": 0.5,
+    "msa": 1.0,
+    "gulf": 0.5,
+    "egyptian": 0.5,
+    "code_switched": 1.0
+   },
+   "pg-037": {
+    "english": 0.5,
+    "msa": 0.0,
+    "gulf": 0.0,
+    "egyptian": 0.0,
+    "code_switched": 0.5
+   }
+  }
+ },
+ "per_query": {
+  "q-0007": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0009#c0",
+    "kb-0006#c0",
+    "kb-0030#c0",
+    "kb-0007#c0",
+    "kb-0017#c0"
+   ]
+  },
+  "q-0008": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0009#c0",
+    "kb-0007#c0",
+    "kb-0030#c0",
+    "kb-0006#c0",
+    "kb-0005#c0"
+   ]
+  },
+  "q-0009": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0007#c0",
+    "kb-0005#c0",
+    "kb-0017#c0",
+    "kb-0009#c0",
+    "kb-0209#c0"
+   ]
+  },
+  "q-0010": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0007#c0",
+    "kb-0009#c0",
+    "kb-0030#c0",
+    "kb-0005#c0",
+    "kb-0017#c0"
+   ]
+  },
+  "q-0011": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0007#c0",
+    "kb-0009#c0",
+    "kb-0030#c0",
+    "kb-0005#c0",
+    "kb-0006#c0"
+   ]
+  },
+  "q-0013": {
+   "first_gold_rank": 1,
+   "recall@10": 0.3333,
+   "top5": [
+    "kb-0030#c0",
+    "kb-0069#c0",
+    "kb-0220#c0",
+    "kb-0328#c0",
+    "kb-0308#c0"
+   ]
+  },
+  "q-0014": {
+   "first_gold_rank": 2,
+   "recall@10": 0.6667,
+   "top5": [
+    "kb-0069#c0",
+    "kb-0034#c0",
+    "kb-0035#c0",
+    "kb-0275#c1",
+    "kb-0041#c0"
+   ]
+  },
+  "q-0015": {
+   "first_gold_rank": 6,
+   "recall@10": 0.3333,
+   "top5": [
+    "kb-0068#c0",
+    "kb-0135#c0",
+    "kb-0070#c0",
+    "kb-0308#c0",
+    "kb-0144#c0"
+   ]
+  },
+  "q-0016": {
+   "first_gold_rank": 6,
+   "recall@10": 0.3333,
+   "top5": [
+    "kb-0068#c0",
+    "kb-0135#c0",
+    "kb-0070#c0",
+    "kb-0308#c0",
+    "kb-0144#c0"
+   ]
+  },
+  "q-0017": {
+   "first_gold_rank": 4,
+   "recall@10": 0.6667,
+   "top5": [
+    "kb-0035#c0",
+    "kb-0069#c0",
+    "kb-0275#c1",
+    "kb-0201#c7",
+    "kb-0034#c0"
+   ]
+  },
+  "q-0019": {
+   "first_gold_rank": 27,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0102#c0",
+    "kb-0165#c0",
+    "kb-0171#c0",
+    "kb-0130#c0",
+    "kb-0201#c4"
+   ]
+  },
+  "q-0020": {
+   "first_gold_rank": 37,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0272#c0",
+    "kb-0040#c0",
+    "kb-0257#c0",
+    "kb-0156#c0",
+    "kb-0306#c0"
+   ]
+  },
+  "q-0021": {
+   "first_gold_rank": 83,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0163#c0",
+    "kb-0022#c0",
+    "kb-0165#c0",
+    "kb-0329#c0",
+    "kb-0258#c0"
+   ]
+  },
+  "q-0022": {
+   "first_gold_rank": 43,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0165#c0",
+    "kb-0102#c0",
+    "kb-0040#c0",
+    "kb-0022#c0",
+    "kb-0167#c0"
+   ]
+  },
+  "q-0023": {
+   "first_gold_rank": 38,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0300#c0",
+    "kb-0185#c0",
+    "kb-0272#c0",
+    "kb-0040#c0",
+    "kb-0202#c21"
+   ]
+  },
+  "q-0037": {
+   "first_gold_rank": 1,
+   "recall@10": 0.3333,
+   "top5": [
+    "kb-0258#c0",
+    "kb-0124#c0",
+    "kb-0165#c0",
+    "kb-0110#c0",
+    "kb-0088#c0"
+   ]
+  },
+  "q-0038": {
+   "first_gold_rank": 10,
+   "recall@10": 0.3333,
+   "top5": [
+    "kb-0197#c0",
+    "kb-0119#c0",
+    "kb-0124#c0",
+    "kb-0201#c2",
+    "kb-0202#c14"
+   ]
+  },
+  "q-0039": {
+   "first_gold_rank": 7,
+   "recall@10": 0.6667,
+   "top5": [
+    "kb-0202#c1",
+    "kb-0201#c2",
+    "kb-0021#c0",
+    "kb-0354#c0",
+    "kb-0231#c0"
+   ]
+  },
+  "q-0040": {
+   "first_gold_rank": 7,
+   "recall@10": 0.3333,
+   "top5": [
+    "kb-0197#c0",
+    "kb-0119#c0",
+    "kb-0202#c14",
+    "kb-0201#c14",
+    "kb-0085#c0"
+   ]
+  },
+  "q-0041": {
+   "first_gold_rank": 2,
+   "recall@10": 0.3333,
+   "top5": [
+    "kb-0021#c0",
+    "kb-0258#c0",
+    "kb-0202#c1",
+    "kb-0201#c2",
+    "kb-0088#c0"
+   ]
+  },
+  "q-0067": {
+   "first_gold_rank": 1,
+   "recall@10": 0.3333,
+   "top5": [
+    "kb-0147#c0",
+    "kb-0068#c0",
+    "kb-0070#c0",
+    "kb-0222#c0",
+    "kb-0223#c0"
+   ]
+  },
+  "q-0068": {
+   "first_gold_rank": 9,
+   "recall@10": 0.3333,
+   "top5": [
+    "kb-0221#c3",
+    "kb-0036#c0",
+    "kb-0133#c0",
+    "kb-0219#c0",
+    "kb-0040#c0"
+   ]
+  },
+  "q-0069": {
+   "first_gold_rank": 1,
+   "recall@10": 0.6667,
+   "top5": [
+    "kb-0147#c0",
+    "kb-0068#c0",
+    "kb-0141#c0",
+    "kb-0070#c0",
+    "kb-0122#c0"
+   ]
+  },
+  "q-0070": {
+   "first_gold_rank": 1,
+   "recall@10": 0.3333,
+   "top5": [
+    "kb-0147#c0",
+    "kb-0068#c0",
+    "kb-0070#c0",
+    "kb-0141#c0",
+    "kb-0136#c0"
+   ]
+  },
+  "q-0071": {
+   "first_gold_rank": 1,
+   "recall@10": 0.3333,
+   "top5": [
+    "kb-0147#c0",
+    "kb-0068#c0",
+    "kb-0141#c0",
+    "kb-0070#c0",
+    "kb-0144#c0"
+   ]
+  },
+  "q-0085": {
+   "first_gold_rank": 7,
+   "recall@10": 0.3333,
+   "top5": [
+    "kb-0097#c0",
+    "kb-0165#c0",
+    "kb-0067#c0",
+    "kb-0078#c0",
+    "kb-0127#c0"
+   ]
+  },
+  "q-0086": {
+   "first_gold_rank": 3,
+   "recall@10": 0.3333,
+   "top5": [
+    "kb-0156#c0",
+    "kb-0157#c0",
+    "kb-0090#c0",
+    "kb-0060#c0",
+    "kb-0067#c0"
+   ]
+  },
+  "q-0087": {
+   "first_gold_rank": 21,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0334#c0",
+    "kb-0165#c0",
+    "kb-0042#c0",
+    "kb-0060#c0",
+    "kb-0086#c0"
+   ]
+  },
+  "q-0088": {
+   "first_gold_rank": 3,
+   "recall@10": 0.6667,
+   "top5": [
+    "kb-0060#c0",
+    "kb-0156#c0",
+    "kb-0090#c0",
+    "kb-0334#c0",
+    "kb-0092#c0"
+   ]
+  },
+  "q-0089": {
+   "first_gold_rank": 1,
+   "recall@10": 0.6667,
+   "top5": [
+    "kb-0090#c0",
+    "kb-0076#c0",
+    "kb-0092#c0",
+    "kb-0215#c0",
+    "kb-0156#c0"
+   ]
+  },
+  "q-0103": {
+   "first_gold_rank": 14,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0078#c0",
+    "kb-0088#c0",
+    "kb-0168#c0",
+    "kb-0005#c0",
+    "kb-0170#c0"
+   ]
+  },
+  "q-0104": {
+   "first_gold_rank": 2,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0078#c0",
+    "kb-0193#c0",
+    "kb-0167#c0",
+    "kb-0170#c0",
+    "kb-0007#c0"
+   ]
+  },
+  "q-0105": {
+   "first_gold_rank": 24,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0147#c0",
+    "kb-0088#c0",
+    "kb-0141#c0",
+    "kb-0308#c0",
+    "kb-0078#c0"
+   ]
+  },
+  "q-0106": {
+   "first_gold_rank": 34,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0146#c0",
+    "kb-0346#c0",
+    "kb-0068#c0",
+    "kb-0149#c0",
+    "kb-0147#c0"
+   ]
+  },
+  "q-0107": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0193#c0",
+    "kb-0016#c1",
+    "kb-0195#c0",
+    "kb-0048#c0",
+    "kb-0125#c0"
+   ]
+  },
+  "q-0109": {
+   "first_gold_rank": 3,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0104#c0",
+    "kb-0103#c0",
+    "kb-0148#c0",
+    "kb-0128#c0",
+    "kb-0127#c0"
+   ]
+  },
+  "q-0110": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0113#c0",
+    "kb-0148#c0",
+    "kb-0204#c2",
+    "kb-0203#c2",
+    "kb-0103#c0"
+   ]
+  },
+  "q-0111": {
+   "first_gold_rank": 1,
+   "recall@10": 0.6667,
+   "top5": [
+    "kb-0148#c0",
+    "kb-0130#c0",
+    "kb-0113#c0",
+    "kb-0166#c0",
+    "kb-0110#c0"
+   ]
+  },
+  "q-0112": {
+   "first_gold_rank": 2,
+   "recall@10": 0.6667,
+   "top5": [
+    "kb-0130#c0",
+    "kb-0113#c0",
+    "kb-0148#c0",
+    "kb-0068#c0",
+    "kb-0204#c3"
+   ]
+  },
+  "q-0113": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0113#c0",
+    "kb-0148#c0",
+    "kb-0204#c2",
+    "kb-0203#c2",
+    "kb-0238#c2"
+   ]
+  },
+  "q-0115": {
+   "first_gold_rank": 97,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0025#c0",
+    "kb-0340#c0",
+    "kb-0310#c0",
+    "kb-0260#c0",
+    "kb-0346#c1"
+   ]
+  },
+  "q-0116": {
+   "first_gold_rank": null,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0340#c0",
+    "kb-0260#c0",
+    "kb-0310#c0",
+    "kb-0164#c0",
+    "kb-0174#c0"
+   ]
+  },
+  "q-0117": {
+   "first_gold_rank": null,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0340#c0",
+    "kb-0260#c0",
+    "kb-0174#c0",
+    "kb-0194#c0",
+    "kb-0025#c0"
+   ]
+  },
+  "q-0118": {
+   "first_gold_rank": null,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0340#c0",
+    "kb-0164#c0",
+    "kb-0260#c0",
+    "kb-0174#c0",
+    "kb-0166#c0"
+   ]
+  },
+  "q-0119": {
+   "first_gold_rank": null,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0340#c0",
+    "kb-0194#c0",
+    "kb-0260#c0",
+    "kb-0079#c0",
+    "kb-0174#c0"
+   ]
+  },
+  "q-0121": {
+   "first_gold_rank": 6,
+   "recall@10": 0.3333,
+   "top5": [
+    "kb-0044#c0",
+    "kb-0227#c3",
+    "kb-0043#c0",
+    "kb-0220#c3",
+    "kb-0224#c3"
+   ]
+  },
+  "q-0122": {
+   "first_gold_rank": 2,
+   "recall@10": 0.3333,
+   "top5": [
+    "kb-0220#c3",
+    "kb-0075#c0",
+    "kb-0044#c0",
+    "kb-0224#c3",
+    "kb-0043#c0"
+   ]
+  },
+  "q-0123": {
+   "first_gold_rank": 23,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0227#c3",
+    "kb-0220#c3",
+    "kb-0044#c0",
+    "kb-0271#c0",
+    "kb-0224#c3"
+   ]
+  },
+  "q-0124": {
+   "first_gold_rank": 10,
+   "recall@10": 0.3333,
+   "top5": [
+    "kb-0210#c0",
+    "kb-0263#c0",
+    "kb-0227#c3",
+    "kb-0194#c0",
+    "kb-0044#c0"
+   ]
+  },
+  "q-0125": {
+   "first_gold_rank": 1,
+   "recall@10": 0.6667,
+   "top5": [
+    "kb-0077#c0",
+    "kb-0208#c1",
+    "kb-0194#c0",
+    "kb-0075#c0",
+    "kb-0099#c0"
+   ]
+  },
+  "q-0133": {
+   "first_gold_rank": 1,
+   "recall@10": 0.6667,
+   "top5": [
+    "kb-0215#c0",
+    "kb-0090#c1",
+    "kb-0164#c0",
+    "kb-0347#c1",
+    "kb-0118#c0"
+   ]
+  },
+  "q-0134": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0215#c0",
+    "kb-0090#c1",
+    "kb-0347#c1",
+    "kb-0118#c0",
+    "kb-0340#c0"
+   ]
+  },
+  "q-0135": {
+   "first_gold_rank": 18,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0118#c0",
+    "kb-0163#c0",
+    "kb-0159#c0",
+    "kb-0261#c0",
+    "kb-0157#c0"
+   ]
+  },
+  "q-0136": {
+   "first_gold_rank": 24,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0170#c0",
+    "kb-0164#c0",
+    "kb-0163#c0",
+    "kb-0159#c0",
+    "kb-0084#c0"
+   ]
+  },
+  "q-0137": {
+   "first_gold_rank": 6,
+   "recall@10": 0.3333,
+   "top5": [
+    "kb-0340#c0",
+    "kb-0261#c0",
+    "kb-0255#c0",
+    "kb-0311#c0",
+    "kb-0211#c0"
+   ]
+  },
+  "q-0145": {
+   "first_gold_rank": 4,
+   "recall@10": 0.5,
+   "top5": [
+    "kb-0004#c3",
+    "kb-0030#c0",
+    "kb-0168#c0",
+    "kb-0009#c0",
+    "kb-0334#c0"
+   ]
+  },
+  "q-0146": {
+   "first_gold_rank": 7,
+   "recall@10": 0.5,
+   "top5": [
+    "kb-0168#c0",
+    "kb-0004#c3",
+    "kb-0030#c0",
+    "kb-0062#c0",
+    "kb-0334#c0"
+   ]
+  },
+  "q-0147": {
+   "first_gold_rank": 2,
+   "recall@10": 0.5,
+   "top5": [
+    "kb-0030#c0",
+    "kb-0009#c0",
+    "kb-0003#c0",
+    "kb-0004#c3",
+    "kb-0008#c0"
+   ]
+  },
+  "q-0148": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0009#c0",
+    "kb-0030#c0",
+    "kb-0334#c0",
+    "kb-0005#c0",
+    "kb-0007#c0"
+   ]
+  },
+  "q-0149": {
+   "first_gold_rank": 2,
+   "recall@10": 0.5,
+   "top5": [
+    "kb-0030#c0",
+    "kb-0009#c0",
+    "kb-0004#c3",
+    "kb-0168#c0",
+    "kb-0334#c0"
+   ]
+  },
+  "q-0175": {
+   "first_gold_rank": 4,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0103#c0",
+    "kb-0041#c0",
+    "kb-0148#c0",
+    "kb-0113#c0",
+    "kb-0062#c0"
+   ]
+  },
+  "q-0176": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0113#c0",
+    "kb-0203#c2",
+    "kb-0204#c2",
+    "kb-0105#c0",
+    "kb-0162#c0"
+   ]
+  },
+  "q-0177": {
+   "first_gold_rank": 5,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0170#c0",
+    "kb-0041#c0",
+    "kb-0203#c2",
+    "kb-0204#c2",
+    "kb-0113#c0"
+   ]
+  },
+  "q-0178": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0113#c0",
+    "kb-0137#c0",
+    "kb-0105#c0",
+    "kb-0148#c0",
+    "kb-0041#c0"
+   ]
+  },
+  "q-0179": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0113#c0",
+    "kb-0105#c0",
+    "kb-0204#c2",
+    "kb-0203#c2",
+    "kb-0148#c0"
+   ]
+  },
+  "q-0187": {
+   "first_gold_rank": 1,
+   "recall@10": 0.6667,
+   "top5": [
+    "kb-0116#c0",
+    "kb-0136#c0",
+    "kb-0089#c0",
+    "kb-0117#c0",
+    "kb-0122#c0"
+   ]
+  },
+  "q-0188": {
+   "first_gold_rank": 1,
+   "recall@10": 0.6667,
+   "top5": [
+    "kb-0116#c0",
+    "kb-0136#c0",
+    "kb-0089#c0",
+    "kb-0122#c0",
+    "kb-0117#c0"
+   ]
+  },
+  "q-0189": {
+   "first_gold_rank": 2,
+   "recall@10": 0.6667,
+   "top5": [
+    "kb-0089#c0",
+    "kb-0136#c0",
+    "kb-0116#c0",
+    "kb-0141#c0",
+    "kb-0068#c0"
+   ]
+  },
+  "q-0190": {
+   "first_gold_rank": 1,
+   "recall@10": 0.6667,
+   "top5": [
+    "kb-0136#c0",
+    "kb-0089#c0",
+    "kb-0141#c0",
+    "kb-0068#c0",
+    "kb-0147#c0"
+   ]
+  },
+  "q-0191": {
+   "first_gold_rank": 1,
+   "recall@10": 0.6667,
+   "top5": [
+    "kb-0136#c0",
+    "kb-0122#c0",
+    "kb-0116#c0",
+    "kb-0141#c0",
+    "kb-0117#c0"
+   ]
+  },
+  "q-0211": {
+   "first_gold_rank": 9,
+   "recall@10": 0.5,
+   "top5": [
+    "kb-0217#c0",
+    "kb-0253#c0",
+    "kb-0088#c0",
+    "kb-0097#c0",
+    "kb-0067#c0"
+   ]
+  },
+  "q-0212": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0217#c2",
+    "kb-0217#c1",
+    "kb-0040#c0",
+    "kb-0217#c0",
+    "kb-0102#c0"
+   ]
+  },
+  "q-0213": {
+   "first_gold_rank": 10,
+   "recall@10": 0.5,
+   "top5": [
+    "kb-0088#c0",
+    "kb-0078#c0",
+    "kb-0067#c0",
+    "kb-0007#c0",
+    "kb-0041#c0"
+   ]
+  },
+  "q-0214": {
+   "first_gold_rank": 6,
+   "recall@10": 0.5,
+   "top5": [
+    "kb-0088#c0",
+    "kb-0078#c0",
+    "kb-0102#c0",
+    "kb-0217#c0",
+    "kb-0067#c0"
+   ]
+  },
+  "q-0215": {
+   "first_gold_rank": 6,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0102#c0",
+    "kb-0040#c0",
+    "kb-0015#c0",
+    "kb-0018#c3",
+    "kb-0097#c0"
+   ]
+  },
+  "q-0217": {
+   "first_gold_rank": 7,
+   "recall@10": 0.5,
+   "top5": [
+    "kb-0163#c0",
+    "kb-0022#c0",
+    "kb-0337#c0",
+    "kb-0250#c4",
+    "kb-0202#c17"
+   ]
+  },
+  "q-0218": {
+   "first_gold_rank": 35,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0332#c0",
+    "kb-0210#c1",
+    "kb-0130#c0",
+    "kb-0110#c0",
+    "kb-0022#c0"
+   ]
+  },
+  "q-0219": {
+   "first_gold_rank": 25,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0163#c0",
+    "kb-0201#c17",
+    "kb-0202#c17",
+    "kb-0210#c1",
+    "kb-0250#c4"
+   ]
+  },
+  "q-0220": {
+   "first_gold_rank": 25,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0163#c0",
+    "kb-0201#c17",
+    "kb-0202#c17",
+    "kb-0210#c1",
+    "kb-0250#c4"
+   ]
+  },
+  "q-0221": {
+   "first_gold_rank": 6,
+   "recall@10": 0.5,
+   "top5": [
+    "kb-0202#c17",
+    "kb-0201#c17",
+    "kb-0022#c0",
+    "kb-0344#c0",
+    "kb-0247#c3"
+   ]
+  },
+  "q-0241": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0003#c0",
+    "kb-0011#c0",
+    "kb-0024#c1",
+    "kb-0004#c1",
+    "kb-0023#c0"
+   ]
+  },
+  "q-0243": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0013#c0",
+    "kb-0157#c0",
+    "kb-0011#c0",
+    "kb-0078#c0",
+    "kb-0119#c0"
+   ]
+  },
+  "q-0244": {
+   "first_gold_rank": 43,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0267#c0",
+    "kb-0253#c1",
+    "kb-0021#c0",
+    "kb-0016#c1",
+    "kb-0342#c1"
+   ]
+  },
+  "q-0249": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0026#c0",
+    "kb-0020#c0",
+    "kb-0260#c0",
+    "kb-0310#c0",
+    "kb-0068#c0"
+   ]
+  },
+  "q-0251": {
+   "first_gold_rank": 1,
+   "recall@10": 0.5,
+   "top5": [
+    "kb-0041#c0",
+    "kb-0052#c0",
+    "kb-0167#c0",
+    "kb-0062#c0",
+    "kb-0060#c0"
+   ]
+  },
+  "q-0253": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0049#c0",
+    "kb-0048#c0",
+    "kb-0058#c0",
+    "kb-0050#c0",
+    "kb-0259#c0"
+   ]
+  },
+  "q-0256": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0147#c0",
+    "kb-0053#c0",
+    "kb-0055#c0",
+    "kb-0029#c0",
+    "kb-0201#c4"
+   ]
+  },
+  "q-0262": {
+   "first_gold_rank": 2,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0270#c0",
+    "kb-0066#c0",
+    "kb-0211#c0",
+    "kb-0022#c0",
+    "kb-0216#c0"
+   ]
+  },
+  "q-0264": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0080#c0",
+    "kb-0184#c0",
+    "kb-0345#c0",
+    "kb-0052#c0",
+    "kb-0321#c0"
+   ]
+  },
+  "q-0266": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0083#c0",
+    "kb-0087#c0",
+    "kb-0353#c0",
+    "kb-0099#c0",
+    "kb-0175#c0"
+   ]
+  },
+  "q-0267": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0085#c0",
+    "kb-0353#c0",
+    "kb-0103#c0",
+    "kb-0108#c0",
+    "kb-0334#c0"
+   ]
+  },
+  "q-0272": {
+   "first_gold_rank": 3,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0228#c3",
+    "kb-0219#c3",
+    "kb-0095#c0",
+    "kb-0230#c3",
+    "kb-0227#c3"
+   ]
+  },
+  "q-0273": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0100#c0",
+    "kb-0328#c1",
+    "kb-0095#c0",
+    "kb-0033#c0",
+    "kb-0207#c4"
+   ]
+  },
+  "q-0274": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0100#c0",
+    "kb-0141#c0",
+    "kb-0097#c0",
+    "kb-0070#c0",
+    "kb-0068#c0"
+   ]
+  },
+  "q-0276": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0118#c0",
+    "kb-0067#c0",
+    "kb-0174#c0",
+    "kb-0203#c4",
+    "kb-0204#c4"
+   ]
+  },
+  "q-0280": {
+   "first_gold_rank": 12,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0102#c0",
+    "kb-0103#c0",
+    "kb-0165#c0",
+    "kb-0104#c0",
+    "kb-0127#c0"
+   ]
+  },
+  "q-0285": {
+   "first_gold_rank": 1,
+   "recall@10": 0.5,
+   "top5": [
+    "kb-0146#c0",
+    "kb-0135#c0",
+    "kb-0308#c0",
+    "kb-0141#c0",
+    "kb-0305#c0"
+   ]
+  },
+  "q-0287": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0155#c0",
+    "kb-0099#c0",
+    "kb-0311#c0",
+    "kb-0249#c1",
+    "kb-0290#c0"
+   ]
+  },
+  "q-0288": {
+   "first_gold_rank": 2,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0163#c0",
+    "kb-0157#c0",
+    "kb-0162#c0",
+    "kb-0030#c0",
+    "kb-0146#c0"
+   ]
+  },
+  "q-0290": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0165#c0",
+    "kb-0163#c0",
+    "kb-0170#c0",
+    "kb-0188#c0",
+    "kb-0107#c0"
+   ]
+  },
+  "q-0293": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0179#c0",
+    "kb-0129#c0",
+    "kb-0190#c0",
+    "kb-0202#c0",
+    "kb-0201#c0"
+   ]
+  },
+  "q-0295": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0186#c0",
+    "kb-0266#c0",
+    "kb-0111#c0",
+    "kb-0165#c0",
+    "kb-0172#c0"
+   ]
+  },
+  "q-0296": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0189#c0",
+    "kb-0171#c0",
+    "kb-0197#c0",
+    "kb-0193#c0",
+    "kb-0165#c0"
+   ]
+  },
+  "q-0297": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0210#c0",
+    "kb-0196#c0",
+    "kb-0210#c1",
+    "kb-0086#c0",
+    "kb-0309#c0"
+   ]
+  },
+  "q-0298": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0197#c0",
+    "kb-0205#c3",
+    "kb-0127#c0",
+    "kb-0189#c0",
+    "kb-0209#c2"
+   ]
+  },
+  "q-0301": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0249#c0",
+    "kb-0274#c0",
+    "kb-0337#c0",
+    "kb-0025#c0",
+    "kb-0070#c0"
+   ]
+  },
+  "q-0309": {
+   "first_gold_rank": 1,
+   "recall@10": 0.5,
+   "top5": [
+    "kb-0351#c0",
+    "kb-0328#c1",
+    "kb-0227#c2",
+    "kb-0225#c2",
+    "kb-0226#c2"
+   ]
+  },
+  "q-0310": {
+   "first_gold_rank": 2,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0119#c0",
+    "kb-0110#c0",
+    "kb-0124#c0",
+    "kb-0127#c0",
+    "kb-0097#c0"
+   ]
+  },
+  "q-0313": {
+   "first_gold_rank": 11,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0147#c0",
+    "kb-0065#c0",
+    "kb-0130#c0",
+    "kb-0141#c0",
+    "kb-0308#c0"
+   ]
+  },
+  "q-0314": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0002#c0",
+    "kb-0342#c0",
+    "kb-0201#c17",
+    "kb-0202#c17",
+    "kb-0016#c2"
+   ]
+  },
+  "q-0316": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0007#c0",
+    "kb-0009#c0",
+    "kb-0006#c0",
+    "kb-0025#c0",
+    "kb-0018#c2"
+   ]
+  },
+  "q-0317": {
+   "first_gold_rank": 3,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0129#c0",
+    "kb-0015#c0",
+    "kb-0009#c0",
+    "kb-0008#c0",
+    "kb-0004#c3"
+   ]
+  },
+  "q-0320": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0019#c0",
+    "kb-0258#c0",
+    "kb-0021#c0",
+    "kb-0016#c1",
+    "kb-0002#c0"
+   ]
+  },
+  "q-0323": {
+   "first_gold_rank": 12,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0325#c0",
+    "kb-0329#c0",
+    "kb-0259#c0",
+    "kb-0252#c0",
+    "kb-0067#c0"
+   ]
+  },
+  "q-0326": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0034#c0",
+    "kb-0041#c0",
+    "kb-0095#c0",
+    "kb-0150#c0",
+    "kb-0208#c0"
+   ]
+  },
+  "q-0327": {
+   "first_gold_rank": 2,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0035#c0",
+    "kb-0034#c0",
+    "kb-0069#c0",
+    "kb-0201#c7",
+    "kb-0202#c6"
+   ]
+  },
+  "q-0335": {
+   "first_gold_rank": 2,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0075#c1",
+    "kb-0044#c0",
+    "kb-0221#c3",
+    "kb-0075#c0",
+    "kb-0096#c0"
+   ]
+  },
+  "q-0336": {
+   "first_gold_rank": 1,
+   "recall@10": 0.5,
+   "top5": [
+    "kb-0059#c0",
+    "kb-0250#c3",
+    "kb-0284#c0",
+    "kb-0302#c0",
+    "kb-0206#c3"
+   ]
+  },
+  "q-0337": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0059#c0",
+    "kb-0284#c0",
+    "kb-0302#c0",
+    "kb-0250#c3",
+    "kb-0170#c0"
+   ]
+  },
+  "q-0338": {
+   "first_gold_rank": 1,
+   "recall@10": 0.6667,
+   "top5": [
+    "kb-0059#c0",
+    "kb-0302#c0",
+    "kb-0284#c0",
+    "kb-0250#c3",
+    "kb-0133#c0"
+   ]
+  },
+  "q-0339": {
+   "first_gold_rank": 2,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0250#c4",
+    "kb-0069#c0",
+    "kb-0201#c7",
+    "kb-0150#c0",
+    "kb-0135#c0"
+   ]
+  },
+  "q-0340": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0150#c0",
+    "kb-0250#c4",
+    "kb-0201#c7",
+    "kb-0069#c0",
+    "kb-0308#c1"
+   ]
+  },
+  "q-0342": {
+   "first_gold_rank": 2,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0308#c0",
+    "kb-0150#c0",
+    "kb-0341#c0",
+    "kb-0007#c0",
+    "kb-0201#c7"
+   ]
+  },
+  "q-0347": {
+   "first_gold_rank": 23,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0215#c0",
+    "kb-0051#c0",
+    "kb-0300#c0",
+    "kb-0289#c0",
+    "kb-0280#c0"
+   ]
+  },
+  "q-0348": {
+   "first_gold_rank": null,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0162#c0",
+    "kb-0170#c0",
+    "kb-0128#c0",
+    "kb-0152#c0",
+    "kb-0304#c0"
+   ]
+  },
+  "q-0352": {
+   "first_gold_rank": 10,
+   "recall@10": 0.5,
+   "top5": [
+    "kb-0119#c0",
+    "kb-0004#c3",
+    "kb-0085#c0",
+    "kb-0011#c0",
+    "kb-0012#c0"
+   ]
+  },
+  "q-0354": {
+   "first_gold_rank": 2,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0306#c0",
+    "kb-0111#c0",
+    "kb-0248#c3",
+    "kb-0201#c21",
+    "kb-0202#c21"
+   ]
+  },
+  "q-0356": {
+   "first_gold_rank": 2,
+   "recall@10": 0.6667,
+   "top5": [
+    "kb-0117#c0",
+    "kb-0116#c0",
+    "kb-0204#c5",
+    "kb-0203#c5",
+    "kb-0134#c0"
+   ]
+  },
+  "q-0359": {
+   "first_gold_rank": 74,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0320#c0",
+    "kb-0074#c0",
+    "kb-0324#c0",
+    "kb-0089#c0",
+    "kb-0161#c0"
+   ]
+  },
+  "q-0364": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0177#c0",
+    "kb-0230#c0",
+    "kb-0041#c0",
+    "kb-0067#c0",
+    "kb-0163#c0"
+   ]
+  },
+  "q-0365": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0177#c0",
+    "kb-0052#c0",
+    "kb-0167#c0",
+    "kb-0093#c0",
+    "kb-0009#c0"
+   ]
+  },
+  "q-0366": {
+   "first_gold_rank": 2,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0112#c0",
+    "kb-0178#c0",
+    "kb-0128#c0",
+    "kb-0122#c0",
+    "kb-0054#c0"
+   ]
+  },
+  "q-0370": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0073#c0",
+    "kb-0071#c4",
+    "kb-0083#c0",
+    "kb-0074#c0",
+    "kb-0315#c0"
+   ]
+  },
+  "q-0374": {
+   "first_gold_rank": 5,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0275#c1",
+    "kb-0341#c0",
+    "kb-0041#c0",
+    "kb-0201#c7",
+    "kb-0034#c0"
+   ]
+  },
+  "q-0375": {
+   "first_gold_rank": 21,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0097#c0",
+    "kb-0078#c0",
+    "kb-0089#c0",
+    "kb-0085#c0",
+    "kb-0071#c4"
+   ]
+  },
+  "q-0380": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0007#c0",
+    "kb-0006#c0",
+    "kb-0005#c0",
+    "kb-0009#c0",
+    "kb-0030#c0"
+   ]
+  },
+  "q-0381": {
+   "first_gold_rank": 2,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0130#c0",
+    "kb-0113#c0",
+    "kb-0148#c0",
+    "kb-0068#c0",
+    "kb-0345#c1"
+   ]
+  },
+  "q-0382": {
+   "first_gold_rank": 28,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0067#c0",
+    "kb-0147#c0",
+    "kb-0085#c0",
+    "kb-0102#c0",
+    "kb-0332#c0"
+   ]
+  },
+  "q-0383": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0111#c0",
+    "kb-0298#c0",
+    "kb-0306#c0",
+    "kb-0248#c3",
+    "kb-0277#c0"
+   ]
+  },
+  "q-0386": {
+   "first_gold_rank": 2,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0028#c0",
+    "kb-0010#c0",
+    "kb-0135#c0",
+    "kb-0007#c0",
+    "kb-0034#c0"
+   ]
+  },
+  "q-0393": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0197#c0",
+    "kb-0205#c3",
+    "kb-0097#c0",
+    "kb-0088#c0",
+    "kb-0085#c0"
+   ]
+  },
+  "q-0396": {
+   "first_gold_rank": 40,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0147#c0",
+    "kb-0068#c0",
+    "kb-0141#c0",
+    "kb-0070#c0",
+    "kb-0349#c1"
+   ]
+  },
+  "q-0398": {
+   "first_gold_rank": null,
+   "recall@10": 0.0,
+   "top5": [
+    "kb-0199#c0",
+    "kb-0313#c0",
+    "kb-0090#c0",
+    "kb-0180#c0",
+    "kb-0076#c0"
+   ]
+  },
+  "q-0401": {
+   "first_gold_rank": 1,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0145#c0",
+    "kb-0066#c0",
+    "kb-0211#c0",
+    "kb-0141#c0",
+    "kb-0045#c0"
+   ]
+  },
+  "q-0404": {
+   "first_gold_rank": 6,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0048#c0",
+    "kb-0338#c0",
+    "kb-0147#c0",
+    "kb-0141#c0",
+    "kb-0251#c0"
+   ]
+  },
+  "q-0405": {
+   "first_gold_rank": 4,
+   "recall@10": 1.0,
+   "top5": [
+    "kb-0010#c0",
+    "kb-0201#c3",
+    "kb-0202#c3",
+    "kb-0140#c0",
+    "kb-0149#c0"
+   ]
+  }
+ }
+}
