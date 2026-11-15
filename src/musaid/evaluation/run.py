@@ -34,6 +34,17 @@ CONFIGS: dict[str, dict] = {
         "max_seq_length": 512,
         "k": 100,
     },
+    "dense_e5_large_raw": {
+        "name": "dense_e5_large_raw",
+        "description": "Ablation #3: dense intfloat/multilingual-e5-large on the raw query",
+        "retriever": "dense",
+        "model": "intfloat/multilingual-e5-large",
+        "query": "raw",
+        "max_seq_length": 512,
+        "query_prefix": "query: ",
+        "passage_prefix": "passage: ",
+        "k": 100,
+    },
 }
 
 
@@ -53,6 +64,8 @@ def build_retriever(config: dict, root: Path):
             model_name=config["model"],
             cache_dir=root / "data" / "cache",
             max_seq_length=config["max_seq_length"],
+            query_prefix=config.get("query_prefix", ""),
+            passage_prefix=config.get("passage_prefix", ""),
         )
     raise ValueError(f"unknown retriever {config['retriever']!r}")
 

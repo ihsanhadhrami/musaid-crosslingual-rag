@@ -2,7 +2,10 @@
 queries and English chunks.
 
 Needs the optional `dense` dependency group: `uv sync --group dense`.
-Chunk embeddings are cached in data/cache/ (gitignored), keyed by model and chunk text.
+Chunk embeddings are cached in data/cache/ (gitignored), keyed by model, prefix and chunk text.
+
+Some models are trained with role prefixes (multilingual-e5: "query: " and "passage: ");
+pass them as query_prefix / passage_prefix. bge-m3 uses none.
 """
 
 import hashlib
@@ -20,6 +23,8 @@ class DenseRetriever:
         cache_dir: Path | None = None,
         max_seq_length: int = 512,
         batch_size: int = 8,
+        query_prefix: str = "",
+        passage_prefix: str = "",
     ):
         from sentence_transformers import SentenceTransformer
 
@@ -27,7 +32,9 @@ class DenseRetriever:
         self.model = SentenceTransformer(model_name, device="cpu")
         self.model.max_seq_length = max_seq_length
         self.batch_size = batch_size
-        texts = [c["text"] for c in chunks]
+        self.query_prefix = query_prefix
+        texts = [passage_prefix + c["text"] for c in chunks]
+        # The prefix is inside `texts`, so unprefixed caches (bge-m3) keep their old key.
         key = hashlib.sha1(
             json.dumps([model_name, max_seq_length, texts], ensure_ascii=False).encode()
         ).hexdigest()[:16]
@@ -53,7 +60,7 @@ class DenseRetriever:
         return vecs.astype(np.float32)
 
     def search(self, texts: list[str], k: int = 100) -> list[dict[str, float]]:
-        q = self._encode(texts)
+        q = self._encode([self.query_prefix + t for t in texts])
         sims = q @ self.matrix.T  # cosine, since both sides are normalized
         k = min(k, len(self.ids))
         out = []

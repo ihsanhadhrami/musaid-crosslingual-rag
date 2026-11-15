@@ -53,7 +53,26 @@ def test_dense_search_ranks_by_cosine_without_loading_a_model():
             return np.array([table[t] for t in texts], dtype=np.float32)
 
     r = DenseRetriever.__new__(DenseRetriever)
-    r.ids, r.model, r.batch_size = ["kb-0001#c0", "kb-0002#c0"], Stub(), 8
+    r.ids, r.model, r.batch_size, r.query_prefix = ["kb-0001#c0", "kb-0002#c0"], Stub(), 8, ""
     r.matrix = np.array([[0.9, 0.1], [0.1, 0.9]], dtype=np.float32)
     (hits,) = r.search(["card"], k=2)
     assert list(hits) == ["kb-0002#c0", "kb-0001#c0"]
+
+
+def test_dense_query_prefix_is_prepended_before_encoding():
+    import numpy as np
+
+    from musaid.retrieval.dense import DenseRetriever
+
+    seen = []
+
+    class Stub:
+        def encode(self, texts, **_):
+            seen.extend(texts)
+            return np.ones((len(texts), 2), dtype=np.float32)
+
+    r = DenseRetriever.__new__(DenseRetriever)
+    r.ids, r.model, r.batch_size, r.query_prefix = ["kb-0001#c0"], Stub(), 8, "query: "
+    r.matrix = np.ones((1, 2), dtype=np.float32)
+    r.search(["refund"], k=1)
+    assert seen == ["query: refund"]
